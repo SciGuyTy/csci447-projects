@@ -1,19 +1,26 @@
 from typing import Any, List, Tuple
 import pandas as pd
 
+# TODO: Define types based on implementation
 Classification = Any
 Attribute = Tuple(str, Any)
 Observation = dict[str, Any]
 
 class Algorithm():
+    training_data: pd.DataFrame = None
+    training_classes: List[Any] = None
+    training_attributes: List[str] = None
+
     def __init__(self, training_data: pd.DataFrame, classification_column: pd.Series) -> None:
-        """
+        """Initialize the algorithm by decomposing training classifications and and attributes 
+        from the training data
+
         Parameters
         ----------
         training_data: pandas.DataFrame
             A Pandas DataFrame object containing the training dataset.
 
-        classification_column: str = "class"
+        classification_column: pandas.Series
             A series that represents the column within the 
             DataFrame which contains classification data.
         """
@@ -37,7 +44,7 @@ class Algorithm():
         
         Parameters
         ----------
-        classification: 
+        classification: Classification
             The classification with which to compute the relative proportion of observations.
 
         Returns
@@ -54,10 +61,10 @@ class Algorithm():
 
         Parameters
         ----------
-        classification: 
+        classification: Classification
             The classification with which the observations belong to.
         
-        attribute:
+        attribute: Attribute
             The attribute with which to compute the proportion of observations whose 
             values are equal to that of the novel observation.
 
@@ -79,7 +86,7 @@ class Algorithm():
 
         Returns
         -------
-        prediction: Class
+        prediction: Classification
             The predicted classification for the provided observation.
         """
         pass
