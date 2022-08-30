@@ -1,5 +1,4 @@
-from typing import Any, Dict, List, Tuple, Union
-from unicodedata import name
+from typing import Any, Dict, List, Union
 import pandas as pd
 
 Column_label = Union[int, str]
