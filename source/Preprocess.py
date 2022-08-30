@@ -22,6 +22,11 @@ class Preprocessor():
             A dictionary where the keys are column names
             and the values are functions that modify the
             column values
+
+       (Optional) bins: dict[str: int]
+            A dictionary where the keys are column names
+            and the values are the number of bins to place
+            that column's values into equally spaced.
         """
 
         # Read the CSV file
