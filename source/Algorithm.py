@@ -1,12 +1,9 @@
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, Union
 import pandas as pd
 
+# Type definitions
 Column_label = Union[int, str]
-
-Classification = Any
-Attribute = List[Column_label]
-
-Observation = Dict[Attribute, int]
+Observation = Dict[Column_label, int]
 Prediction = Dict[Column_label, float]
 
 
@@ -38,7 +35,7 @@ class Algorithm:
         # An array of attributes representing the objects of interest
         self.training_attributes = training_data.columns.drop(classification_label)
 
-    def __get_classification_proportion(self, classification: Classification) -> float:
+    def __get_classification_proportion(self, classification: Any) -> float:
         """Compute the proportion of observations with the provided classification
         relative to the total number of observations in the dataset
 
@@ -65,8 +62,8 @@ class Algorithm:
 
     def __get_attribute_score(
         self,
-        classification: Classification,
-        attribute_label: Union[int, str],
+        classification: Any,
+        attribute_label: Column_label,
         attribute_value: int,
     ) -> float:
         """Compute the proportion of observations within a classification
@@ -137,4 +134,4 @@ class Algorithm:
                     classification, attribute, observation[attribute]
                 )
 
-        return pred_results
+        return max(pred_results)
