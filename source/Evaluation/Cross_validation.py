@@ -9,7 +9,9 @@ class Cross_validation:
     data: pd.DataFrame = None
     classification_column: pd.Series = None
 
-    def set_data(self, data: pd.DataFrame, classification_label: Column_label) -> None:
+    def set_data(
+        self, data: pd.DataFrame, classification_label: Column_label = "class"
+    ) -> None:
         """Set the dataset to be used for cross-validating a model
 
         Parameters
@@ -17,6 +19,8 @@ class Cross_validation:
         data: pd.DataFrame
             The dataset to be used for cross-validating a model.
 
+        (Optional) classification_label: Column_label
+            The label (or index) representing the column storing classification data (defaults to "class").
         """
 
         # Store the data to be used for training and evaluating the model(s)
@@ -31,7 +35,7 @@ class Cross_validation:
         loss_function: Callable,
         num_folds: int = 10,
     ) -> float:
-        """Perform cross-validation on k folds
+        """Perform cross-validation using k=num_folds folds
 
         Parameters
         ----------
@@ -51,7 +55,7 @@ class Cross_validation:
         # Divide the data into k folds
         folded_data = np.array_split(self.data, num_folds)
 
-        # Total loss value
+        # Total loss value (used to calculate average loss value)
         total_loss = 0
 
         # Iterate through each fold and run the model
@@ -59,14 +63,14 @@ class Cross_validation:
             # Array to store prediction results for this fold
             prediction_results = pd.DataFrame(columns=["actual", "prediction"])
 
-            # Define the data for testing
+            # Define the data for testing (a single fold)
             test_data = fold
 
-            # Define the data for training
+            # Define the data for training (remaining folds)
             training_data = folded_data.copy()
             training_data.pop(index)
 
-            # Concatenate training data
+            # Combine training data into a single DataFrame
             training_data = pd.concat(training_data)
 
             # Perform prediction on all samples for this test fold
