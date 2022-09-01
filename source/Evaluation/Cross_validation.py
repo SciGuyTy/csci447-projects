@@ -1,4 +1,4 @@
-from typing import Callable, Union
+from typing import Callable, Union, Any
 import pandas as pd
 import numpy as np
 
@@ -8,7 +8,7 @@ Column_label = Union[str, int]
 class CrossValidation:
 
     def __init__(
-        self, data: pd.DataFrame, classification_label: Column_label = "class", positive_class_value=True
+        self, data: pd.DataFrame, classification_label: Column_label = "class", positive_class_value: Any =True
     ) :
         """Set the dataset to be used for cross-validating a model
 
@@ -19,16 +19,18 @@ class CrossValidation:
 
         (Optional) classification_label: Column_label
             The label (or index) representing the column storing classification data (defaults to "class").
+
+        (Optional) positive_class_value: Any
+            The value representing a positive outcome for the classification column (defaults to True).
         """
 
         # Store the data to be used for training and evaluating the model(s)
         self.data: pd.DataFrame = data
 
-        # Store the column which stores classification data
-        self.classification_column: pd.Series = data[classification_label]
-
+        # Store the classification column name
         self.classification_column_name: Column_label = classification_label
 
+        # Store the classification positive value
         self.positive_class_value = positive_class_value
 
     def validate(
@@ -79,6 +81,8 @@ class CrossValidation:
             for _, sample in test_data.iterrows():
                 # Train and execute the model on the given training data and testing data
                 prediction = algorithm.predict(sample)
+
+                # Determine whether the prediction is a true positive, false positive, true negative, or false negative
                 if prediction == self.positive_class_value:
                     if prediction == sample[self.classification_column_name]:
                         fold_results["TP"] += 1
