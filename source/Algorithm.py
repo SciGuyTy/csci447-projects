@@ -1,5 +1,4 @@
 from typing import Any, Dict, Union
-from webbrowser import get
 import pandas as pd
 
 # Type definitions
@@ -18,10 +17,10 @@ class Algorithm:
         Parameters
         ----------
         training_data: pandas.DataFrame
-            A Pandas DataFrame object containing the training dataset.
+            A Pandas DataFrame object containing the training dataset
 
         classification_label: Column_label
-            The label (or index) representing the column storing classification data.
+            The label (or index) representing the column storing classification data
         """
 
         # Reference to the column containing classification data for each sample
@@ -42,20 +41,20 @@ class Algorithm:
         # A dictionary which contains the conditional probabilities for a given classification-attribute pair
         self.training_distribution = {}
 
-    def __get_classification_proportion(self, classification: Any) -> float:
-        """Compute the proportion of observations with the provided classification
-        relative to the total number of observations in the dataset
+    def __compute_classification_probability(self, classification: Any) -> float:
+        """Compute the marginal probability for an observation to exist within a specified
+        classification level (i.e., the prior)
 
         Parameters
         ----------
         classification: Classification
-            The classification with which to compute the relative proportion of observations.
+            The classification with which to compute the relative proportion of observations
 
         Returns
         -------
         proportion: float
             The proportion of observations with the provided classification
-            relative to the total number of observations in the dataset.
+            relative to the total number of observations in the dataset
         """
         # Compute the number of total samples
         num_total_samples = len(self.training_data)
@@ -65,25 +64,26 @@ class Algorithm:
             self.training_data[self.classification_column == classification]
         )
 
+        # Return the marginal probability for a sample to be classified within the given classification level
         return num_samples_in_class / num_total_samples
 
-    def __get_attribute_score(
+    def __compute_attribute_probability(
         self,
         classification: Any,
         attribute_label: Column_label,
         attribute_value: int,
     ) -> float:
-        """Compute the proportion of observations within a classification
-        that have a value equal to the novel observation for a given attribute
+        """Compute the conditional probability for an attribute having a given value
+        for a given classification level
 
         Parameters
         ----------
         classification: Classification
-            The classification with which the observations belong to.
+            The classification with which the observations belong to
 
         attribute_label: Union[int, str]
             The attribute with which to compute the proportion of observations whose
-            values are equal to that of the novel observation.
+            values are equal to that of the novel observation
 
         attribute_value: int
             The observed (new) value for the given attribute
@@ -91,8 +91,8 @@ class Algorithm:
         Returns
         -------
         proportion: float
-            The proportion of observations within a classification that have a
-            value equal to the novel observation for a given attribute.
+            A modified proportion of samples whose value for the given attribute matches the given 
+            attribute value relative to the total number of observations in the given classification level
         """
         # Compute the number of samples in the classification sub-set
         num_samples_in_class = len(
@@ -110,6 +110,7 @@ class Algorithm:
         # Compute the number of training attributes in these data
         num_attributes = len(self.training_attributes)
 
+        # Return the conditional probability of 
         return (num_equal_attributes + 1) / (num_samples_in_class + num_attributes)
 
     def train(self):
@@ -122,7 +123,7 @@ class Algorithm:
         for classification in self.training_classes:
             self.classification_probability[
                 classification
-            ] = self.__get_classification_proportion(classification)
+            ] = self.__compute_classification_probability(classification)
 
             # For each classification level, loop through each training attribute and get a list of all unique recorded values for the given attribute
             for attribute in self.training_attributes:
@@ -131,7 +132,7 @@ class Algorithm:
                 # For each unique value of the given attribute...
                 for value in attribute_values:
                     # Compute the conditional probability of observing this classification given this combination of attribute and attribute value
-                    likelihood = self.__get_attribute_score(
+                    likelihood = self.__compute_attribute_probability(
                         classification, attribute, value
                     )
 
@@ -146,12 +147,12 @@ class Algorithm:
         observation: Observation
             A novel observation with which to classify based on attribute values.]
             The attribute values should be stored as a dictionary with keys that match
-            column names for the dataset.
+            column names for the dataset
 
         Returns
         -------
         prediction: Classification
-            The predicted classification for the provided observation.
+            The predicted classification for the provided observation
         """
 
         # Scoring object that contains prediction results
