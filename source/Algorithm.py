@@ -159,7 +159,7 @@ class Algorithm:
         pred_results = self.classification_probability.copy()
 
         for classification in pred_results:
-            for attribute in observation:
+            for attribute in self.training_attributes:
                 # Multiply the current conditional probability by the existing conditional probability
                 pred_results[classification] *= self.training_distribution[
                     (classification, attribute, observation[attribute])

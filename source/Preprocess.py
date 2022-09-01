@@ -7,7 +7,7 @@ Bins = dict[str, int]
 class Preprocessor():
     data: pd.DataFrame = None
 
-    def load_raw_data_from_file(self, file_path: str, column_names: List[str], converters: Converter = dict(), bins: Bins = dict()):
+    def load_raw_data_from_file(self, file_path: str, column_names: List[str], columns_to_drop=[], converters: Converter = dict(), bins: Bins = dict()):
         """Load the raw data from a CSV file
 
         Parameters
@@ -31,6 +31,11 @@ class Preprocessor():
 
         # Read the CSV file
         self.data = pd.read_csv(file_path, names=column_names, converters=converters)
+
+        # Drop unwanted cols
+        self.data = self.data.drop(columns=columns_to_drop)
+
+        # Bin the data
         for key, value in bins.items():
             self.data[key] = pd.cut(self.data[key], value, labels=False)
 

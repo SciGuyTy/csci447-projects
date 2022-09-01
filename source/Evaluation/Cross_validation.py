@@ -5,13 +5,11 @@ import numpy as np
 Column_label = Union[str, int]
 
 
-class Cross_validation:
-    data: pd.DataFrame = None
-    classification_column: pd.Series = None
+class CrossValidation:
 
-    def set_data(
-        self, data: pd.DataFrame, classification_label: Column_label = "class"
-    ) -> None:
+    def __init__(
+        self, data: pd.DataFrame, classification_label: Column_label = "class", positive_class_value=True
+    ) :
         """Set the dataset to be used for cross-validating a model
 
         Parameters
@@ -24,15 +22,18 @@ class Cross_validation:
         """
 
         # Store the data to be used for training and evaluating the model(s)
-        self.data = data
+        self.data: pd.DataFrame = data
 
         # Store the column which stores classification data
-        self.classification_column = data[classification_label]
+        self.classification_column: pd.Series = data[classification_label]
+
+        self.classification_column_name: Column_label = classification_label
+
+        self.positive_class_value = positive_class_value
 
     def validate(
         self,
         model: Callable,
-        loss_function: Callable,
         num_folds: int = 10,
     ) -> float:
         """Perform cross-validation using k=num_folds folds
@@ -41,9 +42,6 @@ class Cross_validation:
         ----------
         model: Callable
             The model to perform cross-validation on.
-
-        loss_function: Callable
-            The loss function to use.
 
         (Optional) num_folds: int
             The number of times to sample from the dataset (defaults to 10).
@@ -55,13 +53,14 @@ class Cross_validation:
         # Divide the data into k folds
         folded_data = np.array_split(self.data, num_folds)
 
-        # Total loss value (used to calculate average loss value)
-        total_loss = 0
+        # Results for all the folds
+        overall_results = []
 
         # Iterate through each fold and run the model
         for index, fold in enumerate(folded_data):
-            # Array to store prediction results for this fold
-            prediction_results = pd.DataFrame(columns=["actual", "prediction"])
+
+            # Results for this fold
+            fold_results = {"TP": 0, "TN": 0, "FP": 0, "FN": 0}
 
             # Define the data for testing (a single fold)
             test_data = fold
@@ -73,15 +72,24 @@ class Cross_validation:
             # Combine training data into a single DataFrame
             training_data = pd.concat(training_data)
 
+            algorithm = model(training_data, self.classification_column_name)
+            algorithm.train()
+
             # Perform prediction on all samples for this test fold
             for _, sample in test_data.iterrows():
                 # Train and execute the model on the given training data and testing data
-                prediction_results.loc[len(prediction_results)] = model(
-                    training_data, sample
-                )
-
-            # Implement the loss function and update the total loss value
-            total_loss += loss_function(prediction_results)
+                prediction = algorithm.predict(sample)
+                if prediction == self.positive_class_value:
+                    if prediction == sample[self.classification_column_name]:
+                        fold_results["TP"] += 1
+                    else:
+                        fold_results["FP"] += 1
+                else:
+                    if prediction == sample[self.classification_column_name]:
+                        fold_results["TN"] += 1
+                    else:
+                        fold_results["FN"] += 1
+            overall_results.append(fold_results)
 
         # Return the average loss value
-        return total_loss / num_folds
+        return overall_results
