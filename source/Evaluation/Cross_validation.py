@@ -6,19 +6,12 @@ Column_label = Union[str, int]
 
 
 class CrossValidation:
-<<<<<<< HEAD
     def __init__(
         self,
         data: pd.DataFrame,
         classification_label: Column_label = "class",
         positive_class_value: Any = True,
     ):
-=======
-
-    def __init__(
-        self, data: pd.DataFrame, classification_label: Column_label = "class", positive_class_value: Any =True
-    ) :
->>>>>>> d2c4acb55333ff8d2197bfaa9da391678e594df7
         """Set the dataset to be used for cross-validating a model
 
         Parameters
@@ -38,7 +31,6 @@ class CrossValidation:
 
         # Store the classification column name
         self.classification_column_name: Column_label = classification_label
-<<<<<<< HEAD
 
         # Store the classification positive value
         self.positive_class_value = positive_class_value
@@ -80,11 +72,6 @@ class CrossValidation:
         else:
             # If the data is not to be stratified, simply return a list of equally sized chunks of data from the dataset
             return np.array_split(shuffled_data, num_folds)
-=======
-
-        # Store the classification positive value
-        self.positive_class_value = positive_class_value
->>>>>>> d2c4acb55333ff8d2197bfaa9da391678e594df7
 
     def validate(
         self, 
@@ -147,8 +134,4 @@ class CrossValidation:
             overall_results.append(fold_results)
 
         # Return the average loss value
-<<<<<<< HEAD
         return overall_results
-=======
-        return overall_results
->>>>>>> d2c4acb55333ff8d2197bfaa9da391678e594df7

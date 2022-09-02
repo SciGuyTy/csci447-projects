@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-=======
 from sre_constants import ANY
->>>>>>> d2c4acb55333ff8d2197bfaa9da391678e594df7
 from typing import Any, Dict, Union
 import pandas as pd
 
 # Type definitions
 Column_label = Union[int, str]
-<<<<<<< HEAD
-Observation = Dict[Column_label, int]
-=======
 Observation = Dict[Column_label, Any]
->>>>>>> d2c4acb55333ff8d2197bfaa9da391678e594df7
 Prediction = Dict[Column_label, float]
 
 class Algorithm:
@@ -166,13 +159,6 @@ class Algorithm:
         pred_results = self.classification_probability.copy()
 
         for classification in pred_results:
-<<<<<<< HEAD
-            for attribute in observation:
-                # Multiply the current conditional probability by the existing conditional probability
-                pred_results[classification] *= self.training_distribution[
-                    (classification, attribute, observation[attribute])
-                ]
-=======
             for attribute in self.training_attributes:
                 # The novel attribute observation to retrieve conditional probability for
                 condition = (classification, attribute, observation[attribute])
@@ -185,7 +171,6 @@ class Algorithm:
 
                 # Multiply the current conditional probability by the existing conditional probability
                 pred_results[classification] *= self.training_distribution.setdefault(condition, default_probability)
->>>>>>> d2c4acb55333ff8d2197bfaa9da391678e594df7
 
         # Return the classification label whose conditional probability given the observation's attributes is the largest
         return max(pred_results, key=pred_results.get)
