@@ -6,10 +6,12 @@ Column_label = Union[str, int]
 
 
 class CrossValidation:
-
     def __init__(
-        self, data: pd.DataFrame, classification_label: Column_label = "class", positive_class_value: Any =True
-    ) :
+        self,
+        data: pd.DataFrame,
+        classification_label: Column_label = "class",
+        positive_class_value: Any = True,
+    ):
         """Set the dataset to be used for cross-validating a model
 
         Parameters
@@ -33,10 +35,49 @@ class CrossValidation:
         # Store the classification positive value
         self.positive_class_value = positive_class_value
 
+    def __fold_data(self, num_folds: int, stratify: bool):
+        """Divide a dataset into folds (for cross-validation)
+        
+        Parameters
+        ----------
+        num_folds: int
+            The number of folds (number of 'chunks' with which to split the data).
+
+        stratify: bool
+            Whether the given folds should be stratified (i.e., split in a manner such that 
+            the proportion of classifications within the dataset is similarly represented in each fold).
+
+        """
+        # Define the levels of classification in the data
+        classification_levels = self.data[self.classification_column_name].unique()
+
+        # Shuffle the data into a random order
+        shuffled_data = self.data.sample(frac=1)
+
+        # An array to hold the data while it is being folded
+        folded_data = []
+        
+        if(stratify):
+            # If the data is to be stratified, iterate through each classification level and divide the data into equally sized chunks based on the number of folds
+            for classification in classification_levels:
+                class_data = shuffled_data[shuffled_data[self.classification_column_name] == classification]
+
+                # Divide the data for a given class into equally sized chunks
+                folded_data.append(np.array_split(class_data, num_folds))
+
+            # Stack all of the respective 'columns' (equally divided datasets for each class) and combine them into a fold
+            # Then return the list of folded data
+            return list(map(lambda x: pd.concat(x), np.column_stack((folded_data))))
+
+        else:
+            # If the data is not to be stratified, simply return a list of equally sized chunks of data from the dataset
+            return np.array_split(shuffled_data, num_folds)
+
     def validate(
-        self,
+        self, 
         model: Callable,
         num_folds: int = 10,
+        stratify: bool = False
     ) -> float:
         """Perform cross-validation using k=num_folds folds
 
@@ -49,11 +90,8 @@ class CrossValidation:
             The number of times to sample from the dataset (defaults to 10).
         """
 
-        # Shuffle the data
-        self.data = self.data.sample(frac=1)
-
         # Divide the data into k folds
-        folded_data = np.array_split(self.data, num_folds)
+        folded_data = self.__fold_data(num_folds, stratify)
 
         # Results for all the folds
         overall_results = []
