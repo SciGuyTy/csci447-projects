@@ -47,6 +47,11 @@ class CrossValidation:
             Whether the given folds should be stratified (i.e., split in a manner such that 
             the proportion of classifications within the dataset is similarly represented in each fold).
 
+        Returns
+        -------
+        folded_data: List[pd.DataFrame]
+            A list of k=num_folds DataFrames containing a fold of data
+
         """
         # Define the levels of classification in the data
         classification_levels = self.data[self.classification_column_name].unique()
@@ -54,8 +59,8 @@ class CrossValidation:
         # Shuffle the data into a random order
         shuffled_data = self.data.sample(frac=1)
 
-        # An array to hold the data while it is being folded
-        folded_data = []
+        # A list to hold the folded data
+        folded_data = [None] * num_folds
         
         if(stratify):
             # If the data is to be stratified, iterate through each classification level and divide the data into equally sized chunks based on the number of folds
@@ -63,11 +68,14 @@ class CrossValidation:
                 class_data = shuffled_data[shuffled_data[self.classification_column_name] == classification]
 
                 # Divide the data for a given class into equally sized chunks
-                folded_data.append(np.array_split(class_data, num_folds))
+                split_data = np.array_split(class_data, num_folds)
 
-            # Stack all of the respective 'columns' (equally divided datasets for each class) and combine them into a fold
-            # Then return the list of folded data
-            return list(map(lambda x: pd.concat(x), np.column_stack((folded_data))))
+                # "Stack" each kth chunk of data with its counterparts from the other classes
+                for index, data in enumerate(split_data):
+                    folded_data[index] = pd.concat([data, folded_data[index]])
+
+            # Return the folded data
+            return folded_data
 
         else:
             # If the data is not to be stratified, simply return a list of equally sized chunks of data from the dataset
