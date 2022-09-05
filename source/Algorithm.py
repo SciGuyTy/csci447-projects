@@ -23,6 +23,9 @@ class Algorithm:
             The label (or index) representing the column storing classification data
         """
 
+        # Reference to the classification column's label
+        self.classification_column_label = classification_label
+
         # Reference to the column containing classification data for each sample
         self.classification_column = training_data[classification_label]
 
@@ -100,7 +103,7 @@ class Algorithm:
         )
 
         # Expression used to find samples that belong to the given glass and have the same value as the observation for a given attribute
-        condition = (self.training_data["class"] == classification) & (
+        condition = (self.training_data[self.classification_column_label] == classification) & (
             self.training_data[attribute_label] == attribute_value
         )
 
