@@ -1,6 +1,8 @@
+import re
+import pandas as pd
+
 
 class EvaluationMeasure:
-
     @classmethod
     def calculate_precision(cls, results: dict[str, int]):
         """Calculates the precision based on the results
@@ -10,7 +12,11 @@ class EvaluationMeasure:
         results: dict[str, int]
             The results from the experiment
         """
-        return results['TP'] / (results['TP'] + results['FP'])
+        try:
+            return results["TP"] / (results["TP"] + results["FP"])
+        except ZeroDivisionError:
+            # All predictions are negative, and 0 positive predictions were reported so the precision is 1?
+            return 1.0
 
     @classmethod
     def calculate_recall(cls, results: dict[str, int]):
@@ -21,7 +27,11 @@ class EvaluationMeasure:
         results: dict[str, int]
             The results from the experiment
         """
-        return results['TP'] / (results['TP'] + results['FN'])
+        try:
+            return results["TP"] / (results["TP"] + results["FN"])
+        except ZeroDivisionError:
+            # No positive cases in the input data, and 0 positive classes were predicted so the recall is 1?
+            return 1.0
 
     @classmethod
     def calculate_f_beta_score(cls, results: dict[str, int], beta: int = 1):
@@ -37,7 +47,13 @@ class EvaluationMeasure:
         """
         precision = cls.calculate_precision(results)
         recall = cls.calculate_recall(results)
-        return ((1 + beta ** 2) * precision * recall) / (precision * beta ** 2 + recall)
+        try:
+            return ((1 + beta**2) * precision * recall) / (
+                precision * beta**2 + recall
+            )
+        except ZeroDivisionError:
+            # If both precision and recall are 0, the F-Beta score is 0
+            return 0.0
 
     @classmethod
     def calculate_0_1_loss(cls, results: dict[str, int]):
@@ -48,4 +64,4 @@ class EvaluationMeasure:
         results: dict[str, int]
             The results from the experiment
         """
-        return (results['TP'] + results['TN']) / sum(results.values())
+        return (results["TP"] + results["TN"]) / sum(results.values())
