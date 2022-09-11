@@ -6,39 +6,49 @@ from ExperimentHelper import ExperimentHelper
 
 def run_breast_cancer_experiment():
     file_path = "../datasets/BreastCancer/breast-cancer-wisconsin.data"
-    column_headers = ["id", "clump", "size", "shape", "adhesion", "epithelial_size", "nuclei", "chromatin", "nucleoli",
-                      "mitoses", "class"]
-    converters = {"class": lambda x: (int(x) == 4)}  # Convert the class column from ints to booleans
-    cols_to_drop = ['id']
+    column_headers = [
+        "id",
+        "clump",
+        "size",
+        "shape",
+        "adhesion",
+        "epithelial_size",
+        "nuclei",
+        "chromatin",
+        "nucleoli",
+        "mitoses",
+        "class",
+    ]
+    converters = {
+        "class": lambda x: (int(x) == 4)
+    }  # Convert the class column from ints to booleans
+    cols_to_drop = ["id"]
 
     pp = Preprocessor()
-    pp.load_raw_data_from_file(file_path, column_headers, columns_to_drop=cols_to_drop, converters=converters)
+    pp.load_raw_data_from_file(
+        file_path, column_headers, columns_to_drop=cols_to_drop, converters=converters
+    )
     pp.save_processed_data_to_file("./breast_cancer_processed_data.csv")
-    cv = CrossValidation(pp.data, 'class', True)
+    cv = CrossValidation(pp.data, "class")
     unaltered_results = cv.validate(Algorithm, stratify=True)
 
-
     unaltered_measured_results = ExperimentHelper.convert_results_to_measures(
-        unaltered_results
+        unaltered_results, [True]
     )
 
-
-    # print(unaltered_measured_results)
-    # print(unaltered_measured_results.std())
-
-    pp.alter_dataset(0.1)
-    cv_altered = CrossValidation(pp.data, "class", True)
-    altered_results = cv_altered.validate(Algorithm, stratify=True)
+    cv_altered = CrossValidation(pp.data, "class")
+    altered_results = cv_altered.validate(Algorithm, stratify=True, alter_data=True)
 
     altered_measured_results = ExperimentHelper.convert_results_to_measures(
-        altered_results
+        altered_results, [True]
     )
 
     print(
         ExperimentHelper.run_t_tests_on_columns(
-            unaltered_measured_results, altered_measured_results
+            unaltered_measured_results[True], altered_measured_results[True]
         )
     )
+
 
 def run_congressional_voting_experiment():
     file_path = "../datasets/CongressionalVoting/house-votes-84.data"
@@ -65,32 +75,28 @@ def run_congressional_voting_experiment():
     pp = Preprocessor()
     pp.load_raw_data_from_file(file_path, column_headers)
     pp.save_processed_data_to_file("./congressional-votes-processed-data.csv")
-    cv = CrossValidation(pp.data, 'party', positive_class_value='democrat')
+    cv = CrossValidation(pp.data, "party", positive_class_value="democrat")
     unaltered_results = cv.validate(Algorithm, stratify=True)
 
-
     unaltered_measured_results = ExperimentHelper.convert_results_to_measures(
-        unaltered_results
+        unaltered_results, ["democrat"]
     )
-
-    # print(unaltered_measured_results)
-    # print(unaltered_measured_results.std())
 
     altered_results = cv.validate(Algorithm, stratify=True, alter_data=True)
     altered_measured_results = ExperimentHelper.convert_results_to_measures(
-        altered_results
+        altered_results, ["democrat"]
     )
 
     print(
         ExperimentHelper.run_t_tests_on_columns(
-            unaltered_measured_results, altered_measured_results
+            unaltered_measured_results["democrat"], altered_measured_results["democrat"]
         )
     )
 
 
 def run_iris_experiment():
     # Define properties about the dataset
-    file_path = "/home/tyler/School/CSCI447/csci447-project-01/datasets/Iris/iris.data"
+    file_path = "../datasets/Iris/iris.data"
     column_names = [
         "sepal_length_cm",
         "sepal_width_cm",
@@ -111,33 +117,34 @@ def run_iris_experiment():
     PP = Preprocessor()
     PP.load_raw_data_from_file(file_path, column_names, bins=attribute_bins)
     PP.save_processed_data_to_file(
-        "/home/tyler/School/CSCI447/csci447-project-01/datasets/Iris/iris-processed.csv"
+        "../datasets/Iris/iris-processed.csv"
     )
+
+    classes = PP.data["class"].unique()
 
     # Dictionary to store experimental results for each classification level
     experimental_results = dict.fromkeys(PP.data["class"].unique())
 
     # Compute performance metrics
+    # for classification in PP.data["class"].unique():
+    PP.load_processed_data_from_file(
+        "../datasets/Iris/iris-processed.csv"
+    )
+    
+    # Compute performance metrics for unaltered data
+    CV_unaltered = CrossValidation(PP.data)
+    unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
+    unaltered_metrics = ExperimentHelper.convert_results_to_measures(unaltered_results, classes)
+
+    # Compute performance metrics for altered data
+    CV_altered = CrossValidation(PP.data)
+    altered_results = CV_altered.validate(Algorithm, 10, stratify=True, alter_data=True)
+    altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results, classes)
+
     for classification in PP.data["class"].unique():
-        PP.load_processed_data_from_file(
-            "/home/tyler/School/CSCI447/csci447-project-01/datasets/Iris/iris-processed.csv"
-        )
-        # Compute performance metrics for unaltered data
-        CV_unaltered = CrossValidation(PP.data, positive_class_value=classification)
-        unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
-        unaltered_metrics = ExperimentHelper.convert_results_to_measures(
-            unaltered_results
-        )
-
-        # Compute performance metrics for altered data
-        PP.alter_dataset(0.1)
-        CV_altered = CrossValidation(PP.data, positive_class_value=classification)
-        altered_results = CV_altered.validate(Algorithm, 10, stratify=True)
-        altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results)
-
         # Compare the unaltered and altered performance results
         experimental_results[classification] = ExperimentHelper.run_t_tests_on_columns(
-            unaltered_metrics, altered_metrics
+            unaltered_metrics[classification], altered_metrics[classification]
         )
 
     # Display experiment results
@@ -190,30 +197,25 @@ def run_soybean_experiment():
     PP.load_raw_data_from_file(file_path, column_names)
     PP.save_processed_data_to_file("../datasets/Soybean/soybean-small-processed.csv")
 
+    classes = PP.data["class"].unique()
+
     # Dictionary to store experimental results for each classification level
     experimental_results = dict.fromkeys(PP.data["class"].unique())
 
-    # Compute performance metrics
+    # Compute performance metrics for unaltered data
+    CV_unaltered = CrossValidation(PP.data)
+    unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
+    unaltered_metrics = ExperimentHelper.convert_results_to_measures(unaltered_results, classes)
+
+    # Compute performance metrics for altered data
+    CV_altered = CrossValidation(PP.data)
+    altered_results = CV_altered.validate(Algorithm, 10, stratify=True, alter_data=True)
+    altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results, classes)
+
     for classification in PP.data["class"].unique():
-        PP.load_processed_data_from_file(
-            "../datasets/Soybean/soybean-small-processed.csv"
-        )
-        # Compute performance metrics for unaltered data
-        CV_unaltered = CrossValidation(PP.data, positive_class_value=classification)
-        unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
-        unaltered_metrics = ExperimentHelper.convert_results_to_measures(
-            unaltered_results
-        )
-
-        # Compute performance metrics for altered data
-        PP.alter_dataset(0.1)
-        CV_altered = CrossValidation(PP.data, positive_class_value=classification)
-        altered_results = CV_altered.validate(Algorithm, 10, stratify=True)
-        altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results)
-
         # Compare the unaltered and altered performance results
         experimental_results[classification] = ExperimentHelper.run_t_tests_on_columns(
-            unaltered_metrics, altered_metrics
+            unaltered_metrics[classification], altered_metrics[classification]
         )
 
     # Display experiment results
@@ -241,34 +243,30 @@ def run_glass_identification_experiment():
     PP.load_raw_data_from_file(
         file_path, column_names, bins=attribute_bins, columns_to_drop=["ID"]
     )
+    
     PP.save_processed_data_to_file(
         "../datasets/GlassIdentification/glass-processed.data"
     )
 
+    classes = PP.data["class"].unique()
+
     # Dictionary to store experimental results for each classification level
     experimental_results = dict.fromkeys(PP.data["class"].unique())
 
-    # Compute performance metrics
+    # Compute performance metrics for unaltered data
+    CV_unaltered = CrossValidation(PP.data)
+    unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
+    unaltered_metrics = ExperimentHelper.convert_results_to_measures(unaltered_results, classes)
+
+    # Compute performance metrics for altered data
+    CV_altered = CrossValidation(PP.data)
+    altered_results = CV_altered.validate(Algorithm, 10, stratify=True, alter_data=True)
+    altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results, classes)
+
     for classification in PP.data["class"].unique():
-        PP.load_processed_data_from_file(
-            "../datasets/GlassIdentification/glass-processed.data"
-        )
-        # Compute performance metrics for unaltered data
-        CV_unaltered = CrossValidation(PP.data, positive_class_value=classification)
-        unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
-        unaltered_metrics = ExperimentHelper.convert_results_to_measures(
-            unaltered_results
-        )
-
-        # Compute performance metrics for altered data
-        PP.alter_dataset(0.1)
-        CV_altered = CrossValidation(PP.data, positive_class_value=classification)
-        altered_results = CV_altered.validate(Algorithm, 10, stratify=True)
-        altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results)
-
         # Compare the unaltered and altered performance results
         experimental_results[classification] = ExperimentHelper.run_t_tests_on_columns(
-            unaltered_metrics, altered_metrics
+            unaltered_metrics[classification], altered_metrics[classification]
         )
 
     # Display experiment results
@@ -278,7 +276,9 @@ def run_glass_identification_experiment():
 if __name__ == "__main__":
     print("\nRunning Iris Experiment")
     run_iris_experiment()
-    print("\nRunning Soybean Experiment")
-    run_soybean_experiment()
-    print("\nRunning Glass Identification Experiment")
-    run_glass_identification_experiment()
+    # print("\nRunning Soybean Experiment")
+    # run_soybean_experiment()
+    # print("\nRunning Glass Identification Experiment")
+    # run_glass_identification_experiment()
+    # print("\nRunning BC Experiment")
+    # run_breast_cancer_experiment()
