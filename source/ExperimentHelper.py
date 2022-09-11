@@ -1,10 +1,12 @@
-from typing import List
+from curses import panel
+from typing import Any, List, Tuple
+from unittest import result
 import pandas as pd
 from Evaluation.EvaluationMeasure import EvaluationMeasure as EM
 from scipy.stats import ttest_ind
 
-class ExperimentHelper():
 
+class ExperimentHelper:
     @classmethod
     def convert_results_to_measures(cls, results: List[dict[str, int]]):
         """Convert TP, TN, FP, FN to precision, recall, F1, and 0-1 loss scores
@@ -20,14 +22,19 @@ class ExperimentHelper():
             The precision, recall, F1, and 0-1 loss scores for the data
         """
         # Initialize output Dataframe
-        measures = pd.DataFrame(data={'precision': [], 'recall': [], 'f1': [], "0-1": []})
+        measures = pd.DataFrame(
+            data={"precision": [], "recall": [], "f1": [], "0-1": []}
+        )
 
         # Loop through each fold
         for i, fold in enumerate(results):
             # Calculate each measure and add it to the dataframe
-            measures.loc[i] = \
-                [EM.calculate_precision(fold), EM.calculate_recall(fold),
-                 EM.calculate_f_beta_score(fold), EM.calculate_0_1_loss(fold)]
+            measures.loc[i] = [
+                EM.calculate_precision(fold),
+                EM.calculate_recall(fold),
+                EM.calculate_f_beta_score(fold),
+                EM.calculate_0_1_loss(fold),
+            ]
 
         return measures
 
@@ -55,6 +62,29 @@ class ExperimentHelper():
 
         # Run the t-test on each column and record the t-test results
         for col in cols:
-            t_tests[col] = ttest_ind(measures_1[col],  measures_2[col])
+            t_tests[col] = ttest_ind(measures_1[col], measures_2[col])
 
         return t_tests
+
+    @classmethod
+    def format_results(
+        cls,
+        results: dict[str, dict[str, Tuple[Any, Any]]],
+        index_labels: List[str] = ["t-statistic", "p-value"],
+    ):
+        """Print out the results for a given experiment
+
+        results: dict[str, dict[str, Tuple[Any, Any]]]
+            A dictionary which maps classes to a dictionary containing the results
+        for said class
+
+        index_labels: List[str]
+            A list of labels that describe the respective rows in the results object.
+            Defaults to `["t-statistic", "p-value"]`
+        """
+        # Represent each response object into a pandas DataFrame
+        for result in results:
+            results[result] = pd.DataFrame(results[result], index=index_labels)
+
+        # Concatenate all results into a single DataFrame
+        return pd.concat(results, axis=1)
