@@ -10,7 +10,7 @@ class CrossValidation:
         self,
         data: pd.DataFrame,
         classification_label: Column_label = "class",
-        # positive_class_value: Any = True,
+        positive_class_value: Any = True,
     ):
         """Set the dataset to be used for cross-validating a model
 
@@ -31,9 +31,6 @@ class CrossValidation:
 
         # Store the classification column name
         self.classification_column_name: Column_label = classification_label
-
-        # Store the classification positive value
-        # self.positive_class_value = positive_class_value
 
     def __fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
@@ -84,15 +81,11 @@ class CrossValidation:
             return np.array_split(shuffled_data, num_folds)
 
     def validate(
-<<<<<<< Updated upstream
-        self, 
+        self,
         model: Callable,
         num_folds: int = 10,
         stratify: bool = False,
-        alter_data: bool = False
-=======
-        self, model: Callable, num_folds: int = 10, stratify: bool = False
->>>>>>> Stashed changes
+        alter_data: bool = False,
     ) -> float:
         """Perform cross-validation using k=num_folds folds
 
@@ -103,9 +96,6 @@ class CrossValidation:
 
         (Optional) num_folds: int
             The number of times to sample from the dataset (defaults to 10).
-
-        (Optional) alter_data: bool
-            Whether to stratify the training data (defaults to False).
 
         (Optional) alter_data: bool
             Whether to alter the training data (defaults to False).
@@ -161,12 +151,10 @@ class CrossValidation:
     def alter_dataset(self, data: pd.DataFrame, proportion_to_alter: float):
         """Alters the data set by shuffling column values
             in a sample based on the proportion
-
         Parameters
         ----------
         data: pd.DataFrame
             The data to alter
-
         proportion_to_alter: float
             The proportion of the data to alter [0, 1]
         """
@@ -180,13 +168,15 @@ class CrossValidation:
             shuffled_col_df = altered_data[col_name].reset_index()
 
             # Shuffle the col_name column of the new df and reset the index colum, creating just a series
-            shuffled_col = shuffled_col_df[col_name].sample(frac=1).reset_index(drop=True)
+            shuffled_col = (
+                shuffled_col_df[col_name].sample(frac=1).reset_index(drop=True)
+            )
 
             # Assign the shuffled column series to the created df
             shuffled_col_df[col_name] = shuffled_col
 
             # Remove the temporary indices and restore the original
-            shuffled_col_df = shuffled_col_df.set_index('index', drop=True)
+            shuffled_col_df = shuffled_col_df.set_index("index", drop=True)
 
             # Update the sample to have the shuffled column
             altered_data[col_name] = shuffled_col_df

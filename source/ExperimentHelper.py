@@ -8,7 +8,7 @@ from scipy.stats import ttest_ind
 
 class ExperimentHelper:
     @classmethod
-    def convert_results_to_measures(cls, results: List[pd.DataFrame]):
+    def convert_results_to_measures(cls, results: List[pd.DataFrame], classes: List[Any] = []):
     # def convert_results_to_measures(cls, results: List[dict[str, int]]):
         """Convert TP, TN, FP, FN to precision, recall, F1, and 0-1 loss scores
 
@@ -17,16 +17,19 @@ class ExperimentHelper:
             (TN), false positives (FP), and false negatives (FN) of each fold
             from the experiment.
 
+        classes: List[Any]
+            The classes to individually analyze as 'positive'
+
         Returns
         -------
-        measures: Dataframe
-            The precision, recall, F1, and 0-1 loss scores for the data
+        metrics: Dict[str, Dataframe]
+            A dictionary containing DataFrames with the precision, recall, F1, and 0-1 loss scores for the data for each positive class
         """
         # Initialize a dictionary to store evaluation metrics for each class level
-        res = dict.fromkeys(results[0].columns)
+        metrics = dict.fromkeys(classes)
 
         # For each class level, compute the evaluation metrics on the folded data
-        for classification in res:
+        for classification in metrics:
             # Initialize output Dataframe
             measures = pd.DataFrame(
                 data={"precision": [], "recall": [], "f1": [], "0-1": []}
@@ -42,9 +45,9 @@ class ExperimentHelper:
                         EM.calculate_0_1_loss(fold),
                     ]
             
-            res[classification] = measures
+            metrics[classification] = measures
 
-        return res
+        return metrics
 
     @classmethod
     def run_t_tests_on_columns(cls, measures_1: pd.DataFrame, measures_2: pd.DataFrame):
