@@ -134,10 +134,17 @@ class Algorithm:
 
                 # For each unique value of the given attribute...
                 for value in attribute_values:
-                    # Compute the conditional probability of observing this classification given this combination of attribute and attribute value
-                    likelihood = self.__compute_attribute_probability(
-                        classification, attribute, value
-                    )
+                    if value != '?':
+                        # Compute the conditional probability of observing this classification given this combination of attribute and attribute value
+                        likelihood = self.__compute_attribute_probability(
+                            classification, attribute, value
+                        )
+                    else:
+                        num_samples_in_class = len(
+                            self.training_data[self.classification_column == classification]
+                        )
+                        num_attributes = len(self.training_attributes)
+                        likelihood = 1 / (num_samples_in_class + num_attributes)
 
                     # Record the conditional probability into a dictionary for later reference when making predictions
                     self.training_distribution[
