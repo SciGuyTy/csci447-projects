@@ -85,7 +85,8 @@ class CrossValidation:
         self, 
         model: Callable,
         num_folds: int = 10,
-        stratify: bool = False
+        stratify: bool = False,
+        alter_data: bool = False
     ) -> float:
         """Perform cross-validation using k=num_folds folds
 
@@ -96,7 +97,15 @@ class CrossValidation:
 
         (Optional) num_folds: int
             The number of times to sample from the dataset (defaults to 10).
+
+        (Optional) alter_data: bool
+            Whether to stratify the training data (defaults to False).
+
+        (Optional) alter_data: bool
+            Whether to alter the training data (defaults to False).
         """
+
+        proportion_to_shuffle = 0.1
 
         # Divide the data into k folds
         folded_data = self.__fold_data(num_folds, stratify)
@@ -119,6 +128,10 @@ class CrossValidation:
 
             # Combine training data into a single DataFrame
             training_data = pd.concat(training_data)
+
+            if alter_data:
+                # Alter 10% of the training dataset
+                self.alter_dataset(training_data, proportion_to_shuffle)
 
             algorithm = model(training_data, self.classification_column_name)
             algorithm.train()
@@ -143,3 +156,39 @@ class CrossValidation:
 
         # Return the average loss value
         return overall_results
+
+    def alter_dataset(self, data: pd.DataFrame, proportion_to_alter: float):
+        """Alters the data set by shuffling column values
+            in a sample based on the proportion
+
+        Parameters
+        ----------
+        data: pd.DataFrame
+            The data to alter
+
+        proportion_to_alter: float
+            The proportion of the data to alter [0, 1]
+        """
+        # Get a random sample
+        altered_data = data.sample(frac=proportion_to_alter)
+
+        # Loop through each column to shuffle it
+        for col_name in altered_data.columns:
+            # Get a new version of the column as a data frame with two columns (index, col_name)
+            # so we have a new set of temporary indices on the rows
+            shuffled_col_df = altered_data[col_name].reset_index()
+
+            # Shuffle the col_name column of the new df and reset the index colum, creating just a series
+            shuffled_col = shuffled_col_df[col_name].sample(frac=1).reset_index(drop=True)
+
+            # Assign the shuffled column series to the created df
+            shuffled_col_df[col_name] = shuffled_col
+
+            # Remove the temporary indices and restore the original
+            shuffled_col_df = shuffled_col_df.set_index('index', drop=True)
+
+            # Update the sample to have the shuffled column
+            altered_data[col_name] = shuffled_col_df
+
+        # Update the data with the shuffled sample
+        data.update(altered_data)
