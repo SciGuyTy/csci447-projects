@@ -118,26 +118,27 @@ def run_iris_experiment():
     experimental_results = dict.fromkeys(PP.data["class"].unique())
 
     # Compute performance metrics
+    # for classification in PP.data["class"].unique():
+    PP.load_processed_data_from_file(
+        "/home/tyler/School/CSCI447/csci447-project-01/datasets/Iris/iris-processed.csv"
+    )
+    # Compute performance metrics for unaltered data
+    CV_unaltered = CrossValidation(PP.data)
+    unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
+    unaltered_metrics = ExperimentHelper.convert_results_to_measures(
+        unaltered_results
+    )
+
+    # Compute performance metrics for altered data
+    PP.alter_dataset(0.1)
+    CV_altered = CrossValidation(PP.data)
+    altered_results = CV_altered.validate(Algorithm, 10, stratify=True)
+    altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results)
+
     for classification in PP.data["class"].unique():
-        PP.load_processed_data_from_file(
-            "/home/tyler/School/CSCI447/csci447-project-01/datasets/Iris/iris-processed.csv"
-        )
-        # Compute performance metrics for unaltered data
-        CV_unaltered = CrossValidation(PP.data, positive_class_value=classification)
-        unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
-        unaltered_metrics = ExperimentHelper.convert_results_to_measures(
-            unaltered_results
-        )
-
-        # Compute performance metrics for altered data
-        PP.alter_dataset(0.1)
-        CV_altered = CrossValidation(PP.data, positive_class_value=classification)
-        altered_results = CV_altered.validate(Algorithm, 10, stratify=True)
-        altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results)
-
         # Compare the unaltered and altered performance results
         experimental_results[classification] = ExperimentHelper.run_t_tests_on_columns(
-            unaltered_metrics, altered_metrics
+            unaltered_metrics[classification], altered_metrics[classification]
         )
 
     # Display experiment results
@@ -278,7 +279,7 @@ def run_glass_identification_experiment():
 if __name__ == "__main__":
     print("\nRunning Iris Experiment")
     run_iris_experiment()
-    print("\nRunning Soybean Experiment")
-    run_soybean_experiment()
-    print("\nRunning Glass Identification Experiment")
-    run_glass_identification_experiment()
+    # print("\nRunning Soybean Experiment")
+    # run_soybean_experiment()
+    # print("\nRunning Glass Identification Experiment")
+    # run_glass_identification_experiment()

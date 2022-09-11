@@ -8,7 +8,8 @@ from scipy.stats import ttest_ind
 
 class ExperimentHelper:
     @classmethod
-    def convert_results_to_measures(cls, results: List[dict[str, int]]):
+    def convert_results_to_measures(cls, results: List[pd.DataFrame]):
+    # def convert_results_to_measures(cls, results: List[dict[str, int]]):
         """Convert TP, TN, FP, FN to precision, recall, F1, and 0-1 loss scores
 
         results: List[dict[str, int]]
@@ -21,22 +22,29 @@ class ExperimentHelper:
         measures: Dataframe
             The precision, recall, F1, and 0-1 loss scores for the data
         """
-        # Initialize output Dataframe
-        measures = pd.DataFrame(
-            data={"precision": [], "recall": [], "f1": [], "0-1": []}
-        )
+        # Initialize a dictionary to store evaluation metrics for each class level
+        res = dict.fromkeys(results[0].columns)
 
-        # Loop through each fold
-        for i, fold in enumerate(results):
-            # Calculate each measure and add it to the dataframe
-            measures.loc[i] = [
-                EM.calculate_precision(fold),
-                EM.calculate_recall(fold),
-                EM.calculate_f_beta_score(fold),
-                EM.calculate_0_1_loss(fold),
-            ]
+        # For each class level, compute the evaluation metrics on the folded data
+        for classification in res:
+            # Initialize output Dataframe
+            measures = pd.DataFrame(
+                data={"precision": [], "recall": [], "f1": [], "0-1": []}
+            )
 
-        return measures
+            # Loop through each fold
+            for i, fold in enumerate(results):
+                # Calculate each measure and add it to the dataframe
+                    measures.loc[i] = [
+                        EM.calculate_precision(fold, classification),
+                        EM.calculate_recall(fold, classification),
+                        EM.calculate_f_beta_score(fold, classification),
+                        EM.calculate_0_1_loss(fold),
+                    ]
+            
+            res[classification] = measures
+
+        return res
 
     @classmethod
     def run_t_tests_on_columns(cls, measures_1: pd.DataFrame, measures_2: pd.DataFrame):
@@ -88,3 +96,9 @@ class ExperimentHelper:
 
         # Concatenate all results into a single DataFrame
         return pd.concat(results, axis=1)
+
+
+            # num_true_positives = results[positive_class][positive_class]
+            # num_actual = results[positive_class].sum()
+
+            # return num_true_positives / num_actual

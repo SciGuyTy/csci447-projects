@@ -10,7 +10,7 @@ class CrossValidation:
         self,
         data: pd.DataFrame,
         classification_label: Column_label = "class",
-        positive_class_value: Any = True,
+        # positive_class_value: Any = True,
     ):
         """Set the dataset to be used for cross-validating a model
 
@@ -33,18 +33,18 @@ class CrossValidation:
         self.classification_column_name: Column_label = classification_label
 
         # Store the classification positive value
-        self.positive_class_value = positive_class_value
+        # self.positive_class_value = positive_class_value
 
     def __fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
-        
+
         Parameters
         ----------
         num_folds: int
             The number of folds (number of 'chunks' with which to split the data).
 
         stratify: bool
-            Whether the given folds should be stratified (i.e., split in a manner such that 
+            Whether the given folds should be stratified (i.e., split in a manner such that
             the proportion of classifications within the dataset is similarly represented in each fold).
 
         Returns
@@ -61,11 +61,13 @@ class CrossValidation:
 
         # A list to hold the folded data
         folded_data = [None] * num_folds
-        
-        if(stratify):
+
+        if stratify:
             # If the data is to be stratified, iterate through each classification level and divide the data into equally sized chunks based on the number of folds
             for classification in classification_levels:
-                class_data = shuffled_data[shuffled_data[self.classification_column_name] == classification]
+                class_data = shuffled_data[
+                    shuffled_data[self.classification_column_name] == classification
+                ]
 
                 # Divide the data for a given class into equally sized chunks
                 split_data = np.array_split(class_data, num_folds)
@@ -82,11 +84,15 @@ class CrossValidation:
             return np.array_split(shuffled_data, num_folds)
 
     def validate(
+<<<<<<< Updated upstream
         self, 
         model: Callable,
         num_folds: int = 10,
         stratify: bool = False,
         alter_data: bool = False
+=======
+        self, model: Callable, num_folds: int = 10, stratify: bool = False
+>>>>>>> Stashed changes
     ) -> float:
         """Perform cross-validation using k=num_folds folds
 
@@ -116,8 +122,11 @@ class CrossValidation:
         # Iterate through each fold and run the model
         for index, fold in enumerate(folded_data):
 
+            # Get a list of all class levels
+            classes = self.data[self.classification_column_name].unique()
+
             # Results for this fold
-            fold_results = {"TP": 0, "TN": 0, "FP": 0, "FN": 0}
+            fold_results = pd.DataFrame(0, columns=classes, index=classes)
 
             # Define the data for testing (a single fold)
             test_data = fold
@@ -141,17 +150,9 @@ class CrossValidation:
                 # Train and execute the model on the given training data and testing data
                 prediction = algorithm.predict(sample)
 
-                # Determine whether the prediction is a true positive, false positive, true negative, or false negative
-                if prediction == self.positive_class_value:
-                    if prediction == sample[self.classification_column_name]:
-                        fold_results["TP"] += 1
-                    else:
-                        fold_results["FP"] += 1
-                else:
-                    if prediction == sample[self.classification_column_name]:
-                        fold_results["TN"] += 1
-                    else:
-                        fold_results["FN"] += 1
+                # Increment the prediction/actual pair in the confusion matrix
+                fold_results[sample[self.classification_column_name]][prediction] += 1
+
             overall_results.append(fold_results)
 
         # Return the average loss value
