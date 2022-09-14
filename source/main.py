@@ -1,41 +1,65 @@
-import pandas as pd
-
 from Preprocess import Preprocessor
 from Algorithm import Algorithm
 from Evaluation.CrossValidation import CrossValidation
 from ExperimentHelper import ExperimentHelper
+from scipy import stats
+import numpy as np
 
 
 def run_breast_cancer_experiment():
     file_path = "../datasets/BreastCancer/breast-cancer-wisconsin.data"
-    column_headers = ["id", "clump", "size", "shape", "adhesion", "epithelial_size", "nuclei", "chromatin", "nucleoli",
-                      "mitoses", "class"]
-    converters = {"class": lambda x: (int(x) == 4)}  # Convert the class column from ints to booleans
-    cols_to_drop = ['id']
+    column_headers = [
+        "id",
+        "clump",
+        "size",
+        "shape",
+        "adhesion",
+        "epithelial_size",
+        "nuclei",
+        "chromatin",
+        "nucleoli",
+        "mitoses",
+        "class",
+    ]
+    converters = {
+        "class": lambda x: (int(x) == 4)
+    }  # Convert the class column from ints to booleans
+    cols_to_drop = ["id"]
 
     pp = Preprocessor()
-    pp.load_raw_data_from_file(file_path, column_headers, columns_to_drop=cols_to_drop, converters=converters)
+    pp.load_raw_data_from_file(
+        file_path, column_headers, columns_to_drop=cols_to_drop, converters=converters
+    )
     pp.save_processed_data_to_file("./breast_cancer_processed_data.csv")
-    cv = CrossValidation(pp.data, 'class', True)
+    cv = CrossValidation(pp.data, "class")
     unaltered_results = cv.validate(Algorithm, stratify=True)
 
-    unaltered_measured_results: pd.DataFrame = ExperimentHelper.convert_results_to_measures(
-        unaltered_results
+    unaltered_measured_results = ExperimentHelper.convert_results_to_measures(
+        unaltered_results, [True]
     )
 
-    print(unaltered_measured_results)
-
-    altered_results = cv.validate(Algorithm, stratify=True, alter_data=True)
+    cv_altered = CrossValidation(pp.data, "class")
+    altered_results = cv_altered.validate(Algorithm, stratify=True, alter_data=True)
 
     altered_measured_results = ExperimentHelper.convert_results_to_measures(
-        altered_results
+        altered_results, [True]
     )
-    print("Describe Unaltered\n", unaltered_measured_results.describe())
-    print("Describe Altered\n", altered_measured_results.describe())
+
+    # Display description of data for the unaltered and altered data
+    print("Unaltered\n", unaltered_measured_results[True].describe())
+    print("Altered\n", altered_measured_results[True].describe())
+
+    # Display the KStest for normality for the unaltered data
+    print("Unaltered Smirnov f1:", ExperimentHelper.run_ks_test(unaltered_measured_results[True]['f1']))
+    print("Unaltered Smirnov 01:", ExperimentHelper.run_ks_test(unaltered_measured_results[True]['0-1']))
+
+    # Display the KStest for normality for the altered
+    print("altered Smirnov f1:", ExperimentHelper.run_ks_test(altered_measured_results[True]['f1']))
+    print("altered Smirnov 01:", ExperimentHelper.run_ks_test(altered_measured_results[True]['0-1']))
 
     print(
         ExperimentHelper.run_t_tests_on_columns(
-            unaltered_measured_results, altered_measured_results
+            unaltered_measured_results[True], altered_measured_results[True]
         )
     )
 
@@ -61,43 +85,53 @@ def run_congressional_voting_experiment():
         "duty-free-exports",
         "export-administration-act-south-africa",
     ]
-    present_converter = lambda x: "present" if x == '?' else x
 
-    converters: dict = {"handicapped-infants": present_converter,
-                        "water-project-cost-sharing": present_converter,
-                        "adoption-of-the-budget-resolution": present_converter,
-                        "physician-fee-freeze": present_converter,
-                        "epithelial_size": present_converter,
-                        "el-salvador-aid": present_converter,
-                        "religious-groups-in-schools": present_converter,
-                        "anti-satellite-test-ban": present_converter,
-                        "aid-to-nicaraguan-contras": present_converter,
-                        "mx-missile": present_converter,
-                        "synfuels-corporation-cutback": present_converter,
-                        "education-spending": present_converter,
-                        "superfund-right-to-sue": present_converter,
-                        "crime": present_converter,
-                        "duty-free-exports": present_converter,
-                        "export-administration-act-south-africa": present_converter}
+    converter = lambda x: "present" if x == '?' else x
+
+    converters = {        "handicapped-infants": converter,
+        "water-project-cost-sharing": converter,
+        "adoption-of-the-budget-resolution": converter,
+        "physician-fee-freeze": converter,
+        "epithelial_size": converter,
+        "el-salvador-aid": converter,
+        "religious-groups-in-schools": converter,
+        "anti-satellite-test-ban": converter,
+        "aid-to-nicaraguan-contras": converter,
+        "mx-missile": converter,
+        "synfuels-corporation-cutback": converter,
+        "education-spending": converter,
+        "superfund-right-to-sue": converter,
+        "crime": converter,
+        "duty-free-exports": converter,
+        "export-administration-act-south-africa": converter}
+
     pp = Preprocessor()
     pp.load_raw_data_from_file(file_path, column_headers, converters=converters)
     pp.save_processed_data_to_file("./congressional-votes-processed-data.csv")
-    cv = CrossValidation(pp.data, 'party', positive_class_value='democrat')
+    cv = CrossValidation(pp.data, "party")
     unaltered_results = cv.validate(Algorithm, stratify=True)
 
     unaltered_measured_results = ExperimentHelper.convert_results_to_measures(
-        unaltered_results
+        unaltered_results, ["democrat"]
     )
 
     altered_results = cv.validate(Algorithm, stratify=True, alter_data=True)
     altered_measured_results = ExperimentHelper.convert_results_to_measures(
-        altered_results
+        altered_results, ["democrat"]
     )
-    print("Describe Unaltered\n", unaltered_measured_results.describe())
-    print("Describe Altered\n", altered_measured_results.describe())
+    print("Unaltered\n", unaltered_measured_results['democrat'].describe())
+    print("Altered\n", altered_measured_results['democrat'].describe())
+    print("Unaltered Smirnov f1:", ExperimentHelper.run_ks_test(unaltered_measured_results['democrat']['f1']))
+    print("Unaltered Smirnov 01:", ExperimentHelper.run_ks_test(unaltered_measured_results['democrat']['0-1']))
+
+    # Display the KStest for normality for the altered
+    print("altered Smirnov f1:", ExperimentHelper.run_ks_test(altered_measured_results['democrat']['f1']))
+    print("altered Smirnov 01:", ExperimentHelper.run_ks_test(altered_measured_results['democrat']['0-1']))
+
+
     print(
         ExperimentHelper.run_t_tests_on_columns(
-            unaltered_measured_results, altered_measured_results
+            unaltered_measured_results["democrat"], altered_measured_results["democrat"]
         )
     )
 
@@ -128,29 +162,35 @@ def run_iris_experiment():
         "../datasets/Iris/iris-processed.csv"
     )
 
+    classes = PP.data["class"].unique()
+
     # Dictionary to store experimental results for each classification level
     experimental_results = dict.fromkeys(PP.data["class"].unique())
 
     # Compute performance metrics
+    # for classification in PP.data["class"].unique():
+    PP.load_processed_data_from_file(
+        "../datasets/Iris/iris-processed.csv"
+    )
+    
+    # Compute performance metrics for unaltered data
+    CV_unaltered = CrossValidation(PP.data)
+    unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
+    unaltered_metrics = ExperimentHelper.convert_results_to_measures(unaltered_results, classes)
+
+    # Compute performance metrics for altered data
+    CV_altered = CrossValidation(PP.data)
+    altered_results = CV_altered.validate(Algorithm, 10, stratify=True, alter_data=True)
+    altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results, classes)
+
     for classification in PP.data["class"].unique():
-        PP.load_processed_data_from_file(
-            "../datasets/Iris/iris-processed.csv"
-        )
-        # Compute performance metrics for unaltered data
-        cv = CrossValidation(PP.data, positive_class_value=classification)
-        unaltered_results = cv.validate(Algorithm, 10, stratify=True)
-        unaltered_metrics = ExperimentHelper.convert_results_to_measures(
-            unaltered_results
-        )
-
-        # Compute performance metrics for altered data
-        altered_results = cv.validate(Algorithm, 10, stratify=True, alter_data=True)
-        altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results)
-
+        print("Unaltered " + classification + "\n", unaltered_metrics[classification].describe())
+        print("Altered " + classification + "\n", altered_metrics[classification].describe())
         # Compare the unaltered and altered performance results
         experimental_results[classification] = ExperimentHelper.run_t_tests_on_columns(
-            unaltered_metrics, altered_metrics
+            unaltered_metrics[classification], altered_metrics[classification]
         )
+        print("T Tests\n", experimental_results[classification])
 
     # Display experiment results
     print(ExperimentHelper.format_results(experimental_results))
@@ -202,28 +242,27 @@ def run_soybean_experiment():
     PP.load_raw_data_from_file(file_path, column_names)
     PP.save_processed_data_to_file("../datasets/Soybean/soybean-small-processed.csv")
 
+    classes = PP.data["class"].unique()
+
     # Dictionary to store experimental results for each classification level
     experimental_results = dict.fromkeys(PP.data["class"].unique())
 
-    # Compute performance metrics
+    # Compute performance metrics for unaltered data
+    CV_unaltered = CrossValidation(PP.data)
+    unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
+    unaltered_metrics = ExperimentHelper.convert_results_to_measures(unaltered_results, classes)
+
+    # Compute performance metrics for altered data
+    CV_altered = CrossValidation(PP.data)
+    altered_results = CV_altered.validate(Algorithm, 10, stratify=True, alter_data=True)
+    altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results, classes)
+
     for classification in PP.data["class"].unique():
-        PP.load_processed_data_from_file(
-            "../datasets/Soybean/soybean-small-processed.csv"
-        )
-        # Compute performance metrics for unaltered data
-        cv = CrossValidation(PP.data, positive_class_value=classification)
-        unaltered_results = cv.validate(Algorithm, 10, stratify=True)
-        unaltered_metrics = ExperimentHelper.convert_results_to_measures(
-            unaltered_results
-        )
-
-        # Compute performance metrics for altered data
-        altered_results = cv.validate(Algorithm, 10, stratify=True, alter_data=True)
-        altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results)
-
+        print("Unaltered " + classification + "\n", unaltered_metrics[classification].describe())
+        print("Altered " + classification + "\n", altered_metrics[classification].describe())
         # Compare the unaltered and altered performance results
         experimental_results[classification] = ExperimentHelper.run_t_tests_on_columns(
-            unaltered_metrics, altered_metrics
+            unaltered_metrics[classification], altered_metrics[classification]
         )
 
     # Display experiment results
@@ -251,32 +290,32 @@ def run_glass_identification_experiment():
     PP.load_raw_data_from_file(
         file_path, column_names, bins=attribute_bins, columns_to_drop=["ID"]
     )
+    
     PP.save_processed_data_to_file(
         "../datasets/GlassIdentification/glass-processed.data"
     )
 
+    classes = PP.data["class"].unique()
+
     # Dictionary to store experimental results for each classification level
     experimental_results = dict.fromkeys(PP.data["class"].unique())
 
-    # Compute performance metrics
+    # Compute performance metrics for unaltered data
+    CV_unaltered = CrossValidation(PP.data)
+    unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
+    unaltered_metrics = ExperimentHelper.convert_results_to_measures(unaltered_results, classes)
+
+    # Compute performance metrics for altered data
+    CV_altered = CrossValidation(PP.data)
+    altered_results = CV_altered.validate(Algorithm, 10, stratify=True, alter_data=True)
+    altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results, classes)
+
     for classification in PP.data["class"].unique():
-        PP.load_processed_data_from_file(
-            "../datasets/GlassIdentification/glass-processed.data"
-        )
-        # Compute performance metrics for unaltered data
-        cv = CrossValidation(PP.data, positive_class_value=classification)
-        unaltered_results = cv.validate(Algorithm, 10, stratify=True)
-        unaltered_metrics = ExperimentHelper.convert_results_to_measures(
-            unaltered_results
-        )
-
-        # Compute performance metrics for altered data
-        altered_results = cv.validate(Algorithm, 10, stratify=True, alter_data=True)
-        altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results)
-
+        print("Unaltered " + str(classification) + "\n", unaltered_metrics[classification].describe())
+        print("Altered " + str(classification) + "\n", altered_metrics[classification].describe())
         # Compare the unaltered and altered performance results
         experimental_results[classification] = ExperimentHelper.run_t_tests_on_columns(
-            unaltered_metrics, altered_metrics
+            unaltered_metrics[classification], altered_metrics[classification]
         )
 
     # Display experiment results
@@ -284,13 +323,13 @@ def run_glass_identification_experiment():
 
 
 if __name__ == "__main__":
-    print("\nRunning Breast Cancer Experiment")
-    run_breast_cancer_experiment()
-    #print("\nRunning Congressional Voting Experiment")
+    #run_breast_cancer_experiment()
     #run_congressional_voting_experiment()
-    '''print("\nRunning Iris Experiment")
-    run_iris_experiment()
-    print("\nRunning Soybean Experiment")
-    run_soybean_experiment()
-    print("\nRunning Glass Identification Experiment")
-    run_glass_identification_experiment()'''
+    #print("\nRunning Iris Experiment")
+    #run_iris_experiment()
+    # print("\nRunning Soybean Experiment")
+    #run_soybean_experiment()
+    # print("\nRunning Glass Identification Experiment")
+     run_glass_identification_experiment()
+    # print("\nRunning BC Experiment")
+    # run_breast_cancer_experiment()

@@ -144,7 +144,7 @@ class Algorithm:
                             self.training_data[self.classification_column == classification]
                         )
                         num_attributes = len(self.training_attributes)
-                        likelihood = 1 / (num_samples_in_class + num_attributes)
+                        likelihood = 1 #/ (num_samples_in_class + num_attributes)
 
                     # Record the conditional probability into a dictionary for later reference when making predictions
                     self.training_distribution[
