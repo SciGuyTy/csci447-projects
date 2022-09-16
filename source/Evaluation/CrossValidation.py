@@ -31,6 +31,9 @@ class CrossValidation:
         # Store the classification column name
         self.classification_column_name: Column_label = classification_label
 
+        # The algorithm
+        self.algorithm = None
+
     def __fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
 
@@ -131,13 +134,13 @@ class CrossValidation:
                 # Alter 10% of the training dataset
                 self.alter_dataset(training_data, proportion_to_shuffle)
 
-            algorithm = model(training_data, self.classification_column_name)
-            algorithm.train()
+            self.algorithm = model(training_data, self.classification_column_name)
+            self.algorithm.train()
 
             # Perform prediction on all samples for this test fold
             for _, sample in test_data.iterrows():
                 # Train and execute the model on the given training data and testing data
-                prediction = algorithm.predict(sample)
+                prediction = self.algorithm.predict(sample)
 
                 # Increment the prediction/actual pair in the confusion matrix
                 fold_results[sample[self.classification_column_name]][prediction] += 1

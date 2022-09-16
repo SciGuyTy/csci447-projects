@@ -322,14 +322,102 @@ def run_glass_identification_experiment():
     print(ExperimentHelper.format_results(experimental_results))
 
 
+def showcase_iris_model():
+    dashes = "\n" + "-"*25 + " {} " + "-"*25
+    # Define properties about the dataset
+    file_path = "../datasets/Iris/iris.data"
+    column_names = [
+        "sepal_length_cm",
+        "sepal_width_cm",
+        "petal_length_cm",
+        "petal_width_cm",
+        "class",
+    ]
+
+    # Bin the continuous values
+    attribute_bins = {
+        "sepal_length_cm": 5,
+        "sepal_width_cm": 5,
+        "petal_length_cm": 5,
+        "petal_width_cm": 5,
+    }
+
+    # Process the data
+    PP = Preprocessor()
+    PP.load_raw_data_from_file(file_path, column_names, bins=attribute_bins)
+    print("Saving processed (discretized) data to iris-processed.csv")
+    PP.save_processed_data_to_file(
+        "../datasets/Iris/iris-processed.csv"
+    )
+
+    classes = PP.data["class"].unique()
+
+    # Dictionary to store experimental results for each classification level
+    experimental_results = dict.fromkeys(PP.data["class"].unique())
+
+    # Compute performance metrics
+    # for classification in PP.data["class"].unique():
+    PP.load_processed_data_from_file(
+        "../datasets/Iris/iris-processed.csv"
+    )
+
+    # Compute performance metrics for unaltered data
+    algorithm = Algorithm(PP.data, 'class')
+    algorithm.train()
+    print(dashes.format("Sample Trained Model (trained on whole data set)"))
+    print("Classes:", classes)
+    print("Attributes and their categories:")
+    for key, value in algorithm.all_categories.items():
+        print(key, ":", value)
+
+    print("\nClass parameter values: ")
+    for key, value in algorithm.classification_probability.items():
+        print(key, ":", value)
+
+    print("\nClass-conditional attribute parameter values in form (class, attribute, attribute-value) : value ")
+    for key, value in algorithm.training_distribution.items():
+        print(key, ":", value)
+    print(dashes.format("Demonstrate counting process (trained on whole data set)"))
+
+    # Compute the number of samples in the classification sub-set
+    classification = 'Iris-setosa'
+    attribute_label = 'sepal_length_cm'
+    attribute_value = 1
+    num_samples_in_class = len(
+        algorithm.training_data[algorithm.classification_column == classification]
+    )
+    # Expression used to find samples that belong to the given glass and have the same value as the observation for a given attribute
+    condition = (algorithm.training_data[algorithm.classification_column_label] == classification) & (
+            algorithm.training_data[attribute_label] == attribute_value
+    )
+
+    # Compute the number of samples in the classification sub-set that match the condition
+    num_equal_attributes = len(algorithm.training_data[condition])
+    print("The class {} has {} instances. The class-conditioned attribute {} with value {} has {} instances."
+          .format(classification, num_samples_in_class, attribute_label, attribute_value, num_equal_attributes))
+
+    print(dashes.format("Sample Fold Confusion Matrix (Unaltered)"))
+
+    CV_unaltered = CrossValidation(PP.data)
+    unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
+    print(unaltered_results[0])
+
+
+    print(dashes.format("Sample Fold Confusion Matrix (Altered)"))
+    # Compute performance metrics for altered data
+    CV_altered = CrossValidation(PP.data)
+    altered_results = CV_altered.validate(Algorithm, 10, stratify=True, alter_data=True)
+    print(altered_results[0])
+
+    print(dashes.format("Fold Performance"))
+    unaltered_metrics = ExperimentHelper.convert_results_to_measures(unaltered_results, classes)
+    altered_metrics = ExperimentHelper.convert_results_to_measures(altered_results, classes)
+
+    print("Unaltered 0/1 Loss:", unaltered_metrics[classification]['0-1'][0])
+    print("Altered 0/1 Loss:", altered_metrics[classification]['0-1'][0])
+
 if __name__ == "__main__":
-    #run_breast_cancer_experiment()
-    #run_congressional_voting_experiment()
-    #print("\nRunning Iris Experiment")
-    #run_iris_experiment()
-    # print("\nRunning Soybean Experiment")
-    #run_soybean_experiment()
-    # print("\nRunning Glass Identification Experiment")
-     run_glass_identification_experiment()
-    # print("\nRunning BC Experiment")
-    # run_breast_cancer_experiment()
+
+    print("\nShowcasing Iris Experiment")
+    showcase_iris_model()
+

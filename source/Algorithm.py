@@ -44,6 +44,9 @@ class Algorithm:
         # A dictionary which contains the conditional probabilities for a given classification-attribute pair
         self.training_distribution = {}
 
+        # A dictionary with the set of all the categories for each attribute
+        self.all_categories = dict()
+
     def __compute_classification_probability(self, classification: Any) -> float:
         """Compute the marginal probability for an observation to exist within a specified
         classification level (i.e., the prior)
@@ -74,7 +77,7 @@ class Algorithm:
         self,
         classification: Any,
         attribute_label: Column_label,
-        attribute_value: int,
+        attribute_value: int
     ) -> float:
         """Compute the conditional probability for an attribute having a given value
         for a given classification level
@@ -102,6 +105,7 @@ class Algorithm:
             self.training_data[self.classification_column == classification]
         )
 
+
         # Expression used to find samples that belong to the given glass and have the same value as the observation for a given attribute
         condition = (self.training_data[self.classification_column_label] == classification) & (
             self.training_data[attribute_label] == attribute_value
@@ -113,7 +117,7 @@ class Algorithm:
         # Compute the number of training attributes in these data
         num_attributes = len(self.training_attributes)
 
-        # Return the conditional probability of 
+        # Return the conditional probability of
         return (num_equal_attributes + 1) / (num_samples_in_class + num_attributes)
 
     def train(self):
@@ -122,16 +126,18 @@ class Algorithm:
         of data attribute and classification)
         """
 
+
         # Loop through each classification level and compute the marginal probability
         for classification in self.training_classes:
             self.classification_probability[
                 classification
             ] = self.__compute_classification_probability(classification)
 
+            self.all_categories = dict.fromkeys(self.training_attributes, set())
             # For each classification level, loop through each training attribute and get a list of all unique recorded values for the given attribute
             for attribute in self.training_attributes:
                 attribute_values = self.training_data[attribute].unique()
-
+                self.all_categories[attribute].update(attribute_values)
                 # For each unique value of the given attribute...
                 for value in attribute_values:
                     if value != '?':
@@ -150,6 +156,8 @@ class Algorithm:
                     self.training_distribution[
                         (classification, attribute, value)
                     ] = likelihood
+
+
 
     def predict(self, observation: Observation) -> Prediction:
         """Classify a novel observation based on the observation's attributes
