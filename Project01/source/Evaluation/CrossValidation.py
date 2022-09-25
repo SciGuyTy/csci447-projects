@@ -65,7 +65,9 @@ class CrossValidation:
             # If the data is to be stratified, iterate through each classification level and divide the data into equally sized chunks based on the number of folds
             for classification in classification_levels:
                 class_data = shuffled_data[
+                    
                     shuffled_data[self.classification_column_name] == classification
+                
                 ]
 
                 # Divide the data for a given class into equally sized chunks
@@ -87,7 +89,7 @@ class CrossValidation:
         model: Callable,
         num_folds: int = 10,
         stratify: bool = False,
-        alter_data: bool = False,
+        alter_data: bool = False,,
     ) -> float:
         """Perform cross-validation using k=num_folds folds
 
@@ -113,6 +115,9 @@ class CrossValidation:
 
         # Iterate through each fold and run the model
         for index, fold in enumerate(folded_data):
+
+            # Get a list of all class levels
+            classes = self.data[self.classification_column_name].unique()
 
             # Get a list of all class levels
             classes = self.data[self.classification_column_name].unique()
@@ -171,7 +176,9 @@ class CrossValidation:
 
             # Shuffle the col_name column of the new df and reset the index colum, creating just a series
             shuffled_col = (
+                (
                 shuffled_col_df[col_name].sample(frac=1).reset_index(drop=True)
+            )
             )
 
             # Assign the shuffled column series to the created df
@@ -185,3 +192,4 @@ class CrossValidation:
 
         # Update the data with the shuffled sample
         data.update(altered_data)
+
