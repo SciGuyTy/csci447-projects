@@ -1,10 +1,9 @@
-from curses import panel
 from typing import Any, List, Tuple
-from unittest import result
 import pandas as pd
 from Evaluation.EvaluationMeasure import EvaluationMeasure as EM
 from scipy.stats import ttest_ind
-
+from scipy import stats
+import numpy as np
 
 class ExperimentHelper:
     @classmethod
@@ -73,6 +72,8 @@ class ExperimentHelper:
 
         # Run the t-test on each column and record the t-test results
         for col in cols:
+            print(col, ":", ExperimentHelper.run_ks_test(measures_1[col]))
+            print(col, ":", ExperimentHelper.run_ks_test(measures_2[col]))
             t_tests[col] = ttest_ind(measures_1[col], measures_2[col])
 
         return t_tests
@@ -98,10 +99,19 @@ class ExperimentHelper:
             results[result] = pd.DataFrame(results[result], index=index_labels)
 
         # Concatenate all results into a single DataFrame
-        return pd.concat(results, axis=1)
+        return pd.concat(results, axis=1).transpose()
 
 
             # num_true_positives = results[positive_class][positive_class]
             # num_actual = results[positive_class].sum()
 
             # return num_true_positives / num_actual
+
+    @classmethod
+    def run_ks_test(cls, column: pd.Series):
+        """Return the KS Normality test results
+
+                column: pd.Series
+                    A column to be checked for normality
+        """
+        return stats.kstest(column, np.random.normal(column.mean(), column.std(), 1000))

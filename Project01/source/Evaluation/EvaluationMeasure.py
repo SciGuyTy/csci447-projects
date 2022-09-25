@@ -15,14 +15,16 @@ class EvaluationMeasure:
         positive_class: str
             The positive class in the calculation
         """
-        try:
-            num_true_positives = results[positive_class][positive_class]
-            num_predicted_positives = results.sum(axis=1)[positive_class]
 
-            return num_true_positives / num_predicted_positives
-        except ZeroDivisionError:
-            # All predictions are negative, and 0 positive predictions were reported so the precision is 1?
-            return 1.0
+        num_true_positives = results[positive_class][positive_class]
+        num_predicted_positives = results.sum(axis=1)[positive_class]
+
+        # All predictions are negative, and 0 positive predictions were reported so the precision approaches 1
+        if num_predicted_positives == 0:
+            return 1
+
+        return num_true_positives / num_predicted_positives
+
 
     @classmethod
     def calculate_recall(cls, results: pd.DataFrame, positive_class: str):
@@ -36,14 +38,15 @@ class EvaluationMeasure:
         positive_class: str
             The positive class in the calculation
         """
-        try:
-            num_true_positives = results[positive_class][positive_class]
-            num_predicted_positives = results.sum(axis=0)[positive_class]
 
-            return num_true_positives / num_predicted_positives
-        except ZeroDivisionError:
-            # No positive cases in the input data, and 0 positive classes were predicted so the recall is 1?
-            return 1.0
+        num_true_positives = results[positive_class][positive_class]
+        num_predicted_positives = results.sum(axis=0)[positive_class]
+
+        # No positive cases in the input data, and 0 positive classes were predicted so the recall is 1?
+        if num_predicted_positives == 0:
+            return 1
+
+        return num_true_positives / num_predicted_positives
 
     @classmethod
     def calculate_f_beta_score(cls, results: pd.DataFrame, positive_class: str, beta: int = 1):
@@ -62,14 +65,12 @@ class EvaluationMeasure:
         """
         precision = cls.calculate_precision(results, positive_class)
         recall = cls.calculate_recall(results, positive_class)
-
-        try:
-            return ((1 + beta**2) * precision * recall) / (
-                precision * beta**2 + recall
-            )
-        except ZeroDivisionError:
-            # If both precision and recall are 0, the F-Beta score is 0
+        denom = precision * beta**2 + recall
+        
+        if denom == 0:
             return 0.0
+
+        return ((1 + beta**2) * precision * recall) / denom
 
     @classmethod
     def calculate_0_1_loss(cls, results: pd.DataFrame):

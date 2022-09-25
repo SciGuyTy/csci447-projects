@@ -10,7 +10,6 @@ class CrossValidation:
         self,
         data: pd.DataFrame,
         classification_label: Column_label = "class",
-        positive_class_value: Any = True,
     ):
         """Set the dataset to be used for cross-validating a model
 
@@ -31,6 +30,9 @@ class CrossValidation:
 
         # Store the classification column name
         self.classification_column_name: Column_label = classification_label
+
+        # The algorithm
+        self.algorithm = None
 
     def __fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
@@ -63,7 +65,9 @@ class CrossValidation:
             # If the data is to be stratified, iterate through each classification level and divide the data into equally sized chunks based on the number of folds
             for classification in classification_levels:
                 class_data = shuffled_data[
+                    
                     shuffled_data[self.classification_column_name] == classification
+                
                 ]
 
                 # Divide the data for a given class into equally sized chunks
@@ -85,7 +89,7 @@ class CrossValidation:
         model: Callable,
         num_folds: int = 10,
         stratify: bool = False,
-        alter_data: bool = False,
+        alter_data: bool = False,,
     ) -> float:
         """Perform cross-validation using k=num_folds folds
 
@@ -115,6 +119,9 @@ class CrossValidation:
             # Get a list of all class levels
             classes = self.data[self.classification_column_name].unique()
 
+            # Get a list of all class levels
+            classes = self.data[self.classification_column_name].unique()
+
             # Results for this fold
             fold_results = pd.DataFrame(0, columns=classes, index=classes)
 
@@ -132,13 +139,13 @@ class CrossValidation:
                 # Alter 10% of the training dataset
                 self.alter_dataset(training_data, proportion_to_shuffle)
 
-            algorithm = model(training_data, self.classification_column_name)
-            algorithm.train()
+            self.algorithm = model(training_data, self.classification_column_name)
+            self.algorithm.train()
 
             # Perform prediction on all samples for this test fold
             for _, sample in test_data.iterrows():
                 # Train and execute the model on the given training data and testing data
-                prediction = algorithm.predict(sample)
+                prediction = self.algorithm.predict(sample)
 
                 # Increment the prediction/actual pair in the confusion matrix
                 fold_results[sample[self.classification_column_name]][prediction] += 1
@@ -169,7 +176,9 @@ class CrossValidation:
 
             # Shuffle the col_name column of the new df and reset the index colum, creating just a series
             shuffled_col = (
+                (
                 shuffled_col_df[col_name].sample(frac=1).reset_index(drop=True)
+            )
             )
 
             # Assign the shuffled column series to the created df
@@ -183,3 +192,4 @@ class CrossValidation:
 
         # Update the data with the shuffled sample
         data.update(altered_data)
+
