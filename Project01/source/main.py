@@ -7,7 +7,7 @@ import numpy as np
 
 
 def run_breast_cancer_experiment():
-    file_path = "../datasets/BreastCancer/breast-cancer-wisconsin.data"
+    file_path = "../../datasets/classification/BreastCancer/breast-cancer-wisconsin.data"
     column_headers = [
         "id",
         "clump",
@@ -65,7 +65,7 @@ def run_breast_cancer_experiment():
 
 
 def run_congressional_voting_experiment():
-    file_path = "../datasets/CongressionalVoting/house-votes-84.data"
+    file_path = "../../datasets/classification/CongressionalVoting/house-votes-84.data"
     column_headers = [
         "party",
         "handicapped-infants",
@@ -138,7 +138,7 @@ def run_congressional_voting_experiment():
 
 def run_iris_experiment():
     # Define properties about the dataset
-    file_path = "../datasets/Iris/iris.data"
+    file_path = "../../datasets/classification/Iris/iris.data"
     column_names = [
         "sepal_length_cm",
         "sepal_width_cm",
@@ -159,7 +159,7 @@ def run_iris_experiment():
     PP = Preprocessor()
     PP.load_raw_data_from_file(file_path, column_names, bins=attribute_bins)
     PP.save_processed_data_to_file(
-        "../datasets/Iris/iris-processed.csv"
+        "../../datasets/classification/Iris/iris-processed.csv"
     )
 
     classes = PP.data["class"].unique()
@@ -170,7 +170,7 @@ def run_iris_experiment():
     # Compute performance metrics
     # for classification in PP.data["class"].unique():
     PP.load_processed_data_from_file(
-        "../datasets/Iris/iris-processed.csv"
+        "../../datasets/classification/Iris/iris-processed.csv"
     )
     
     # Compute performance metrics for unaltered data
@@ -197,7 +197,7 @@ def run_iris_experiment():
 
 
 def run_soybean_experiment():
-    file_path = "../datasets/Soybean/soybean-small.data"
+    file_path = "../../datasets/classification/Soybean/soybean-small.data"
     column_names = [
         "date",
         "plant_stand",
@@ -240,7 +240,7 @@ def run_soybean_experiment():
     # Process the data
     PP = Preprocessor()
     PP.load_raw_data_from_file(file_path, column_names)
-    PP.save_processed_data_to_file("../datasets/Soybean/soybean-small-processed.csv")
+    PP.save_processed_data_to_file("../../datasets/classification/Soybean/soybean-small-processed.csv")
 
     classes = PP.data["class"].unique()
 
@@ -270,7 +270,7 @@ def run_soybean_experiment():
 
 
 def run_glass_identification_experiment():
-    file_path = "../datasets/GlassIdentification/glass.data"
+    file_path = "../../datasets/classification/GlassIdentification/glass.data"
     column_names = ["ID", "RI", "Na", "Mg", "Al", "Si", "K", "Ca", "Ba", "Fe", "class"]
 
     attribute_bins = {
@@ -292,7 +292,7 @@ def run_glass_identification_experiment():
     )
     
     PP.save_processed_data_to_file(
-        "../datasets/GlassIdentification/glass-processed.data"
+        "../../datasets/classification/GlassIdentification/glass-processed.data"
     )
 
     classes = PP.data["class"].unique()
@@ -325,7 +325,7 @@ def run_glass_identification_experiment():
 def showcase_iris_model():
     dashes = "\n" + "-"*25 + " {} " + "-"*25
     # Define properties about the dataset
-    file_path = "../datasets/Iris/iris.data"
+    file_path = "../../datasets/classification/Iris/iris.data"
     column_names = [
         "sepal_length_cm",
         "sepal_width_cm",
@@ -346,8 +346,9 @@ def showcase_iris_model():
     PP = Preprocessor()
     PP.load_raw_data_from_file(file_path, column_names, bins=attribute_bins)
     print("Saving processed (discretized) data to iris-processed.csv")
+    input("")
     PP.save_processed_data_to_file(
-        "../datasets/Iris/iris-processed.csv"
+        "../../datasets/classification/Iris/iris-processed.csv"
     )
 
     classes = PP.data["class"].unique()
@@ -358,7 +359,7 @@ def showcase_iris_model():
     # Compute performance metrics
     # for classification in PP.data["class"].unique():
     PP.load_processed_data_from_file(
-        "../datasets/Iris/iris-processed.csv"
+        "../../datasets/classification/Iris/iris-processed.csv"
     )
 
     # Compute performance metrics for unaltered data
@@ -377,6 +378,9 @@ def showcase_iris_model():
     print("\nClass-conditional attribute parameter values in form (class, attribute, attribute-value) : value ")
     for key, value in algorithm.training_distribution.items():
         print(key, ":", value)
+
+    input("")
+
     print(dashes.format("Demonstrate counting process (trained on whole data set)"))
 
     # Compute the number of samples in the classification sub-set
@@ -391,10 +395,13 @@ def showcase_iris_model():
             algorithm.training_data[attribute_label] == attribute_value
     )
 
+
     # Compute the number of samples in the classification sub-set that match the condition
     num_equal_attributes = len(algorithm.training_data[condition])
     print("The class {} has {} instances. The class-conditioned attribute {} with value {} has {} instances."
           .format(classification, num_samples_in_class, attribute_label, attribute_value, num_equal_attributes))
+
+    input("")
 
     print(dashes.format("Sample Fold Confusion Matrix (Unaltered)"))
 
@@ -402,12 +409,15 @@ def showcase_iris_model():
     unaltered_results = CV_unaltered.validate(Algorithm, 10, stratify=True)
     print(unaltered_results[0])
 
+    input("")
 
     print(dashes.format("Sample Fold Confusion Matrix (Altered)"))
     # Compute performance metrics for altered data
     CV_altered = CrossValidation(PP.data)
     altered_results = CV_altered.validate(Algorithm, 10, stratify=True, alter_data=True)
     print(altered_results[0])
+
+    input("")
 
     print(dashes.format("Fold Performance"))
     unaltered_metrics = ExperimentHelper.convert_results_to_measures(unaltered_results, classes)
