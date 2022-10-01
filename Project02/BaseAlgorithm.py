@@ -29,12 +29,12 @@ class BaseAlgorithm(ABC):
         for i in range(len(self.training_data.index)):
             neighbor = self.training_data.iloc[i]
             distance = -1 * self.minkowski_metric(neighbor, instance)  # Multiply by negative one to use Max Heap
-            if len(heap) < k:
+            if len(heap) < k or abs(distance) < abs(heap[0][0]):
+                # Push the distance, a tiebreaker, and the neighbor onto the heap
                 heappush(heap, (distance, next(self.tiebreaker), neighbor))
-            elif abs(distance) < abs(heap[0][0]):
+            if len(heap) > k:
                 heappop(heap)
-                heappush(heap, (distance, next(self.tiebreaker), neighbor))
-        return [(-i[0], i[2]) for i in heap]  # Flip distance
+        return [(-i[0], i[2]) for i in heap]  # Flip distance and remove tiebreaker
 
     def regress(self, neighbors, instance):
         total = 0
@@ -46,6 +46,7 @@ class BaseAlgorithm(ABC):
         df = pd.DataFrame(data=neighbors)
         mode = df[self.class_col].mode()
         if len(mode) > 1:
+            print("TIE!")
             mode = mode.sample()
         return mode.iloc[0]
 

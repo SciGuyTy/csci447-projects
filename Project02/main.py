@@ -27,7 +27,7 @@ def test_knn_on_breast_cancer():
     data = data[~data['id'].isin(rows_to_drop)]
     knn = BaseAlgorithm(column_headers[1:-1], "class", data)
 
-    print(knn.predict(data.iloc[0], 5))
+    print(knn.predict(data.iloc[1], 2))
 
 if __name__ == "__main__":
     test_knn_on_breast_cancer()
