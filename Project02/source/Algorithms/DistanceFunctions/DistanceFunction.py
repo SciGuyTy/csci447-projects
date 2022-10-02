@@ -8,13 +8,6 @@ class DistanceFunction:
         """
         pass
 
-    def _preprocess(self) -> None:
-        """
-        Handle any preprocessing of the vectors required by the underlying distance
-        function
-        """
-        pass
-
     def _validate_vectors(self, v1: pd.Series, v2: pd.Series) -> bool:
         """
         This method is used to validate the two vectors. By default, the shape of the
@@ -51,5 +44,4 @@ class DistanceFunction:
         --------
         A float representing the distance between v1 and v2
         """
-        self._validate_vectors()
-        self._preprocess()
+        self._validate_vectors(v1, v2)

@@ -45,6 +45,7 @@ class KNN(ABC):
             distance = -1 * self.distance_function.compute_distance(
                 neighbor[self.attributes], instance[self.attributes]
             )
+
             if len(heap) < k:
                 heappush(heap, (distance, next(self.tiebreaker), neighbor))
             elif abs(distance) < abs(heap[0][0]):

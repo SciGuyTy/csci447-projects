@@ -1,4 +1,5 @@
 from sqlite3 import converters
+from source.Algorithms.DistanceFunctions.ValueDifference import ValueDifference
 from source.Utilities.Preprocess import Preprocessor
 from source.Algorithms.KNN import KNN
 import pandas as pd
@@ -37,7 +38,7 @@ def test_knn_on_breast_cancer():
         dropNA=["?"],
     )
 
-    knn = KNN(column_names[1:-1], "class", pp.data)
+    knn = KNN(column_names[1:-1], "class", pp.data, distance_function=ValueDifference(pp.data, "class"))
     print(knn.predict(pp.data.iloc[0], 5))
 
 
