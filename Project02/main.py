@@ -1,4 +1,5 @@
-from sqlite3 import converters
+from source.Algorithms.KMeans import KMeans
+from source.Algorithms.EditedKNN import EditedKNN
 from source.Algorithms.DistanceFunctions.ValueDifference import ValueDifference
 from source.Utilities.Preprocess import Preprocessor
 from source.Algorithms.KNN import KNN
@@ -38,8 +39,15 @@ def test_knn_on_breast_cancer():
         dropNA=["?"],
     )
 
-    knn = KNN(column_names[1:-1], "class", pp.data, distance_function=ValueDifference(pp.data, "class"))
-    print(knn.predict(pp.data.iloc[0], 5))
+    # knn = KNN(column_names[1:-1], "class", pp.data, distance_function=ValueDifference(pp.data, "class"))
+    # knn = KNN(column_names[1:-1], "class", pp.data)
+    # print(knn.predict(pp.data.iloc[0], 5))
+
+    # eknn = EditedKNN(column_names[1:-1], "class", pp.data)
+    # print(eknn.predict(pp.data.iloc[0], 5))
+
+    km = KMeans(column_names[1:-1], pp.data, "class", 2)
+    print(km.predict(pp.data.iloc[0]))
 
 
 if __name__ == "__main__":
