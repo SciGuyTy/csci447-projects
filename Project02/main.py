@@ -1,4 +1,4 @@
-from BaseAlgorithm import BaseAlgorithm
+from source.Algorithms.KNN import BaseAlgorithm
 import pandas as pd
 
 def main():
