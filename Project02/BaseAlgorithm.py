@@ -58,7 +58,8 @@ class BaseAlgorithm(ABC):
             mode = mode.sample()
         return mode.iloc[0]
 
-    def gaussian_kernel(self, u):
+    @staticmethod
+    def gaussian_kernel(u):
         return math.e ** ((u ** 2) / -2) / math.sqrt(2 * math.pi)
 
     def minkowski_metric(self, x, y, p=2):
