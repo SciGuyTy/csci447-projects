@@ -1,12 +1,16 @@
-from source.Algorithms.KNN import BaseAlgorithm
+from sqlite3 import converters
+from source.Utilities.Preprocess import Preprocessor
+from source.Algorithms.KNN import KNN
 import pandas as pd
+
 
 def main():
     pass
 
+
 def test_knn_on_breast_cancer():
-    filepath = "../datasets/classification/BreastCancer/breast-cancer-wisconsin.data"
-    column_headers = [
+    file_path = "../datasets/classification/BreastCancer/breast-cancer-wisconsin.data"
+    column_names = [
         "id",
         "clump",
         "size",
@@ -20,14 +24,22 @@ def test_knn_on_breast_cancer():
         "class",
     ]
 
-    data = pd.read_csv(filepath, names=column_headers, converters={"class": lambda x: (int(x) == 4)})
-    rows_to_drop = [1057013, 1057013, 1096800, 1183246, 1184840, 1193683, 1197510, 1241232, 169356, 432809,
-                    563649, 606140, 61634, 704168, 733639, 1238464, 1057067]
+    pp = Preprocessor()
 
-    data = data[~data['id'].isin(rows_to_drop)]
-    knn = BaseAlgorithm(column_headers[1:-1], "class", data)
+    feature_modifiers = {"class": lambda x: (int(x) == 4)}
 
-    print(knn.predict(data.iloc[0], 5))
+    pp.load_raw_data_from_file(
+        file_path,
+        column_names,
+        columns_to_drop=["id"],
+        columns_to_normalize=column_names[1:-1],
+        converters=feature_modifiers,
+        dropNA=["?"],
+    )
+
+    knn = KNN(column_names[1:-1], "class", pp.data)
+    print(knn.predict(pp.data.iloc[0], 5))
+
 
 if __name__ == "__main__":
     test_knn_on_breast_cancer()
