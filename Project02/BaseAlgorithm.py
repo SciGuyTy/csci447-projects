@@ -7,7 +7,7 @@ from itertools import count
 
 class BaseAlgorithm(ABC):
 
-    def __init__(self, attributes, class_col: str, training_data: pd.DataFrame, regression=False):
+    def __init__(self, attributes, class_col: str, training_data: pd.DataFrame, regression=False, h=None, sigma=None):
         self.attributes = attributes
         self.class_col = class_col
         self.training_data: pd.DataFrame = training_data
@@ -15,10 +15,14 @@ class BaseAlgorithm(ABC):
         self.classes = self.training_data[self.class_col].unique()
         self.tiebreaker = count()
 
+        self.h = h
+        self.sigma = sigma
+
     def predict(self, instance, k):
         neighbors_distance = self.find_k_nearest_neighbors(instance, k)
         if self.regression:
-            pass
+            distances = [i[0] for i in neighbors_distance]
+            return self.regress(distances)
         else:
             neighbors = [i[1] for i in neighbors_distance]
             return self.vote(neighbors)
@@ -36,11 +40,11 @@ class BaseAlgorithm(ABC):
                 heappop(heap)
         return [(-i[0], i[2]) for i in heap]  # Flip distance and remove tiebreaker
 
-    def regress(self, neighbors, instance):
+    def regress(self, distances):
         total = 0
-        for t in neighbors:
-            pass
-            # TODO
+        for d in distances:
+            total += self.gaussian_kernel(d/self.sigma)
+        return total / (self.h * len(distances))
 
     def vote(self, neighbors):
         df = pd.DataFrame(data=neighbors)

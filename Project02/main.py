@@ -29,5 +29,7 @@ def test_knn_on_breast_cancer():
 
     print(knn.predict(data.iloc[1], 2))
 
+def test_knn_on_
+
 if __name__ == "__main__":
     test_knn_on_breast_cancer()
