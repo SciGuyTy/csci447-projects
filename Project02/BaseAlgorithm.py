@@ -17,12 +17,13 @@ class BaseAlgorithm(ABC):
 
         self.h = h
         self.sigma = sigma
+        if regression and (self.sigma is None or self.h is None):
+            raise ValueError
 
     def predict(self, instance, k):
         neighbors_distance = self.find_k_nearest_neighbors(instance, k)
         if self.regression:
-            distances = [i[0] for i in neighbors_distance]
-            return self.regress(distances)
+            return self.regress(neighbors_distance)
         else:
             neighbors = [i[1] for i in neighbors_distance]
             return self.vote(neighbors)
@@ -40,11 +41,14 @@ class BaseAlgorithm(ABC):
                 heappop(heap)
         return [(-i[0], i[2]) for i in heap]  # Flip distance and remove tiebreaker
 
-    def regress(self, distances):
+    def regress(self, neighbors_distances):
         total = 0
-        for d in distances:
-            total += self.gaussian_kernel(d/self.sigma)
-        return total / (self.h * len(distances))
+        weighted_sum = 0
+        for d, neighbor in neighbors_distances:
+            kernel_distance = self.gaussian_kernel(d/self.sigma)
+            total += kernel_distance
+            weighted_sum += kernel_distance * neighbor[self.class_col]
+        return weighted_sum / total
 
     def vote(self, neighbors):
         df = pd.DataFrame(data=neighbors)
