@@ -1,13 +1,23 @@
-from abc import ABC, abstractmethod
+from turtle import distance
 import pandas as pd
 import math
 from heapq import heappop, heappush, heapify
 from itertools import count
 
+from Project02.source.Algorithms.DistanceFunctions.DistanceFunction import DistanceFunction
+from Project02.source.Algorithms.DistanceFunctions.Minkowski import Minkowski
 
-class BaseAlgorithm(ABC):
-
-    def __init__(self, attributes, class_col: str, training_data: pd.DataFrame, regression=False, h=None, sigma=None):
+class KNN:
+    def __init__(
+        self,
+        attributes,
+        class_col: str,
+        training_data: pd.DataFrame,
+        regression=False,
+        h=None,
+        sigma=None,
+        distance_function: DistanceFunction = Minkowski(),
+    ):
         self.attributes = attributes
         self.class_col = class_col
         self.training_data: pd.DataFrame = training_data
@@ -20,8 +30,11 @@ class BaseAlgorithm(ABC):
         if regression and (self.sigma is None or self.h is None):
             raise ValueError
 
+        self.distance_function = distance_function
+
     def predict(self, instance, k):
         neighbors_distance = self.find_k_nearest_neighbors(instance, k)
+
         if self.regression:
             return self.regress(neighbors_distance)
         else:
@@ -33,7 +46,9 @@ class BaseAlgorithm(ABC):
         heapify(heap)
         for i in range(len(self.training_data.index)):
             neighbor = self.training_data.iloc[i]
-            distance = -1 * self.minkowski_metric(neighbor, instance)  # Multiply by negative one to use Max Heap
+            distance = -1 * self.distance_function.compute_distance(
+                neighbor[self.attributes], instance[self.attributes]
+            )
             if len(heap) < k or abs(distance) < abs(heap[0][0]):
                 # Push the distance, a tiebreaker, and the neighbor onto the heap
                 heappush(heap, (distance, next(self.tiebreaker), neighbor))
