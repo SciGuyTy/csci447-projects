@@ -60,7 +60,7 @@ class KNN:
         total = 0
         weighted_sum = 0
         for d, neighbor in neighbors_distances:
-            kernel_distance = self.gaussian_kernel(d/self.sigma)
+            kernel_distance = self.gaussian_kernel(d, 1/self.sigma)
             total += kernel_distance
             weighted_sum += kernel_distance * neighbor[self.class_col]
         return weighted_sum / total
@@ -74,11 +74,5 @@ class KNN:
         return mode.iloc[0]
 
     @staticmethod
-    def gaussian_kernel(u):
-        return math.e ** ((u ** 2) / -2) / math.sqrt(2 * math.pi)
-
-    def minkowski_metric(self, x, y, p=2):
-        dist = 0
-        for attr_label in self.attributes:
-            dist += abs(float(x[attr_label]) - float(y[attr_label])) ** p
-        return dist
+    def gaussian_kernel(distance, gamma):
+        return math.e ** (-gamma * (distance ** 2))
