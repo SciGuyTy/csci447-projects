@@ -43,11 +43,8 @@ def test_knn_on_breast_cancer():
     # knn = KNN(column_names[1:-1], "class", pp.data)
     # print(knn.predict(pp.data.iloc[0], 5))
 
-    # eknn = EditedKNN(column_names[1:-1], "class", pp.data)
-    # print(eknn.predict(pp.data.iloc[0], 5))
-
-    km = KMeans(column_names[1:-1], pp.data, "class", 2)
-    print(km.predict(pp.data.iloc[0]))
+    km = KMeans(column_names[1:-1], pp.data)
+    print(km.cluster(2))
 
 
 if __name__ == "__main__":

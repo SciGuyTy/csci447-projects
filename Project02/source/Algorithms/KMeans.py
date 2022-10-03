@@ -1,82 +1,133 @@
-import math
-from threading import current_thread
-from tkinter import W
 from typing import List
-from unicodedata import name
-import pandas as pd
 from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
 from source.Algorithms.DistanceFunctions.DistanceFunction import DistanceFunction
+
+import math
+import pandas as pd
 
 
 class KMeans:
     def __init__(
         self,
-        attributes: List[str],
-        training_data: pd.DataFrame,
-        class_col: str,
-        k: int,
+        features: List[str],
+        data: pd.DataFrame,
         distance_function: DistanceFunction = Minkowski(),
-    ) -> None:
-        self.attributes = attributes
-        self.training_data = training_data
-        self.class_col = class_col
-        self.k = k
+    ):
+        """
+        K-Means clustering used to cluster data
+
+        Parameters:
+        -----------
+        features: List[str]
+            A list of strings that represent the training features
+
+        data: pd.DataFrame
+            The training data
+
+        distance_function: DistanceFunction
+            The distance function to use when computing the distance
+            between a centroid and a sample (defaults to the Minkoski metric
+            with p=2)
+        """
+        self.features = features
+        self.data = data
         self.distance_function = distance_function
 
-    def _initialize_clusters(self):
-        self.clusters = self.training_data.groupby(self.class_col).sample(1)
+    def _initialize_clusters(self) -> None:
+        """
+        Handles initialization the k cluster objects, containing a reference to
+        the cluster centroid as well as the samples which belong to the cluster
+        """
+        # Define an array to hold cluster objects
+        clusters = []
 
-    def _update_cluster(self):
-        for row_index, row in self.training_data.iterrows():
+        for cluster_id in range(self.k):
+            # Select a random sample from the dataset to act as an initial
+            # centroid location
+            centroid = self.data.sample().iloc[0][self.features]
+
+            # Define an empty DataFrame with which to hold samples belonging
+            # to the cluster
+            samples = pd.DataFrame(columns=self.data.columns)
+
+            # Define the cluster object
+            clusters.append({"centroid": centroid, "samples": samples})
+
+        self.clusters = clusters
+
+    def _update_samples(self) -> None:
+        """
+        Handles updating the samples that belong to each cluster
+        """
+        # Locate the nearest cluster centroid for each sample in the dataset
+        for _, row in self.data.iterrows():
+            # Rows current shortest distance to the 'current_centroid'
             current_dist = math.inf
-            current_classification = None
+            current_centroid = None
 
-            for cluster in self.clusters.iterrows():
-                cluster = cluster[1]
+            for cluster_id, cluster in enumerate(self.clusters):
+                # Compute the distance between the sample and the current centroid
                 dist = self.distance_function.compute_distance(
-                    row[self.attributes], cluster[self.attributes]
+                    row[self.features], cluster["centroid"]
                 )
 
+                # If the sample is closer to the given centroid than the previous
+                # centroid, update the 'current_centroid' to reflect
                 if dist < current_dist:
                     current_dist = dist
-                    current_classification = cluster["class"]
+                    current_centroid = cluster_id
 
-            self.training_data.at[row_index, "class"] = current_classification
+            # Reference to samples DataFrame for the current cluster
+            cluster_samples = self.clusters[current_centroid]["samples"]
 
-    def _move_centroid(self):
-        for index, cluster in self.clusters.iterrows():
-            self.clusters.loc[index, self.attributes] = self.training_data[
-                self.training_data["class"] == cluster["class"]
-            ].mean()[self.attributes]
+            # Updated samples DataFrame containing the 'clustered' row
+            updated_cluster_samples = pd.concat(
+                [cluster_samples, row.to_frame().T], ignore_index=True
+            )
 
-    def _cluster(self):
+            # Update the samples DataFrame for the current cluster
+            self.clusters[current_centroid]["samples"] = updated_cluster_samples
+
+    def _update_centroids(self) -> None:
+        """
+        Handles updating the centroid of a cluster based on the new mean
+        after updating the samples
+        """
+        # Move the centroid for each cluster to the new center
+        for index_id, cluster in enumerate(self.clusters):
+            # Compute the mean vector for the given cluster
+            mean_vector = cluster["samples"].mean()[self.features]
+
+            # Update the centroid to the new center of the cluster
+            self.clusters[index_id]["centroid"] = mean_vector
+
+    def cluster(self, k: int) -> None:
+        """
+        Cluster data into k clusters using the k-means algorithm
+
+        Parameters:
+        -----------
+        k: int
+            Number of clusters to fit
+        """
+        self.k = k
+
+        # Initialize the clusters
         self._initialize_clusters()
 
+        # Reference to the current clusters (used to keep track of centroid movement)
         current_clusters = None
 
         while True:
-            self._update_cluster()
-            self._move_centroid()
-            print(self.clusters)
+            # Update the samples and move the centroids based on the new cluster mean
+            self._update_samples()
+            self._update_centroids()
 
-            if self.clusters.equals(current_clusters):
+            # If no centroids change, stop the loop
+            if self.clusters == current_clusters:
                 break
 
-            current_clusters = self.clusters.copy()
+            # Update the 'previous' cluster data
+            current_clusters = self.clusters
 
-    def predict(self, instance):
-
-        # print(self.training_data[self.training_data["class"] == True].mean())
-
-        self._cluster()
-
-        results = dict.fromkeys(self.training_data["class"].unique())
-
-        for _, cluster in self.clusters.iterrows():
-            dist = self.distance_function.compute_distance(
-                instance[self.attributes], cluster[self.attributes]
-            )
-
-            results[cluster["class"]] = dist
-
-        print(min(results))
+        return current_clusters
