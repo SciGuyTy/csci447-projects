@@ -130,4 +130,4 @@ class KMeans:
             # Update the 'previous' cluster data
             current_clusters = self.clusters
 
-        return current_clusters
+        return [cluster["centroid"] for cluster in current_clusters]
