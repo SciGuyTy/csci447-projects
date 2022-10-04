@@ -9,37 +9,11 @@ Bins = dict[str, int]
 class Preprocessor:
     data: pd.DataFrame = None
 
-    def _normalize(self, target_features: List[str]):
-        """
-        Perform min-max normalization on a set of features belonging to the dataset
-        (i.e., bound the feature values between 0 and 1, inclusive)
-
-        Parameters:
-        -----------
-        target_features: List[str]
-            The set of features with which to normalize
-        """
-        for feature in target_features:
-            # Cast dtype of features to be normalized as a float 
-            self.data[feature] = self.data[feature].astype("float64")
-
-            # Retrieve the minimum and maximum values for the given column
-            minimum_value = self.data[feature].min()
-            maximum_value = self.data[feature].max()
-
-            # Define the newly normalized feature in the dataset, and assign its values to
-            # the normalized version of the original data
-
-            self.data[feature] = (self.data[feature] - minimum_value) / (
-                maximum_value - minimum_value
-            )
-
     def load_raw_data_from_file(
         self,
         file_path: str,
         column_names: List[str],
         columns_to_drop: List[str] = [],
-        columns_to_normalize: List[str] = [],
         converters: Converter = dict(),
         bins: Bins = dict(),
         dropNA: List[str] = False,
@@ -89,9 +63,6 @@ class Preprocessor:
         if dropNA:
             self.data = self.data.replace(dict.fromkeys(dropNA, math.nan))
             self.data = self.data.dropna()
-
-        # Normalize columns
-        self._normalize(columns_to_normalize)
 
         # Bin the data
         for key, value in bins.items():

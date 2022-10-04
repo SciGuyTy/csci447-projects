@@ -65,14 +65,13 @@ def test_knn_on_ch():
         file_path,
         column_names,
         columns_to_drop=["vendor_name", "model_name"],
-        columns_to_normalize=column_names[2:-1]
     )
 
     # knn = KNN(training_data=pp.data.sample(100), target_feature="class")
     # print(knn.predict(pp.data.iloc[0], 5))
 
-    cv = CrossValidation(pp.data.sample(100), "ERP")
-    print(cv.validate(KNN, 10, True, predict_params=[2], regression=True))
+    cv = CrossValidation(pp.data.sample(100), "ERP", regression=True)
+    print(cv.validate(KNN, 10, True, predict_params=[2]))
 if __name__ == "__main__":
     # test_knn_on_breast_cancer()
     test_knn_on_ch()

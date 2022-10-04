@@ -1,6 +1,9 @@
-from typing import Callable, List, Union, Any
+from source.Utilities.Utilities import Utilities
+from typing import Callable, Union
+
 import pandas as pd
 import numpy as np
+
 
 Column_label = Union[str, int]
 
@@ -10,6 +13,7 @@ class CrossValidation:
         self,
         data: pd.DataFrame,
         target_feature: Column_label = "class",
+        regression: bool = False,
     ):
         """Set the dataset to be used for cross-validating a model
 
@@ -26,6 +30,9 @@ class CrossValidation:
 
         (Optional) target_feature: Column_label
             The label of the feature which is being used as the target (defaults to "class"),
+
+        (Optional) regression: bool
+            Whether the underlying data is being used for regression (defaults to False),
         """
 
         # Store the data to be used for training and evaluating the model(s)
@@ -37,7 +44,10 @@ class CrossValidation:
         # The algorithm
         self.algorithm = None
 
-    def __fold_data(self, num_folds: int, stratify: bool, regression: bool = False):
+        # Whether the underlying data is being used for regression
+        self.regression = regression
+
+    def __fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
 
         Parameters
@@ -61,58 +71,56 @@ class CrossValidation:
         # A list to hold the folded data
         folded_data = [pd.DataFrame(columns=self.data.columns)] * num_folds
 
-        if stratify:
-            if regression:
-                # Sort the data based on the target feature
-                sorted_data = shuffled_data.sort_values(self.target_feature)
-
-                fold_size = int(len(sorted_data.index) / num_folds)
-
-                # Decompose data into 10 'bins' of consecutive data
-                split_data = np.array_split(sorted_data, fold_size)
-
-                for fold_id in range(len(folded_data)):
-                    for group in split_data:
-                        # For each fold, select the corresponding value from each group in the
-                        # split value array (so for example, the first fold will grab the first
-                        # element from each group in the split value array)
-                        folded_data[fold_id] = pd.concat(
-                            [folded_data[fold_id], group.iloc[fold_id].to_frame().T],
-                            ignore_index=True,
-                        )
-
-            else:
-                # Define the levels of classification in the data
-                classification_levels = self.data[self.target_feature].unique()
-
-                # If the data is to be stratified, iterate through each classification level
-                # and divide the data into equally sized chunks based on the number of folds
-                for classification in classification_levels:
-                    class_data = shuffled_data[
-                        shuffled_data[self.target_feature] == classification
-                    ]
-
-                    # Divide the data for a given class into equally sized chunks
-                    split_data = np.array_split(class_data, num_folds)
-
-                    # "Stack" each kth chunk of data with its counterparts from the other classes
-                    for index, data in enumerate(split_data):
-                        folded_data[index] = pd.concat([data, folded_data[index]])
-
-            # Return the folded data
-            return folded_data
-
-        else:
+        if not stratify:
             # If the data is not to be stratified, simply return a list of equally sized
             # chunks of data from the dataset
             return np.array_split(shuffled_data, num_folds)
+
+        if self.regression:
+            # Sort the data based on the target feature
+            sorted_data = shuffled_data.sort_values(self.target_feature)
+
+            fold_size = int(len(sorted_data.index) / num_folds)
+
+            # Decompose data into 10 'bins' of consecutive data
+            split_data = np.array_split(sorted_data, fold_size)
+
+            for fold_id in range(len(folded_data)):
+                for group in split_data:
+                    # For each fold, select the corresponding value from each group in the
+                    # split value array (so for example, the first fold will grab the first
+                    # element from each group in the split value array)
+                    folded_data[fold_id] = pd.concat(
+                        [folded_data[fold_id], group.iloc[fold_id].to_frame().T],
+                        ignore_index=True,
+                    )
+
+        else:
+            # Define the levels of classification in the data
+            classification_levels = self.data[self.target_feature].unique()
+
+            # If the data is to be stratified, iterate through each classification level
+            # and divide the data into equally sized chunks based on the number of folds
+            for classification in classification_levels:
+                class_data = shuffled_data[
+                    shuffled_data[self.target_feature] == classification
+                ]
+
+                # Divide the data for a given class into equally sized chunks
+                split_data = np.array_split(class_data, num_folds)
+
+                # "Stack" each kth chunk of data with its counterparts from the other classes
+                for index, data in enumerate(split_data):
+                    folded_data[index] = pd.concat([data, folded_data[index]])
+
+        # Return the folded data
+        return folded_data
 
     def validate(
         self,
         model: Callable,
         num_folds: int = 10,
         stratify: bool = False,
-        regression: bool = False,
         model_params=[],
         predict_params=[],
     ) -> float:
@@ -131,7 +139,7 @@ class CrossValidation:
         """
 
         # Divide the data into k folds
-        folded_data = self.__fold_data(num_folds, stratify, regression)
+        folded_data = self.__fold_data(num_folds, stratify)
 
         # Results for all the folds
         overall_results = []
@@ -148,25 +156,38 @@ class CrossValidation:
             # Combine training data into a single DataFrame
             training_data = pd.concat(training_data)
 
+            # Normalize the training and testing data
+            training_data = Utilities.normalize(training_data, self.target_feature)
+            test_data = Utilities.normalize(test_data, self.target_feature)
+
+            # Instantiate the model
             self.algorithm = model(training_data, self.target_feature, *model_params)
 
-            # Get a list of all class levels
-            classes = self.data[self.target_feature].unique()
+            if self.regression:
+                # DataFrame to store results for this fold
+                fold_results = pd.DataFrame(columns=["actual", "predicted"])
 
-            # Results for this fold
-            fold_results = pd.DataFrame(columns=["actual", "predicted"])
+                for sample_index, sample in test_data.iterrows():
+                    # Train and execute the model on the given training data and testing data
+                    prediction = self.algorithm.predict(sample, *predict_params)
 
-            if not regression:
+                    # Append the prediction and actual values to the fold_results
+                    fold_results.loc[sample_index] = [
+                        sample[self.target_feature],
+                        prediction,
+                    ]
+            else:
+                # Get a list of all class levels
+                classes = self.data[self.target_feature].unique()
+
+                # DataFrame to store results for this fold
                 fold_results = pd.DataFrame(0, columns=classes, index=classes)
 
-            # Perform prediction on all samples for this test fold
-            for _, sample in test_data.iterrows():
-                # Train and execute the model on the given training data and testing data
-                prediction = self.algorithm.predict(sample, *predict_params)
+                # Perform prediction on all samples for this test fold
+                for sample_index, sample in test_data.iterrows():
+                    # Train and execute the model on the given training data and testing data
+                    prediction = self.algorithm.predict(sample, *predict_params)
 
-                if regression:
-                    fold_results.loc[0] = [sample[self.target_feature], prediction]
-                else:
                     # Increment the prediction/actual pair in the confusion matrix
                     fold_results[sample[self.target_feature]][prediction] += 1
 

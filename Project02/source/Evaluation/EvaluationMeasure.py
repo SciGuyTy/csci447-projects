@@ -1,10 +1,8 @@
-import re
 import pandas as pd
-
 
 class EvaluationMeasure:
     @classmethod
-    def calculate_precision(cls, results: pd.DataFrame, positive_class: str):
+    def calculate_precision(cls, results: pd.DataFrame, positive_class: str) -> float:
         """Calculates the precision based on the results
 
         Parameters
@@ -14,20 +12,24 @@ class EvaluationMeasure:
 
         positive_class: str
             The positive class in the calculation
+
+        Returns
+        -------
+        A float representing the recall of the provided results
         """
 
         num_true_positives = results[positive_class][positive_class]
         num_predicted_positives = results.sum(axis=1)[positive_class]
 
-        # All predictions are negative, and 0 positive predictions were reported so the precision approaches 1
+        # All predictions are negative, and 0 positive predictions were reported 
+        # so the precision approaches 1
         if num_predicted_positives == 0:
             return 1
 
         return num_true_positives / num_predicted_positives
 
-
     @classmethod
-    def calculate_recall(cls, results: pd.DataFrame, positive_class: str):
+    def calculate_recall(cls, results: pd.DataFrame, positive_class: str) -> float:
         """Calculates the recall based on the results
 
         Parameters
@@ -37,19 +39,24 @@ class EvaluationMeasure:
 
         positive_class: str
             The positive class in the calculation
+
+        Returns
+        -------
+        A float representing the recall of the provided results
         """
 
         num_true_positives = results[positive_class][positive_class]
         num_predicted_positives = results.sum(axis=0)[positive_class]
 
-        # No positive cases in the input data, and 0 positive classes were predicted so the recall is 1?
         if num_predicted_positives == 0:
             return 1
 
         return num_true_positives / num_predicted_positives
 
     @classmethod
-    def calculate_f_beta_score(cls, results: pd.DataFrame, positive_class: str, beta: int = 1):
+    def calculate_f_beta_score(
+        cls, results: pd.DataFrame, positive_class: str, beta: int = 1
+    ) -> float:
         """Calculates the F_Beta score based on the results and the beta value
 
         Parameters
@@ -62,24 +69,32 @@ class EvaluationMeasure:
 
         positive_class: str
             The positive class in the calculation
+
+        Returns
+        -------
+        A float representing the f-beta score for the provided results
         """
         precision = cls.calculate_precision(results, positive_class)
         recall = cls.calculate_recall(results, positive_class)
         denom = precision * beta**2 + recall
-        
+
         if denom == 0:
             return 0.0
 
         return ((1 + beta**2) * precision * recall) / denom
 
     @classmethod
-    def calculate_0_1_loss(cls, results: pd.DataFrame):
+    def calculate_0_1_loss(cls, results: pd.DataFrame) -> float:
         """Calculates the 0-1 loss measure based on the results
 
         Parameters
         ----------
         results: dict[str, int]
             The results from the experiment
+
+        Returns
+        -------
+        A float representing the 0_1 loss for the provided results
         """
         num_correct_predictions = 0
 
@@ -90,14 +105,27 @@ class EvaluationMeasure:
         return num_correct_predictions / results.to_numpy().sum()
 
     @classmethod
-    def calculate_square_loss(cls, results: pd.DataFrame):
+    def calculate_means_square_error(cls, results: pd.DataFrame) -> float:
         """
-        Calculate square loss for a regression prediction
+        Calculate mean square error for a set of predictions
 
-        Parameters:
+        Parameters
         -----------
         results: pd.DataFrame
             The results from the experiment, with a colum for the actual response
             and a model for the predicted response
+
+        Returns
+        -------
+        A float representing the mean square error for the provided results
         """
-        return (results["actual"] - results["predicted"])**2
+        # Sum of square error for each result in the set
+        total_error = 0
+
+        # For each result in the set, compute the square error and add it to the total_error
+        for result in results.iterrows():
+            total_error += (result["actual"] - result["predicted"]) ** 2
+
+        # Divide the total_error by the number of results in the set to compute and return
+        # the mean square error
+        return total_error / len(results.index)
