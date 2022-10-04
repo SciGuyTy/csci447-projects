@@ -47,6 +47,10 @@ class CrossValidation:
         # Whether the underlying data is being used for regression
         self.regression = regression
 
+        if not self.regression:
+            # Get a list of all class levels
+            self.classes = self.data[self.target_feature].unique()
+
     def __fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
 
@@ -163,35 +167,37 @@ class CrossValidation:
             # Instantiate the model
             self.algorithm = model(training_data, self.target_feature, *model_params)
 
-            if self.regression:
-                # DataFrame to store results for this fold
-                fold_results = pd.DataFrame(columns=["actual", "predicted"])
-
-                for sample_index, sample in test_data.iterrows():
-                    # Train and execute the model on the given training data and testing data
-                    prediction = self.algorithm.predict(sample, *predict_params)
-
-                    # Append the prediction and actual values to the fold_results
-                    fold_results.loc[sample_index] = [
-                        sample[self.target_feature],
-                        prediction,
-                    ]
-            else:
-                # Get a list of all class levels
-                classes = self.data[self.target_feature].unique()
-
-                # DataFrame to store results for this fold
-                fold_results = pd.DataFrame(0, columns=classes, index=classes)
-
-                # Perform prediction on all samples for this test fold
-                for sample_index, sample in test_data.iterrows():
-                    # Train and execute the model on the given training data and testing data
-                    prediction = self.algorithm.predict(sample, *predict_params)
-
-                    # Increment the prediction/actual pair in the confusion matrix
-                    fold_results[sample[self.target_feature]][prediction] += 1
+            fold_results = self.calculate_results_for_folds(self.algorithm, training_data, test_data, predict_params=predict_params)
 
             overall_results.append(fold_results)
 
         # Return the average loss value
         return overall_results
+
+    def calculate_results_for_fold(self, algorithm, training_data, test_data, predict_params=[]):
+        if self.regression:
+            # DataFrame to store results for this fold
+            fold_results = pd.DataFrame(columns=["actual", "predicted"])
+
+            for sample_index, sample in test_data.iterrows():
+                # Train and execute the model on the given training data and testing data
+                prediction = self.algorithm.predict(sample, *predict_params)
+
+                # Append the prediction and actual values to the fold_results
+                fold_results.loc[sample_index] = [
+                    sample[self.target_feature],
+                    prediction,
+                ]
+        else:
+            # DataFrame to store results for this fold
+            fold_results = pd.DataFrame(0, columns=self.classes, index=self.classes)
+
+            # Perform prediction on all samples for this test fold
+            for sample_index, sample in test_data.iterrows():
+                # Train and execute the model on the given training data and testing data
+                prediction = self.algorithm.predict(sample, *predict_params)
+
+                # Increment the prediction/actual pair in the confusion matrix
+                fold_results[sample[self.target_feature]][prediction] += 1
+
+        return fold_results
