@@ -88,3 +88,16 @@ class EvaluationMeasure:
             num_correct_predictions += results[column][column]
 
         return num_correct_predictions / results.to_numpy().sum()
+
+    @classmethod
+    def calculate_square_loss(cls, results: pd.DataFrame):
+        """
+        Calculate square loss for a regression prediction
+
+        Parameters:
+        -----------
+        results: pd.DataFrame
+            The results from the experiment, with a colum for the actual response
+            and a model for the predicted response
+        """
+        return (results["actual"] - results["predicted"])**2
