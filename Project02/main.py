@@ -1,4 +1,4 @@
-from sqlite3 import converters
+from source.Evaluation.CrossValidation import CrossValidation
 from source.Algorithms.DistanceFunctions.ValueDifference import ValueDifference
 from source.Utilities.Preprocess import Preprocessor
 from source.Algorithms.KNN import KNN
@@ -38,9 +38,40 @@ def test_knn_on_breast_cancer():
         dropNA=["?"],
     )
 
-    knn = KNN(column_names[1:-1], "class", pp.data, distance_function=ValueDifference(pp.data, "class"))
-    print(knn.predict(pp.data.iloc[0], 5))
+    # knn = KNN(training_data=pp.data.sample(100), target_feature="class")
+    # print(knn.predict(pp.data.iloc[0], 5))
 
+    cv = CrossValidation(pp.data.sample(100), "class")
+    print(cv.validate(KNN, 10, True, predict_params=[2]))
 
+def test_knn_on_ch():
+    file_path = "../datasets/regression/ComputerHardware/machine.data"
+    column_names = [
+        "vendor_name",
+        "model_name",
+        "MYCT",
+        "MMIN",
+        "MMAX",
+        "CACH",
+        "CHMIN",
+        "CHMAX",
+        "PRP",
+        "ERP"
+    ]
+
+    pp = Preprocessor()
+
+    pp.load_raw_data_from_file(
+        file_path,
+        column_names,
+        columns_to_drop=["vendor_name", "model_name"],
+    )
+
+    # knn = KNN(training_data=pp.data.sample(100), target_feature="class")
+    # print(knn.predict(pp.data.iloc[0], 5))
+
+    cv = CrossValidation(pp.data.sample(100), "ERP", regression=True)
+    print(cv.validate(KNN, 10, True, predict_params=[2]))
 if __name__ == "__main__":
-    test_knn_on_breast_cancer()
+    # test_knn_on_breast_cancer()
+    test_knn_on_ch()

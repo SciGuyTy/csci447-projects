@@ -4,25 +4,24 @@ import math
 from heapq import heappop, heappush, heapify
 from itertools import count
 
-from Project02.source.Algorithms.DistanceFunctions.DistanceFunction import DistanceFunction
-from Project02.source.Algorithms.DistanceFunctions.Minkowski import Minkowski
+from source.Algorithms.DistanceFunctions.DistanceFunction import DistanceFunction
+from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
 
 class KNN:
     def __init__(
         self,
-        attributes,
-        class_col: str,
         training_data: pd.DataFrame,
+        target_feature: str,
         regression=False,
         h=None,
         sigma=None,
         distance_function: DistanceFunction = Minkowski(),
     ):
-        self.attributes = attributes
-        self.class_col = class_col
+        self.attributes = training_data.columns.drop(target_feature)
+        self.class_col = target_feature
         self.training_data: pd.DataFrame = training_data
         self.regression = regression
-        self.classes = self.training_data[self.class_col].unique()
+        self.classes = self.training_data[target_feature].unique()
         self.tiebreaker = count()
 
         self.h = h
@@ -69,7 +68,6 @@ class KNN:
         df = pd.DataFrame(data=neighbors)
         mode = df[self.class_col].mode()
         if len(mode) > 1:
-            print("TIE!")
             mode = mode.sample()
         return mode.iloc[0]
 
