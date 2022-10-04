@@ -145,10 +145,28 @@ class CrossValidation:
         # Divide the data into k folds
         folded_data = self.__fold_data(num_folds, stratify)
 
+        # Get the training and test data pairs for each fold
+        training_test_data = self.get_training_test_data_from_folds(folded_data)
+
         # Results for all the folds
         overall_results = []
 
-        # Iterate through each fold and run the model
+        # Iterate through the training and test data pairs
+        for training_data, test_data in training_test_data:
+            # Instantiate the model
+            self.algorithm = model(training_data, self.target_feature, *model_params)
+
+            fold_results = self.calculate_results_for_fold(self.algorithm, training_data, test_data, predict_params=predict_params)
+
+            overall_results.append(fold_results)
+
+        # Return the average loss value
+        return overall_results
+
+    def get_training_test_data_from_folds(self, folded_data):
+        training_test_data = []
+
+        # Iterate through each fold
         for index, fold in enumerate(folded_data):
             # Define the data for testing (a single fold)
             test_data = fold
@@ -164,15 +182,10 @@ class CrossValidation:
             training_data = Utilities.normalize(training_data, self.target_feature)
             test_data = Utilities.normalize(test_data, self.target_feature)
 
-            # Instantiate the model
-            self.algorithm = model(training_data, self.target_feature, *model_params)
+            # Add the training and test data as a pair to the list
+            training_test_data.append((training_data, test_data))
 
-            fold_results = self.calculate_results_for_folds(self.algorithm, training_data, test_data, predict_params=predict_params)
-
-            overall_results.append(fold_results)
-
-        # Return the average loss value
-        return overall_results
+        return training_test_data
 
     def calculate_results_for_fold(self, algorithm, training_data, test_data, predict_params=[]):
         if self.regression:
