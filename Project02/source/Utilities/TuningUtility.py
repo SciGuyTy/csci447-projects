@@ -26,7 +26,7 @@ class TuningUtility:
         best_ks = []
         k_losses = []
         for training_data, _, norm_params in training_test_data:
-            results = self.tune_k_for_single_fold(training_data, tuning_data.copy(), norm_params=norm_params, k_range=k_range)
+            results = self.tune_k_for_single_fold(training_data, tuning_data.copy(), norm_params=norm_params, model_params=model_params, k_range=k_range)
             results_df = pd.DataFrame(results.items(), columns=['k', '0/1'])
             results_df = results_df.sort_values(by=['0/1', 'k'], ascending=[False, True], ignore_index=True)
             k, loss = results_df.loc[0]

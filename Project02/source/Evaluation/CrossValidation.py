@@ -169,7 +169,7 @@ class CrossValidation:
         # Iterate through each fold
         for index, fold in enumerate(folded_data):
             # Define the data for testing (a single fold)
-            test_data = fold
+            test_data = fold.copy()
 
             # Define the data for training (remaining folds)
             training_data = folded_data.copy()
