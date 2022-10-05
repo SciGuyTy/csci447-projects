@@ -1,4 +1,4 @@
-from source.Utilities.Utilities import Utilities
+from Project02.source.Utilities.Utilities import Utilities
 from typing import Callable, Union
 
 import pandas as pd
@@ -51,7 +51,7 @@ class CrossValidation:
             # Get a list of all class levels
             self.classes = self.data[self.target_feature].unique()
 
-    def __fold_data(self, num_folds: int, stratify: bool):
+    def fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
 
         Parameters
@@ -101,7 +101,7 @@ class CrossValidation:
 
         else:
             # Define the levels of classification in the data
-            classification_levels = self.data[self.target_feature].unique()
+            classification_levels = self.classes
 
             # If the data is to be stratified, iterate through each classification level
             # and divide the data into equally sized chunks based on the number of folds
@@ -143,7 +143,7 @@ class CrossValidation:
         """
 
         # Divide the data into k folds
-        folded_data = self.__fold_data(num_folds, stratify)
+        folded_data = self.fold_data(num_folds, stratify)
 
         # Get the training and test data pairs for each fold
         training_test_data = self.get_training_test_data_from_folds(folded_data)
@@ -152,11 +152,11 @@ class CrossValidation:
         overall_results = []
 
         # Iterate through the training and test data pairs
-        for training_data, test_data in training_test_data:
+        for training_data, test_data, _ in training_test_data:
             # Instantiate the model
             self.algorithm = model(training_data, self.target_feature, *model_params)
 
-            fold_results = self.calculate_results_for_fold(self.algorithm, training_data, test_data, predict_params=predict_params)
+            fold_results = self.calculate_results_for_fold(self.algorithm, test_data, predict_params=predict_params)
 
             overall_results.append(fold_results)
 
@@ -179,22 +179,22 @@ class CrossValidation:
             training_data = pd.concat(training_data)
 
             # Normalize the training and testing data
-            training_data = Utilities.normalize(training_data, self.target_feature)
-            test_data = Utilities.normalize(test_data, self.target_feature)
+            norm_params = Utilities.normalize(training_data, self.target_feature)
+            test_data = Utilities.normalize_set_by_params(test_data, norm_params)
 
             # Add the training and test data as a pair to the list
-            training_test_data.append((training_data, test_data))
+            training_test_data.append((training_data, test_data, norm_params))
 
         return training_test_data
 
-    def calculate_results_for_fold(self, algorithm, training_data, test_data, predict_params=[]):
+    def calculate_results_for_fold(self, algorithm, test_data, predict_params=[]):
         if self.regression:
             # DataFrame to store results for this fold
             fold_results = pd.DataFrame(columns=["actual", "predicted"])
 
             for sample_index, sample in test_data.iterrows():
                 # Train and execute the model on the given training data and testing data
-                prediction = self.algorithm.predict(sample, *predict_params)
+                prediction = algorithm.predict(sample, *predict_params)
 
                 # Append the prediction and actual values to the fold_results
                 fold_results.loc[sample_index] = [
@@ -208,9 +208,9 @@ class CrossValidation:
             # Perform prediction on all samples for this test fold
             for sample_index, sample in test_data.iterrows():
                 # Train and execute the model on the given training data and testing data
-                prediction = self.algorithm.predict(sample, *predict_params)
-
+                actual = sample[self.target_feature]
+                prediction = algorithm.predict(sample, *predict_params)
                 # Increment the prediction/actual pair in the confusion matrix
-                fold_results[sample[self.target_feature]][prediction] += 1
+                fold_results[actual][prediction] += 1
 
         return fold_results
