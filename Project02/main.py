@@ -1,3 +1,4 @@
+from source.Algorithms.EditedKNN import EditedKNN
 from source.Evaluation.CrossValidation import CrossValidation
 from source.Algorithms.DistanceFunctions.ValueDifference import ValueDifference
 from source.Utilities.Preprocess import Preprocessor
@@ -33,7 +34,6 @@ def test_knn_on_breast_cancer():
         file_path,
         column_names,
         columns_to_drop=["id"],
-        columns_to_normalize=column_names[1:-1],
         converters=feature_modifiers,
         dropNA=["?"],
     )
@@ -41,8 +41,12 @@ def test_knn_on_breast_cancer():
     # knn = KNN(training_data=pp.data.sample(100), target_feature="class")
     # print(knn.predict(pp.data.iloc[0], 5))
 
-    cv = CrossValidation(pp.data.sample(100), "class")
-    print(cv.validate(KNN, 10, True, predict_params=[2]))
+    # cv = CrossValidation(pp.data.sample(100), "class")
+    # print(cv.validate(KNN, 10, True, predict_params=[2]))
+
+    eknn = EditedKNN(data=pp.data.sample(100), target_feature="class")
+    print(eknn.predict(pp.data.iloc[0], 5))
+
 
 def test_knn_on_ch():
     file_path = "../datasets/regression/ComputerHardware/machine.data"
@@ -56,7 +60,7 @@ def test_knn_on_ch():
         "CHMIN",
         "CHMAX",
         "PRP",
-        "ERP"
+        "ERP",
     ]
 
     pp = Preprocessor()
@@ -70,8 +74,10 @@ def test_knn_on_ch():
     # knn = KNN(training_data=pp.data.sample(100), target_feature="class")
     # print(knn.predict(pp.data.iloc[0], 5))
 
-    cv = CrossValidation(pp.data.sample(100), "ERP", regression=True)
-    print(cv.validate(KNN, 10, True, predict_params=[2]))
+    # cv = CrossValidation(pp.data.sample(100), "ERP", regression=True)
+    # print(cv.validate(KNN, 10, True, predict_params=[2]))
+
+
 if __name__ == "__main__":
-    # test_knn_on_breast_cancer()
-    test_knn_on_ch()
+    test_knn_on_breast_cancer()
+    # test_knn_on_ch()
