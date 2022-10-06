@@ -124,7 +124,7 @@ class EvaluationMeasure:
 
         # For each result in the set, compute the square error and add it to the total_error
         for result in results.iterrows():
-            total_error += (result["actual"] - result["predicted"]) ** 2
+            total_error += (result[1]["actual"] - result[1]["predicted"]) ** 2
 
         # Divide the total_error by the number of results in the set to compute and return
         # the mean square error

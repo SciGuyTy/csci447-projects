@@ -44,7 +44,7 @@ def test_knn_on_breast_cancer():
     # cv = CrossValidation(pp.data.sample(100), "class")
     # print(cv.validate(KNN, 10, True, predict_params=[2]))
 
-    eknn = EditedKNN(data=pp.data.sample(100), target_feature="class")
+    eknn = EditedKNN(training_data=pp.data.sample(100), target_feature="class")
     print(eknn.predict(pp.data.iloc[0], 5))
 
 
@@ -77,7 +77,9 @@ def test_knn_on_ch():
     # cv = CrossValidation(pp.data.sample(100), "ERP", regression=True)
     # print(cv.validate(KNN, 10, True, predict_params=[2]))
 
+    eknn = EditedKNN(training_data=pp.data.sample(100), target_feature="ERP", regression=True, h=10, sigma=10)
+    print(eknn.predict(pp.data.iloc[0], 5))
 
 if __name__ == "__main__":
-    test_knn_on_breast_cancer()
-    # test_knn_on_ch()
+    # test_knn_on_breast_cancer()
+    test_knn_on_ch()
