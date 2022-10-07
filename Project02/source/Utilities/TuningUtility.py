@@ -24,18 +24,22 @@ class TuningUtility:
             k_range = (1, math.ceil(len(training_test_data[0][0].index)**.5))
 
         best_ks = []
-        k_losses = []
-        for training_data, _, norm_params in training_test_data:
+        best_results = dict()
+        for fold, (training_data, _, norm_params) in enumerate(training_test_data, start=1):
             results = self.tune_k_for_single_fold(training_data, tuning_data.copy(), norm_params=norm_params, model_params=model_params, k_range=k_range)
-            results_df = pd.DataFrame(results.items(), columns=['k', '0/1'])
-            results_df = results_df.sort_values(by=['0/1', 'k'], ascending=[False, True], ignore_index=True)
-            k, loss = results_df.loc[0]
+            if self.regression:
+                results_df = pd.DataFrame(results.items(), columns=['k', 'MSE'])
+                results_df = results_df.sort_values(by=['MSE', 'k'], ascending=[True, True], ignore_index=True)
+            else:
+                results_df = pd.DataFrame(results.items(), columns=['k', '0/1'])
+                results_df = results_df.sort_values(by=['0/1', 'k'], ascending=[False, True], ignore_index=True)
+            k, measure = results_df.loc[0]
+            best_results[fold] = (k, measure)
             best_ks.append(k)
-            k_losses.append((k, loss))
             k_range = TuningUtility.get_new_range(best_ks, 5)
             print("Best ks", best_ks)
             print("current range: ", k_range)
-        return round(sum(best_ks)/len(best_ks))
+        return best_results
 
     @staticmethod
     def get_new_range(items, margin):
@@ -65,13 +69,27 @@ class TuningUtility:
                 jobs.append(process)
                 process.start()
 
+            for j in jobs:
+                j.join()
+
+        else:
+            algorithm = self.model(training_data, self.target_feature, *model_params)
+            print("k_range", k_range)
+
+            jobs = []
+
+            manager = multiprocessing.Manager()
+            results = manager.dict()
+            for k in range(k_range[0], k_range[1] + 1):
+                process = multiprocessing.Process(target=TuningUtility.get_mean_squared_error_for_k,
+                                                  args=(algorithm, self.CV, test_data, k, results))
+                jobs.append(process)
+                process.start()
 
             for j in jobs:
                 j.join()
 
 
-        else:
-            pass
         return results
 
 
@@ -86,3 +104,13 @@ class TuningUtility:
         results[k] = loss
         print(results)
 
+    @staticmethod
+    def get_mean_squared_error_for_k(algorithm, cv, test_data, k, results):
+        print("k: ", k)
+        if k < 1:
+            results[k] = None
+            return
+        fold_results = cv.calculate_results_for_fold(algorithm, test_data, predict_params=[k])
+        MSE = EvaluationMeasure.calculate_means_square_error(fold_results)
+        results[k] = MSE
+        print(results)

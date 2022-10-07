@@ -1,3 +1,5 @@
+import math
+
 from Project02.source.Utilities.Utilities import Utilities
 from typing import Callable, Union
 
@@ -50,6 +52,43 @@ class CrossValidation:
         if not self.regression:
             # Get a list of all class levels
             self.classes = self.data[self.target_feature].unique()
+
+    def get_tuning_set(self, proportion):
+        # Shuffle the data into a random order
+        shuffled_data = self.data.sample(frac=1)
+        hold_out_size = int(len(shuffled_data.index) * proportion)
+
+        if self.regression:
+            # Sort the data based on the target feature
+            sorted_data = shuffled_data.sort_values(self.target_feature)
+
+
+            # Decompose data into 10 'bins' of consecutive data
+            split_data = np.array_split(sorted_data, hold_out_size)
+
+            return split_data[0]
+
+        else:
+            # Define the levels of classification in the data
+            classification_levels = self.classes
+
+            hold_out = pd.DataFrame(columns=self.data.columns)
+
+            # If the data is to be stratified, iterate through each classification level
+            # and divide the data into equally sized chunks based on the number of folds
+            for classification in classification_levels:
+                class_data = shuffled_data[
+                    shuffled_data[self.target_feature] == classification
+                ]
+
+                # Divide the data for a given class into equally sized chunks
+                split_data = np.array_split(class_data, math.ceil(1/proportion))
+
+                # "Stack" each chunk of data with its counterparts from the other classes
+                hold_out = pd.concat([split_data[0], hold_out])
+
+            # Return the folded data
+            return hold_out
 
     def fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
