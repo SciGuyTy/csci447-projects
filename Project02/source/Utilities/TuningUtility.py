@@ -18,6 +18,28 @@ class TuningUtility:
         self.target_feature = target_feature
         self.CV = CrossValidation(self.data, regression=self.regression, target_feature=self.target_feature)
 
+    def tune_sigma_and_k_for_folds(self, training_test_data, tuning_data: pd.DataFrame, sigma_range, sigma_step):
+        all_results = dict()
+        for sigma in range(sigma_range[0], sigma_range[1], sigma_step):
+            print("Sigma {}".format(sigma))
+            best_results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma])
+            all_results[sigma] = best_results
+        return all_results
+
+    @staticmethod
+    def get_best_parameters_and_results(all_results):
+        fold_sigma_k = dict()
+        for sigma, values in all_results.items():
+            for fold, (k, mse) in values.items():
+                if fold not in fold_sigma_k:
+                    fold_sigma_k[fold] = []
+                fold_sigma_k[fold].append((k, sigma, mse))
+
+        for fold in fold_sigma_k:
+            fold_sigma_k[fold] = min(fold_sigma_k[fold], key=lambda item: item[2])
+
+        return fold_sigma_k
+
     def tune_k_for_folds(self, training_test_data, tuning_data:pd.DataFrame, model_params=[], k_range=None):
         if k_range is None:
             # TODO Might have to change this len() to be the number of rows in edited dataset
@@ -56,7 +78,7 @@ class TuningUtility:
             test_data = Utilities.normalize_set_by_params(test_data, norm_params)
 
         if not self.regression:
-            algorithm = self.model(training_data, self.target_feature, *model_params)
+            algorithm = self.model(training_data, self.target_feature, False, *model_params)
 
             print("k_range", k_range)
 
@@ -73,7 +95,7 @@ class TuningUtility:
                 j.join()
 
         else:
-            algorithm = self.model(training_data, self.target_feature, *model_params)
+            algorithm = self.model(training_data, self.target_feature, True, *model_params)
             print("k_range", k_range)
 
             jobs = []

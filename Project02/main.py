@@ -153,10 +153,11 @@ def test_tuning_utility_regression():
     folded_training_data = cv.fold_data(10, True)
     training_test_data = cv.get_training_test_data_from_folds(folded_training_data)
 
-    tuning_utility = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True, model_params=[15])
+    tuning_utility = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True)
 
-    best_results = tuning_utility.tune_k_for_folds(training_test_data, tuning_data)
-    best_results = dict(sorted(best_results.items(), key=lambda item: item[1]))
+
+    all_results = tuning_utility.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [1, 20], 1)
+    best_results = TuningUtility.get_best_parameters_and_results(all_results)
 
     print("Best results:", best_results)
     print("Tuning time:", time.time()-pp_time)
