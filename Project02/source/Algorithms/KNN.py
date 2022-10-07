@@ -12,7 +12,6 @@ class KNN:
         training_data: pd.DataFrame,
         target_feature: str,
         regression=False,
-        h=None,
         sigma=None,
         distance_function: DistanceFunction = Minkowski(),
     ):
@@ -23,9 +22,8 @@ class KNN:
         self.classes = self.training_data[target_feature].unique()
         self.tiebreaker = count()
 
-        self.h = h
         self.sigma = sigma
-        if regression and (self.sigma is None or self.h is None):
+        if regression and (self.sigma is None):
             raise ValueError
 
         self.distance_function = distance_function

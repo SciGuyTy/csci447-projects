@@ -45,7 +45,7 @@ def test_knn_on_breast_cancer():
     # print(cv.validate(KNN, 10, True, predict_params=[2]))
 
     eknn = EditedKNN(training_data=pp.data.sample(100), target_feature="class")
-    print(eknn.predict(pp.data.iloc[0], 5))
+    print(eknn.edit_and_predict(pp.data.iloc[0], 5, reduce_redundancy=False))
 
 
 def test_knn_on_ch():
@@ -81,5 +81,5 @@ def test_knn_on_ch():
     print(eknn.predict(pp.data.iloc[0], 5))
 
 if __name__ == "__main__":
-    # test_knn_on_breast_cancer()
-    test_knn_on_ch()
+    test_knn_on_breast_cancer()
+    # test_knn_on_ch()
