@@ -1,4 +1,5 @@
 from typing import Iterable
+from unittest import result
 from source.Evaluation.EvaluationMeasure import EvaluationMeasure
 from source.Evaluation.CrossValidation import CrossValidation
 from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
@@ -12,7 +13,7 @@ class EditedKNN(KNN):
         self,
         training_data: pd.DataFrame,
         target_feature: str,
-        regression = False,
+        regression=False,
         sigma: float = None,
         distance_function: DistanceFunction = Minkowski(),
     ):
@@ -25,6 +26,10 @@ class EditedKNN(KNN):
         training_data: pd.DataFrame
             The training data
 
+        tuning_data: pd.DataFrame
+            The tuning data (used to evaluate performance for each fold of the editing
+            process)
+
         target_feature: str
             The target ("response") feature
 
@@ -36,7 +41,7 @@ class EditedKNN(KNN):
             The threshold value for the Gaussian kernel
 
         distance_function: DistanceFunction
-            The distance function to use when determining the k nearest neighbors 
+            The distance function to use when determining the k nearest neighbors
             (Defaults to the Minkowski metric of order 2)
         """
         # Extend the KNN class
@@ -111,41 +116,66 @@ class EditedKNN(KNN):
         # Drop irrelevant samples from the training data
         self.training_data.drop(index=samples_to_drop, inplace=True)
 
-    def _check_performance(self) -> float:
+    def _check_performance(self, k) -> float:
         """
         Check the performance of the model on a training set
+
+        Paramters:
+        k: int
+            The number of neighbors to consider when performing knn
         """
-        # TODO: Remove CV? Nested k-fold CV seems really inefficient...
-        cv = CrossValidation(
-            self.training_data, self.target_feature, regression=self.regression
-        )
-        results = cv.validate(KNN, 10, predict_params=[2])
-
-        # Keep track of the performance of the model
-        performance_metric = 0
-
         # Compute the performance metric for each fold from CV
-        for result in results:
-            if self.regression:
-                performance_metric += EvaluationMeasure.calculate_means_square_error(
-                    result
-                )
-            else:
-                performance_metric += EvaluationMeasure.calculate_0_1_loss(result)
+        if self.regression:
+            results = pd.DataFrame(columns=["actual", "predicted"])
 
-        # Return the average performance of the model trained with the current
-        # training data
-        return performance_metric / len(results)
+            for index, sample in self.training_data.iterrows():
+                # Predict the response value for the given sample
+                prediction = self.predict(sample, k)
 
-    def edit_and_predict(self, instance: Iterable, k: int, reduce_redundancy=False, err_threshold=0.0) -> str:
+                # Store results for prediction
+                results.loc[index] = [sample[self.target_feature], prediction]
+
+            # Return the performance of the model trained with the current training data
+            return EvaluationMeasure.calculate_means_square_error(results)
+        else:
+            # Get a list of all class levels
+            classes = self.training_data[self.target_feature].unique()
+
+            # Results for this fold
+            results = pd.DataFrame(0, columns=classes, index=classes)
+
+            for _, sample in self.training_data.iterrows():
+                # Predict the response value for the given sample
+                prediction = self.predict(sample, k)
+                actual = sample[self.target_feature]
+
+                # Store results for prediction in confusion matrix
+                results[actual][prediction] += 1
+
+            # Return the performance of the model trained with the current training data
+            return EvaluationMeasure.calculate_0_1_loss(results)
+
+
+    def edit_and_predict(
+        self,
+        instance: Iterable,
+        k: int,
+        tuning_performance: float,
+        reduce_redundancy=False,
+        err_threshold=0.0,
+    ) -> str:
         """
-        Edit the underlying dataset and preform a prediction on the edited dataset 
-        
+        Edit the underlying dataset and preform a prediction on the edited dataset
+
         instance: Iterable
             The instance to make a prediction for
 
         k: int
             The number of neighbors to consider when making a prediction
+
+        tuning_performance: float
+            The performance from a model trained on the tuning data, used to compare
+            the performance of each edited fold
 
         reduce_redundancy: bool
             Whether the minimization process should target the removal of redundant
@@ -157,11 +187,8 @@ class EditedKNN(KNN):
             with which a predicted response value from a regression model
             will still be considered 'correct'
         """
-        # Measure performance of model on initial dataset
-        initial_performance = self._check_performance()
-
         # Continue to minimize the training data if the performance does not decrease
-        while self._check_performance() >= initial_performance:
+        while self._check_performance(k) >= tuning_performance:
             self._minimize_data(k, reduce_redundancy, err_threshold)
 
         # Report the prediction based on the minimized dataset
