@@ -33,10 +33,10 @@ class TuningUtility:
             for fold, (k, mse) in values.items():
                 if fold not in fold_sigma_k:
                     fold_sigma_k[fold] = []
-                fold_sigma_k[fold].append((k, sigma, mse))
+                fold_sigma_k[fold].append({'k': k, 'sigma': sigma, 'mse': mse})
 
         for fold in fold_sigma_k:
-            fold_sigma_k[fold] = min(fold_sigma_k[fold], key=lambda item: item[2])
+            fold_sigma_k[fold] = min(fold_sigma_k[fold], key=lambda item: item['mse'])
 
         return fold_sigma_k
 

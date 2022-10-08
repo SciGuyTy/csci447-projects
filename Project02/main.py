@@ -3,6 +3,7 @@ from source.Algorithms.DistanceFunctions.ValueDifference import ValueDifference
 from source.Utilities.Preprocess import Preprocessor
 from source.Algorithms.KNN import KNN
 from source.Utilities.TuningUtility import TuningUtility
+from source.Evaluation.EvaluationMeasure import EvaluationMeasure
 import pandas as pd
 import time
 
@@ -118,7 +119,7 @@ def test_tuning_utility():
     print("Tuning time:", time.time()-pp_time)
     print("Total time:", time.time()-start_time)
 
-def test_tuning_utility_regression():
+def run_computer_hardware_expirement():
     start_time = time.time()
 
     file_path = "../datasets/regression/ComputerHardware/machine.data"
@@ -157,13 +158,18 @@ def test_tuning_utility_regression():
 
 
     all_results = tuning_utility.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [1, 20], 1)
-    best_results = TuningUtility.get_best_parameters_and_results(all_results)
+    tuned_parameters = TuningUtility.get_best_parameters_and_results(all_results)
 
-    print("Best results:", best_results)
+    print("Best results:", tuned_parameters)
     print("Tuning time:", time.time()-pp_time)
+
+    final_raw_results_knn = cv.validate_for_folds(KNN, training_test_data, tuned_parameters)
+    final_results = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_knn]
+    print("Final raw performance for knn", final_raw_results_knn)
+
+    print("Final performance for knn", final_results)
     print("Total time:", time.time()-start_time)
 
 
 if __name__ == "__main__":
-    # test_knn_on_breast_cancer()
-    test_tuning_utility_regression()
+    run_computer_hardware_expirement()
