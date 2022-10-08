@@ -120,7 +120,7 @@ class EditedKNN(KNN):
         """
         Check the performance of the model on a training set
 
-        Paramters:
+        Parameters:
         k: int
             The number of neighbors to consider when performing knn
         """
@@ -160,7 +160,6 @@ class EditedKNN(KNN):
         self,
         instance: Iterable,
         k: int,
-        tuning_performance: float,
         reduce_redundancy=False,
         err_threshold=0.0,
     ) -> str:
@@ -173,10 +172,6 @@ class EditedKNN(KNN):
         k: int
             The number of neighbors to consider when making a prediction
 
-        tuning_performance: float
-            The performance from a model trained on the tuning data, used to compare
-            the performance of each edited fold
-
         reduce_redundancy: bool
             Whether the minimization process should target the removal of redundant
             data, or whether it should target the removal of noisy data (defaults to
@@ -187,9 +182,30 @@ class EditedKNN(KNN):
             with which a predicted response value from a regression model
             will still be considered 'correct'
         """
-        # Continue to minimize the training data if the performance does not decrease
-        while self._check_performance(k) >= tuning_performance:
+        # Initialize the previous edit and performance to that of the models performance 
+        # on unedited data 
+        previous_edit = self.training_data
+        previous_performance = current_performance = self._check_performance(k)
+        
+
+        # Continue to minimize the training data if the performance until the performance 
+        # of the model stops improving
+        while True:
+            # Minimize the data
             self._minimize_data(k, reduce_redundancy, err_threshold)
+
+            # Update the current performance
+            current_performance = self._check_performance(k)
+
+            if current_performance > previous_performance:
+                # Update the previous performance/data
+                previous_performance = current_performance
+                previous_edit = self.training_data
+            else:
+                break
+
+        # Set the training data to that of the previous edit
+        self.training_data = previous_edit
 
         # Report the prediction based on the minimized dataset
         return self.predict(instance, k)
