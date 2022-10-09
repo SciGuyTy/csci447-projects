@@ -59,7 +59,11 @@ class KNN:
             kernel_distance = self.gaussian_kernel(d, 1/self.sigma)
             total += kernel_distance
             weighted_sum += kernel_distance * neighbor[self.target_feature]
-        return weighted_sum / total
+
+        if weighted_sum == 0:
+            return 0
+        else:
+            return weighted_sum / total
 
     def vote(self, neighbors):
         df = pd.DataFrame(data=neighbors)
