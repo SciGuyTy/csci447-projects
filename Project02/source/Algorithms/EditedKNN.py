@@ -1,4 +1,4 @@
-from typing import Iterable
+from typing import Any, Iterable
 from unittest import result
 from source.Evaluation.EvaluationMeasure import EvaluationMeasure
 from source.Evaluation.CrossValidation import CrossValidation
@@ -49,6 +49,31 @@ class EditedKNN(KNN):
             training_data, target_feature, regression, sigma, distance_function
         )
 
+    def _predict_response(self, instance: pd.Series, k: int) -> Any:
+        """
+        Predict the response value for a novel data point
+
+        Parameters:
+        -----------
+        k: int
+            The number of nearest neighbors to consider when making
+            the prediction
+
+        Returns:
+        --------
+        The prediction for the response value of the novel instance
+        """
+        # Find the k nearest neighbors
+        neighbors_distance = self.find_k_nearest_neighbors(instance, k)
+
+        if self.regression:
+            # Perform regression and return the response
+            return self.regress(neighbors_distance)
+        else:
+            # Apply a vote of plurality and return the response
+            neighbors = [i[1] for i in neighbors_distance]
+            return self.vote(neighbors)
+
     def _minimize_data(
         self, k: int, reduce_redundancy: bool, err_threshold: float
     ) -> pd.DataFrame:
@@ -86,7 +111,7 @@ class EditedKNN(KNN):
             sample_vector = instance[self.features]
 
             # Predict the response value for the given sample
-            prediction = self.predict(sample_vector, k)
+            prediction = self._predict_response(sample_vector, k)
 
             correct_response = instance[self.target_feature]
 
@@ -130,7 +155,7 @@ class EditedKNN(KNN):
 
             for index, sample in self.training_data.iterrows():
                 # Predict the response value for the given sample
-                prediction = self.predict(sample, k)
+                prediction = self._predict_response(sample, k)
 
                 # Store results for prediction
                 results.loc[index] = [sample[self.target_feature], prediction]
@@ -146,7 +171,7 @@ class EditedKNN(KNN):
 
             for _, sample in self.training_data.iterrows():
                 # Predict the response value for the given sample
-                prediction = self.predict(sample, k)
+                prediction = self._predict_response(sample, k)
                 actual = sample[self.target_feature]
 
                 # Store results for prediction in confusion matrix
@@ -155,8 +180,7 @@ class EditedKNN(KNN):
             # Return the performance of the model trained with the current training data
             return EvaluationMeasure.calculate_0_1_loss(results)
 
-
-    def edit_and_predict(
+    def predict(
         self,
         instance: Iterable,
         k: int,
@@ -208,4 +232,4 @@ class EditedKNN(KNN):
         self.training_data = previous_edit
 
         # Report the prediction based on the minimized dataset
-        return self.predict(instance, k)
+        return self._predict_response(instance, k)
