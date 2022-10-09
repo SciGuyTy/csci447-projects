@@ -126,6 +126,7 @@ class EvaluationMeasure:
         for index, result in results.iterrows():
             total_error += (result["actual"] - result["predicted"]) ** 2
 
+
         # Divide the total_error by the number of results in the set to compute and return
         # the mean square error
         return total_error / len(results.index)

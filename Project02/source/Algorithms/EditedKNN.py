@@ -1,0 +1,197 @@
+from typing import Iterable
+from unittest import result
+from source.Evaluation.EvaluationMeasure import EvaluationMeasure
+from source.Evaluation.CrossValidation import CrossValidation
+from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
+from source.Algorithms.DistanceFunctions.DistanceFunction import DistanceFunction
+from source.Algorithms.KNN import KNN
+import pandas as pd
+
+
+class EditedKNN(KNN):
+    def __init__(
+        self,
+        training_data: pd.DataFrame,
+        target_feature: str,
+        regression=False,
+        sigma: float = None,
+        distance_function: DistanceFunction = Minkowski(),
+    ):
+        """
+        Perform edited k-NN by minimizing (editing) the training data through excision
+        of either noisy data or redundant data
+
+        Parameters:
+        -----------
+        training_data: pd.DataFrame
+            The training data
+
+        tuning_data: pd.DataFrame
+            The tuning data (used to evaluate performance for each fold of the editing
+            process)
+
+        target_feature: str
+            The target ("response") feature
+
+        regression: bool
+            Whether the training data is a regression dataset or classification dataset
+            (Defaults to false)
+
+        sigma: float
+            The threshold value for the Gaussian kernel
+
+        distance_function: DistanceFunction
+            The distance function to use when determining the k nearest neighbors
+            (Defaults to the Minkowski metric of order 2)
+        """
+        # Extend the KNN class
+        super().__init__(
+            training_data, target_feature, regression, sigma, distance_function
+        )
+
+    def _minimize_data(
+        self, k: int, reduce_redundancy: bool, err_threshold: float
+    ) -> pd.DataFrame:
+        """
+        Remove samples based on a criteria. Removing samples that produce incorrect
+        predictions will serve to reduce noise ipn the data. Removing samples that produce
+        correct predictions will serve to reduce redundant data
+
+        Parameters
+        ----------
+        k: int
+            The number of clusters with which to fit
+
+        reduce_redundancy: bool
+            Whether the minimization process should target the removal of redundant
+            data, or whether it should target the removal of noisy data
+
+        err_threshold: float
+            The threshold around the actual value for a given instance
+            with which a predicted response value from a regression model
+            will still be considered 'correct'
+
+        Returns
+        -------
+        A DataFrame containing the minimized dataset
+        """
+        # List to keep track of samples that should be dropped from the training data
+        samples_to_drop = []
+
+        for index, instance in self.training_data.iterrows():
+            # Drop the current instance from the training data
+            self.training_data.drop(index, inplace=True)
+
+            # Retrieve the relevant features for the given instance
+            sample_vector = instance[self.features]
+
+            # Predict the response value for the given sample
+            prediction = self.predict(sample_vector, k)
+
+            correct_response = instance[self.target_feature]
+
+            # Boolean representing if an instance was correctly predicted
+            correctly_predicted = False
+
+            # For regression data, check if the predicted response is within
+            # the error threshold for the actual response
+            if self.regression and (
+                prediction >= correct_response - err_threshold
+                or prediction <= correct_response + err_threshold
+            ):
+                correctly_predicted = True
+            elif not self.regression:
+                correctly_predicted = correct_response == prediction
+
+            if reduce_redundancy and correctly_predicted:
+                # Remove redundant data
+                samples_to_drop.append(index)
+            elif not reduce_redundancy and not correctly_predicted:
+                # Remove noisy data
+                samples_to_drop.append(index)
+
+            # Reinsert the instance into the training data
+            self.training_data.loc[index] = instance
+
+        # Drop irrelevant samples from the training data
+        self.training_data.drop(index=samples_to_drop, inplace=True)
+
+    def _check_performance(self, k) -> float:
+        """
+        Check the performance of the model on a training set
+
+        Paramters:
+        k: int
+            The number of neighbors to consider when performing knn
+        """
+        # Compute the performance metric for each fold from CV
+        if self.regression:
+            results = pd.DataFrame(columns=["actual", "predicted"])
+
+            for index, sample in self.training_data.iterrows():
+                # Predict the response value for the given sample
+                prediction = self.predict(sample, k)
+
+                # Store results for prediction
+                results.loc[index] = [sample[self.target_feature], prediction]
+
+            # Return the performance of the model trained with the current training data
+            return EvaluationMeasure.calculate_means_square_error(results)
+        else:
+            # Get a list of all class levels
+            classes = self.training_data[self.target_feature].unique()
+
+            # Results for this fold
+            results = pd.DataFrame(0, columns=classes, index=classes)
+
+            for _, sample in self.training_data.iterrows():
+                # Predict the response value for the given sample
+                prediction = self.predict(sample, k)
+                actual = sample[self.target_feature]
+
+                # Store results for prediction in confusion matrix
+                results[actual][prediction] += 1
+
+            # Return the performance of the model trained with the current training data
+            return EvaluationMeasure.calculate_0_1_loss(results)
+
+
+    def edit_and_predict(
+        self,
+        instance: Iterable,
+        k: int,
+        tuning_performance: float,
+        reduce_redundancy=False,
+        err_threshold=0.0,
+    ) -> str:
+        """
+        Edit the underlying dataset and preform a prediction on the edited dataset
+
+        instance: Iterable
+            The instance to make a prediction for
+
+        k: int
+            The number of neighbors to consider when making a prediction
+
+        tuning_performance: float
+            The performance from a model trained on the tuning data, used to compare
+            the performance of each edited fold
+
+        reduce_redundancy: bool
+            Whether the minimization process should target the removal of redundant
+            data, or whether it should target the removal of noisy data (defaults to
+            False... i.e., it targets removal of noisy data by default)
+
+        err_threshold: float
+            The threshold around the actual value for a given instance
+            with which a predicted response value from a regression model
+            will still be considered 'correct'
+        """
+        # Continue to minimize the training data if the performance does not decrease
+        while self._check_performance(k) >= tuning_performance:
+            self._minimize_data(k, reduce_redundancy, err_threshold)
+
+        # Report the prediction based on the minimized dataset
+        return self.predict(instance, k)
+
+    def edit_data_set(self):

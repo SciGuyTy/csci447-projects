@@ -10,17 +10,23 @@ import multiprocessing
 
 class TuningUtility:
 
-    def __init__(self, model, data: pd.DataFrame, target_feature="class", regression=False, model_params=[]):
+    def __init__(self, model, data: pd.DataFrame, target_feature="class", regression=False):
         self.model = model
         self.data = data
         self.regression = regression
-        self.model_params = model_params
         self.target_feature = target_feature
         self.CV = CrossValidation(self.data, regression=self.regression, target_feature=self.target_feature)
 
-    def tune_sigma_and_k_for_folds(self, training_test_data, tuning_data: pd.DataFrame, sigma_range, sigma_step):
+    def tune_sigma_k_and_epsilon_for_folds(self, training_test_data, tuning_data, sigma_range, sigma_step, epsilon_range, epsilon_step):
         all_results = dict()
-        for sigma in range(sigma_range[0], sigma_range[1], sigma_step):
+        for epsilon in range(epsilon_range[0], epsilon_range[1]+1, epsilon_step):
+            for sigma in range(sigma_range[0], sigma_range[1] + 1, sigma_step):
+                print(f"{sigma=},{epsilon=}")
+                best_results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma, epsilon])
+                all_results[(epsilon, sigma)] = best_results
+    def tune_sigma_and_k_for_folds(self, training_test_data, tuning_data: pd.DataFrame, sigma_range, sigma_step, epsilon=None):
+        all_results = dict()
+        for sigma in range(sigma_range[0], sigma_range[1]+1, sigma_step):
             print("Sigma {}".format(sigma))
             best_results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma])
             all_results[sigma] = best_results

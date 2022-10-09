@@ -1,4 +1,3 @@
-from turtle import distance
 import pandas as pd
 import math
 from heapq import heappop, heappush, heapify
@@ -16,8 +15,8 @@ class KNN:
         sigma=None,
         distance_function: DistanceFunction = Minkowski(),
     ):
-        self.attributes = training_data.columns.drop(target_feature)
-        self.class_col = target_feature
+        self.features = training_data.columns.drop(target_feature)
+        self.target_feature = target_feature
         self.training_data: pd.DataFrame = training_data
         self.regression = regression
         self.classes = self.training_data[target_feature].unique()
@@ -44,7 +43,7 @@ class KNN:
         for i in range(len(self.training_data.index)):
             neighbor = self.training_data.iloc[i]
             distance = -1 * self.distance_function.compute_distance(
-                neighbor[self.attributes], instance[self.attributes]
+                neighbor[self.features], instance[self.features]
             )
             if len(heap) < k or abs(distance) < abs(heap[0][0]):
                 # Push the distance, a tiebreaker, and the neighbor onto the heap
@@ -59,12 +58,12 @@ class KNN:
         for d, neighbor in neighbors_distances:
             kernel_distance = self.gaussian_kernel(d, 1/self.sigma)
             total += kernel_distance
-            weighted_sum += kernel_distance * neighbor[self.class_col]
+            weighted_sum += kernel_distance * neighbor[self.target_feature]
         return weighted_sum / total
 
     def vote(self, neighbors):
         df = pd.DataFrame(data=neighbors)
-        mode = df[self.class_col].mode()
+        mode = df[self.target_feature].mode()
         if len(mode) > 1:
             mode = mode.sample()
         return mode.iloc[0]
