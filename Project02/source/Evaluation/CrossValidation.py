@@ -146,8 +146,8 @@ class CrossValidation:
 
         # Iterate through each fold and run the model
         for index, fold in enumerate(folded_data):
-            # Define the data for testing (a single fold)
-            test_data = fold
+            print(f"Starting on Fold {index}")
+            test_data = fold.copy()
 
             # Define the data for training (remaining folds)
             training_data = folded_data.copy()
@@ -159,7 +159,7 @@ class CrossValidation:
             # Normalize the training and testing data
             training_data = Utilities.normalize(training_data, self.target_feature)
             test_data = Utilities.normalize(test_data, self.target_feature)
-
+            
             # Instantiate the model
             self.algorithm = model(training_data, self.target_feature, *model_params)
 
