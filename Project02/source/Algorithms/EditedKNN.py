@@ -14,6 +14,7 @@ class EditedKNN(KNN):
         self,
         training_data: pd.DataFrame,
         target_feature: str,
+        cluster=False,
         regression=False,
         sigma: float = None,
         epsilon: float = None,
