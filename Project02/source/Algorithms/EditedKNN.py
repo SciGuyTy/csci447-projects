@@ -15,6 +15,8 @@ class EditedKNN(KNN):
         target_feature: str,
         regression=False,
         sigma: float = None,
+        epsilon: float = None,
+        k: int = 1,
         distance_function: DistanceFunction = Minkowski(),
     ):
         """
@@ -48,6 +50,10 @@ class EditedKNN(KNN):
         super().__init__(
             training_data, target_feature, regression, sigma, distance_function
         )
+
+        self.epsilon = epsilon
+        self.k = k
+
 
     def _minimize_data(
         self, k: int, reduce_redundancy: bool, err_threshold: float
@@ -182,20 +188,26 @@ class EditedKNN(KNN):
             with which a predicted response value from a regression model
             will still be considered 'correct'
         """
-        # Initialize the previous edit and performance to that of the models performance 
-        # on unedited data 
-        previous_edit = self.training_data
-        previous_performance = current_performance = self._check_performance(k)
-        
+        self.train(k, reduce_redundancy=reduce_redundancy, err_threshold=err_threshold)
 
-        # Continue to minimize the training data if the performance until the performance 
+        # Report the prediction based on the minimized dataset
+        return self.predict(instance, k)
+
+    def train(self, k: int, reduce_redundancy=False):
+
+        # Initialize the previous edit and performance to that of the models performance
+        # on unedited data
+        previous_edit = self.training_data
+        previous_performance = current_performance = self._check_performance(self.k)
+
+        # Continue to minimize the training data if the performance until the performance
         # of the model stops improving
         while True:
             # Minimize the data
-            self._minimize_data(k, reduce_redundancy, err_threshold)
+            self._minimize_data(self.k, reduce_redundancy, self.epsilon)
 
             # Update the current performance
-            current_performance = self._check_performance(k)
+            current_performance = self._check_performance(self.k)
 
             if current_performance > previous_performance:
                 # Update the previous performance/data
@@ -206,8 +218,3 @@ class EditedKNN(KNN):
 
         # Set the training data to that of the previous edit
         self.training_data = previous_edit
-
-        # Report the prediction based on the minimized dataset
-        return self.predict(instance, k)
-
-    def edit_data_set(self):

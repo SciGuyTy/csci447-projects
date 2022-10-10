@@ -1,11 +1,13 @@
 import math
-
+import time
+import copy
 from Project02.source.Evaluation.CrossValidation import CrossValidation
 from Project02.source.Evaluation.EvaluationMeasure import EvaluationMeasure
 from Project02.source.Utilities.Utilities import Utilities
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor
 import multiprocessing
+import numpy
 
 
 class TuningUtility:
@@ -17,16 +19,17 @@ class TuningUtility:
         self.target_feature = target_feature
         self.CV = CrossValidation(self.data, regression=self.regression, target_feature=self.target_feature)
 
-    def tune_sigma_k_and_epsilon_for_folds(self, training_test_data, tuning_data, sigma_range, sigma_step, epsilon_range, epsilon_step):
+    def tune_sigma_k_and_epsilon_for_folds(self, training_test_data, tuning_data, sigma_range, sigma_step, epsilon_range, epsilon_step, k_range=None):
         all_results = dict()
-        for epsilon in range(epsilon_range[0], epsilon_range[1]+1, epsilon_step):
-            for sigma in range(sigma_range[0], sigma_range[1] + 1, sigma_step):
+        for epsilon in numpy.arange(epsilon_range[0], epsilon_range[1]+epsilon_step, epsilon_step):
+            for sigma in numpy.arange(sigma_range[0], sigma_range[1]+sigma_step, sigma_step):
                 print(f"{sigma=},{epsilon=}")
-                best_results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma, epsilon])
+                best_results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma, epsilon], include_k_in_model=True, k_range=k_range)
                 all_results[(epsilon, sigma)] = best_results
+        return all_results
     def tune_sigma_and_k_for_folds(self, training_test_data, tuning_data: pd.DataFrame, sigma_range, sigma_step, epsilon=None):
         all_results = dict()
-        for sigma in range(sigma_range[0], sigma_range[1]+1, sigma_step):
+        for sigma in numpy.arange(sigma_range[0], sigma_range[1]+1, sigma_step):
             print("Sigma {}".format(sigma))
             best_results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma])
             all_results[sigma] = best_results
@@ -36,37 +39,43 @@ class TuningUtility:
     def get_best_parameters_and_results(all_results):
         fold_sigma_k = dict()
         for sigma, values in all_results.items():
-            for fold, (k, mse) in values.items():
+            for fold, (k, mse, model) in values.items():
                 if fold not in fold_sigma_k:
                     fold_sigma_k[fold] = []
-                fold_sigma_k[fold].append({'k': k, 'sigma': sigma, 'mse': mse})
+                fold_sigma_k[fold].append({'k': k, 'sigma': sigma, 'mse': mse, 'model': model})
 
         for fold in fold_sigma_k:
             fold_sigma_k[fold] = min(fold_sigma_k[fold], key=lambda item: item['mse'])
 
         return fold_sigma_k
 
-    def tune_k_for_folds(self, training_test_data, tuning_data:pd.DataFrame, model_params=[], k_range=None):
+
+    def tune_k_for_folds(self, training_test_data, tuning_data:pd.DataFrame, model_params=[], k_range=None, include_k_in_model=False):
         if k_range is None:
-            # TODO Might have to change this len() to be the number of rows in edited dataset
             k_range = (1, math.ceil(len(training_test_data[0][0].index)**.5))
 
         best_ks = []
         best_results = dict()
+        start_time = time.time()
         for fold, (training_data, _, norm_params) in enumerate(training_test_data, start=1):
-            results = self.tune_k_for_single_fold(training_data, tuning_data.copy(), norm_params=norm_params, model_params=model_params, k_range=k_range)
+            results = self.tune_k_for_single_fold(training_data, tuning_data.copy(), norm_params=norm_params, model_params=model_params, k_range=k_range, train=True)
             if self.regression:
-                results_df = pd.DataFrame(results.items(), columns=['k', 'MSE'])
+                results_df = pd.DataFrame(results).T
+                results_df.reset_index(inplace=True)
+                results_df.columns=['k', 'MSE', 'Model']
                 results_df = results_df.sort_values(by=['MSE', 'k'], ascending=[True, True], ignore_index=True)
             else:
-                results_df = pd.DataFrame(results.items(), columns=['k', '0/1'])
+                results_df = pd.DataFrame(results).T
+                results_df.reset_index(inplace=True)
+                results_df.columns=['k', '0/1', 'Model']
                 results_df = results_df.sort_values(by=['0/1', 'k'], ascending=[False, True], ignore_index=True)
-            k, measure = results_df.loc[0]
-            best_results[fold] = (k, measure)
+            k, measure, model = results_df.loc[0]
+            best_results[fold] = (k, measure, model)
             best_ks.append(k)
             k_range = TuningUtility.get_new_range(best_ks, 5)
             print("Best ks", best_ks)
             print("current range: ", k_range)
+        print("time to tune folds", time.time()-start_time)
         return best_results
 
     @staticmethod
@@ -75,16 +84,16 @@ class TuningUtility:
         new_max = max(items) + margin
         return int(new_min), int(new_max)
 
-    def tune_k_for_single_fold(self, training_data: pd.DataFrame, test_data: pd.DataFrame, norm_params: pd.DataFrame = None, model_params=[], k_range=None):
+    def tune_k_for_single_fold(self, training_data: pd.DataFrame, test_data: pd.DataFrame, norm_params: pd.DataFrame = None, model_params=[], k_range=None, train=None):
         if k_range is None:
-            # TODO Might have to change this len() to be the number of rows in edited dataset
             k_range = (1, math.ceil(len(training_data.index)**.5))
+
+
 
         if norm_params is not None:
             test_data = Utilities.normalize_set_by_params(test_data, norm_params)
 
         if not self.regression:
-            algorithm = self.model(training_data, self.target_feature, False, *model_params)
 
             print("k_range", k_range)
 
@@ -93,7 +102,11 @@ class TuningUtility:
             manager = multiprocessing.Manager()
             results = manager.dict()
             for k in range(k_range[0], k_range[1] + 1):
-                process = multiprocessing.Process(target=TuningUtility.get_01_loss_for_k, args=(algorithm, self.CV, test_data, k, results))
+                algorithm = self.model(training_data, self.target_feature, False, *model_params)
+                args = [algorithm, self.CV, test_data, k, results]
+                if train:
+                    args += [algorithm.train, [k]]
+                process = multiprocessing.Process(target=TuningUtility.get_01_loss_for_k, args=args)
                 jobs.append(process)
                 process.start()
 
@@ -101,7 +114,6 @@ class TuningUtility:
                 j.join()
 
         else:
-            algorithm = self.model(training_data, self.target_feature, True, *model_params)
             print("k_range", k_range)
 
             jobs = []
@@ -109,36 +121,44 @@ class TuningUtility:
             manager = multiprocessing.Manager()
             results = manager.dict()
             for k in range(k_range[0], k_range[1] + 1):
+                algorithm = self.model(training_data, self.target_feature, True, *model_params)
+                args = [algorithm, self.CV, test_data, k, results]
+                if train:
+                    args += [algorithm.train, [k]]
                 process = multiprocessing.Process(target=TuningUtility.get_mean_squared_error_for_k,
-                                                  args=(algorithm, self.CV, test_data, k, results))
+                                                  args=args)
                 jobs.append(process)
                 process.start()
 
             for j in jobs:
                 j.join()
 
-
-        return results
+        print(results)
+        return dict(results)
 
 
     @staticmethod
-    def get_01_loss_for_k(algorithm, cv, test_data, k, results):
-        print("k: ", k)
+    def get_01_loss_for_k(algorithm, cv, test_data, k, results, train_callable=None, train_params=[]):
         if k < 1:
             results[k] = None
             return
+        #print("k: ", k)
+        if train_callable is not None:
+            train_callable(*train_params)
         fold_results = cv.calculate_results_for_fold(algorithm, test_data, predict_params=[k])
         loss = EvaluationMeasure.calculate_0_1_loss(fold_results)
-        results[k] = loss
-        print(results)
+        results[k] = (loss, algorithm)
+        #print(results)
 
     @staticmethod
-    def get_mean_squared_error_for_k(algorithm, cv, test_data, k, results):
-        print("k: ", k)
+    def get_mean_squared_error_for_k(algorithm, cv, test_data, k, results, train_callable=None, train_params=[]):
         if k < 1:
             results[k] = None
             return
+        #print("k: ", k)
+        if train_callable is not None:
+            train_callable(*train_params)
         fold_results = cv.calculate_results_for_fold(algorithm, test_data, predict_params=[k])
         MSE = EvaluationMeasure.calculate_means_square_error(fold_results)
-        results[k] = MSE
-        print(results)
+        results[k] = (MSE, algorithm)
+        #print(results)

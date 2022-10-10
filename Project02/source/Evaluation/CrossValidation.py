@@ -202,18 +202,13 @@ class CrossValidation:
         # Return the average loss value
         return overall_results
 
-    def validate_for_folds(self, model, training_test_data, tuned_params):
+    def validate_for_folds(self, training_test_data, tuned_params):
         # Results for all the folds
         overall_results = []
 
         # Iterate through the training and test data pairs
         for fold, (training_data, test_data, _) in enumerate(training_test_data, start=1):
-            if self.regression:
-                print(tuned_params)
-                # Instantiate the model
-                self.algorithm = model(training_data, self.target_feature, True, sigma = tuned_params[fold]['sigma'])
-            else:
-                self.algorithm = model(training_data, self.target_feature, False)
+            self.algorithm = tuned_params[fold]['model']
 
             fold_results = self.calculate_results_for_fold(self.algorithm, test_data, predict_params=[int(tuned_params[fold]['k'])])
 
