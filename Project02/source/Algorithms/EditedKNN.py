@@ -6,8 +6,9 @@ from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
 from source.Algorithms.DistanceFunctions.DistanceFunction import DistanceFunction
 from source.Algorithms.KNN import KNN
 import pandas as pd
+from itertools import count
 
-
+counter = count()
 class EditedKNN(KNN):
     def __init__(
         self,
@@ -17,7 +18,6 @@ class EditedKNN(KNN):
         sigma: float = None,
         epsilon: float = None,
         k: int = 1,
-        distance_function: DistanceFunction = Minkowski(),
     ):
         """
         Perform edited k-NN by minimizing (editing) the training data through excision
@@ -48,7 +48,7 @@ class EditedKNN(KNN):
         """
         # Extend the KNN class
         super().__init__(
-            training_data, target_feature, regression, sigma, distance_function
+            training_data, target_feature, regression, sigma,
         )
 
         self.epsilon = epsilon
@@ -68,9 +68,9 @@ class EditedKNN(KNN):
         --------
         The prediction for the response value of the novel instance
         """
+
         # Find the k nearest neighbors
         neighbors_distance = self.find_k_nearest_neighbors(instance, k)
-
         if self.regression:
             # Perform regression and return the response
             return self.regress(neighbors_distance)
@@ -182,9 +182,10 @@ class EditedKNN(KNN):
                 # Store results for prediction in confusion matrix
                 results[actual][prediction] += 1
 
+            #print("Ending check performance for", k)
             # Return the performance of the model trained with the current training data
             return EvaluationMeasure.calculate_0_1_loss(results)
-
+    '''
     def predict(
         self,
         instance: Iterable,
@@ -211,10 +212,10 @@ class EditedKNN(KNN):
             with which a predicted response value from a regression model
             will still be considered 'correct'
         """
-        self.train(k, reduce_redundancy=reduce_redundancy)
+        #self.train(k, reduce_redundancy=reduce_redundancy)
 
         # Report the prediction based on the minimized dataset
-        return self.predict(instance, k)
+        return self.predict(instance, k)'''
 
     def train(self, k: int, reduce_redundancy=False):
 
@@ -225,20 +226,22 @@ class EditedKNN(KNN):
 
         # Continue to minimize the training data if the performance until the performance
         # of the model stops improving
+        count = 1
         while True:
             # Minimize the data
             self._minimize_data(k, reduce_redundancy, self.epsilon)
+            #print("k {} finished minimizing {}".format(k, count))
 
             # Update the current performance
             current_performance = self._check_performance(k)
-
+            count += 1
             if current_performance > previous_performance:
                 # Update the previous performance/data
                 previous_performance = current_performance
                 previous_edit = self.training_data
             else:
                 break
-
+        #print("K {} done after {} loops".format(k, count))
         # Set the training data to that of the previous edit
         self.training_data = previous_edit
 

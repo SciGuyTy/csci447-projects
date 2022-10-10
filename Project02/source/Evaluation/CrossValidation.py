@@ -56,17 +56,22 @@ class CrossValidation:
     def get_tuning_set(self, proportion):
         # Shuffle the data into a random order
         shuffled_data = self.data.sample(frac=1)
-        hold_out_size = int(len(shuffled_data.index) * proportion)
+        num_folds = math.ceil(1/proportion)
 
         if self.regression:
+            tuning_data = pd.DataFrame(columns=self.data.columns)
+
             # Sort the data based on the target feature
             sorted_data = shuffled_data.sort_values(self.target_feature)
 
-
             # Decompose data into 10 'bins' of consecutive data
-            split_data = np.array_split(sorted_data, hold_out_size)
+            split_data = np.array_split(sorted_data, num_folds)
 
-            return split_data[0]
+            for g in range(len(split_data)):
+                split_group = np.array_split(split_data[g], num_folds)
+                tuning_data = pd.concat([tuning_data, split_group[0]], ignore_index=True)
+
+            return tuning_data
 
         else:
             # Define the levels of classification in the data
@@ -123,12 +128,10 @@ class CrossValidation:
             # Sort the data based on the target feature
             sorted_data = shuffled_data.sort_values(self.target_feature)
 
-            fold_size = int(len(sorted_data.index) / num_folds)
-
             # Decompose data into 10 'bins' of consecutive data
-            split_data = np.array_split(sorted_data, fold_size)
+            split_data = np.array_split(sorted_data, num_folds)
 
-            for fold_id in range(len(folded_data)):
+            '''for fold_id in range(len(folded_data)):
                 for group in split_data:
                     # For each fold, select the corresponding value from each group in the
                     # split value array (so for example, the first fold will grab the first
@@ -137,6 +140,12 @@ class CrossValidation:
                         [folded_data[fold_id], group.iloc[fold_id].to_frame().T],
                         ignore_index=True,
                     )
+            '''
+            for g in range(len(split_data)):
+                split_data[g] = split_data[g].sample(frac=1)
+                split_group = np.array_split(split_data[g], num_folds)
+                for fold_id in range(num_folds):
+                    folded_data[fold_id] = pd.concat([folded_data[fold_id], split_group[fold_id]], ignore_index=True)
 
         else:
             # Define the levels of classification in the data
@@ -252,7 +261,6 @@ class CrossValidation:
             for sample_index, sample in test_data.iterrows():
                 # Train and execute the model on the given training data and testing data
                 prediction = algorithm.predict(sample, *predict_params)
-
                 # Append the prediction and actual values to the fold_results
                 fold_results.loc[sample_index] = [
                     sample[self.target_feature],
@@ -267,6 +275,7 @@ class CrossValidation:
                 # Train and execute the model on the given training data and testing data
                 actual = sample[self.target_feature]
                 prediction = algorithm.predict(sample, *predict_params)
+                print("Prediction {}, Actual {}".format(prediction, actual))
                 # Increment the prediction/actual pair in the confusion matrix
                 fold_results[actual][prediction] += 1
 

@@ -2,6 +2,8 @@ import datetime
 import pickle
 
 import math
+
+from Project02.source.Utilities.Utilities import OneHotEncoding
 from source.Utilities.ExperimentHelper import ExperimentHelper
 from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
 from source.Algorithms.EditedKNN import EditedKNN
@@ -15,6 +17,7 @@ import pandas as pd
 import time
 
 computer_hardware_save_folds_path = "../datasets/regression/ComputerHardware/folds.txt"
+abalone_save_folds_path = "../datasets/regression/Abalone/folds.txt"
 
 
 def project_demonstration():
@@ -299,53 +302,167 @@ def test_tuning_utility():
     print("Tuning time:", time.time()-pp_time)
     print("Total time:", time.time()-start_time)
 
-def run_computer_hardware_expirement():
+def run_abalone_experiment(run_knn=False, run_eknn=False, run_kmeans=False):
+    start_time = time.time()
+
+
+    with open(abalone_save_folds_path, 'rb') as f:
+        training_test_data, pp, training_data, tuning_data, cv = pickle.load(f)
+    pp_time = time.time()
+    print("Preprocessing time:", pp_time - start_time)
+    if run_knn:
+
+        knn_start_time = time.time()
+        tuning_utility = TuningUtility(KNN, pp.data, target_feature="rings", regression=True)
+        all_results_knn = tuning_utility.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [10, 20], 5, k_range=[1,10])
+        tuned_parameters_knn = TuningUtility.get_best_parameters_and_results(all_results_knn)
+
+        print("Best results:", tuned_parameters_knn)
+        print("KNN Tuning time:", time.time()-knn_start_time)
+
+        final_raw_results_knn = cv.validate_for_folds(training_test_data, tuned_parameters_knn)
+        final_results = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_knn]
+        print("Final raw performance for knn", final_raw_results_knn)
+
+        print("Final performance for knn", final_results)
+
+
+    if run_eknn:
+        eknn_time = time.time()
+        tuning_utility = TuningUtility(EditedKNN, pp.data, target_feature="rings", regression=True)
+        all_params_eknn = tuning_utility.tune_sigma_k_and_epsilon_for_folds(training_test_data, tuning_data, [1, 3], 1, [10, 20], 5, train=True, k_range=[1, 12]);
+        tuned_params_eknn = TuningUtility.get_best_parameters_and_results(all_params_eknn)
+        print("Best EKNN params", tuned_params_eknn)
+        with open("eknn-best-params.bin", 'wb+') as f:
+            pickle.dump(tuned_params_eknn, f)
+
+        print("EKNN Tuning Time", time.time()-eknn_time)
+
+        final_raw_results_eknn = cv.validate_for_folds(training_test_data, tuned_params_eknn)
+        final_results = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_eknn]
+        print("Final raw performance for eknn", final_raw_results_eknn)
+        print("Final performance for eknn", final_results)
+
+    if run_kmeans:
+        with open("eknn-best-params.bin", 'rb') as f:
+            tuned_parameters_eknn = pickle.load(f)
+
+        clusters = [len(item['model'].training_data) for item in tuned_parameters_eknn.values()]
+        tuning_utility_kmeans = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True)
+        all_params_kmeans = tuning_utility_kmeans.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [0.005, 0.015], 0.002, clusters=clusters)
+        tuned_params_kmeans = TuningUtility.get_best_parameters_and_results(all_params_kmeans)
+        print("Best K means params:", tuned_params_kmeans)
+        with open("kmeans-best-params.bin", 'wb+') as f:
+            pickle.dump(tuned_params_kmeans, f)
+
+        final_raw_results_kmeans = cv.validate_for_folds(training_test_data, tuned_params_kmeans)
+        final_results_kmeans = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_kmeans]
+
+        print("Final raw performance for kmeans", final_raw_results_kmeans)
+        print("Final performance for kmeans", final_results_kmeans)
+
+    print("Total time:", time.time()-start_time)
+
+
+def run_computer_hardware_experiment(run_knn=False, run_eknn=False, run_kmeans=False):
     start_time = time.time()
 
 
     with open(computer_hardware_save_folds_path, 'rb') as f:
         training_test_data, pp, training_data, tuning_data, cv = pickle.load(f)
-
     pp_time = time.time()
     print("Preprocessing time:", pp_time - start_time)
-    knn_start_time = time.time()
-    tuning_utility = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True)
-    all_results_knn = tuning_utility.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [1, 20], 1)
-    tuned_parameters_knn = TuningUtility.get_best_parameters_and_results(all_results_knn)
 
-    print("Best results:", tuned_parameters_knn)
-    print("KNN Tuning time:", time.time()-knn_start_time)
+    if run_knn:
+        knn_start_time = time.time()
+        tuning_utility = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True)
+        all_results_knn = tuning_utility.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [0.001, 0.010], 0.002)
+        tuned_parameters_knn = TuningUtility.get_best_parameters_and_results(all_results_knn)
 
-    final_raw_results_knn = cv.validate_for_folds(training_test_data, tuned_parameters_knn)
-    final_results = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_knn]
-    print("Final raw performance for knn", final_raw_results_knn)
+        print("Best results:", tuned_parameters_knn)
+        print("KNN Tuning time:", time.time()-knn_start_time)
 
-    print("Final performance for knn", final_results)
+        final_raw_results_knn = cv.validate_for_folds(training_test_data, tuned_parameters_knn)
+        final_results = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_knn]
+        print("Final raw performance for knn", final_raw_results_knn)
 
-    '''
-    eknn_time = time.time()
-    tuning_utility = TuningUtility(EditedKNN, pp.data, target_feature="ERP", regression=True)
-    all_params_eknn = tuning_utility.tune_sigma_k_and_epsilon_for_folds(training_test_data, tuning_data, [0.005, 0.015], 0.002, [1,3], 1, train=True);
-    tuned_params_eknn = TuningUtility.get_best_parameters_and_results(all_params_eknn)
-    print("Best Results", tuned_params_eknn)
-    with open("eknn-best-params.bin", 'wb+') as f:
-        pickle.dump(tuned_params_eknn, f)
+        print("Final performance for knn", final_results)
 
-    print("EKNN Tuning Time", time.time()-eknn_time)
+    if run_eknn:
+        eknn_time = time.time()
+        tuning_utility = TuningUtility(EditedKNN, pp.data, target_feature="ERP", regression=True)
+        all_params_eknn = tuning_utility.tune_sigma_k_and_epsilon_for_folds(training_test_data, tuning_data, [0.005, 0.015], 0.002, [1,4], 1, train=True);
+        tuned_params_eknn = TuningUtility.get_best_parameters_and_results(all_params_eknn)
+        print("Best EKNN params", tuned_params_eknn)
+        with open("eknn-best-params.bin", 'wb+') as f:
+            pickle.dump(tuned_params_eknn, f)
 
-    final_raw_results_eknn = cv.validate_for_folds(training_test_data, tuned_params_eknn)
-    final_results = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_eknn]
-    print("Final raw performance for knn", final_raw_results_eknn)
-    print("Final performance for eknn", final_results)
-    '''
+        print("EKNN Tuning Time", time.time()-eknn_time)
+
+        final_raw_results_eknn = cv.validate_for_folds(training_test_data, tuned_params_eknn)
+        final_results = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_eknn]
+        print("Final raw performance for eknn", final_raw_results_eknn)
+        print("Final performance for eknn", final_results)
+
+    if run_kmeans:
+        with open("eknn-best-params.bin", 'rb') as f:
+            tuned_parameters_eknn = pickle.load(f)
+
+        clusters = [len(item['model'].training_data) for item in tuned_parameters_eknn.values()]
+        tuning_utility_kmeans = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True)
+        all_params_kmeans = tuning_utility_kmeans.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [0.005, 0.0015], 0.001, clusters=clusters)
+        tuned_params_kmeans = TuningUtility.get_best_parameters_and_results(all_params_kmeans)
+        print("Best K means params:", tuned_params_kmeans)
+        with open("kmeans-best-params.bin", 'wb+') as f:
+            pickle.dump(tuned_params_kmeans, f)
+
+        final_raw_results_kmeans = cv.validate_for_folds(training_test_data, tuned_params_kmeans)
+        final_results_kmeans = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_kmeans]
+        print("Final raw performance for kmeans", final_raw_results_kmeans)
+        print("Final performance for kmeans", final_results_kmeans)
     print("Total time:", time.time()-start_time)
 
+
+def create_folds_for_abalone():
+    file_path = '../datasets/regression/Abalone/abalone.data'
+    save_folds_path = abalone_save_folds_path
+
+    column_names = [
+        'sex',
+        'length',
+        'diameter',
+        'height',
+        'whole_weight',
+        'shucked_weight',
+        'viscera_weight',
+        'shell_weight',
+        'rings',
+    ]
+    feature_modifiers = {"sex": lambda x: OneHotEncoding(x)}
+    pp = Preprocessor()
+
+    pp.load_raw_data_from_file(file_path, column_names, converters=feature_modifiers)
+
+    cv = CrossValidation(pp.data, "rings", regression=True)
+    tuning_data = cv.get_tuning_set(0.1)
+    training_data = pp.data.drop(tuning_data.index)
+    #cv = CrossValidation(training_data, "rings", regression=True)
+    #sample_data = cv.get_tuning_set(0.1)
+
+    #training_data = sample_data
+    #cv = CrossValidation(sample_data, "rings", regression=True)
+
+    folded_training_data = cv.fold_data(10, True)
+    training_test_data = cv.get_training_test_data_from_folds(folded_training_data)
+
+    with open(save_folds_path, 'wb+') as f:
+        pickle.dump([training_test_data, pp, training_data, tuning_data, cv], f)
 
 
 def create_folds_for_computer_hard():
 
     file_path = "../datasets/regression/ComputerHardware/machine.data"
-    save_folds_path = "../datasets/regression/ComputerHardware/machine.data"
+    save_folds_path = computer_hardware_save_folds_path
     column_names = [
         "vendor_name",
         "model_name",
@@ -366,6 +483,8 @@ def create_folds_for_computer_hard():
         column_names,
         columns_to_drop=["vendor_name", "model_name"],
     )
+    # Convert all the columns to float (needed to allow one hot encoding for other data sets)
+    pp.data = pp.data.astype('float64')
 
     cv = CrossValidation(pp.data, "ERP", regression=True)
     tuning_data = cv.get_tuning_set(0.1)
@@ -375,11 +494,13 @@ def create_folds_for_computer_hard():
     folded_training_data = cv.fold_data(10, True)
     training_test_data = cv.get_training_test_data_from_folds(folded_training_data)
 
-    with open(computer_hardware_save_folds_path, 'wb+') as f:
+    with open(save_folds_path, 'wb+') as f:
         pickle.dump([training_test_data, pp, training_data, tuning_data, cv], f)
 
 
 if __name__ == "__main__":
     print("Starting at:", datetime.datetime.now())
-    run_computer_hardware_expirement()
+    #create_folds_for_abalone()
+    #create_folds_for_computer_hard()
+    run_computer_hardware_experiment(True, True,True)
 

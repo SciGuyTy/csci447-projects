@@ -42,7 +42,7 @@ class Minkowski(DistanceFunction):
 
         # Iterate over all attributes and compute the difference between the two vectors
         for attribute in v1.index:
-            dist += abs(float(v1[attribute]) - float(v2[attribute])) ** self.p
+            dist += abs(v1[attribute] - v2[attribute]) ** self.p
 
         # Return the resultant distance
         return dist

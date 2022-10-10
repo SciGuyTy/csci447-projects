@@ -1,3 +1,4 @@
+import math
 from typing import List
 
 import pandas as pd
@@ -37,6 +38,11 @@ class Utilities:
         normalization_parameters = pd.DataFrame(columns=["feature", "min", "max"])
 
         for feature in training_features:
+
+            # If the feature is one hot encoded
+            if data[feature].dtype.kind == 'O':
+                continue
+
             # Cast dtype of features to be normalized as a float
             data[feature] = data[feature].astype("float64")
 
@@ -71,8 +77,14 @@ class Utilities:
 
         # Loop through each feature to normalize
         for index, row in norm_params.iterrows():
+            feature = row["feature"]
+
+            # If the feature is one hot encoded
+            if instance[feature].dtype == object:
+                continue
+
             # Normalize the instance's feature
-            instance[row["feature"]] = (instance[row["feature"]] - row['min']) / (
+            instance[feature] = (instance[feature] - row['min']) / (
                 row['max'] - row['min']
             )
 
@@ -92,6 +104,10 @@ class Utilities:
         """
         for index, row in norm_params.iterrows():
             feature = row["feature"]
+
+            # If the feature is one hot encoded
+            if data[feature].dtype.kind == 'O':
+                continue
 
             # Cast dtype of features to be normalized as a float
             data[feature] = data[feature].astype("float64")
@@ -113,3 +129,18 @@ class Utilities:
 
         # Return the normalized data
         return data
+
+
+
+
+
+class OneHotEncoding:
+
+    root_2 = math.sqrt(2)
+    def __init__(self, value):
+        self.value = value
+
+    def __sub__(self, other):
+        if self.value == other.value:
+            return 0
+        return self.root_2

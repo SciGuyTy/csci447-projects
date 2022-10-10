@@ -16,8 +16,7 @@ class KNN:
         target_feature: str,
         regression: bool = False,
         sigma: float = None,
-        distance_function: DistanceFunction = Minkowski(),
-        cluster: bool = False,
+        cluster: int = None,
     ):
         """
         K-Nearest Neighbor algorithm that uses the response value of the k
@@ -59,7 +58,13 @@ class KNN:
         if regression and self.sigma is None:
             raise ValueError
 
-        self.distance_function = distance_function
+        self.distance_function = Minkowski()
+
+        if self.cluster is not None:
+            # If clustering is selected, apply KMeans clustering
+            kmeans = KMeans(self.features, self.training_data, self.cluster)
+            centroids = kmeans.cluster(self.cluster)
+            self.training_data = centroids
 
     def predict(self, instance: pd.Series, k: int) -> Any:
         """
@@ -76,23 +81,7 @@ class KNN:
         The prediction for the response value of the novel instance
         """
         # Array to store nearest neighbors distance
-        neighbors_distance = []
-
-        if self.cluster:
-            # If clustering is selected, apply KMeans clustering
-            kmeans = KMeans(self.features, self.training_data, self.distance_function)
-            centroids = kmeans.cluster(k)
-
-            # Find the distance between the novel instance and the k clusters
-            for centroid in centroids:
-                distance = self.distance_function.compute_distance(
-                    centroid[self.features], instance[self.features]
-                )
-
-                neighbors_distance.append((distance, instance))
-        else:
-            # If clustering is not selected, simply find the k nearest neighbors
-            neighbors_distance = self.find_k_nearest_neighbors(instance, k)
+        neighbors_distance = self.find_k_nearest_neighbors(instance, k)
 
         if self.regression:
             # Perform regression and return the response
@@ -166,7 +155,6 @@ class KNN:
             kernel_distance = self.gaussian_kernel(d, 1 / self.sigma)
             total += kernel_distance
             weighted_sum += kernel_distance * neighbor[self.target_feature]
-
         if total == 0:
             return 0
         else:

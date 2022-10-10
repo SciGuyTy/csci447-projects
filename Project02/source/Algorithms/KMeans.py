@@ -11,7 +11,7 @@ class KMeans:
         self,
         features: List[str],
         data: pd.DataFrame,
-        distance_function: DistanceFunction = Minkowski(),
+        cluster_count: int,
     ):
         """
         K-Means clustering used to cluster data
@@ -31,7 +31,8 @@ class KMeans:
         """
         self.features = features
         self.data = data
-        self.distance_function = distance_function
+        self.distance_function = Minkowski()
+        self.k = cluster_count
 
     def _initialize_clusters(self) -> None:
         """
@@ -40,7 +41,7 @@ class KMeans:
         """
         # Define an array to hold cluster objects
         clusters = []
-
+        print(self.k)
         for cluster_id in range(self.k):
             # Select a random sample from the dataset to act as an initial
             # centroid location
