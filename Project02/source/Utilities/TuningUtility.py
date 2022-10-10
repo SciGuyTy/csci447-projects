@@ -28,7 +28,7 @@ class TuningUtility:
         # The Cross Validation utility
         self.CV = CrossValidation(self.data, regression=self.regression, target_feature=self.target_feature)
 
-    def tune_sigma_k_and_epsilon_for_folds(self, training_test_data, tuning_data, sigma_range, sigma_step, epsilon_range, epsilon_step, k_range=None):
+    def tune_sigma_k_and_epsilon_for_folds(self, training_test_data, tuning_data, sigma_range, sigma_step, epsilon_range, epsilon_step, k_range=None, train=False):
         # Initialize the dictionary of all results.
         # Key = (epsilon, sigma)
         # Value = list of data frames containing the k, mse, and trained model
@@ -38,10 +38,10 @@ class TuningUtility:
             for sigma in numpy.arange(sigma_range[0], sigma_range[1]+sigma_step, sigma_step):
                 print(f"{sigma=},{epsilon=}")
                 # Calculate the results and add them to the dictionary
-                results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma, epsilon], include_k_in_model=True, k_range=k_range)
+                results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma, epsilon], include_k_in_model=True, k_range=k_range, train=train)
                 all_results[(epsilon, sigma)] = results
         return all_results
-    def tune_sigma_and_k_for_folds(self, training_test_data, tuning_data: pd.DataFrame, sigma_range, sigma_step, epsilon=None):
+    def tune_sigma_and_k_for_folds(self, training_test_data, tuning_data: pd.DataFrame, sigma_range, sigma_step, train=False):
         # Initialize the dictionary of all results.
         # Key = sigma
         # Value = list of data frames containing the k, mse, and trained model
@@ -50,7 +50,7 @@ class TuningUtility:
         for sigma in numpy.arange(sigma_range[0], sigma_range[1]+1, sigma_step):
             print("Sigma {}".format(sigma))
             # Calculate the results for each sigma and k and add them to the dictionary
-            results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma])
+            results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma], train=train)
             all_results[sigma] = results
         return all_results
 
@@ -72,7 +72,7 @@ class TuningUtility:
         return fold_sigma_k
 
 
-    def tune_k_for_folds(self, training_test_data, tuning_data:pd.DataFrame, model_params=[], k_range=None, include_k_in_model=False):
+    def tune_k_for_folds(self, training_test_data, tuning_data:pd.DataFrame, model_params=[], k_range=None, train=False):
         # If there isn't a defined range for the k values, use a default baseline
         if k_range is None:
             # [1, sqrt(n)]
@@ -85,7 +85,7 @@ class TuningUtility:
         # Loop through the folds and record the hyperparameters, results, and the trained model (K, MSE/0-1 loss, Model).
         for fold, (training_data, _, norm_params) in enumerate(training_test_data, start=1):
             # Calculate the results for this fold
-            results = self.tune_k_for_single_fold(training_data, tuning_data.copy(), norm_params=norm_params, model_params=model_params, k_range=k_range, train=True)
+            results = self.tune_k_for_single_fold(training_data, tuning_data.copy(), norm_params=norm_params, model_params=model_params, k_range=k_range, train=train)
             # Transform the data, label the columns, and sort them based on the measure. Ties are broken by the lower k value winning
             results_df = pd.DataFrame(results).T
             results_df.reset_index(inplace=True)

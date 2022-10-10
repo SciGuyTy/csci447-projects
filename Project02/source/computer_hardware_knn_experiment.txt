@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/home/braeden/Git/csci447-project-01/Project02/main.py", line 5, in <module>
-    from source.Utilities.ExperimentHelper import ExperimentHelper
-ModuleNotFoundError: No module named 'source.Utilities.ExperimentHelper'

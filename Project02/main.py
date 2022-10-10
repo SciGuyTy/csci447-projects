@@ -308,25 +308,24 @@ def run_computer_hardware_expirement():
 
     pp_time = time.time()
     print("Preprocessing time:", pp_time - start_time)
-    '''tuning_utility = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True)
-
-
+    knn_start_time = time.time()
+    tuning_utility = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True)
     all_results_knn = tuning_utility.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [1, 20], 1)
     tuned_parameters_knn = TuningUtility.get_best_parameters_and_results(all_results_knn)
 
     print("Best results:", tuned_parameters_knn)
-    print("KNN Tuning time:", time.time()-pp_time)
+    print("KNN Tuning time:", time.time()-knn_start_time)
 
-    final_raw_results_knn = cv.validate_for_folds(KNN, training_test_data, tuned_parameters_knn)
+    final_raw_results_knn = cv.validate_for_folds(training_test_data, tuned_parameters_knn)
     final_results = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_knn]
     print("Final raw performance for knn", final_raw_results_knn)
 
     print("Final performance for knn", final_results)
-'''
-    eknn_time = time.time()
 
+    '''
+    eknn_time = time.time()
     tuning_utility = TuningUtility(EditedKNN, pp.data, target_feature="ERP", regression=True)
-    all_params_eknn = tuning_utility.tune_sigma_k_and_epsilon_for_folds(training_test_data, tuning_data, [0.005, 0.015], 0.002, [1,3], 1);
+    all_params_eknn = tuning_utility.tune_sigma_k_and_epsilon_for_folds(training_test_data, tuning_data, [0.005, 0.015], 0.002, [1,3], 1, train=True);
     tuned_params_eknn = TuningUtility.get_best_parameters_and_results(all_params_eknn)
     print("Best Results", tuned_params_eknn)
     with open("eknn-best-params.bin", 'wb+') as f:
@@ -337,8 +336,8 @@ def run_computer_hardware_expirement():
     final_raw_results_eknn = cv.validate_for_folds(training_test_data, tuned_params_eknn)
     final_results = [EvaluationMeasure.calculate_means_square_error(i) for i in final_raw_results_eknn]
     print("Final raw performance for knn", final_raw_results_eknn)
-    print("Final performance for knn", final_results)
-
+    print("Final performance for eknn", final_results)
+    '''
     print("Total time:", time.time()-start_time)
 
 

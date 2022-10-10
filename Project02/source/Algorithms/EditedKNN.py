@@ -211,7 +211,7 @@ class EditedKNN(KNN):
             with which a predicted response value from a regression model
             will still be considered 'correct'
         """
-        self.train(k, reduce_redundancy=reduce_redundancy, err_threshold=err_threshold)
+        self.train(k, reduce_redundancy=reduce_redundancy)
 
         # Report the prediction based on the minimized dataset
         return self.predict(instance, k)
