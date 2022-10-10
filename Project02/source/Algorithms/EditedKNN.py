@@ -13,6 +13,7 @@ class EditedKNN(KNN):
         self,
         training_data: pd.DataFrame,
         target_feature: str,
+        cluster=False,
         regression=False,
         sigma: float = None,
         epsilon: float = None,
@@ -48,7 +49,7 @@ class EditedKNN(KNN):
         """
         # Extend the KNN class
         super().__init__(
-            training_data, target_feature, regression, sigma, distance_function
+            training_data, target_feature, cluster, regression, sigma, distance_function
         )
 
         self.epsilon = epsilon
