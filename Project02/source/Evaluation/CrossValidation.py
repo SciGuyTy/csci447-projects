@@ -47,7 +47,7 @@ class CrossValidation:
         # Whether the underlying data is being used for regression
         self.regression = regression
 
-    def __fold_data(self, num_folds: int, stratify: bool):
+    def _fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
 
         Parameters
@@ -139,7 +139,7 @@ class CrossValidation:
         """
 
         # Divide the data into k folds
-        folded_data = self.__fold_data(num_folds, stratify)
+        folded_data = self._fold_data(num_folds, stratify)
 
         # Results for all the folds
         overall_results = []

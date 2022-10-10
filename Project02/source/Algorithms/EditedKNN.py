@@ -13,6 +13,7 @@ class EditedKNN(KNN):
         self,
         training_data: pd.DataFrame,
         target_feature: str,
+        cluster=False,
         regression=False,
         sigma: float = None,
         distance_function: DistanceFunction = Minkowski(),
@@ -46,7 +47,7 @@ class EditedKNN(KNN):
         """
         # Extend the KNN class
         super().__init__(
-            training_data, target_feature, regression, sigma, distance_function
+            training_data, target_feature, cluster, regression, sigma, distance_function
         )
 
     def _predict_response(self, instance: pd.Series, k: int) -> Any:
