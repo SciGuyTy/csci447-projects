@@ -167,7 +167,7 @@ class KNN:
             total += kernel_distance
             weighted_sum += kernel_distance * neighbor[self.target_feature]
 
-        if weighted_sum == 0:
+        if total == 0:
             return 0
         else:
             return weighted_sum / total
