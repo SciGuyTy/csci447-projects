@@ -49,7 +49,7 @@ class EditedKNN(KNN):
         """
         # Extend the KNN class
         super().__init__(
-            training_data, target_feature, cluster, regression, sigma, distance_function
+            training_data, target_feature, regression, sigma, distance_function, cluster
         )
 
         self.epsilon = epsilon
@@ -215,7 +215,7 @@ class EditedKNN(KNN):
         self.train(k, reduce_redundancy=reduce_redundancy)
 
         # Report the prediction based on the minimized dataset
-        return self.predict(instance, k)
+        return self._predict_response(instance, k)
 
     def train(self, k: int, reduce_redundancy=False):
 

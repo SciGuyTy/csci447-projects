@@ -1,6 +1,6 @@
 import math
 
-from Project02.source.Utilities.Utilities import Utilities
+from source.Utilities.Utilities import Utilities
 from typing import Callable, Union
 
 import pandas as pd
@@ -191,7 +191,9 @@ class CrossValidation:
         overall_results = []
 
         # Iterate through the training and test data pairs
-        for training_data, test_data, _ in training_test_data:
+        for index, (training_data, test_data, _) in enumerate(training_test_data):
+            print(f"Starting on Fold {index}")
+
             # Instantiate the model
             self.algorithm = model(training_data, self.target_feature, *model_params)
 
@@ -224,7 +226,6 @@ class CrossValidation:
         # Iterate through each fold
         for index, fold in enumerate(folded_data):
             # Define the data for testing (a single fold)
-            print(f"Starting on Fold {index}")
             test_data = fold.copy()
 
             # Define the data for training (remaining folds)
