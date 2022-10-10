@@ -14,10 +14,10 @@ class KNN:
         self,
         training_data: pd.DataFrame,
         target_feature: str,
-        cluster: bool = False,
         regression: bool = False,
         sigma: float = None,
         distance_function: DistanceFunction = Minkowski(),
+        cluster: bool = False,
     ):
         """
         K-Nearest Neighbor algorithm that uses the response value of the k
@@ -56,7 +56,7 @@ class KNN:
 
         # Raise an exception if regression data is provided but the
         # Gaussian Threshold is not provide
-        if regression and (self.sigma is None):
+        if regression and self.sigma is None:
             raise ValueError
 
         self.distance_function = distance_function

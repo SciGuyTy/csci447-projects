@@ -89,7 +89,7 @@ class CrossValidation:
         model: Callable,
         num_folds: int = 10,
         stratify: bool = False,
-        alter_data: bool = False,,
+        alter_data: bool = False,
     ) -> float:
         """Perform cross-validation using k=num_folds folds
 

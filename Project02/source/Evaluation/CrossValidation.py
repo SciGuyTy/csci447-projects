@@ -1,4 +1,6 @@
-from source.Utilities.Utilities import Utilities
+import math
+
+from Project02.source.Utilities.Utilities import Utilities
 from typing import Callable, Union
 
 import pandas as pd
@@ -47,7 +49,48 @@ class CrossValidation:
         # Whether the underlying data is being used for regression
         self.regression = regression
 
-    def _fold_data(self, num_folds: int, stratify: bool):
+        if not self.regression:
+            # Get a list of all class levels
+            self.classes = self.data[self.target_feature].unique()
+
+    def get_tuning_set(self, proportion):
+        # Shuffle the data into a random order
+        shuffled_data = self.data.sample(frac=1)
+        hold_out_size = int(len(shuffled_data.index) * proportion)
+
+        if self.regression:
+            # Sort the data based on the target feature
+            sorted_data = shuffled_data.sort_values(self.target_feature)
+
+
+            # Decompose data into 10 'bins' of consecutive data
+            split_data = np.array_split(sorted_data, hold_out_size)
+
+            return split_data[0]
+
+        else:
+            # Define the levels of classification in the data
+            classification_levels = self.classes
+
+            hold_out = pd.DataFrame(columns=self.data.columns)
+
+            # If the data is to be stratified, iterate through each classification level
+            # and divide the data into equally sized chunks based on the number of folds
+            for classification in classification_levels:
+                class_data = shuffled_data[
+                    shuffled_data[self.target_feature] == classification
+                ]
+
+                # Divide the data for a given class into equally sized chunks
+                split_data = np.array_split(class_data, math.ceil(1/proportion))
+
+                # "Stack" each chunk of data with its counterparts from the other classes
+                hold_out = pd.concat([split_data[0], hold_out])
+
+            # Return the folded data
+            return hold_out
+
+    def fold_data(self, num_folds: int, stratify: bool):
         """Divide a dataset into folds (for cross-validation)
 
         Parameters
@@ -97,7 +140,7 @@ class CrossValidation:
 
         else:
             # Define the levels of classification in the data
-            classification_levels = self.data[self.target_feature].unique()
+            classification_levels = self.classes
 
             # If the data is to be stratified, iterate through each classification level
             # and divide the data into equally sized chunks based on the number of folds
@@ -139,13 +182,48 @@ class CrossValidation:
         """
 
         # Divide the data into k folds
-        folded_data = self._fold_data(num_folds, stratify)
+        folded_data = self.fold_data(num_folds, stratify)
+
+        # Get the training and test data pairs for each fold
+        training_test_data = self.get_training_test_data_from_folds(folded_data)
 
         # Results for all the folds
         overall_results = []
 
-        # Iterate through each fold and run the model
+        # Iterate through the training and test data pairs
+        for training_data, test_data, _ in training_test_data:
+            # Instantiate the model
+            self.algorithm = model(training_data, self.target_feature, *model_params)
+
+            fold_results = self.calculate_results_for_fold(self.algorithm, test_data, predict_params=predict_params)
+
+            overall_results.append(fold_results)
+
+        # Return the average loss value
+        return overall_results
+
+    def validate_for_folds(self, training_test_data, tuned_params):
+        # Results for all the folds
+        overall_results = []
+
+        # Iterate through the training and test data pairs
+        for fold, (training_data, test_data, _) in enumerate(training_test_data, start=1):
+            self.algorithm = tuned_params[fold]['model']
+
+            fold_results = self.calculate_results_for_fold(self.algorithm, test_data, predict_params=[int(tuned_params[fold]['k'])])
+
+            overall_results.append(fold_results)
+
+        # Return the average loss value
+        return overall_results
+
+
+    def get_training_test_data_from_folds(self, folded_data):
+        training_test_data = []
+
+        # Iterate through each fold
         for index, fold in enumerate(folded_data):
+            # Define the data for testing (a single fold)
             print(f"Starting on Fold {index}")
             test_data = fold.copy()
 
@@ -157,41 +235,39 @@ class CrossValidation:
             training_data = pd.concat(training_data)
 
             # Normalize the training and testing data
-            training_data = Utilities.normalize(training_data, self.target_feature)
-            test_data = Utilities.normalize(test_data, self.target_feature)
-            
-            # Instantiate the model
-            self.algorithm = model(training_data, self.target_feature, *model_params)
+            norm_params = Utilities.normalize(training_data, self.target_feature)
+            test_data = Utilities.normalize_set_by_params(test_data, norm_params)
 
-            if self.regression:
-                # DataFrame to store results for this fold
-                fold_results = pd.DataFrame(columns=["actual", "predicted"])
+            # Add the training and test data as a pair to the list
+            training_test_data.append((training_data, test_data, norm_params))
 
-                for sample_index, sample in test_data.iterrows():
-                    # Train and execute the model on the given training data and testing data
-                    prediction = self.algorithm.predict(sample, *predict_params)
 
-                    # Append the prediction and actual values to the fold_results
-                    fold_results.loc[sample_index] = [
-                        sample[self.target_feature],
-                        prediction,
-                    ]
-            else:
-                # Get a list of all class levels
-                classes = self.data[self.target_feature].unique()
+        return training_test_data
 
-                # DataFrame to store results for this fold
-                fold_results = pd.DataFrame(0, columns=classes, index=classes)
+    def calculate_results_for_fold(self, algorithm, test_data, predict_params=[]):
+        if self.regression:
+            # DataFrame to store results for this fold
+            fold_results = pd.DataFrame(columns=["actual", "predicted"])
 
-                # Perform prediction on all samples for this test fold
-                for sample_index, sample in test_data.iterrows():
-                    # Train and execute the model on the given training data and testing data
-                    prediction = self.algorithm.predict(sample, *predict_params)
+            for sample_index, sample in test_data.iterrows():
+                # Train and execute the model on the given training data and testing data
+                prediction = algorithm.predict(sample, *predict_params)
 
-                    # Increment the prediction/actual pair in the confusion matrix
-                    fold_results[sample[self.target_feature]][prediction] += 1
+                # Append the prediction and actual values to the fold_results
+                fold_results.loc[sample_index] = [
+                    sample[self.target_feature],
+                    prediction,
+                ]
+        else:
+            # DataFrame to store results for this fold
+            fold_results = pd.DataFrame(0, columns=self.classes, index=self.classes)
 
-            overall_results.append(fold_results)
+            # Perform prediction on all samples for this test fold
+            for sample_index, sample in test_data.iterrows():
+                # Train and execute the model on the given training data and testing data
+                actual = sample[self.target_feature]
+                prediction = algorithm.predict(sample, *predict_params)
+                # Increment the prediction/actual pair in the confusion matrix
+                fold_results[actual][prediction] += 1
 
-        # Return the average loss value
-        return overall_results
+        return fold_results
