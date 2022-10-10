@@ -103,9 +103,13 @@ class Utilities:
             # Define the newly normalized feature in the dataset, and assign its values to
             # the normalized version of the original data
 
-            data[feature] = (data[feature] - minimum_value) / (
-                maximum_value - minimum_value
-            )
+            if maximum_value - minimum_value == 0:
+                data[feature] = 0
+            else:
+                data[feature] = (data[feature] - minimum_value) / (
+                    maximum_value - minimum_value
+                )
+            
 
         # Return the normalized data
         return data

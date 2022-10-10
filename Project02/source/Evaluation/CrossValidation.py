@@ -224,6 +224,7 @@ class CrossValidation:
         # Iterate through each fold
         for index, fold in enumerate(folded_data):
             # Define the data for testing (a single fold)
+            print(f"Starting on Fold {index}")
             test_data = fold.copy()
 
             # Define the data for training (remaining folds)
@@ -239,6 +240,7 @@ class CrossValidation:
 
             # Add the training and test data as a pair to the list
             training_test_data.append((training_data, test_data, norm_params))
+
 
         return training_test_data
 

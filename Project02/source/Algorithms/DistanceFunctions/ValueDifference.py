@@ -53,7 +53,8 @@ class ValueDifference(DistanceFunction):
         for attribute in v1.index:
             attr_dist = 0
 
-            # For each attribute, compute the difference in class conditional probability for the given attribute values of v1, v2 on each class
+            # For each attribute, compute the difference in class conditional probability
+            # for the given attribute values of v1, v2 on each class
             for classification_level in classification_levels:
                 # Class conditional probability for the given attribute on v1 P(c|v1_a)
                 v1_class_conditional = self._compute_class_conditional(
@@ -93,7 +94,8 @@ class ValueDifference(DistanceFunction):
         --------
         A float representing the class conditional probability for the given parameters
         """
-        # Query condition that describes instances within the data that have the given value for the attribute and belong to the given classification level
+        # Query condition that describes instances within the data that have the given value
+        # for the attribute and belong to the given classification level
         condition = (self.data[self.class_feature] == classification) & (
             self.data[attribute_label] == attribute_value
         )
@@ -101,7 +103,8 @@ class ValueDifference(DistanceFunction):
         # Retrieve the number of instances within the data that match the condition
         num_attr_in_class = len(self.data[condition])
 
-        # Compute the total number of instances within the data that have the given value for the attribute
+        # Compute the total number of instances within the data that have the given
+        # value for the attribute
         num_attr = len(self.data[self.data[attribute_label] == attribute_value])
 
         # Return the CCP
