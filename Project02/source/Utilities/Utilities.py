@@ -144,3 +144,12 @@ class OneHotEncoding:
         if self.value == other.value:
             return 0
         return self.root_2
+
+class CyclicalData:
+
+    def __init__(self, value, total):
+        self.value = value
+        self.total = total
+
+    def __sub__(self, other):
+        return min((self.value - other.value) % 12, (other.value-self.value) % 12)

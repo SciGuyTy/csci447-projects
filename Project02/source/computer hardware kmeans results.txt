@@ -1,0 +1,1770 @@
+Starting at: 2022-10-10 16:51:09.247534
+Preprocessing time: 0.003309965133666992
+Sigma 0.005
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+{11: (230.84195461395527, <source.Algorithms.KNN.KNN object at 0x7f81c6a05ea0>), 5: (102.22187553190197, <source.Algorithms.KNN.KNN object at 0x7f81c6a05c60>), 13: (229.74095178422004, <source.Algorithms.KNN.KNN object at 0x7f81c6a06a10>), 10: (217.95598352370118, <source.Algorithms.KNN.KNN object at 0x7f81c6a06560>), 12: (233.73775794897807, <source.Algorithms.KNN.KNN object at 0x7f81c6a06b90>), 6: (137.81087924242303, <source.Algorithms.KNN.KNN object at 0x7f81c6a06dd0>), 3: (77.31698595812442, <source.Algorithms.KNN.KNN object at 0x7f81c6a07190>), 9: (197.89095372803882, <source.Algorithms.KNN.KNN object at 0x7f81c6a06e60>), 2: (68.2855386007835, <source.Algorithms.KNN.KNN object at 0x7f81c6a07640>), 1: (91.75862068965517, <source.Algorithms.KNN.KNN object at 0x7f81c6a074c0>), 4: (73.35863070527544, <source.Algorithms.KNN.KNN object at 0x7f81c6a07910>), 7: (165.95553778736212, <source.Algorithms.KNN.KNN object at 0x7f81c6a07b50>), 8: (183.55041570681854, <source.Algorithms.KNN.KNN object at 0x7f81c6a07d90>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 4: (48.957392206875916, <source.Algorithms.KNN.KNN object at 0x7f81c6a05e70>), 1: (44.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a38910>), 5: (36.92138194003201, <source.Algorithms.KNN.KNN object at 0x7f81c6a388e0>), 3: (65.12193396201869, <source.Algorithms.KNN.KNN object at 0x7f81c6a060e0>), 7: (49.647302969995486, <source.Algorithms.KNN.KNN object at 0x7f81c6a05ea0>), 6: (42.963809695041945, <source.Algorithms.KNN.KNN object at 0x7f81c6a38b80>), 2: (49.52495533572698, <source.Algorithms.KNN.KNN object at 0x7f81c6a38e80>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 8: (69.9893660218954, <source.Algorithms.KNN.KNN object at 0x7f81c6a07040>), 3: (52.99353950948434, <source.Algorithms.KNN.KNN object at 0x7f81c6a07640>), 2: (67.90599722851506, <source.Algorithms.KNN.KNN object at 0x7f81c6a06d40>), 6: (48.34627687157841, <source.Algorithms.KNN.KNN object at 0x7f81c6a07df0>), 4: (37.42076136226604, <source.Algorithms.KNN.KNN object at 0x7f81c6a076d0>), 5: (36.259410793210165, <source.Algorithms.KNN.KNN object at 0x7f81c6a05cc0>), 7: (61.6841239906533, <source.Algorithms.KNN.KNN object at 0x7f81c6a07a90>), 1: (20.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a06560>), 10: (93.92905697848222, <source.Algorithms.KNN.KNN object at 0x7f81c6a05ea0>), 9: (81.87929795435348, <source.Algorithms.KNN.KNN object at 0x7f81c6a05ff0>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 9: (64.19593877104666, <source.Algorithms.KNN.KNN object at 0x7f81c6a06d10>), 4: (19.70920908146563, <source.Algorithms.KNN.KNN object at 0x7f81c6a079d0>), 2: (40.710747467183566, <source.Algorithms.KNN.KNN object at 0x7f81c6a06950>), 5: (18.83544962565621, <source.Algorithms.KNN.KNN object at 0x7f81c6a38f70>), 6: (23.554642936301068, <source.Algorithms.KNN.KNN object at 0x7f81c6a07160>), 8: (53.86717436930112, <source.Algorithms.KNN.KNN object at 0x7f81c6a38850>), 7: (37.375854216950536, <source.Algorithms.KNN.KNN object at 0x7f81c6a391e0>), 10: (75.66220228906674, <source.Algorithms.KNN.KNN object at 0x7f81c6a06dd0>), 3: (19.272540658818592, <source.Algorithms.KNN.KNN object at 0x7f81c6a399c0>), 1: (45.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a397e0>)}
+Best ks [2, 5, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 8: (107.80056692950994, <source.Algorithms.KNN.KNN object at 0x7f81c6a05c30>), 3: (87.4064234616418, <source.Algorithms.KNN.KNN object at 0x7f81c6a076d0>), 1: (43.89655172413793, <source.Algorithms.KNN.KNN object at 0x7f81c6a05bd0>), 5: (61.79819595933761, <source.Algorithms.KNN.KNN object at 0x7f81c6a07970>), 6: (74.14111551265442, <source.Algorithms.KNN.KNN object at 0x7f81c6a07a30>), 4: (62.7182383236052, <source.Algorithms.KNN.KNN object at 0x7f81c6a065c0>), 10: (132.6561141538293, <source.Algorithms.KNN.KNN object at 0x7f81c6a05a20>), 2: (161.02059947899548, <source.Algorithms.KNN.KNN object at 0x7f81c6a070d0>), 9: (120.6656252129138, <source.Algorithms.KNN.KNN object at 0x7f81c6a05930>), 7: (94.50608543905088, <source.Algorithms.KNN.KNN object at 0x7f81c6a07fa0>)}
+Best ks [2, 5, 1, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (50.69379963822682, <source.Algorithms.KNN.KNN object at 0x7f81c6a060b0>), 6: (40.083604312464665, <source.Algorithms.KNN.KNN object at 0x7f81c6a05ea0>), 10: (85.080018089355, <source.Algorithms.KNN.KNN object at 0x7f81c6a05cf0>), 3: (61.0840611100406, <source.Algorithms.KNN.KNN object at 0x7f81c6a389d0>), 2: (42.60821270232955, <source.Algorithms.KNN.KNN object at 0x7f81c6a39a80>), 9: (71.33834831370386, <source.Algorithms.KNN.KNN object at 0x7f81c6a39030>), 4: (46.476267858512486, <source.Algorithms.KNN.KNN object at 0x7f81c6a392d0>), 5: (34.206601115989415, <source.Algorithms.KNN.KNN object at 0x7f81c6a38760>), 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81c6a38e20>), 8: (63.344785331741754, <source.Algorithms.KNN.KNN object at 0x7f81c6a39840>)}
+Best ks [2, 5, 1, 5, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (98.96989010479643, <source.Algorithms.KNN.KNN object at 0x7f81c6a072b0>), 4: (71.32089149382219, <source.Algorithms.KNN.KNN object at 0x7f81c6a075b0>), 6: (72.02963636621048, <source.Algorithms.KNN.KNN object at 0x7f81c6a06d70>), 2: (76.80910284904618, <source.Algorithms.KNN.KNN object at 0x7f81c6a05e70>), 5: (63.45869774748568, <source.Algorithms.KNN.KNN object at 0x7f81c6a07e50>), 1: (150.6206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a06b90>), 10: (111.70175925661442, <source.Algorithms.KNN.KNN object at 0x7f81c6a07e20>), 8: (88.4104808568386, <source.Algorithms.KNN.KNN object at 0x7f81c6a38490>), 9: (105.04871121247015, <source.Algorithms.KNN.KNN object at 0x7f81c6a39cc0>), 7: (79.29794348930089, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a170>)}
+Best ks [2, 5, 1, 5, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (78.84704897367486, <source.Algorithms.KNN.KNN object at 0x7f81c6a06950>), 6: (39.28857577907756, <source.Algorithms.KNN.KNN object at 0x7f81c6a06e00>), 5: (46.488522870339196, <source.Algorithms.KNN.KNN object at 0x7f81c6a06e90>), 9: (83.93162284440892, <source.Algorithms.KNN.KNN object at 0x7f81c6a39c60>), 10: (92.59946788126267, <source.Algorithms.KNN.KNN object at 0x7f81c6a39330>), 8: (70.79631194038782, <source.Algorithms.KNN.KNN object at 0x7f81c6a39a20>), 7: (53.38437830769323, <source.Algorithms.KNN.KNN object at 0x7f81c6a393c0>), 1: (52.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a38e20>), 2: (48.71193603515195, <source.Algorithms.KNN.KNN object at 0x7f81c6a38eb0>), 4: (53.24247825368836, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ada0>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 3: (65.44034442567929, <source.Algorithms.KNN.KNN object at 0x7f81c6a07cd0>), 11: (98.82454847082252, <source.Algorithms.KNN.KNN object at 0x7f81c6a05780>), 4: (46.60932871038198, <source.Algorithms.KNN.KNN object at 0x7f81c6a06fe0>), 6: (35.70569386792653, <source.Algorithms.KNN.KNN object at 0x7f81c6a07100>), 8: (63.98249938036415, <source.Algorithms.KNN.KNN object at 0x7f81c6a07130>), 9: (80.26970425490669, <source.Algorithms.KNN.KNN object at 0x7f81c6a06f80>), 2: (47.61922688709056, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a8c0>), 5: (35.966569063870196, <source.Algorithms.KNN.KNN object at 0x7f81c6a399c0>), 7: (46.73776189603948, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ab00>), 1: (43.86206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a382e0>), 10: (91.67051341724458, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ac50>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 5: (40.19054231348198, <source.Algorithms.KNN.KNN object at 0x7f81c6a06c50>), 3: (88.20563139397167, <source.Algorithms.KNN.KNN object at 0x7f81c6a079d0>), 9: (81.20445933160309, <source.Algorithms.KNN.KNN object at 0x7f81c6a07e80>), 7: (50.34157786065, <source.Algorithms.KNN.KNN object at 0x7f81c6a39000>), 10: (88.09233356067476, <source.Algorithms.KNN.KNN object at 0x7f81c6a39360>), 6: (35.504125912001115, <source.Algorithms.KNN.KNN object at 0x7f81c6a39480>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81c6a39810>), 8: (67.16145394373493, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ad70>), 2: (176.09773499318374, <source.Algorithms.KNN.KNN object at 0x7f81c6a39570>), 11: (94.880236154595, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ab30>), 4: (55.215456958252716, <source.Algorithms.KNN.KNN object at 0x7f81c6a38730>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6, 6, 6]
+current range:  (0, 11)
+time to tune folds 34.6691370010376
+Sigma 0.006
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+{4: (75.83762675231307, <source.Algorithms.KNN.KNN object at 0x7f81c6a07130>), 5: (110.38566929294885, <source.Algorithms.KNN.KNN object at 0x7f81c6a07e50>), 6: (153.9085366471257, <source.Algorithms.KNN.KNN object at 0x7f81c6a05e70>), 11: (271.2947293861596, <source.Algorithms.KNN.KNN object at 0x7f81c6a07df0>), 2: (68.49785048055377, <source.Algorithms.KNN.KNN object at 0x7f81c6a06ad0>), 8: (210.07399655896313, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b670>), 9: (228.51767709135015, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b8b0>), 12: (276.94609235238727, <source.Algorithms.KNN.KNN object at 0x7f81c6a392a0>), 1: (91.75862068965523, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ada0>), 13: (274.69809252400887, <source.Algorithms.KNN.KNN object at 0x7f81c6a388e0>), 3: (79.02051390909631, <source.Algorithms.KNN.KNN object at 0x7f81c6a39d80>), 7: (188.24371962756055, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ba90>), 10: (253.79255503298094, <source.Algorithms.KNN.KNN object at 0x7f81c6a398a0>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 2: (49.7490694605667, <source.Algorithms.KNN.KNN object at 0x7f81c6a061a0>), 1: (44.965517241379374, <source.Algorithms.KNN.KNN object at 0x7f81c6a05db0>), 5: (37.35660898717854, <source.Algorithms.KNN.KNN object at 0x7f81c6a06e60>), 4: (49.42912731857227, <source.Algorithms.KNN.KNN object at 0x7f81c6a38d00>), 7: (53.061854627078915, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b160>), 3: (65.42748346646391, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a0e0>), 6: (43.9397385144646, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b190>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 4: (37.527841723160854, <source.Algorithms.KNN.KNN object at 0x7f81c6a06e90>), 3: (53.652923117988934, <source.Algorithms.KNN.KNN object at 0x7f81c6a05a20>), 8: (82.3061286100865, <source.Algorithms.KNN.KNN object at 0x7f81c6a070a0>), 1: (20.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a07580>), 2: (68.46614264776304, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b6a0>), 7: (69.44877662654527, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b490>), 6: (51.363699942185406, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aec0>), 10: (113.0907296630367, <source.Algorithms.KNN.KNN object at 0x7f81c6a39240>), 5: (36.814179101538386, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b640>), 9: (97.43286088964756, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bac0>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (18.988201923558435, <source.Algorithms.KNN.KNN object at 0x7f81c6a06c80>), 1: (45.34482758620696, <source.Algorithms.KNN.KNN object at 0x7f81c6a07040>), 3: (19.25838913247446, <source.Algorithms.KNN.KNN object at 0x7f81c6a07790>), 10: (94.76003795665328, <source.Algorithms.KNN.KNN object at 0x7f81c6a07130>), 4: (19.724495837809474, <source.Algorithms.KNN.KNN object at 0x7f81c6a398d0>), 8: (64.56266559808918, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b160>), 2: (40.771512677677485, <source.Algorithms.KNN.KNN object at 0x7f81c6a39ab0>), 6: (25.39549374757397, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b220>), 7: (43.53998166518858, <source.Algorithms.KNN.KNN object at 0x7f81c6a39690>), 9: (78.43545929687834, <source.Algorithms.KNN.KNN object at 0x7f81c6a06ef0>)}
+Best ks [2, 5, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 2: (161.78678963050768, <source.Algorithms.KNN.KNN object at 0x7f81c6a060b0>), 9: (138.7084977254801, <source.Algorithms.KNN.KNN object at 0x7f81c6a079d0>), 5: (63.28445296767951, <source.Algorithms.KNN.KNN object at 0x7f81c6a07df0>), 1: (43.89655172413799, <source.Algorithms.KNN.KNN object at 0x7f81c6a05cc0>), 7: (104.71444519421792, <source.Algorithms.KNN.KNN object at 0x7f81c6a397e0>), 10: (154.19838707337712, <source.Algorithms.KNN.KNN object at 0x7f81c6a39a80>), 3: (87.53070053708208, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b430>), 8: (122.81278218337548, <source.Algorithms.KNN.KNN object at 0x7f81c6a38700>), 6: (78.87924473216755, <source.Algorithms.KNN.KNN object at 0x7f81c6a38d30>), 4: (63.60880503048456, <source.Algorithms.KNN.KNN object at 0x7f81c6a386d0>)}
+Best ks [2, 5, 1, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81c6a06e30>), 9: (81.46545440347828, <source.Algorithms.KNN.KNN object at 0x7f81c6a05450>), 5: (34.58991275170366, <source.Algorithms.KNN.KNN object at 0x7f81c6a05b10>), 4: (46.85268015108598, <source.Algorithms.KNN.KNN object at 0x7f81c6a3be80>), 6: (41.00595171955999, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ab00>), 2: (42.81872825498591, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b250>), 3: (61.38395434298058, <source.Algorithms.KNN.KNN object at 0x7f81c6a39fc0>), 8: (70.91619713085517, <source.Algorithms.KNN.KNN object at 0x7f81c6a39960>), 7: (54.08135143008325, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b5b0>), 10: (99.40104066825405, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b2b0>)}
+Best ks [2, 5, 1, 5, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (86.87015057846828, <source.Algorithms.KNN.KNN object at 0x7f81c6a3baf0>), 6: (76.57617173567704, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b970>), 5: (64.58056604493636, <source.Algorithms.KNN.KNN object at 0x7f81c6ba1120>), 3: (99.90795515223458, <source.Algorithms.KNN.KNN object at 0x7f81c6ba0e20>), 9: (121.21328604158512, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ae30>), 2: (76.89523284458537, <source.Algorithms.KNN.KNN object at 0x7f81c6a07fd0>), 10: (131.91264909454742, <source.Algorithms.KNN.KNN object at 0x7f81c6a066e0>), 1: (150.62068965517238, <source.Algorithms.KNN.KNN object at 0x7f81c6a06fb0>), 4: (71.8740198045169, <source.Algorithms.KNN.KNN object at 0x7f81c6a05b10>), 8: (99.55093527627392, <source.Algorithms.KNN.KNN object at 0x7f81c6a397e0>)}
+Best ks [2, 5, 1, 5, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (79.6464606778863, <source.Algorithms.KNN.KNN object at 0x7f81c6a38370>), 5: (46.91032014580135, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a9e0>), 9: (95.11014625223163, <source.Algorithms.KNN.KNN object at 0x7f81c6a39690>), 1: (52.34482758620696, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd30>), 7: (56.548166939315806, <source.Algorithms.KNN.KNN object at 0x7f81c6a380d0>), 2: (48.89054611726222, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b100>), 8: (78.03771497702508, <source.Algorithms.KNN.KNN object at 0x7f81c6a39870>), 6: (39.7195554653793, <source.Algorithms.KNN.KNN object at 0x7f81c6a388e0>), 10: (106.70806421667506, <source.Algorithms.KNN.KNN object at 0x7f81c6a38fd0>), 4: (53.260108935068565, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b8b0>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 6: (36.59728799557552, <source.Algorithms.KNN.KNN object at 0x7f81c6a06bf0>), 1: (43.8620689655173, <source.Algorithms.KNN.KNN object at 0x7f81c6a06650>), 8: (71.644938087063, <source.Algorithms.KNN.KNN object at 0x7f81c6a07e80>), 4: (47.08126411737713, <source.Algorithms.KNN.KNN object at 0x7f81c6a3beb0>), 9: (91.95650382083493, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aaa0>), 5: (36.38438099776095, <source.Algorithms.KNN.KNN object at 0x7f81c6a3baf0>), 3: (65.77761370302872, <source.Algorithms.KNN.KNN object at 0x7f81c6a3be80>), 11: (116.27890961294239, <source.Algorithms.KNN.KNN object at 0x7f81c6a06e90>), 7: (50.13524650057697, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a110>), 2: (47.84916478654102, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b160>), 10: (106.07347406378493, <source.Algorithms.KNN.KNN object at 0x7f81c6a94160>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 9: (89.795439870576, <source.Algorithms.KNN.KNN object at 0x7f81c6a06080>), 7: (52.54985326082987, <source.Algorithms.KNN.KNN object at 0x7f81c6a061a0>), 11: (109.48211873357555, <source.Algorithms.KNN.KNN object at 0x7f81c6a05e70>), 5: (39.047521763968206, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd90>), 3: (86.60873930324588, <source.Algorithms.KNN.KNN object at 0x7f81c6a38220>), 6: (35.51053899303664, <source.Algorithms.KNN.KNN object at 0x7f81c6a39d80>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b5e0>), 4: (53.965071210166265, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bc10>), 8: (72.47697184737302, <source.Algorithms.KNN.KNN object at 0x7f81c6a38400>), 2: (175.1143905259812, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd30>), 10: (99.79121497776305, <source.Algorithms.KNN.KNN object at 0x7f81c6a948b0>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6, 5, 6]
+current range:  (0, 11)
+time to tune folds 35.08727025985718
+Sigma 0.007
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  13
+k:  12
+{10: (283.0210181546519, <source.Algorithms.KNN.KNN object at 0x7f81c6a05c30>), 1: (91.75862068965517, <source.Algorithms.KNN.KNN object at 0x7f81c6a06bf0>), 4: (77.69859512139561, <source.Algorithms.KNN.KNN object at 0x7f81c6a06c50>), 5: (116.90196466262175, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a260>), 11: (304.4951365668778, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aec0>), 8: (231.6123018900117, <source.Algorithms.KNN.KNN object at 0x7f81c6a38700>), 12: (312.8949277216575, <source.Algorithms.KNN.KNN object at 0x7f81c6a3abc0>), 7: (206.35177744374923, <source.Algorithms.KNN.KNN object at 0x7f81c6a3be80>), 6: (166.96469137630518, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ace0>), 2: (68.65025042302258, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a0b0>), 3: (80.3018607971216, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a110>), 9: (253.4227356126094, <source.Algorithms.KNN.KNN object at 0x7f81c6a39ed0>), 13: (312.6928722298779, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b760>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 3: (65.64677431479456, <source.Algorithms.KNN.KNN object at 0x7f81c6a07880>), 6: (44.69764643129902, <source.Algorithms.KNN.KNN object at 0x7f81c6a05450>), 5: (37.68857577684005, <source.Algorithms.KNN.KNN object at 0x7f81c6a05c30>), 1: (44.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a947c0>), 7: (55.92449692658812, <source.Algorithms.KNN.KNN object at 0x7f81c6a943a0>), 2: (49.90990427350206, <source.Algorithms.KNN.KNN object at 0x7f81c6a946a0>), 4: (49.77712612825886, <source.Algorithms.KNN.KNN object at 0x7f81c6a94d30>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (37.23188105083024, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b010>), 6: (53.95992384462335, <source.Algorithms.KNN.KNN object at 0x7f81c6a3be50>), 4: (37.59477771260744, <source.Algorithms.KNN.KNN object at 0x7f81c6a397b0>), 2: (68.86839007473488, <source.Algorithms.KNN.KNN object at 0x7f81c6a39fc0>), 9: (110.98091525459994, <source.Algorithms.KNN.KNN object at 0x7f81c6b87280>), 3: (54.13805130177093, <source.Algorithms.KNN.KNN object at 0x7f81c6a39870>), 7: (76.2559769634989, <source.Algorithms.KNN.KNN object at 0x7f81c6a38700>), 8: (93.12636811014475, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a260>), 10: (129.8022407154836, <source.Algorithms.KNN.KNN object at 0x7f81c6a3baf0>), 1: (20.965517241379327, <source.Algorithms.KNN.KNN object at 0x7f81c6a06c80>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 2: (40.81500964169184, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a590>), 6: (27.11154232793281, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bdf0>), 8: (74.22382885599832, <source.Algorithms.KNN.KNN object at 0x7f81c6a07a90>), 9: (91.18424976990336, <source.Algorithms.KNN.KNN object at 0x7f81c6a07040>), 5: (19.122870273366996, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aad0>), 1: (45.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a94340>), 3: (19.24858297712521, <source.Algorithms.KNN.KNN object at 0x7f81c6a952d0>), 4: (19.739268549654852, <source.Algorithms.KNN.KNN object at 0x7f81c6a94fa0>), 7: (49.15926020691968, <source.Algorithms.KNN.KNN object at 0x7f81c6a941c0>), 10: (111.88687808592915, <source.Algorithms.KNN.KNN object at 0x7f81c6a94af0>)}
+Best ks [2, 5, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 2: (162.3359745037559, <source.Algorithms.KNN.KNN object at 0x7f81c6a38a30>), 8: (135.50868033909592, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bb20>), 4: (64.29645472250155, <source.Algorithms.KNN.KNN object at 0x7f81c6a3abc0>), 6: (82.7826318671721, <source.Algorithms.KNN.KNN object at 0x7f81c6a38730>), 3: (87.61813362806089, <source.Algorithms.KNN.KNN object at 0x7f81c6a380a0>), 1: (43.89655172413793, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aef0>), 10: (172.3614596825515, <source.Algorithms.KNN.KNN object at 0x7f81c6a38e50>), 9: (153.87298045053396, <source.Algorithms.KNN.KNN object at 0x7f81c6a39e40>), 5: (64.43559724933871, <source.Algorithms.KNN.KNN object at 0x7f81c6a388e0>), 7: (113.30717615093272, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd30>)}
+Best ks [2, 5, 1, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 6: (41.738181159753516, <source.Algorithms.KNN.KNN object at 0x7f81c6a38a30>), 9: (90.24537562362738, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aaa0>), 5: (34.89504392128467, <source.Algorithms.KNN.KNN object at 0x7f81c6a06080>), 10: (111.85289234140559, <source.Algorithms.KNN.KNN object at 0x7f81c6a384c0>), 2: (42.96978098025475, <source.Algorithms.KNN.KNN object at 0x7f81c6a94a00>), 3: (61.5991606312074, <source.Algorithms.KNN.KNN object at 0x7f81c6a94610>), 4: (47.13140210441068, <source.Algorithms.KNN.KNN object at 0x7f81c6a06950>), 7: (56.951766345123424, <source.Algorithms.KNN.KNN object at 0x7f81c6a95270>), 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81c6a940d0>), 8: (77.45841247256124, <source.Algorithms.KNN.KNN object at 0x7f81c6a94fa0>)}
+Best ks [2, 5, 1, 5, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 6: (80.40980606527522, <source.Algorithms.KNN.KNN object at 0x7f81c6a38df0>), 3: (100.60046362927083, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a3e0>), 5: (65.44922357043156, <source.Algorithms.KNN.KNN object at 0x7f81c6a39210>), 10: (150.06286548083128, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b640>), 7: (93.39815413807072, <source.Algorithms.KNN.KNN object at 0x7f81c6a39f90>), 1: (150.6206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a38eb0>), 2: (76.95682519889642, <source.Algorithms.KNN.KNN object at 0x7f81c6a391e0>), 4: (72.29357304292536, <source.Algorithms.KNN.KNN object at 0x7f81c6a06bc0>), 8: (109.34879859719491, <source.Algorithms.KNN.KNN object at 0x7f81c6a38730>), 9: (135.55394900844246, <source.Algorithms.KNN.KNN object at 0x7f81c6a38490>)}
+Best ks [2, 5, 1, 5, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (47.23124118562299, <source.Algorithms.KNN.KNN object at 0x7f81c6a38c70>), 6: (40.0817815004295, <source.Algorithms.KNN.KNN object at 0x7f81c6a39450>), 4: (53.26049216452241, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ace0>), 2: (49.019211600510395, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a170>), 10: (118.94772227143868, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ba0>), 3: (80.22964549543467, <source.Algorithms.KNN.KNN object at 0x7f81c6a94f40>), 1: (52.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a94340>), 7: (59.24190560836425, <source.Algorithms.KNN.KNN object at 0x7f81c6a06b60>), 8: (84.30313257980758, <source.Algorithms.KNN.KNN object at 0x7f81c6a95330>), 9: (104.84586957538865, <source.Algorithms.KNN.KNN object at 0x7f81c6a94ee0>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 8: (78.21776405794918, <source.Algorithms.KNN.KNN object at 0x7f81c6a39240>), 3: (66.01975143012551, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a860>), 2: (48.01416337325693, <source.Algorithms.KNN.KNN object at 0x7f81c6a39720>), 7: (52.9858790094037, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a260>), 9: (102.0383556660721, <source.Algorithms.KNN.KNN object at 0x7f81c6a39060>), 4: (47.429315240193496, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b370>), 1: (43.86206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a39f60>), 6: (37.294510044240354, <source.Algorithms.KNN.KNN object at 0x7f81c6a38c70>), 10: (118.45131943181927, <source.Algorithms.KNN.KNN object at 0x7f81c6a06bc0>), 11: (131.35483220074275, <source.Algorithms.KNN.KNN object at 0x7f81c6a95c90>), 5: (36.70341363566146, <source.Algorithms.KNN.KNN object at 0x7f81c6a960e0>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 5: (38.340324227307214, <source.Algorithms.KNN.KNN object at 0x7f81c6a07550>), 1: (179.4827586206898, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b9d0>), 9: (98.49368760302431, <source.Algorithms.KNN.KNN object at 0x7f81c6a38370>), 10: (111.49748209856143, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aad0>), 6: (35.93660617049163, <source.Algorithms.KNN.KNN object at 0x7f81c6a956c0>), 4: (53.1256508805554, <source.Algorithms.KNN.KNN object at 0x7f81c6a953c0>), 2: (174.41599810662453, <source.Algorithms.KNN.KNN object at 0x7f81c6a946d0>), 8: (78.00768565354328, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ff0>), 7: (55.09285422989918, <source.Algorithms.KNN.KNN object at 0x7f81c6a95720>), 3: (85.48861887217075, <source.Algorithms.KNN.KNN object at 0x7f81c6a94be0>), 11: (124.11311450669172, <source.Algorithms.KNN.KNN object at 0x7f81c6a94f40>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6, 5, 6]
+current range:  (0, 11)
+time to tune folds 35.22264075279236
+Sigma 0.008
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+{1: (91.75862068965517, <source.Algorithms.KNN.KNN object at 0x7f81c6a073d0>), 2: (68.76495788929402, <source.Algorithms.KNN.KNN object at 0x7f81c6a07100>), 8: (249.2207471889206, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a860>), 11: (331.7414128579566, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b9a0>), 9: (273.77122613400996, <source.Algorithms.KNN.KNN object at 0x7f81c6a39300>), 7: (221.1884569864403, <source.Algorithms.KNN.KNN object at 0x7f81c6a397e0>), 10: (306.9230575594363, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd00>), 13: (344.6682981527259, <source.Algorithms.KNN.KNN object at 0x7f81c6a39540>), 4: (79.14276917368807, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b730>), 6: (177.6706319208087, <source.Algorithms.KNN.KNN object at 0x7f81c6a3abf0>), 12: (342.7239527510908, <source.Algorithms.KNN.KNN object at 0x7f81c6a07460>), 5: (122.19265426379624, <source.Algorithms.KNN.KNN object at 0x7f81c6a95510>), 3: (81.29921371492793, <source.Algorithms.KNN.KNN object at 0x7f81c6a96890>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 4: (50.044317751206655, <source.Algorithms.KNN.KNN object at 0x7f81c6a06c80>), 1: (44.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a073d0>), 3: (65.81181306903616, <source.Algorithms.KNN.KNN object at 0x7f81c6a077f0>), 2: (50.030940455592194, <source.Algorithms.KNN.KNN object at 0x7f81c6a94f40>), 7: (58.33473364605203, <source.Algorithms.KNN.KNN object at 0x7f81c6a94a30>), 5: (37.949840179951494, <source.Algorithms.KNN.KNN object at 0x7f81c6a958d0>), 6: (45.30134441046417, <source.Algorithms.KNN.KNN object at 0x7f81c6a95cc0>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (37.55764063503857, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bcd0>), 10: (144.16394521705618, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a170>), 6: (56.18982353797425, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bf40>), 4: (37.63953776675882, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bdc0>), 7: (82.16520206301676, <source.Algorithms.KNN.KNN object at 0x7f81c6a39d80>), 8: (102.510905364039, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bfd0>), 9: (122.6326193745323, <source.Algorithms.KNN.KNN object at 0x7f81c6a39e40>), 1: (20.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a9e0>), 3: (54.50971744137297, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b640>), 2: (69.17124309182945, <source.Algorithms.KNN.KNN object at 0x7f81c6a96a70>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (54.15640257975413, <source.Algorithms.KNN.KNN object at 0x7f81c6a38490>), 6: (28.661006528113795, <source.Algorithms.KNN.KNN object at 0x7f81c6a3abf0>), 5: (19.24034629856896, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ace0>), 3: (19.241397888442023, <source.Algorithms.KNN.KNN object at 0x7f81c6a397e0>), 1: (45.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a96740>), 9: (102.33517088752916, <source.Algorithms.KNN.KNN object at 0x7f81c6a94a30>), 4: (19.75270818676475, <source.Algorithms.KNN.KNN object at 0x7f81c6a95cf0>), 8: (82.74519355729396, <source.Algorithms.KNN.KNN object at 0x7f81c6a967a0>), 2: (40.8476829288911, <source.Algorithms.KNN.KNN object at 0x7f81c6a95330>), 10: (126.8698479846857, <source.Algorithms.KNN.KNN object at 0x7f81c6a95810>)}
+Best ks [2, 5, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (65.34937976232173, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a1a0>), 1: (43.89655172413793, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aad0>), 4: (64.84171281460014, <source.Algorithms.KNN.KNN object at 0x7f81c6a393c0>), 7: (120.54613886233346, <source.Algorithms.KNN.KNN object at 0x7f81c6a39030>), 8: (146.218198935021, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b100>), 10: (187.5933684128568, <source.Algorithms.KNN.KNN object at 0x7f81c6a38a30>), 3: (87.68297073130938, <source.Algorithms.KNN.KNN object at 0x7f81c6a39f60>), 2: (162.74889812863512, <source.Algorithms.KNN.KNN object at 0x7f81c6a39960>), 6: (86.02565745640857, <source.Algorithms.KNN.KNN object at 0x7f81c6a95e40>), 9: (166.5814789554677, <source.Algorithms.KNN.KNN object at 0x7f81c6a96710>)}
+Best ks [2, 5, 1, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (59.3866838928821, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ace0>), 5: (35.142560972667724, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bf40>), 8: (83.0779908376645, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a3e0>), 3: (61.76111284689158, <source.Algorithms.KNN.KNN object at 0x7f81c6a06950>), 2: (43.08344318862087, <source.Algorithms.KNN.KNN object at 0x7f81c6a06c80>), 10: (122.55342986176882, <source.Algorithms.KNN.KNN object at 0x7f81c6a94fd0>), 4: (47.34596519184442, <source.Algorithms.KNN.KNN object at 0x7f81c6a96b60>), 6: (42.330146613948756, <source.Algorithms.KNN.KNN object at 0x7f81c6a94fa0>), 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81c6a95660>), 9: (97.78914503617736, <source.Algorithms.KNN.KNN object at 0x7f81c6a96380>)}
+Best ks [2, 5, 1, 5, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 10: (165.9948733465484, <source.Algorithms.KNN.KNN object at 0x7f81c6a38370>), 2: (77.00305785292404, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b100>), 3: (101.13234048460933, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b520>), 1: (150.6206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a39450>), 7: (98.98958435971605, <source.Algorithms.KNN.KNN object at 0x7f81c6a3abc0>), 5: (66.1389170243301, <source.Algorithms.KNN.KNN object at 0x7f81c6a3add0>), 4: (72.62244788414267, <source.Algorithms.KNN.KNN object at 0x7f81c6a398a0>), 6: (83.64948623039963, <source.Algorithms.KNN.KNN object at 0x7f81c6a96710>), 9: (148.04592970076885, <source.Algorithms.KNN.KNN object at 0x7f81c6a06da0>), 8: (117.84604925356373, <source.Algorithms.KNN.KNN object at 0x7f81c6a94be0>)}
+Best ks [2, 5, 1, 5, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (47.483659006745455, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a3e0>), 10: (129.44210641130508, <source.Algorithms.KNN.KNN object at 0x7f81c6a39090>), 4: (53.25407080151829, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd60>), 1: (52.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a39540>), 8: (89.68638517649906, <source.Algorithms.KNN.KNN object at 0x7f81c6a95c90>), 3: (80.67375356683043, <source.Algorithms.KNN.KNN object at 0x7f81c6a96620>), 2: (49.11630668817783, <source.Algorithms.KNN.KNN object at 0x7f81c6a96c50>), 7: (61.532367744308765, <source.Algorithms.KNN.KNN object at 0x7f81c6a94670>), 6: (40.38671150341635, <source.Algorithms.KNN.KNN object at 0x7f81c6a945e0>), 9: (113.23473419011987, <source.Algorithms.KNN.KNN object at 0x7f81c6a94040>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 3: (66.20202953049262, <source.Algorithms.KNN.KNN object at 0x7f81c6a06950>), 7: (55.38721313129111, <source.Algorithms.KNN.KNN object at 0x7f81c6a398a0>), 9: (110.6742633705549, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b4c0>), 4: (47.69649584815618, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a9e0>), 1: (43.86206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a38c70>), 10: (129.00330147002236, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bf40>), 8: (83.83498541300261, <source.Algorithms.KNN.KNN object at 0x7f81c6a395a0>), 2: (48.13832453452019, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a3e0>), 11: (144.2343268118551, <source.Algorithms.KNN.KNN object at 0x7f81c6a968c0>), 5: (36.95470332922808, <source.Algorithms.KNN.KNN object at 0x7f81c6a94b80>), 6: (37.8524511703623, <source.Algorithms.KNN.KNN object at 0x7f81c6a953c0>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 11: (138.0252653990783, <source.Algorithms.KNN.KNN object at 0x7f81c6a06080>), 3: (84.65985875824623, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aec0>), 9: (106.82838056903046, <source.Algorithms.KNN.KNN object at 0x7f81c6a38730>), 5: (37.87940519809616, <source.Algorithms.KNN.KNN object at 0x7f81c6a39fc0>), 2: (173.89476953050112, <source.Algorithms.KNN.KNN object at 0x7f81c6a97580>), 10: (122.62475550907315, <source.Algorithms.KNN.KNN object at 0x7f81c6a95c00>), 4: (52.52581855951361, <source.Algorithms.KNN.KNN object at 0x7f81c6a96380>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81c6a95db0>), 6: (36.54119475895331, <source.Algorithms.KNN.KNN object at 0x7f81c6a971f0>), 8: (83.38219498565077, <source.Algorithms.KNN.KNN object at 0x7f81c6a966b0>), 7: (57.67550923701477, <source.Algorithms.KNN.KNN object at 0x7f81c6a94490>)}
+Best ks [2, 5, 1, 5, 1, 5, 5, 6, 5, 6]
+current range:  (0, 11)
+time to tune folds 35.721904277801514
+Sigma 0.009000000000000001
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+{6: (186.56351034006556, <source.Algorithms.KNN.KNN object at 0x7f81c6a079d0>), 5: (126.55929181421482, <source.Algorithms.KNN.KNN object at 0x7f81c6a072e0>), 8: (263.77914475200936, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a560>), 3: (82.09691068662394, <source.Algorithms.KNN.KNN object at 0x7f81c6a39ab0>), 7: (233.48984940578683, <source.Algorithms.KNN.KNN object at 0x7f81c6a38a30>), 11: (354.27725545256493, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ba90>), 2: (68.85441545472429, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a860>), 1: (91.75862068965517, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aec0>), 10: (326.6528790148034, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b100>), 9: (290.56996388613436, <source.Algorithms.KNN.KNN object at 0x7f81c6a967d0>), 4: (80.29413704062226, <source.Algorithms.KNN.KNN object at 0x7f81c6a960e0>), 13: (371.68971100992957, <source.Algorithms.KNN.KNN object at 0x7f81c6a97670>), 12: (367.61894353160596, <source.Algorithms.KNN.KNN object at 0x7f81c6a96b60>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 3: (65.94051521737944, <source.Algorithms.KNN.KNN object at 0x7f81c6a070d0>), 7: (60.38028828082458, <source.Algorithms.KNN.KNN object at 0x7f81c6a07130>), 1: (44.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a07550>), 2: (50.125321872210996, <source.Algorithms.KNN.KNN object at 0x7f81c6a96710>), 5: (38.16068129013853, <source.Algorithms.KNN.KNN object at 0x7f81c6a97430>), 4: (50.25586907908169, <source.Algorithms.KNN.KNN object at 0x7f81c6a96bc0>), 6: (45.79265434165048, <source.Algorithms.KNN.KNN object at 0x7f81c6a94550>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 8: (110.63496297067223, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a380>), 5: (37.81876427030086, <source.Algorithms.KNN.KNN object at 0x7f81c6a38a30>), 7: (87.29167898485376, <source.Algorithms.KNN.KNN object at 0x7f81c6a3add0>), 1: (20.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b760>), 6: (58.11214084485235, <source.Algorithms.KNN.KNN object at 0x7f81c6a38700>), 10: (156.48102889387783, <source.Algorithms.KNN.KNN object at 0x7f81c6a39330>), 3: (54.80345986319548, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b160>), 2: (69.40748510738877, <source.Algorithms.KNN.KNN object at 0x7f81c6a94fa0>), 4: (37.67104352984873, <source.Algorithms.KNN.KNN object at 0x7f81c6a073d0>), 9: (132.64153454767853, <source.Algorithms.KNN.KNN object at 0x7f81c6a97250>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 8: (90.2033015452309, <source.Algorithms.KNN.KNN object at 0x7f81c6a38730>), 4: (19.76467586387651, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bb20>), 7: (58.561816000364445, <source.Algorithms.KNN.KNN object at 0x7f81c6a398d0>), 2: (40.87312526012869, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd60>), 3: (19.235911849956057, <source.Algorithms.KNN.KNN object at 0x7f81c6a95fc0>), 6: (30.04262407062755, <source.Algorithms.KNN.KNN object at 0x7f81c6a97490>), 1: (45.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a97280>), 9: (112.02178910747745, <source.Algorithms.KNN.KNN object at 0x7f81c6a977f0>), 5: (19.34269720844612, <source.Algorithms.KNN.KNN object at 0x7f81c6a96aa0>), 10: (139.87803600046385, <source.Algorithms.KNN.KNN object at 0x7f81c6a97ac0>)}
+Best ks [2, 5, 1, 3]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (87.73295944326566, <source.Algorithms.KNN.KNN object at 0x7f81c6b87310>), 6: (88.7495094340634, <source.Algorithms.KNN.KNN object at 0x7f81c6b87640>), 1: (43.89655172413793, <source.Algorithms.KNN.KNN object at 0x7f81c6b87e80>), 8: (155.2956520099318, <source.Algorithms.KNN.KNN object at 0x7f81c6a05c30>), 5: (66.09051698053034, <source.Algorithms.KNN.KNN object at 0x7f81c6a05e70>), 2: (163.07067094064442, <source.Algorithms.KNN.KNN object at 0x7f81c6ba0bb0>), 7: (126.68384096041191, <source.Algorithms.KNN.KNN object at 0x7f81c6ba0e20>), 9: (177.2873037615658, <source.Algorithms.KNN.KNN object at 0x7f81c6a3abf0>), 10: (200.4190019332166, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ba90>), 4: (65.2838905036701, <source.Algorithms.KNN.KNN object at 0x7f81c6a3abc0>)}
+Best ks [2, 5, 1, 3, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 10: (131.74258040019228, <source.Algorithms.KNN.KNN object at 0x7f81c6a96800>), 8: (87.91421389209152, <source.Algorithms.KNN.KNN object at 0x7f81c6a95780>), 7: (61.464597802261075, <source.Algorithms.KNN.KNN object at 0x7f81c6a95480>), 9: (104.27401283792273, <source.Algorithms.KNN.KNN object at 0x7f81c6a94610>), 2: (43.1720672275948, <source.Algorithms.KNN.KNN object at 0x7f81c6a97640>), 4: (47.51617623594766, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ae0>), 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81c6ba0e20>), 3: (61.887401167742915, <source.Algorithms.KNN.KNN object at 0x7f81c6a06aa0>), 6: (42.81705868951664, <source.Algorithms.KNN.KNN object at 0x7f81c6a39060>), 5: (35.346851543188166, <source.Algorithms.KNN.KNN object at 0x7f81c6b87280>)}
+Best ks [2, 5, 1, 3, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 8: (125.19786832164515, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b4c0>), 5: (66.6985209153446, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aef0>), 9: (158.87686239524993, <source.Algorithms.KNN.KNN object at 0x7f81c6a380d0>), 3: (101.55351372976843, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b940>), 7: (103.78822152172472, <source.Algorithms.KNN.KNN object at 0x7f81c6a97c10>), 2: (77.0390391558588, <source.Algorithms.KNN.KNN object at 0x7f81c6a96b30>), 4: (72.88705696651228, <source.Algorithms.KNN.KNN object at 0x7f81c6a95fc0>), 1: (150.6206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a95300>), 6: (86.40611682781021, <source.Algorithms.KNN.KNN object at 0x7f81c6a972b0>), 10: (179.87693615138306, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b5e0>)}
+Best ks [2, 5, 1, 3, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (63.48939611543064, <source.Algorithms.KNN.KNN object at 0x7f81c6a97fd0>), 5: (47.68739317640652, <source.Algorithms.KNN.KNN object at 0x7f81c6a971f0>), 10: (138.43683525074184, <source.Algorithms.KNN.KNN object at 0x7f81c6a073d0>), 1: (52.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a07f40>), 9: (120.46065400766929, <source.Algorithms.KNN.KNN object at 0x7f81c6a061a0>), 8: (94.31874476485521, <source.Algorithms.KNN.KNN object at 0x7f81c6a3add0>), 3: (81.0231771590024, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a170>), 6: (40.64517723559612, <source.Algorithms.KNN.KNN object at 0x7f81c6a38730>), 2: (49.19217890462927, <source.Algorithms.KNN.KNN object at 0x7f81c6a05a20>), 4: (53.24510542575557, <source.Algorithms.KNN.KNN object at 0x7f81c6a39090>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 5: (37.157622368013485, <source.Algorithms.KNN.KNN object at 0x7f81c6a94550>), 4: (47.90800855990247, <source.Algorithms.KNN.KNN object at 0x7f81c6a97370>), 11: (155.23825952508304, <source.Algorithms.KNN.KNN object at 0x7f81c6a975b0>), 3: (66.34420194604662, <source.Algorithms.KNN.KNN object at 0x7f81c6a97550>), 10: (138.01265892106656, <source.Algorithms.KNN.KNN object at 0x7f81c6a95120>), 7: (57.42590807010053, <source.Algorithms.KNN.KNN object at 0x7f81c6a95240>), 1: (43.86206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ae0>), 8: (88.65130068430103, <source.Algorithms.KNN.KNN object at 0x7f81c6a971f0>), 9: (118.08335149245822, <source.Algorithms.KNN.KNN object at 0x7f81c6a96e30>), 6: (38.30802961229016, <source.Algorithms.KNN.KNN object at 0x7f81c6a975e0>), 2: (48.23513776256489, <source.Algorithms.KNN.KNN object at 0x7f81e4f20550>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 9: (114.58733786011335, <source.Algorithms.KNN.KNN object at 0x7f81c6a39ab0>), 7: (60.15977789479912, <source.Algorithms.KNN.KNN object at 0x7f81c6a39d80>), 4: (52.077046011820656, <source.Algorithms.KNN.KNN object at 0x7f81c6a388e0>), 5: (37.567134101323155, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a470>), 3: (84.02202168661539, <source.Algorithms.KNN.KNN object at 0x7f81c6a39030>), 11: (150.88563382242162, <source.Algorithms.KNN.KNN object at 0x7f81c6a96c50>), 2: (173.4910555538637, <source.Algorithms.KNN.KNN object at 0x7f81c6a97be0>), 6: (37.20793205189094, <source.Algorithms.KNN.KNN object at 0x7f81c6a95b70>), 10: (132.9159469668456, <source.Algorithms.KNN.KNN object at 0x7f81c6a97370>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81c6a95e40>), 8: (88.43037383560448, <source.Algorithms.KNN.KNN object at 0x7f81e4f20190>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5, 6]
+current range:  (0, 11)
+time to tune folds 35.78379845619202
+Sigma 0.01
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  13
+k:  12
+{6: (194.04500543130786, <source.Algorithms.KNN.KNN object at 0x7f81c6a97b20>), 2: (68.92613270151888, <source.Algorithms.KNN.KNN object at 0x7f81c6a94fa0>), 8: (275.96352074067084, <source.Algorithms.KNN.KNN object at 0x7f81c6a94610>), 4: (81.23258996089226, <source.Algorithms.KNN.KNN object at 0x7f81c6a975e0>), 11: (373.11356215902777, <source.Algorithms.KNN.KNN object at 0x7f81c6a96140>), 3: (82.74912159050203, <source.Algorithms.KNN.KNN object at 0x7f81c6ba1120>), 9: (304.6034688340193, <source.Algorithms.KNN.KNN object at 0x7f81c6ba1060>), 1: (91.75862068965517, <source.Algorithms.KNN.KNN object at 0x7f81c6a971f0>), 5: (130.2171494495734, <source.Algorithms.KNN.KNN object at 0x7f81c6a05d80>), 10: (343.1247934390006, <source.Algorithms.KNN.KNN object at 0x7f81c6ba0e20>), 13: (394.6933583393635, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b520>), 12: (388.58204973185127, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a560>), 7: (243.8158075921945, <source.Algorithms.KNN.KNN object at 0x7f81c6a96b30>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 1: (44.9655172413793, <source.Algorithms.KNN.KNN object at 0x7f81c6a95b40>), 2: (50.20097915441374, <source.Algorithms.KNN.KNN object at 0x7f81c6a97d60>), 6: (46.19982825349947, <source.Algorithms.KNN.KNN object at 0x7f81c6a97b20>), 5: (38.33434411675141, <source.Algorithms.KNN.KNN object at 0x7f81c6a95e40>), 7: (62.13203595942097, <source.Algorithms.KNN.KNN object at 0x7f81e4f20640>), 3: (66.04369055585911, <source.Algorithms.KNN.KNN object at 0x7f81e4f20550>), 4: (50.42749529032597, <source.Algorithms.KNN.KNN object at 0x7f81e4f21210>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 4: (37.694129556034646, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aaa0>), 6: (59.77912454526243, <source.Algorithms.KNN.KNN object at 0x7f81c6a05cf0>), 3: (55.041410601966746, <source.Algorithms.KNN.KNN object at 0x7f81c6a07010>), 2: (69.59691215116999, <source.Algorithms.KNN.KNN object at 0x7f81c6ba1120>), 10: (167.08120339928567, <source.Algorithms.KNN.KNN object at 0x7f81c6a96380>), 5: (38.0327318274031, <source.Algorithms.KNN.KNN object at 0x7f81c6a96140>), 1: (20.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a38c70>), 8: (117.6887522731546, <source.Algorithms.KNN.KNN object at 0x7f81c6a39450>), 7: (91.75447246134804, <source.Algorithms.KNN.KNN object at 0x7f81c6a97160>), 9: (141.2719907741449, <source.Algorithms.KNN.KNN object at 0x7f81c6a94610>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 1: (45.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a3add0>), 3: (19.23158843385448, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a020>), 4: (19.77526228307278, <source.Algorithms.KNN.KNN object at 0x7f81c6a06b60>), 2: (40.893497790384636, <source.Algorithms.KNN.KNN object at 0x7f81c6a06aa0>), 7: (62.440496382498104, <source.Algorithms.KNN.KNN object at 0x7f81c6a07a90>), 10: (151.17305116121204, <source.Algorithms.KNN.KNN object at 0x7f81e4f20bb0>), 5: (19.432133076873985, <source.Algorithms.KNN.KNN object at 0x7f81e4f21480>), 8: (96.72802576683002, <source.Algorithms.KNN.KNN object at 0x7f81e4f20b80>), 6: (31.270023741325186, <source.Algorithms.KNN.KNN object at 0x7f81e4f215a0>), 9: (120.44038044698516, <source.Algorithms.KNN.KNN object at 0x7f81e4f21060>)}
+Best ks [2, 5, 1, 3]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 2: (163.3284718563557, <source.Algorithms.KNN.KNN object at 0x7f81c6a97fa0>), 9: (186.3798154561839, <source.Algorithms.KNN.KNN object at 0x7f81c6a94610>), 4: (65.64931859307835, <source.Algorithms.KNN.KNN object at 0x7f81c6a95b40>), 3: (87.7726716977006, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bfd0>), 6: (91.06279388416166, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b100>), 5: (66.70280594864109, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ed0>), 1: (43.89655172413793, <source.Algorithms.KNN.KNN object at 0x7f81c6a395a0>), 7: (131.93122905319905, <source.Algorithms.KNN.KNN object at 0x7f81c6a3ba90>), 8: (163.04806982667557, <source.Algorithms.KNN.KNN object at 0x7f81c6a39fc0>), 10: (211.30106961811305, <source.Algorithms.KNN.KNN object at 0x7f81c6a06e90>)}
+Best ks [2, 5, 1, 3, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (61.988637390199955, <source.Algorithms.KNN.KNN object at 0x7f81c6a95cf0>), 9: (109.87404730521244, <source.Algorithms.KNN.KNN object at 0x7f81c6a97160>), 5: (35.51806652326321, <source.Algorithms.KNN.KNN object at 0x7f81c6a97640>), 10: (139.66585336766042, <source.Algorithms.KNN.KNN object at 0x7f81c6a97220>), 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81e4f21b10>), 8: (92.09785522941291, <source.Algorithms.KNN.KNN object at 0x7f81e4f21030>), 2: (43.2431047578037, <source.Algorithms.KNN.KNN object at 0x7f81e4f21300>), 7: (63.251564142292196, <source.Algorithms.KNN.KNN object at 0x7f81e4f20280>), 4: (47.65446911534791, <source.Algorithms.KNN.KNN object at 0x7f81e4f20a60>), 6: (43.223815845784884, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ff0>)}
+Best ks [2, 5, 1, 3, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 10: (191.9705705859654, <source.Algorithms.KNN.KNN object at 0x7f81c6a38670>), 9: (168.2816995395385, <source.Algorithms.KNN.KNN object at 0x7f81c6a398a0>), 3: (101.89521133693364, <source.Algorithms.KNN.KNN object at 0x7f81c6ba1060>), 1: (150.6206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a39030>), 6: (88.77139567254196, <source.Algorithms.KNN.KNN object at 0x7f81c6b87370>), 4: (73.10450412621826, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ae0>), 7: (107.92882692929408, <source.Algorithms.KNN.KNN object at 0x7f81c6a97d60>), 5: (67.16103579573232, <source.Algorithms.KNN.KNN object at 0x7f81c6a95db0>), 2: (77.06783833254514, <source.Algorithms.KNN.KNN object at 0x7f81c6a97190>), 8: (131.5763147572922, <source.Algorithms.KNN.KNN object at 0x7f81c6b87340>)}
+Best ks [2, 5, 1, 3, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (47.85528121153744, <source.Algorithms.KNN.KNN object at 0x7f81c6a3add0>), 10: (146.18022715104718, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b3d0>), 7: (65.17348472234168, <source.Algorithms.KNN.KNN object at 0x7f81c6a3beb0>), 1: (52.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a39d80>), 8: (98.32513066724003, <source.Algorithms.KNN.KNN object at 0x7f81e4f211e0>), 2: (49.25309987261715, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a1a0>), 3: (81.30525089978754, <source.Algorithms.KNN.KNN object at 0x7f81e4f218d0>), 9: (126.7103162806262, <source.Algorithms.KNN.KNN object at 0x7f81e4f202b0>), 4: (53.23544068949215, <source.Algorithms.KNN.KNN object at 0x7f81c6a39330>), 6: (40.866149097728666, <source.Algorithms.KNN.KNN object at 0x7f81e4f21b40>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 4: (48.07958481566158, <source.Algorithms.KNN.KNN object at 0x7f81c6a97190>), 1: (43.86206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ab0>), 8: (92.80610154858566, <source.Algorithms.KNN.KNN object at 0x7f81c6a96830>), 2: (48.31274129467093, <source.Algorithms.KNN.KNN object at 0x7f81c6a061a0>), 6: (38.68652877182902, <source.Algorithms.KNN.KNN object at 0x7f81c6a06da0>), 7: (59.172209832044004, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b9d0>), 9: (124.47311354924778, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd30>), 5: (37.32484349483443, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b760>), 3: (66.45819255771573, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b640>), 10: (145.74737284234058, <source.Algorithms.KNN.KNN object at 0x7f81c6a38220>), 11: (164.68444956802512, <source.Algorithms.KNN.KNN object at 0x7f81e4f21cc0>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 5: (37.34919617973879, <source.Algorithms.KNN.KNN object at 0x7f81c6a950f0>), 6: (37.87982310641036, <source.Algorithms.KNN.KNN object at 0x7f81c6a966b0>), 4: (51.72928426474681, <source.Algorithms.KNN.KNN object at 0x7f81c6a97190>), 2: (173.16922647435973, <source.Algorithms.KNN.KNN object at 0x7f81c6a96770>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81e4f21930>), 11: (162.59896944328605, <source.Algorithms.KNN.KNN object at 0x7f81e4f20af0>), 9: (121.70203549876535, <source.Algorithms.KNN.KNN object at 0x7f81c6a97c10>), 7: (62.486927910779656, <source.Algorithms.KNN.KNN object at 0x7f81e4f20190>), 8: (93.0898794827859, <source.Algorithms.KNN.KNN object at 0x7f81e4f22200>), 10: (142.29890271182674, <source.Algorithms.KNN.KNN object at 0x7f81e4f20280>), 3: (83.51602354266444, <source.Algorithms.KNN.KNN object at 0x7f81e4f217e0>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5, 5]
+current range:  (0, 11)
+time to tune folds 35.73681926727295
+Sigma 0.011
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+{6: (200.41391419879545, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b4c0>), 4: (82.01167340029728, <source.Algorithms.KNN.KNN object at 0x7f81c6a3add0>), 1: (91.75862068965517, <source.Algorithms.KNN.KNN object at 0x7f81c6a39450>), 2: (68.98491019270944, <source.Algorithms.KNN.KNN object at 0x7f81c6a38670>), 8: (286.28202945353087, <source.Algorithms.KNN.KNN object at 0x7f81c6a398d0>), 5: (133.32182692130874, <source.Algorithms.KNN.KNN object at 0x7f81c6a38eb0>), 11: (389.03124360253673, <source.Algorithms.KNN.KNN object at 0x7f81c6a96b90>), 3: (83.29214575678857, <source.Algorithms.KNN.KNN object at 0x7f81c6a94400>), 10: (357.03555877774323, <source.Algorithms.KNN.KNN object at 0x7f81c6a97640>), 7: (252.58579900408307, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd30>), 12: (406.4070368275536, <source.Algorithms.KNN.KNN object at 0x7f81c6a395a0>), 13: (414.44119136608384, <source.Algorithms.KNN.KNN object at 0x7f81e4f206a0>), 9: (316.46494611649484, <source.Algorithms.KNN.KNN object at 0x7f81e4f202e0>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 2: (50.262980941435735, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bfd0>), 3: (66.12824811222518, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bb20>), 7: (63.64566611076445, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aaa0>), 6: (46.542521870072235, <source.Algorithms.KNN.KNN object at 0x7f81e4f201f0>), 4: (50.56951020330377, <source.Algorithms.KNN.KNN object at 0x7f81e4f21030>), 5: (38.479828879772946, <source.Algorithms.KNN.KNN object at 0x7f81e4f22950>), 1: (44.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a380d0>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (38.21124735609502, <source.Algorithms.KNN.KNN object at 0x7f81c6a05d80>), 8: (123.84439543730888, <source.Algorithms.KNN.KNN object at 0x7f81c6a06ad0>), 4: (37.711601489550446, <source.Algorithms.KNN.KNN object at 0x7f81c6a06fb0>), 9: (148.75761324606302, <source.Algorithms.KNN.KNN object at 0x7f81c6a05c30>), 10: (176.25668836296884, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b640>), 1: (20.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a3aef0>), 3: (55.23806004508728, <source.Algorithms.KNN.KNN object at 0x7f81c6a398a0>), 7: (95.65973187158443, <source.Algorithms.KNN.KNN object at 0x7f81c6a38730>), 2: (69.75218391698458, <source.Algorithms.KNN.KNN object at 0x7f81e4f22b90>), 6: (61.23436494562539, <source.Algorithms.KNN.KNN object at 0x7f81e4f21330>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 9: (127.78466927397704, <source.Algorithms.KNN.KNN object at 0x7f81c6b87e80>), 3: (19.228094829704887, <source.Algorithms.KNN.KNN object at 0x7f81c6b87310>), 5: (19.51065693441984, <source.Algorithms.KNN.KNN object at 0x7f81c6b86da0>), 8: (102.45312163637503, <source.Algorithms.KNN.KNN object at 0x7f81c6b87640>), 1: (45.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81e4f21f30>), 7: (65.86291563027346, <source.Algorithms.KNN.KNN object at 0x7f81c6a94670>), 4: (19.78462431487, <source.Algorithms.KNN.KNN object at 0x7f81e4f22680>), 2: (40.91017851590395, <source.Algorithms.KNN.KNN object at 0x7f81e4f226e0>), 6: (32.361023273401145, <source.Algorithms.KNN.KNN object at 0x7f81c6a95de0>), 10: (161.0161782580624, <source.Algorithms.KNN.KNN object at 0x7f81e4f23010>)}
+Best ks [2, 5, 1, 3]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 10: (220.61494990341748, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a170>), 7: (136.45652971620686, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a470>), 6: (93.04808767248669, <source.Algorithms.KNN.KNN object at 0x7f81c6a96590>), 3: (87.80497853008137, <source.Algorithms.KNN.KNN object at 0x7f81c6a97e20>), 5: (67.21667580608091, <source.Algorithms.KNN.KNN object at 0x7f81c6a953c0>), 4: (65.95618470977602, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ab0>), 2: (163.53965201795677, <source.Algorithms.KNN.KNN object at 0x7f81c6a07550>), 1: (43.89655172413793, <source.Algorithms.KNN.KNN object at 0x7f81c6a07a90>), 9: (194.17150748770612, <source.Algorithms.KNN.KNN object at 0x7f81e4f209d0>), 8: (169.72427566871374, <source.Algorithms.KNN.KNN object at 0x7f81c6a39090>)}
+Best ks [2, 5, 1, 3, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (62.071603206897855, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a590>), 2: (43.301317617934025, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd60>), 7: (64.80075037563327, <source.Algorithms.KNN.KNN object at 0x7f81c6a39d80>), 6: (43.568280509408545, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bb20>), 10: (146.5387627454324, <source.Algorithms.KNN.KNN object at 0x7f81e4f218d0>), 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81e4f226e0>), 4: (47.76903614063306, <source.Algorithms.KNN.KNN object at 0x7f81e4f21960>), 5: (35.66349423410694, <source.Algorithms.KNN.KNN object at 0x7f81e4f22260>), 8: (95.74026544530582, <source.Algorithms.KNN.KNN object at 0x7f81e4f22c20>), 9: (114.73994847282208, <source.Algorithms.KNN.KNN object at 0x7f81e4f20220>)}
+Best ks [2, 5, 1, 3, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 2: (77.09141059497138, <source.Algorithms.KNN.KNN object at 0x7f81c6a39450>), 3: (102.17794825512293, <source.Algorithms.KNN.KNN object at 0x7f81c6a38eb0>), 5: (67.54937040450079, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a590>), 4: (73.28633640926218, <source.Algorithms.KNN.KNN object at 0x7f81c6a3abc0>), 1: (150.6206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a970d0>), 9: (176.48328849603215, <source.Algorithms.KNN.KNN object at 0x7f81c6a953c0>), 6: (90.81826993893314, <source.Algorithms.KNN.KNN object at 0x7f81c6a39090>), 10: (202.540011603283, <source.Algorithms.KNN.KNN object at 0x7f81e4f23340>), 7: (111.52561578199374, <source.Algorithms.KNN.KNN object at 0x7f81c6a95840>), 8: (137.13804390417616, <source.Algorithms.KNN.KNN object at 0x7f81e4f200a0>)}
+Best ks [2, 5, 1, 3, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 8: (101.81233980033304, <source.Algorithms.KNN.KNN object at 0x7f81c6a38670>), 9: (132.14749753888543, <source.Algorithms.KNN.KNN object at 0x7f81c6a386d0>), 4: (53.22589315743132, <source.Algorithms.KNN.KNN object at 0x7f81c6a39060>), 2: (49.303092012057256, <source.Algorithms.KNN.KNN object at 0x7f81c6a39450>), 1: (52.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81e4f234c0>), 5: (47.99601057233445, <source.Algorithms.KNN.KNN object at 0x7f81e4f21300>), 10: (152.8884858165741, <source.Algorithms.KNN.KNN object at 0x7f81e4f21900>), 3: (81.53771985430932, <source.Algorithms.KNN.KNN object at 0x7f81e4f22260>), 6: (41.05674516104782, <source.Algorithms.KNN.KNN object at 0x7f81e4f22c20>), 7: (66.63396685915677, <source.Algorithms.KNN.KNN object at 0x7f81e4f226e0>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 4: (48.221546183339576, <source.Algorithms.KNN.KNN object at 0x7f81c6a06da0>), 1: (43.86206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a071f0>), 5: (37.46498859634564, <source.Algorithms.KNN.KNN object at 0x7f81c6a38850>), 8: (96.41557924268753, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd30>), 9: (130.0202440999596, <source.Algorithms.KNN.KNN object at 0x7f81c6a39000>), 6: (39.00570223675196, <source.Algorithms.KNN.KNN object at 0x7f81c6a07df0>), 10: (152.43435203659158, <source.Algorithms.KNN.KNN object at 0x7f81c6a073d0>), 7: (60.68141250212455, <source.Algorithms.KNN.KNN object at 0x7f81e4f23250>), 11: (172.84703462724295, <source.Algorithms.KNN.KNN object at 0x7f81e4f237f0>), 2: (48.376335997069724, <source.Algorithms.KNN.KNN object at 0x7f81e4f20940>), 3: (66.55162483534873, <source.Algorithms.KNN.KNN object at 0x7f81e4f23130>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 7: (64.63791878016663, <source.Algorithms.KNN.KNN object at 0x7f81c6a07010>), 8: (97.35315295705854, <source.Algorithms.KNN.KNN object at 0x7f81c6a071f0>), 4: (51.45222634261227, <source.Algorithms.KNN.KNN object at 0x7f81c6a07df0>), 5: (37.19354304813014, <source.Algorithms.KNN.KNN object at 0x7f81c6a386d0>), 10: (150.79521916104147, <source.Algorithms.KNN.KNN object at 0x7f81e4f21870>), 6: (38.529353593970264, <source.Algorithms.KNN.KNN object at 0x7f81e4f22680>), 2: (172.90670863916048, <source.Algorithms.KNN.KNN object at 0x7f81c6a06fb0>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81e4f22050>), 3: (83.10485663018947, <source.Algorithms.KNN.KNN object at 0x7f81e4f235e0>), 9: (128.17749644786502, <source.Algorithms.KNN.KNN object at 0x7f81e4f229e0>), 11: (173.1915532522258, <source.Algorithms.KNN.KNN object at 0x7f81e4f23040>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5, 5]
+current range:  (0, 11)
+time to tune folds 36.14498805999756
+Sigma 0.012
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+{5: (135.98767431343862, <source.Algorithms.KNN.KNN object at 0x7f81e4f22f80>), 4: (82.66851350556296, <source.Algorithms.KNN.KNN object at 0x7f81e4f205e0>), 1: (91.75862068965517, <source.Algorithms.KNN.KNN object at 0x7f81e4f23070>), 7: (260.1148492432093, <source.Algorithms.KNN.KNN object at 0x7f81e4f21330>), 6: (205.89403957288897, <source.Algorithms.KNN.KNN object at 0x7f81e4f211e0>), 13: (431.53711167766056, <source.Algorithms.KNN.KNN object at 0x7f81e4f21e40>), 12: (421.7096848390455, <source.Algorithms.KNN.KNN object at 0x7f81e4f23dc0>), 10: (368.9117120030441, <source.Algorithms.KNN.KNN object at 0x7f81e4f23520>), 3: (83.75118392943943, <source.Algorithms.KNN.KNN object at 0x7f81e4f23f70>), 8: (295.11635016743134, <source.Algorithms.KNN.KNN object at 0x7f81e4f204c0>), 2: (69.03395988536099, <source.Algorithms.KNN.KNN object at 0x7f81e4f23490>), 9: (326.6009502944264, <source.Algorithms.KNN.KNN object at 0x7f81c6a95480>), 11: (402.6251852034612, <source.Algorithms.KNN.KNN object at 0x7f81c6a953c0>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 3: (66.19881000951855, <source.Algorithms.KNN.KNN object at 0x7f81e4f23640>), 4: (50.68896063983675, <source.Algorithms.KNN.KNN object at 0x7f81c6a07010>), 5: (38.603458002142354, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a3e0>), 7: (64.96466910953237, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bb20>), 2: (50.31471798043927, <source.Algorithms.KNN.KNN object at 0x7f81c6a06b60>), 1: (44.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a39d80>), 6: (46.83478219417768, <source.Algorithms.KNN.KNN object at 0x7f81c6a071f0>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (99.09706149175435, <source.Algorithms.KNN.KNN object at 0x7f81e4f23190>), 4: (37.72517970358142, <source.Algorithms.KNN.KNN object at 0x7f81e4f23970>), 9: (155.2931318566982, <source.Algorithms.KNN.KNN object at 0x7f81e4f22b60>), 2: (69.88177336374034, <source.Algorithms.KNN.KNN object at 0x7f81e4f23910>), 5: (38.36244068433093, <source.Algorithms.KNN.KNN object at 0x7f81e4f23fa0>), 1: (20.96551724137926, <source.Algorithms.KNN.KNN object at 0x7f81e4f20e50>), 6: (62.513356690584786, <source.Algorithms.KNN.KNN object at 0x7f81e4f23340>), 3: (55.403287755123074, <source.Algorithms.KNN.KNN object at 0x7f81e4f22b30>), 8: (129.24786582827446, <source.Algorithms.KNN.KNN object at 0x7f81e4f230a0>), 10: (184.25170063964865, <source.Algorithms.KNN.KNN object at 0x7f81e4f23b80>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 2: (40.92408754346795, <source.Algorithms.KNN.KNN object at 0x7f81c6a06aa0>), 5: (19.579977617030895, <source.Algorithms.KNN.KNN object at 0x7f81c6a05d80>), 7: (68.89432700532355, <source.Algorithms.KNN.KNN object at 0x7f81c6a97490>), 1: (45.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81c6a96c20>), 6: (33.333340597180765, <source.Algorithms.KNN.KNN object at 0x7f81e4f22f80>), 3: (19.225213834435273, <source.Algorithms.KNN.KNN object at 0x7f81e4f21ff0>), 10: (169.63840031509903, <source.Algorithms.KNN.KNN object at 0x7f81e4f20070>), 9: (134.22517669388972, <source.Algorithms.KNN.KNN object at 0x7f81e4f22f50>), 4: (19.79292523044913, <source.Algorithms.KNN.KNN object at 0x7f81e4f68400>), 8: (107.49920461985378, <source.Algorithms.KNN.KNN object at 0x7f81e4f68640>)}
+Best ks [2, 5, 1, 3]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (87.83177328614009, <source.Algorithms.KNN.KNN object at 0x7f81e4f23670>), 5: (67.65381623413323, <source.Algorithms.KNN.KNN object at 0x7f81e4f23610>), 8: (175.5214153534092, <source.Algorithms.KNN.KNN object at 0x7f81e4f21960>), 7: (140.39201518107143, <source.Algorithms.KNN.KNN object at 0x7f81e4f234f0>), 10: (228.65675906259952, <source.Algorithms.KNN.KNN object at 0x7f81e4f21570>), 1: (43.89655172413793, <source.Algorithms.KNN.KNN object at 0x7f81c6a39e40>), 6: (94.76835777980406, <source.Algorithms.KNN.KNN object at 0x7f81c6a39d80>), 2: (163.71580834605967, <source.Algorithms.KNN.KNN object at 0x7f81c6a397b0>), 4: (66.21740963911779, <source.Algorithms.KNN.KNN object at 0x7f81c6a38a30>), 9: (200.90770055392255, <source.Algorithms.KNN.KNN object at 0x7f81c6a38670>)}
+Best ks [2, 5, 1, 3, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (66.1543474318075, <source.Algorithms.KNN.KNN object at 0x7f81e4f23490>), 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81e4f22230>), 3: (62.140835162369136, <source.Algorithms.KNN.KNN object at 0x7f81e4f23a90>), 10: (152.54035727100987, <source.Algorithms.KNN.KNN object at 0x7f81e4f213c0>), 6: (43.863501388644, <source.Algorithms.KNN.KNN object at 0x7f81e4f217e0>), 4: (47.86549147242277, <source.Algorithms.KNN.KNN object at 0x7f81e4f21b10>), 2: (43.34989095648394, <source.Algorithms.KNN.KNN object at 0x7f81c6a96b90>), 9: (118.9962688560984, <source.Algorithms.KNN.KNN object at 0x7f81c6a94340>), 8: (98.93285227801488, <source.Algorithms.KNN.KNN object at 0x7f81e4f64640>), 5: (35.78847051859669, <source.Algorithms.KNN.KNN object at 0x7f81e4f64ac0>)}
+Best ks [2, 5, 1, 3, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (114.67189666231081, <source.Algorithms.KNN.KNN object at 0x7f81c6a95fc0>), 10: (211.82130281882615, <source.Algorithms.KNN.KNN object at 0x7f81c6a96c20>), 1: (150.6206896551724, <source.Algorithms.KNN.KNN object at 0x7f81e4f20e50>), 6: (92.60414665173477, <source.Algorithms.KNN.KNN object at 0x7f81e4f22b60>), 2: (77.11106051509118, <source.Algorithms.KNN.KNN object at 0x7f81e4f23d30>), 8: (142.01618323844383, <source.Algorithms.KNN.KNN object at 0x7f81e4f23670>), 5: (67.87985097106495, <source.Algorithms.KNN.KNN object at 0x7f81e4f229e0>), 4: (73.44062446207208, <source.Algorithms.KNN.KNN object at 0x7f81c6a06aa0>), 3: (102.41574960151172, <source.Algorithms.KNN.KNN object at 0x7f81e4f21000>), 9: (183.67471218806915, <source.Algorithms.KNN.KNN object at 0x7f81e4f22fb0>)}
+Best ks [2, 5, 1, 3, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (67.9102605988219, <source.Algorithms.KNN.KNN object at 0x7f81c6a97c10>), 8: (104.868151312023, <source.Algorithms.KNN.KNN object at 0x7f81c6a97fa0>), 5: (48.115671882983456, <source.Algorithms.KNN.KNN object at 0x7f81c6a95480>), 3: (81.73260277120268, <source.Algorithms.KNN.KNN object at 0x7f81e4f23970>), 2: (49.34485375636702, <source.Algorithms.KNN.KNN object at 0x7f81e4f234c0>), 9: (136.90851847203285, <source.Algorithms.KNN.KNN object at 0x7f81e4f238b0>), 10: (158.7401686795134, <source.Algorithms.KNN.KNN object at 0x7f81e4f22710>), 4: (53.216815150063184, <source.Algorithms.KNN.KNN object at 0x7f81c6a97ee0>), 6: (41.222544714899975, <source.Algorithms.KNN.KNN object at 0x7f81e4f64070>), 1: (52.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81e4f64670>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 11: (179.95103440843152, <source.Algorithms.KNN.KNN object at 0x7f81e4f22290>), 2: (48.429400829115565, <source.Algorithms.KNN.KNN object at 0x7f81e4f22590>), 4: (48.340943247565164, <source.Algorithms.KNN.KNN object at 0x7f81e4f21930>), 9: (134.86943042033187, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a860>), 5: (37.58412022074471, <source.Algorithms.KNN.KNN object at 0x7f81e4f21540>), 10: (158.2581698287105, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a380>), 7: (61.99674570118027, <source.Algorithms.KNN.KNN object at 0x7f81c6a386d0>), 6: (39.2783220045581, <source.Algorithms.KNN.KNN object at 0x7f81c6a3b3d0>), 3: (66.62960013402287, <source.Algorithms.KNN.KNN object at 0x7f81c6a05db0>), 1: (43.86206896551724, <source.Algorithms.KNN.KNN object at 0x7f81c6a96a10>), 8: (99.57386823098922, <source.Algorithms.KNN.KNN object at 0x7f81e4f64d90>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 6: (39.144056047646224, <source.Algorithms.KNN.KNN object at 0x7f81e4f23eb0>), 9: (134.0530818604148, <source.Algorithms.KNN.KNN object at 0x7f81e4f213c0>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81e4f21030>), 2: (172.68851488343108, <source.Algorithms.KNN.KNN object at 0x7f81e4f23640>), 4: (51.22650054681249, <source.Algorithms.KNN.KNN object at 0x7f81e4f21540>), 10: (158.46881400586088, <source.Algorithms.KNN.KNN object at 0x7f81e4f21930>), 7: (66.61313810252891, <source.Algorithms.KNN.KNN object at 0x7f81e4f229e0>), 8: (101.23875899619709, <source.Algorithms.KNN.KNN object at 0x7f81e4f23670>), 11: (182.744696335188, <source.Algorithms.KNN.KNN object at 0x7f81e4f64a90>), 5: (37.08035814181804, <source.Algorithms.KNN.KNN object at 0x7f81e4f640a0>), 3: (82.76416786866952, <source.Algorithms.KNN.KNN object at 0x7f81e4f65360>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5, 5]
+current range:  (0, 11)
+time to tune folds 36.86338710784912
+Sigma 0.013000000000000001
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+{10: (379.1526630222659, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a980>), 7: (266.64172648646183, <source.Algorithms.KNN.KNN object at 0x7f81c6a3add0>), 4: (83.22961341945535, <source.Algorithms.KNN.KNN object at 0x7f81e4f22770>), 3: (84.14426216648967, <source.Algorithms.KNN.KNN object at 0x7f81c6a397b0>), 9: (335.3495988091571, <source.Algorithms.KNN.KNN object at 0x7f81e4f23a60>), 6: (210.65494537883677, <source.Algorithms.KNN.KNN object at 0x7f81e4f22fe0>), 13: (446.45650413350853, <source.Algorithms.KNN.KNN object at 0x7f81e4f23a30>), 5: (138.300192038904, <source.Algorithms.KNN.KNN object at 0x7f81e4f22b30>), 2: (69.07551200146578, <source.Algorithms.KNN.KNN object at 0x7f81e4f21b10>), 8: (302.75537411002125, <source.Algorithms.KNN.KNN object at 0x7f81c6a971c0>), 1: (91.75862068965517, <source.Algorithms.KNN.KNN object at 0x7f81e4f23b20>), 11: (414.3489257586668, <source.Algorithms.KNN.KNN object at 0x7f81e4f22230>), 12: (434.9661381210695, <source.Algorithms.KNN.KNN object at 0x7f81e4f235b0>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 3: (66.25858533967067, <source.Algorithms.KNN.KNN object at 0x7f81c6a974f0>), 7: (66.12311062517044, <source.Algorithms.KNN.KNN object at 0x7f81c6a97d30>), 5: (38.70979962317158, <source.Algorithms.KNN.KNN object at 0x7f81e4f640a0>), 2: (50.35854431238225, <source.Algorithms.KNN.KNN object at 0x7f81e4f64a90>), 4: (50.79082383663831, <source.Algorithms.KNN.KNN object at 0x7f81e4f65870>), 1: (44.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81e4f64b80>), 6: (47.086890891878895, <source.Algorithms.KNN.KNN object at 0x7f81e4f65210>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 6: (63.64478185024553, <source.Algorithms.KNN.KNN object at 0x7f81e4f22b60>), 8: (134.01978193905236, <source.Algorithms.KNN.KNN object at 0x7f81e4f23160>), 9: (161.03723406301964, <source.Algorithms.KNN.KNN object at 0x7f81e4f23fa0>), 2: (69.99156517419506, <source.Algorithms.KNN.KNN object at 0x7f81e4f22c80>), 3: (55.544058863993186, <source.Algorithms.KNN.KNN object at 0x7f81e4f22f20>), 7: (102.14046065192784, <source.Algorithms.KNN.KNN object at 0x7f81e4f234f0>), 10: (191.26528035475127, <source.Algorithms.KNN.KNN object at 0x7f81c6a071f0>), 1: (20.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a39720>), 5: (38.49213408624531, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bb20>), 4: (37.73596783863379, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a380>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 7: (71.59159086816977, <source.Algorithms.KNN.KNN object at 0x7f81e4f21450>), 8: (111.96953207124584, <source.Algorithms.KNN.KNN object at 0x7f81e4f22b30>), 1: (45.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81e4f22e60>), 2: (40.93586268512806, <source.Algorithms.KNN.KNN object at 0x7f81e4f21960>), 5: (19.641517483074864, <source.Algorithms.KNN.KNN object at 0x7f81e4f650f0>), 6: (34.20303237821131, <source.Algorithms.KNN.KNN object at 0x7f81e4f654e0>), 4: (19.800314096324737, <source.Algorithms.KNN.KNN object at 0x7f81e4f65660>), 10: (177.23443149110074, <source.Algorithms.KNN.KNN object at 0x7f81e4f65120>), 3: (19.22279777443041, <source.Algorithms.KNN.KNN object at 0x7f81e4f65720>), 9: (139.9054260105725, <source.Algorithms.KNN.KNN object at 0x7f81e4f64c40>)}
+Best ks [2, 5, 1, 3]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 4: (66.44240447720068, <source.Algorithms.KNN.KNN object at 0x7f81e4f22a70>), 7: (143.84158718022664, <source.Algorithms.KNN.KNN object at 0x7f81e4f23d30>), 9: (206.78016675895003, <source.Algorithms.KNN.KNN object at 0x7f81e4f23e20>), 3: (87.85435492690013, <source.Algorithms.KNN.KNN object at 0x7f81e4f235b0>), 1: (43.89655172413793, <source.Algorithms.KNN.KNN object at 0x7f81e4f23d90>), 2: (163.86498615360478, <source.Algorithms.KNN.KNN object at 0x7f81e4f23760>), 5: (68.0300549459342, <source.Algorithms.KNN.KNN object at 0x7f81c6a95ab0>), 10: (235.6584508297113, <source.Algorithms.KNN.KNN object at 0x7f81e4f23b80>), 6: (96.27203365813295, <source.Algorithms.KNN.KNN object at 0x7f81e4f23730>), 8: (180.59490153218724, <source.Algorithms.KNN.KNN object at 0x7f81e4f22c20>)}
+Best ks [2, 5, 1, 3, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (62.199482722771336, <source.Algorithms.KNN.KNN object at 0x7f81e4f22620>), 5: (35.896976636826125, <source.Algorithms.KNN.KNN object at 0x7f81e4f23e80>), 4: (47.94780987988218, <source.Algorithms.KNN.KNN object at 0x7f81e4f239a0>), 9: (122.74417004216643, <source.Algorithms.KNN.KNN object at 0x7f81e4f212d0>), 8: (101.7496751445382, <source.Algorithms.KNN.KNN object at 0x7f81e4f66050>), 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81e4f65420>), 7: (67.34578385089868, <source.Algorithms.KNN.KNN object at 0x7f81e4f64a00>), 10: (157.81629178209903, <source.Algorithms.KNN.KNN object at 0x7f81e4f654e0>), 2: (43.391035874313516, <source.Algorithms.KNN.KNN object at 0x7f81e4f66530>), 6: (44.119187713179144, <source.Algorithms.KNN.KNN object at 0x7f81e4f65840>)}
+Best ks [2, 5, 1, 3, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (68.16439289367382, <source.Algorithms.KNN.KNN object at 0x7f81e4f210f0>), 1: (150.6206896551724, <source.Algorithms.KNN.KNN object at 0x7f81e4f22fb0>), 2: (77.12769187728179, <source.Algorithms.KNN.KNN object at 0x7f81e4f23520>), 4: (73.5731762296908, <source.Algorithms.KNN.KNN object at 0x7f81e4f22f50>), 7: (117.44293402302846, <source.Algorithms.KNN.KNN object at 0x7f81e4f23b80>), 3: (102.61852515060102, <source.Algorithms.KNN.KNN object at 0x7f81e4f20670>), 6: (94.17422921631234, <source.Algorithms.KNN.KNN object at 0x7f81e4f22aa0>), 8: (146.32078684846897, <source.Algorithms.KNN.KNN object at 0x7f81e4f21930>), 10: (220.01517982947038, <source.Algorithms.KNN.KNN object at 0x7f81e4f23e20>), 9: (190.01727510443956, <source.Algorithms.KNN.KNN object at 0x7f81e4f213c0>)}
+Best ks [2, 5, 1, 3, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 10: (163.8798804036792, <source.Algorithms.KNN.KNN object at 0x7f81e4f236d0>), 1: (52.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81e4f21540>), 5: (48.218662087109664, <source.Algorithms.KNN.KNN object at 0x7f81e4f652d0>), 4: (53.2083413521748, <source.Algorithms.KNN.KNN object at 0x7f81e4f661d0>), 2: (49.3802628221929, <source.Algorithms.KNN.KNN object at 0x7f81e4f23640>), 7: (69.03371984345588, <source.Algorithms.KNN.KNN object at 0x7f81e4f21cf0>), 6: (41.36792158149188, <source.Algorithms.KNN.KNN object at 0x7f81e4f658d0>), 9: (141.10459354992412, <source.Algorithms.KNN.KNN object at 0x7f81e4f65120>), 8: (107.56370112736239, <source.Algorithms.KNN.KNN object at 0x7f81e4f660e0>), 3: (81.8983281150418, <source.Algorithms.KNN.KNN object at 0x7f81e4f66590>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 5: (37.686622210948855, <source.Algorithms.KNN.KNN object at 0x7f81e4f23be0>), 7: (63.15209623155624, <source.Algorithms.KNN.KNN object at 0x7f81e4f22aa0>), 9: (139.1375047020602, <source.Algorithms.KNN.KNN object at 0x7f81e4f21b10>), 3: (66.6956609936724, <source.Algorithms.KNN.KNN object at 0x7f81e4f23400>), 10: (163.3668886747236, <source.Algorithms.KNN.KNN object at 0x7f81e4f23e50>), 2: (48.47435093628673, <source.Algorithms.KNN.KNN object at 0x7f81e4f23d90>), 6: (39.513783137338955, <source.Algorithms.KNN.KNN object at 0x7f81e4f210f0>), 8: (102.35655502538106, <source.Algorithms.KNN.KNN object at 0x7f81e4f20730>), 4: (48.44275504642087, <source.Algorithms.KNN.KNN object at 0x7f81e4f23820>), 11: (186.1778180955099, <source.Algorithms.KNN.KNN object at 0x7f81e4f66290>), 1: (43.86206896551724, <source.Algorithms.KNN.KNN object at 0x7f81e4f64790>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 6: (39.71925352282487, <source.Algorithms.KNN.KNN object at 0x7f81e4f201f0>), 3: (82.47727950026079, <source.Algorithms.KNN.KNN object at 0x7f81e4f21510>), 8: (104.77632524516656, <source.Algorithms.KNN.KNN object at 0x7f81e4f21c30>), 7: (68.42200297062051, <source.Algorithms.KNN.KNN object at 0x7f81e4f22530>), 2: (172.50430857185992, <source.Algorithms.KNN.KNN object at 0x7f81e4f66ad0>), 4: (51.03917239216557, <source.Algorithms.KNN.KNN object at 0x7f81e4f20f10>), 5: (36.996909691188286, <source.Algorithms.KNN.KNN object at 0x7f81e4f657e0>), 9: (139.38165152605436, <source.Algorithms.KNN.KNN object at 0x7f81e4f659c0>), 11: (191.3594181226964, <source.Algorithms.KNN.KNN object at 0x7f81e4f65720>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81e4f65120>), 10: (165.39876599580518, <source.Algorithms.KNN.KNN object at 0x7f81e4f64520>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5, 5]
+current range:  (0, 11)
+time to tune folds 38.886452198028564
+Sigma 0.014000000000000002
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+{8: (309.42017802248967, <source.Algorithms.KNN.KNN object at 0x7f81c6a974f0>), 9: (342.96947717205285, <source.Algorithms.KNN.KNN object at 0x7f81e4f20730>), 3: (84.48460719879428, <source.Algorithms.KNN.KNN object at 0x7f81e4f20280>), 12: (446.54619821323547, <source.Algorithms.KNN.KNN object at 0x7f81e4f23e20>), 10: (388.06409074693585, <source.Algorithms.KNN.KNN object at 0x7f81e4f209d0>), 4: (83.71437475820808, <source.Algorithms.KNN.KNN object at 0x7f81e4f23a90>), 2: (69.11116346256699, <source.Algorithms.KNN.KNN object at 0x7f81e4f23af0>), 11: (424.55071808841365, <source.Algorithms.KNN.KNN object at 0x7f81e4f21960>), 6: (214.82677212353457, <source.Algorithms.KNN.KNN object at 0x7f81e4f201f0>), 7: (272.34953383901524, <source.Algorithms.KNN.KNN object at 0x7f81e4f67280>), 5: (140.32438156175147, <source.Algorithms.KNN.KNN object at 0x7f81e4f64a90>), 1: (91.75862068965517, <source.Algorithms.KNN.KNN object at 0x7f81e4f674c0>), 13: (459.57428736380757, <source.Algorithms.KNN.KNN object at 0x7f81e4f64ca0>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 2: (50.396145325499226, <source.Algorithms.KNN.KNN object at 0x7f81e4f23af0>), 6: (47.30653461113975, <source.Algorithms.KNN.KNN object at 0x7f81c6a94610>), 1: (44.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81c6a94fa0>), 3: (66.30987178563511, <source.Algorithms.KNN.KNN object at 0x7f81e4f66ec0>), 5: (38.802234861406454, <source.Algorithms.KNN.KNN object at 0x7f81e4f663b0>), 4: (50.87871462535485, <source.Algorithms.KNN.KNN object at 0x7f81e4f64d30>), 7: (67.14786115197909, <source.Algorithms.KNN.KNN object at 0x7f81e4f648e0>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (55.66542374016483, <source.Algorithms.KNN.KNN object at 0x7f81e4f23610>), 7: (104.8505779530446, <source.Algorithms.KNN.KNN object at 0x7f81e4f23a90>), 1: (20.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81e4f234f0>), 2: (70.08577388360483, <source.Algorithms.KNN.KNN object at 0x7f81e4f21330>), 8: (138.25887058897519, <source.Algorithms.KNN.KNN object at 0x7f81e4f21510>), 4: (37.744701089424645, <source.Algorithms.KNN.KNN object at 0x7f81e4f23820>), 9: (166.1183090981637, <source.Algorithms.KNN.KNN object at 0x7f81e4f23880>), 6: (64.65181969010106, <source.Algorithms.KNN.KNN object at 0x7f81e4f209d0>), 5: (38.60460626481396, <source.Algorithms.KNN.KNN object at 0x7f81e4f674c0>), 10: (197.4582971873467, <source.Algorithms.KNN.KNN object at 0x7f81e4f64a90>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 6: (34.984078256536954, <source.Algorithms.KNN.KNN object at 0x7f81e4f20670>), 3: (19.220742800936055, <source.Algorithms.KNN.KNN object at 0x7f81e4f201f0>), 9: (144.94403171727214, <source.Algorithms.KNN.KNN object at 0x7f81e4f23520>), 2: (40.945960005262734, <source.Algorithms.KNN.KNN object at 0x7f81e4f21120>), 1: (45.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81e4f66470>), 7: (74.00296019172781, <source.Algorithms.KNN.KNN object at 0x7f81e4f66a70>), 8: (115.95056835264197, <source.Algorithms.KNN.KNN object at 0x7f81e4f66bf0>), 5: (19.696449628867796, <source.Algorithms.KNN.KNN object at 0x7f81e4f65480>), 10: (183.96523713306456, <source.Algorithms.KNN.KNN object at 0x7f81e4f670a0>), 4: (19.806920258255495, <source.Algorithms.KNN.KNN object at 0x7f81e4f647f0>)}
+Best ks [2, 5, 1, 3]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (87.87364419339758, <source.Algorithms.KNN.KNN object at 0x7f81e4f22bf0>), 6: (97.59676686124114, <source.Algorithms.KNN.KNN object at 0x7f81e4f20730>), 4: (66.63817647442245, <source.Algorithms.KNN.KNN object at 0x7f81e4f212a0>), 1: (43.89655172413793, <source.Algorithms.KNN.KNN object at 0x7f81e4f23070>), 8: (185.06757950140994, <source.Algorithms.KNN.KNN object at 0x7f81e4f22530>), 2: (163.99294200852597, <source.Algorithms.KNN.KNN object at 0x7f81e4f20dc0>), 7: (146.88726093751404, <source.Algorithms.KNN.KNN object at 0x7f81e4f650f0>), 9: (211.93935083758635, <source.Algorithms.KNN.KNN object at 0x7f81e4f65690>), 10: (241.80210023523443, <source.Algorithms.KNN.KNN object at 0x7f81e4f67580>), 5: (68.35718833268498, <source.Algorithms.KNN.KNN object at 0x7f81e4f64bb0>)}
+Best ks [2, 5, 1, 3, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (62.249800760873555, <source.Algorithms.KNN.KNN object at 0x7f81e4f23880>), 9: (126.06542883325835, <source.Algorithms.KNN.KNN object at 0x7f81e4f212d0>), 1: (48.17241379310339, <source.Algorithms.KNN.KNN object at 0x7f81e4f23af0>), 7: (68.4016556679204, <source.Algorithms.KNN.KNN object at 0x7f81e4f209d0>), 4: (48.018883694309295, <source.Algorithms.KNN.KNN object at 0x7f81e4f66f80>), 2: (43.42633530108868, <source.Algorithms.KNN.KNN object at 0x7f81e4f65120>), 6: (44.34269125416206, <source.Algorithms.KNN.KNN object at 0x7f81e4f66ad0>), 8: (104.25058344947789, <source.Algorithms.KNN.KNN object at 0x7f81c6a97490>), 5: (35.992036116677724, <source.Algorithms.KNN.KNN object at 0x7f81e4f66a70>), 10: (162.48429717701703, <source.Algorithms.KNN.KNN object at 0x7f81e4f67550>)}
+Best ks [2, 5, 1, 3, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 5: (68.41187922803626, <source.Algorithms.KNN.KNN object at 0x7f81e4f20670>), 4: (73.6882765340299, <source.Algorithms.KNN.KNN object at 0x7f81e4f20e50>), 7: (119.89931022652641, <source.Algorithms.KNN.KNN object at 0x7f81e4f22c20>), 1: (150.6206896551724, <source.Algorithms.KNN.KNN object at 0x7f81e4f233a0>), 6: (95.56431073078122, <source.Algorithms.KNN.KNN object at 0x7f81e4f23fa0>), 2: (77.14195060938167, <source.Algorithms.KNN.KNN object at 0x7f81e4f21330>), 10: (227.28880328182873, <source.Algorithms.KNN.KNN object at 0x7f81e4f64bb0>), 9: (195.64377541398295, <source.Algorithms.KNN.KNN object at 0x7f81e4f664a0>), 3: (102.79347374512605, <source.Algorithms.KNN.KNN object at 0x7f81c6a96a10>), 8: (150.14191188369142, <source.Algorithms.KNN.KNN object at 0x7f81e4f67a90>)}
+Best ks [2, 5, 1, 3, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 6: (41.496323813081816, <source.Algorithms.KNN.KNN object at 0x7f81e4f23e50>), 9: (144.82590780656685, <source.Algorithms.KNN.KNN object at 0x7f81e4f23490>), 5: (48.308234886891434, <source.Algorithms.KNN.KNN object at 0x7f81e4f22230>), 2: (49.41066615604289, <source.Algorithms.KNN.KNN object at 0x7f81e4f21870>), 8: (109.95646644569686, <source.Algorithms.KNN.KNN object at 0x7f81e4f67310>), 10: (168.42409617698263, <source.Algorithms.KNN.KNN object at 0x7f81e4f65330>), 4: (53.20050283346056, <source.Algorithms.KNN.KNN object at 0x7f81e4f66e00>), 7: (70.02934870111285, <source.Algorithms.KNN.KNN object at 0x7f81e4f22f80>), 1: (52.3448275862069, <source.Algorithms.KNN.KNN object at 0x7f81e4f64910>), 3: (82.04098084205191, <source.Algorithms.KNN.KNN object at 0x7f81e4f648e0>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 1: (43.86206896551724, <source.Algorithms.KNN.KNN object at 0x7f81e4f23ac0>), 6: (39.71913667153343, <source.Algorithms.KNN.KNN object at 0x7f81e4f23a00>), 2: (48.51291537350746, <source.Algorithms.KNN.KNN object at 0x7f81e4f23490>), 3: (66.75234427415485, <source.Algorithms.KNN.KNN object at 0x7f81e4f23640>), 8: (104.82432571624263, <source.Algorithms.KNN.KNN object at 0x7f81e4f23a30>), 5: (37.77574141100677, <source.Algorithms.KNN.KNN object at 0x7f81e4f64a60>), 9: (142.9185425208831, <source.Algorithms.KNN.KNN object at 0x7f81e4f679d0>), 4: (48.5305972153788, <source.Algorithms.KNN.KNN object at 0x7f81e4f67e50>), 7: (64.17420784184355, <source.Algorithms.KNN.KNN object at 0x7f81e4f65600>), 11: (191.67289371958785, <source.Algorithms.KNN.KNN object at 0x7f81e4f65060>), 10: (167.87899732683343, <source.Algorithms.KNN.KNN object at 0x7f81e4f23820>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 8: (107.99883020664787, <source.Algorithms.KNN.KNN object at 0x7f81e4f648b0>), 4: (50.88128916366075, <source.Algorithms.KNN.KNN object at 0x7f81e4f67eb0>), 5: (36.9347518321797, <source.Algorithms.KNN.KNN object at 0x7f81e4f65810>), 2: (172.3467316466437, <source.Algorithms.KNN.KNN object at 0x7f81c6a05d80>), 10: (171.66574085243556, <source.Algorithms.KNN.KNN object at 0x7f81c6a07550>), 6: (40.2542968853496, <source.Algorithms.KNN.KNN object at 0x7f81c6a06aa0>), 3: (82.23238796918153, <source.Algorithms.KNN.KNN object at 0x7f81c6a97c10>), 7: (70.07762833490486, <source.Algorithms.KNN.KNN object at 0x7f81c6a97fd0>), 9: (144.21894944513645, <source.Algorithms.KNN.KNN object at 0x7f81e4f22500>), 11: (199.13878049439379, <source.Algorithms.KNN.KNN object at 0x7f81e4f23b80>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81e4f22f80>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5, 5]
+current range:  (0, 11)
+time to tune folds 36.751960039138794
+Sigma 0.015
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+{6: (218.510712212861, <source.Algorithms.KNN.KNN object at 0x7f81e4f23a90>), 11: (433.5006017534407, <source.Algorithms.KNN.KNN object at 0x7f81e4f22c20>), 5: (142.11043215064163, <source.Algorithms.KNN.KNN object at 0x7f81e4f23640>), 1: (91.75862068965515, <source.Algorithms.KNN.KNN object at 0x7f81e4f22bf0>), 3: (84.78213962190263, <source.Algorithms.KNN.KNN object at 0x7f81e4f66f50>), 8: (315.2819947472623, <source.Algorithms.KNN.KNN object at 0x7f81e4f67190>), 2: (69.14208776963126, <source.Algorithms.KNN.KNN object at 0x7f81e4f23f40>), 13: (471.18788858427155, <source.Algorithms.KNN.KNN object at 0x7f81e4f65840>), 4: (84.13731404214064, <source.Algorithms.KNN.KNN object at 0x7f81e4f67430>), 9: (349.6606385977343, <source.Algorithms.KNN.KNN object at 0x7f81e4f64b80>), 10: (395.882497987316, <source.Algorithms.KNN.KNN object at 0x7f81e4f64c70>), 12: (456.7393360607853, <source.Algorithms.KNN.KNN object at 0x7f81e4f67610>), 7: (277.38043686912874, <source.Algorithms.KNN.KNN object at 0x7f81e4f65780>)}
+Best ks [2]
+current range:  (0, 7)
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+{0: None, 5: (38.883318938338334, <source.Algorithms.KNN.KNN object at 0x7f81e4f237f0>), 4: (50.95532140199707, <source.Algorithms.KNN.KNN object at 0x7f81e4f23fa0>), 7: (68.06029977086966, <source.Algorithms.KNN.KNN object at 0x7f81e4f66920>), 2: (50.42875941160736, <source.Algorithms.KNN.KNN object at 0x7f81e4f66ec0>), 3: (66.35435772441025, <source.Algorithms.KNN.KNN object at 0x7f81e4f678e0>), 6: (47.499568650056126, <source.Algorithms.KNN.KNN object at 0x7f81e4f941f0>), 1: (44.965517241379246, <source.Algorithms.KNN.KNN object at 0x7f81e4f94520>)}
+Best ks [2, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 9: (170.6402444466808, <source.Algorithms.KNN.KNN object at 0x7f81e4f67fa0>), 1: (20.96551724137931, <source.Algorithms.KNN.KNN object at 0x7f81e4f65840>), 10: (202.9607122945464, <source.Algorithms.KNN.KNN object at 0x7f81e4f66b60>), 5: (38.70307181861087, <source.Algorithms.KNN.KNN object at 0x7f81e4f65630>), 4: (37.751885094223944, <source.Algorithms.KNN.KNN object at 0x7f81e4f64c70>), 6: (65.55327537068699, <source.Algorithms.KNN.KNN object at 0x7f81e4f65540>), 2: (70.16749710093836, <source.Algorithms.KNN.KNN object at 0x7f81e4f64ca0>), 3: (55.77113302059269, <source.Algorithms.KNN.KNN object at 0x7f81e4f66470>), 7: (107.27708612503645, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a1a0>), 8: (142.04581351683944, <source.Algorithms.KNN.KNN object at 0x7f81c6a3bd30>)}
+Best ks [2, 5, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 10: (189.96297771175102, <source.Algorithms.KNN.KNN object at 0x7f81e4f65330>), 1: (45.34482758620683, <source.Algorithms.KNN.KNN object at 0x7f81e4f65600>), 5: (19.74573993527454, <source.Algorithms.KNN.KNN object at 0x7f81e4f675e0>), 8: (119.51409474499977, <source.Algorithms.KNN.KNN object at 0x7f81e4f8c130>), 2: (40.95471425129997, <source.Algorithms.KNN.KNN object at 0x7f81e4f66470>), 7: (76.16892603624737, <source.Algorithms.KNN.KNN object at 0x7f81e4f674f0>), 6: (35.688427888235886, <source.Algorithms.KNN.KNN object at 0x7f81e4f677f0>), 4: (19.812853524088965, <source.Algorithms.KNN.KNN object at 0x7f81e4f8c640>), 9: (149.43841892667655, <source.Algorithms.KNN.KNN object at 0x7f81e4f8c880>), 3: (19.218973785424335, <source.Algorithms.KNN.KNN object at 0x7f81e4f8cc10>)}
+Best ks [2, 5, 1, 3]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 3: (87.89031186750223, <source.Algorithms.KNN.KNN object at 0x7f81c6a953f0>), 2: (164.10390354359598, <source.Algorithms.KNN.KNN object at 0x7f81c6a97c10>), 4: (66.81004525851043, <source.Algorithms.KNN.KNN object at 0x7f81e4f67cd0>), 5: (68.64417541847149, <source.Algorithms.KNN.KNN object at 0x7f81e4f649d0>), 1: (43.896551724137865, <source.Algorithms.KNN.KNN object at 0x7f81e4f672e0>), 10: (247.231524555896, <source.Algorithms.KNN.KNN object at 0x7f81e4f66590>), 7: (149.59426117847013, <source.Algorithms.KNN.KNN object at 0x7f81e4f674c0>), 8: (189.0371613681402, <source.Algorithms.KNN.KNN object at 0x7f81c6a06b60>), 6: (98.77216317717149, <source.Algorithms.KNN.KNN object at 0x7f81e4f66cb0>), 9: (216.50411012029804, <source.Algorithms.KNN.KNN object at 0x7f81e4f663b0>)}
+Best ks [2, 5, 1, 3, 1]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 4: (48.0808674051363, <source.Algorithms.KNN.KNN object at 0x7f81c6a061a0>), 3: (62.293446125581966, <source.Algorithms.KNN.KNN object at 0x7f81c6a96a10>), 2: (43.45695226990892, <source.Algorithms.KNN.KNN object at 0x7f81c6a974f0>), 8: (106.4840650357511, <source.Algorithms.KNN.KNN object at 0x7f81e4f677c0>), 9: (129.0262442152817, <source.Algorithms.KNN.KNN object at 0x7f81c6a97490>), 7: (69.34326619338148, <source.Algorithms.KNN.KNN object at 0x7f81e4f23130>), 5: (36.07598254922191, <source.Algorithms.KNN.KNN object at 0x7f81e4f8c820>), 10: (166.63958595944743, <source.Algorithms.KNN.KNN object at 0x7f81e4f8c3a0>), 1: (48.172413793103445, <source.Algorithms.KNN.KNN object at 0x7f81e4f8ca60>), 6: (44.539669368130504, <source.Algorithms.KNN.KNN object at 0x7f81e4f8ca90>)}
+Best ks [2, 5, 1, 3, 1, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 10: (233.78026034873744, <source.Algorithms.KNN.KNN object at 0x7f81e4f67cd0>), 1: (150.62068965517236, <source.Algorithms.KNN.KNN object at 0x7f81e4f65630>), 4: (73.78915489697394, <source.Algorithms.KNN.KNN object at 0x7f81e4f65810>), 8: (153.55311183677523, <source.Algorithms.KNN.KNN object at 0x7f81c6a386d0>), 2: (77.15431061944638, <source.Algorithms.KNN.KNN object at 0x7f81e4f22500>), 5: (68.62905876645677, <source.Algorithms.KNN.KNN object at 0x7f81c6a39e40>), 3: (102.94594997218184, <source.Algorithms.KNN.KNN object at 0x7f81e4f21330>), 6: (96.8029535697232, <source.Algorithms.KNN.KNN object at 0x7f81e4f235b0>), 7: (122.08993461191598, <source.Algorithms.KNN.KNN object at 0x7f81c6a061a0>), 9: (200.66306343394848, <source.Algorithms.KNN.KNN object at 0x7f81c6a07f70>)}
+Best ks [2, 5, 1, 3, 1, 5, 5]
+current range:  (0, 10)
+k_range (0, 10)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{0: None, 2: (49.43705508167697, <source.Algorithms.KNN.KNN object at 0x7f81e4f677f0>), 5: (48.38684954169195, <source.Algorithms.KNN.KNN object at 0x7f81e4f66b00>), 3: (82.16506360276016, <source.Algorithms.KNN.KNN object at 0x7f81e4f66bc0>), 8: (112.09299830464892, <source.Algorithms.KNN.KNN object at 0x7f81e4f65300>), 7: (70.91720466298695, <source.Algorithms.KNN.KNN object at 0x7f81e4f64790>), 9: (148.1456393747699, <source.Algorithms.KNN.KNN object at 0x7f81e4f66ec0>), 1: (52.34482758620683, <source.Algorithms.KNN.KNN object at 0x7f81e4f8cdf0>), 4: (53.193281947067774, <source.Algorithms.KNN.KNN object at 0x7f81e4f8c790>), 10: (172.46675232723504, <source.Algorithms.KNN.KNN object at 0x7f81e4f8cbe0>), 6: (41.61049135999149, <source.Algorithms.KNN.KNN object at 0x7f81e4f8d390>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 2: (48.54636456764625, <source.Algorithms.KNN.KNN object at 0x7f81c6a38670>), 1: (43.86206896551718, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a380>), 11: (196.55320606798986, <source.Algorithms.KNN.KNN object at 0x7f81e4f67730>), 8: (107.02610313203104, <source.Algorithms.KNN.KNN object at 0x7f81e4f672e0>), 6: (39.89977034991726, <source.Algorithms.KNN.KNN object at 0x7f81e4f649d0>), 10: (171.88960723105382, <source.Algorithms.KNN.KNN object at 0x7f81e4f671c0>), 3: (66.80151437181674, <source.Algorithms.KNN.KNN object at 0x7f81e4f67490>), 7: (65.08436731335132, <source.Algorithms.KNN.KNN object at 0x7f81e4f66fb0>), 4: (48.60715843783338, <source.Algorithms.KNN.KNN object at 0x7f81e4f8cee0>), 5: (37.85393292610568, <source.Algorithms.KNN.KNN object at 0x7f81e4f65120>), 9: (146.28848944369378, <source.Algorithms.KNN.KNN object at 0x7f81c6a97fd0>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5]
+current range:  (0, 11)
+k_range (0, 11)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+{0: None, 10: (177.34569204921223, <source.Algorithms.KNN.KNN object at 0x7f81c6a3a860>), 5: (36.88812770368883, <source.Algorithms.KNN.KNN object at 0x7f81c6a39810>), 6: (40.750569089471234, <source.Algorithms.KNN.KNN object at 0x7f81c6a97c10>), 4: (50.74646443916346, <source.Algorithms.KNN.KNN object at 0x7f81e4f66bf0>), 9: (148.6184946267758, <source.Algorithms.KNN.KNN object at 0x7f81e4f67cd0>), 7: (71.59412306124067, <source.Algorithms.KNN.KNN object at 0x7f81e4f66ec0>), 1: (179.48275862068965, <source.Algorithms.KNN.KNN object at 0x7f81e4f8ce50>), 11: (206.17971323162456, <source.Algorithms.KNN.KNN object at 0x7f81e4f8c850>), 2: (172.21040490823444, <source.Algorithms.KNN.KNN object at 0x7f81e4f8c4f0>), 3: (82.02090544488682, <source.Algorithms.KNN.KNN object at 0x7f81e4f8d570>), 8: (110.9388010376857, <source.Algorithms.KNN.KNN object at 0x7f81e4f8c070>)}
+Best ks [2, 5, 1, 3, 1, 5, 5, 6, 5, 5]
+current range:  (0, 11)
+time to tune folds 35.971978187561035
+Best K means params: {1: {'k': 2, 'sigma': 0.005, 'mse': 68.2855386007835, 'model': <source.Algorithms.KNN.KNN object at 0x7f81c6a07850>}, 2: {'k': 5, 'sigma': 0.005, 'mse': 36.92138194003201, 'model': <source.Algorithms.KNN.KNN object at 0x7f81c6a387f0>}, 3: {'k': 1, 'sigma': 0.012, 'mse': 20.96551724137926, 'model': <source.Algorithms.KNN.KNN object at 0x7f81e4f232b0>}, 4: {'k': 5, 'sigma': 0.005, 'mse': 18.83544962565621, 'model': <source.Algorithms.KNN.KNN object at 0x7f81c6a394b0>}, 5: {'k': 1, 'sigma': 0.015, 'mse': 43.896551724137865, 'model': <source.Algorithms.KNN.KNN object at 0x7f81e4f66560>}, 6: {'k': 5, 'sigma': 0.005, 'mse': 34.206601115989415, 'model': <source.Algorithms.KNN.KNN object at 0x7f81c6a39270>}, 7: {'k': 5, 'sigma': 0.005, 'mse': 63.45869774748568, 'model': <source.Algorithms.KNN.KNN object at 0x7f81c6a061d0>}, 8: {'k': 6, 'sigma': 0.005, 'mse': 39.28857577907756, 'model': <source.Algorithms.KNN.KNN object at 0x7f81c6a39e70>}, 9: {'k': 6, 'sigma': 0.005, 'mse': 35.70569386792653, 'model': <source.Algorithms.KNN.KNN object at 0x7f81c6a3a050>}, 10: {'k': 6, 'sigma': 0.005, 'mse': 35.504125912001115, 'model': <source.Algorithms.KNN.KNN object at 0x7f81c6a39750>}}
+Final raw performance for kmeans [    actual   predicted
+0     19.0   23.984450
+1     19.0   21.500493
+2     24.0   23.499934
+3     25.0   20.501596
+4     28.0   23.999840
+5     29.0   25.000000
+6     34.0   34.000000
+7     32.0   32.499785
+8     37.0   38.997196
+9     36.0   31.502657
+10    54.0   48.486537
+11    50.0   46.000000
+12    64.0   76.000000
+13    74.0   76.908937
+14    81.0  107.505627
+15    82.0   78.012953
+16   157.0   98.756480
+17   171.0  135.875644
+18   270.0  266.502081
+19   275.0  266.495736,     actual   predicted
+0     18.0   23.790985
+1     18.0   20.394798
+2     21.0   23.199917
+3     25.0   21.198971
+4     26.0   25.394936
+5     30.0   26.599481
+6     30.0   39.167457
+7     34.0   32.804362
+8     37.0   39.197801
+9     41.0   40.402508
+10    53.0   49.209849
+11    53.0   49.221280
+12    59.0   60.187558
+13    74.0   77.103507
+14    80.0   83.146252
+15    86.0   86.903078
+16   120.0  106.877845
+17   138.0  122.680066
+18   350.0  372.833489
+19   281.0  171.884350,     actual  predicted
+0     18.0       17.0
+1     18.0       20.0
+2     24.0       24.0
+3     20.0       20.0
+4     28.0       26.0
+5     28.0       20.0
+6     32.0       32.0
+7     34.0       34.0
+8     41.0       37.0
+9     43.0       38.0
+10    46.0       46.0
+11    53.0       53.0
+12    62.0       78.0
+13    74.0       74.0
+14   113.0       75.0
+15    80.0       74.0
+16   142.0      128.0
+17   175.0      182.0
+18   220.0      183.0
+19   919.0      978.0,     actual   predicted
+0     17.0   22.000094
+1     20.0   23.001242
+2     21.0   23.799429
+3     25.0   24.798909
+4     27.0   23.798206
+5     29.0   29.799069
+6     35.0   37.001396
+7     34.0   34.000000
+8     38.0   39.800536
+9     44.0   43.199553
+10    47.0   38.810030
+11    50.0   49.681372
+12    76.0   75.212868
+13    56.0   50.198051
+14    99.0   95.843814
+15    88.0   78.053193
+16   151.0  136.854672
+17   119.0  108.549101
+18   183.0  154.789340
+19   190.0  128.145110,     actual  predicted
+0     20.0       18.0
+1     20.0       20.0
+2     20.0       18.0
+3     23.0       20.0
+4     29.0       26.0
+5     28.0       20.0
+6     34.0       34.0
+7     33.0       73.0
+8     44.0       44.0
+9     44.0       44.0
+10    47.0       25.0
+11    46.0       46.0
+12    67.0       53.0
+13    74.0       74.0
+14   102.0      102.0
+15    78.0       62.0
+16   113.0      126.0
+17   181.0      181.0
+18   341.0      360.0
+19   266.0      267.0,     actual   predicted
+0     15.0   22.974750
+1     19.0   23.975589
+2     23.0   22.793611
+3     22.0   21.798853
+4     29.0   30.599638
+5     28.0   21.802969
+6     31.0   31.189678
+7     30.0   28.405215
+8     41.0   41.599477
+9     45.0   30.217024
+10    47.0   56.683675
+11    52.0   49.129357
+12    75.0   71.358441
+13    73.0   33.086688
+14   102.0  122.558574
+15    80.0   84.558757
+16   116.0   91.636226
+17   117.0  105.644463
+18   361.0  373.758004
+19   978.0  919.000000,     actual   predicted
+0     20.0   22.566180
+1     18.0   21.996581
+2     24.0   24.001871
+3     24.0   24.199878
+4     26.0   23.794708
+5     25.0   23.400811
+6     31.0   27.805680
+7     34.0   32.804339
+8     41.0   41.600909
+9     42.0   40.406150
+10    56.0   44.250486
+11    48.0   43.409309
+12    65.0   64.995582
+13    67.0   81.666119
+14   107.0  106.885637
+15    82.0   96.069993
+16   136.0  140.453665
+17   126.0  143.213279
+18   382.0  267.509755
+19   267.0  251.928420,     actual   predicted
+0     20.0   22.352661
+1     20.0   22.184559
+2     24.0   23.833723
+3     23.0   25.832893
+4     28.0   32.653319
+5     26.0   23.167057
+6     31.0   33.325258
+7     30.0   32.166769
+8     41.0   41.338991
+9     41.0   41.498802
+10    46.0   44.663706
+11    53.0   49.177839
+12    57.0   52.830901
+13    72.0   70.995650
+14    95.0   90.448558
+15    88.0   75.906755
+16   181.0  171.504397
+17   128.0  139.085253
+18   227.0  162.357124
+19   360.0  341.000000,    actual   predicted
+0    18.0   19.599095
+1    24.0   24.333275
+2    27.0   25.006989
+3    33.0   32.166330
+4    42.0   38.336870
+5    54.0   46.773960
+6    74.0   76.163295
+7   101.0   87.147230
+8   182.0  155.351487
+9   426.0  357.444762,    actual   predicted
+0    19.0   21.834598
+1    21.0   23.501605
+2    25.0   23.499614
+3    35.0   38.664364
+4    36.0   28.827712
+5    47.0   44.498358
+6    76.0   72.347240
+7    82.0   75.178884
+8   149.0  157.227727
+9   603.0  426.000000]
+Final performance for kmeans [286.79698704503573, 652.3015899505696, 347.25, 260.11019789387194, 157.85, 343.4483230930206, 713.4026324289398, 250.65011301600452, 567.9512465349083, 3154.423739179911]
+Total time: 412.1505253314972

@@ -1,0 +1,315 @@
+Starting at: 2022-10-10 17:15:41.420468
+Preprocessing time: 0.0030853748321533203
+Sigma 10
+k_range [1, 10]
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{2: (4.421295233702078, <source.Algorithms.KNN.KNN object at 0x7f4fe9968ac0>), 5: (3.640113833616474, <source.Algorithms.KNN.KNN object at 0x7f4fe9968cd0>), 3: (3.7997161727127486, <source.Algorithms.KNN.KNN object at 0x7f4fe9968970>), 6: (3.549500165886619, <source.Algorithms.KNN.KNN object at 0x7f4fe9968b20>), 1: (5.376190476190477, <source.Algorithms.KNN.KNN object at 0x7f4fe99689d0>), 7: (3.474915185507649, <source.Algorithms.KNN.KNN object at 0x7f4fe9968d60>), 10: (3.4187414200904116, <source.Algorithms.KNN.KNN object at 0x7f4fe9968af0>), 9: (3.369606839635435, <source.Algorithms.KNN.KNN object at 0x7f4fe9968d30>), 8: (3.472584600746977, <source.Algorithms.KNN.KNN object at 0x7f4fe9968d00>), 4: (3.7782067863645623, <source.Algorithms.KNN.KNN object at 0x7f4fe9968c70>)}
+Best ks [9]
+current range:  (4, 14)
+k_range (4, 14)
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+k:  14
+{5: (3.406484200605851, <source.Algorithms.KNN.KNN object at 0x7f4fe9968af0>), 4: (3.5085169237117153, <source.Algorithms.KNN.KNN object at 0x7f4fe9968f40>), 9: (3.3593435313418625, <source.Algorithms.KNN.KNN object at 0x7f4fe9968d60>), 11: (3.3659394548366977, <source.Algorithms.KNN.KNN object at 0x7f4fe9969180>), 7: (3.2984199170724016, <source.Algorithms.KNN.KNN object at 0x7f4fe9968d00>), 12: (3.3355203865570298, <source.Algorithms.KNN.KNN object at 0x7f4fe9968be0>), 6: (3.366656919965638, <source.Algorithms.KNN.KNN object at 0x7f4fe9968e50>), 10: (3.3520977977879554, <source.Algorithms.KNN.KNN object at 0x7f4fe9887f10>), 13: (3.344128317699748, <source.Algorithms.KNN.KNN object at 0x7f4fe9887d90>), 8: (3.323425943227117, <source.Algorithms.KNN.KNN object at 0x7f4fe9887fa0>), 14: (3.4009681688955156, <source.Algorithms.KNN.KNN object at 0x7f4fe9887e20>)}
+Best ks [9, 7]
+current range:  (2, 14)
+time to tune folds 124.76118445396423
+Sigma 15
+k_range [1, 10]
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{1: (5.376190476190477, <source.Algorithms.KNN.KNN object at 0x7f4fe9857430>), 9: (3.371201911014907, <source.Algorithms.KNN.KNN object at 0x7f4fe9857610>), 3: (3.7997226066714203, <source.Algorithms.KNN.KNN object at 0x7f4fe98577c0>), 2: (4.421339660315258, <source.Algorithms.KNN.KNN object at 0x7f4fe9857400>), 7: (3.4756574900521975, <source.Algorithms.KNN.KNN object at 0x7f4fe9857760>), 10: (3.4212097003332924, <source.Algorithms.KNN.KNN object at 0x7f4fe9857520>), 5: (3.6403891899321965, <source.Algorithms.KNN.KNN object at 0x7f4fe9857790>), 4: (3.7782291380372244, <source.Algorithms.KNN.KNN object at 0x7f4fe9857880>), 6: (3.5500571530886504, <source.Algorithms.KNN.KNN object at 0x7f4fe9857490>), 8: (3.4737040320678743, <source.Algorithms.KNN.KNN object at 0x7f4fe9857640>)}
+Best ks [9]
+current range:  (4, 14)
+k_range (4, 14)
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+k:  14
+{10: (3.352627803748914, <source.Algorithms.KNN.KNN object at 0x7f4fe9857370>), 8: (3.323726843993042, <source.Algorithms.KNN.KNN object at 0x7f4fe98573a0>), 5: (3.4065449804705126, <source.Algorithms.KNN.KNN object at 0x7f4fe9857730>), 6: (3.3668141289309523, <source.Algorithms.KNN.KNN object at 0x7f4fe9857790>), 12: (3.3359031005328657, <source.Algorithms.KNN.KNN object at 0x7f4fe9857640>), 13: (3.3450814551566475, <source.Algorithms.KNN.KNN object at 0x7f4fe9857970>), 9: (3.3598725828834257, <source.Algorithms.KNN.KNN object at 0x7f4fe987c100>), 7: (3.2986061565962403, <source.Algorithms.KNN.KNN object at 0x7f4fe987c040>), 11: (3.366496676654019, <source.Algorithms.KNN.KNN object at 0x7f4fe989bf40>), 14: (3.4025475118746584, <source.Algorithms.KNN.KNN object at 0x7f4fe987ab90>), 4: (3.5085549179637994, <source.Algorithms.KNN.KNN object at 0x7f4fe97fac50>)}
+Best ks [9, 7]
+current range:  (2, 14)
+time to tune folds 127.36708950996399
+Sigma 20
+k_range [1, 10]
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+{2: (4.421361880883775, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8b20>), 5: (3.640528419397143, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8940>), 9: (3.372003837988572, <source.Algorithms.KNN.KNN object at 0x7f4fe97f87f0>), 4: (3.778240309903572, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8bb0>), 1: (5.376190476190477, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8850>), 8: (3.474266823119476, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8ac0>), 6: (3.550338063479416, <source.Algorithms.KNN.KNN object at 0x7f4fe97f87c0>), 7: (3.476031178022783, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8a30>), 3: (3.7997258205550786, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8730>), 10: (3.4224524091798934, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8970>)}
+Best ks [9]
+current range:  (4, 14)
+k_range (4, 14)
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+k:  11
+k:  12
+k:  13
+k:  14
+{13: (3.345559460103071, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8be0>), 4: (3.5085739208373634, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8c10>), 12: (3.3360930005845257, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8a90>), 7: (3.2986993960349, <source.Algorithms.KNN.KNN object at 0x7f4fe97f86d0>), 9: (3.3601376166503143, <source.Algorithms.KNN.KNN object at 0x7f4fe97f86a0>), 8: (3.323877508774442, <source.Algorithms.KNN.KNN object at 0x7f4fe97f87c0>), 6: (3.366892868680447, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8820>), 5: (3.4065753862340027, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8880>), 14: (3.4033421415599117, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8970>), 11: (3.3667753011432064, <source.Algorithms.KNN.KNN object at 0x7f4fe97f85e0>), 10: (3.3528931409898486, <source.Algorithms.KNN.KNN object at 0x7f4fe97f8790>)}
+Best ks [9, 7]
+current range:  (2, 14)
+time to tune folds 132.9939398765564
+Best results: {1: {'k': 9, 'sigma': 10, 'mse': 3.369606839635435, 'model': <source.Algorithms.KNN.KNN object at 0x7f4fe97d5000>}, 2: {'k': 7, 'sigma': 10, 'mse': 3.2984199170724016, 'model': <source.Algorithms.KNN.KNN object at 0x7f4fe9861a50>}}
+KNN Tuning time: 385.12308406829834
+Final raw performance for knn [     actual  predicted
+0       6.0   9.555548
+1       3.0   4.333335
+2       8.0   8.888893
+3       6.0   7.111112
+4       9.0   9.333332
+..      ...        ...
+185    14.0  10.222253
+186    14.0   9.111118
+187    14.0   9.444438
+188    14.0  10.221016
+189    11.0  11.444364
+
+[190 rows x 2 columns],      actual  predicted
+0       6.0   5.142871
+1       7.0   9.285650
+2       8.0   8.142861
+3       3.0   3.571427
+4       9.0   9.714254
+..      ...        ...
+185    14.0  10.857198
+186    10.0   6.571428
+187    14.0   9.857165
+188    14.0  11.000284
+189    11.0   8.571429
+
+[190 rows x 2 columns]]
+Final performance for knn [3.438674003061401, 3.610904969703201]
+sigma=1,epsilon=10
+k_range [1, 12]
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  11
+k:  12
+k:  10
+Process Process-75:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-77:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-73:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-80:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-79:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-81:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-82:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-72:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-76:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-71:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-78:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Process Process-74:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 209, in get_mean_squared_error_for_k
+    train_callable(*train_params)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 233, in train
+    self._minimize_data(k, reduce_redundancy, self.epsilon)
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Algorithms/EditedKNN.py", line 130, in _minimize_data
+    prediction >= correct_response - err_threshold
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+{}
+Traceback (most recent call last):
+  File "/home/braeden/Git/csci447-project-01/Project02/main.py", line 504, in <module>
+    run_abalone_experiment(True, True, True)
+  File "/home/braeden/Git/csci447-project-01/Project02/main.py", line 333, in run_abalone_experiment
+    all_params_eknn = tuning_utility.tune_sigma_k_and_epsilon_for_folds(training_test_data, tuning_data, [1, 3], 1, [10, 20], 5, train=True, k_range=[1, 12]);
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 42, in tune_sigma_k_and_epsilon_for_folds
+    results = self.tune_k_for_folds(training_test_data, tuning_data, model_params=[sigma, epsilon],
+  File "/home/braeden/Git/csci447-project-01/Project02/source/Utilities/TuningUtility.py", line 101, in tune_k_for_folds
+    results_df.columns = ['k', 'MSE', 'Model']
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 5588, in __setattr__
+    return object.__setattr__(self, name, value)
+  File "pandas/_libs/properties.pyx", line 70, in pandas._libs.properties.AxisProperty.__set__
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 769, in _set_axis
+    self._mgr.set_axis(axis, labels)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/internals/managers.py", line 214, in set_axis
+    self._validate_set_axis(axis, new_labels)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/internals/base.py", line 69, in _validate_set_axis
+    raise ValueError(
+ValueError: Length mismatch: Expected axis has 1 elements, new values have 3 elements

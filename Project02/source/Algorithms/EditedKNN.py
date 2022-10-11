@@ -14,11 +14,12 @@ class EditedKNN(KNN):
         self,
         training_data: pd.DataFrame,
         target_feature: str,
-        cluster=False,
         regression=False,
         sigma: float = None,
         epsilon: float = None,
         k: int = 1,
+        cluster=False,
+
     ):
         """
         Perform edited k-NN by minimizing (editing) the training data through excision
