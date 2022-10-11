@@ -152,4 +152,4 @@ class CyclicalData:
         self.total = total
 
     def __sub__(self, other):
-        return min((self.value - other.value) % 12, (other.value-self.value) % 12)
+        return min((self.value - other.value) % self.total, (other.value-self.value) % self.total) / (0.5 * self.total)
