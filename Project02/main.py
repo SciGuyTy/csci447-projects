@@ -330,7 +330,7 @@ def run_abalone_experiment(run_knn=False, run_eknn=False, run_kmeans=False):
     if run_eknn:
         eknn_time = time.time()
         tuning_utility = TuningUtility(EditedKNN, pp.data, target_feature="rings", regression=True)
-        all_params_eknn = tuning_utility.tune_sigma_k_and_epsilon_for_folds(training_test_data, tuning_data, [1, 3], 1, [1,3], 1, train=True);
+        all_params_eknn = tuning_utility.tune_sigma_k_and_epsilon_for_folds(training_test_data, tuning_data, [0.005, 0.005], 0.5, [0.5, 0.5], 0.5, train=True, k_range=[1,10]);
         tuned_params_eknn = TuningUtility.get_best_parameters_and_results(all_params_eknn)
         print("Best EKNN params", tuned_params_eknn)
         with open("eknn-best-params.bin", 'wb+') as f:
@@ -348,8 +348,8 @@ def run_abalone_experiment(run_knn=False, run_eknn=False, run_kmeans=False):
             tuned_parameters_eknn = pickle.load(f)
 
         clusters = [len(item['model'].training_data) for item in tuned_parameters_eknn.values()]
-        tuning_utility_kmeans = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True)
-        all_params_kmeans = tuning_utility_kmeans.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [0.005, 0.015], 0.002, clusters=clusters)
+        tuning_utility_kmeans = TuningUtility(KNN, pp.data, target_feature="rings", regression=True)
+        all_params_kmeans = tuning_utility_kmeans.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [0.005, 0.005], 0.002, clusters=clusters, k_range=[1, 10])
         tuned_params_kmeans = TuningUtility.get_best_parameters_and_results(all_params_kmeans)
         print("Best K means params:", tuned_params_kmeans)
         with open("kmeans-best-params.bin", 'wb+') as f:
@@ -409,7 +409,7 @@ def run_computer_hardware_experiment(run_knn=False, run_eknn=False, run_kmeans=F
             tuned_parameters_eknn = pickle.load(f)
 
         clusters = [len(item['model'].training_data) for item in tuned_parameters_eknn.values()]
-        tuning_utility_kmeans = TuningUtility(KNN, pp.data, target_feature="rings ", regression=True)
+        tuning_utility_kmeans = TuningUtility(KNN, pp.data, target_feature="ERP", regression=True)
         all_params_kmeans = tuning_utility_kmeans.tune_sigma_and_k_for_folds(training_test_data, tuning_data, [0.005, 0.015], 0.001, clusters=clusters)
         tuned_params_kmeans = TuningUtility.get_best_parameters_and_results(all_params_kmeans)
         print("Best K means params:", tuned_params_kmeans)
@@ -444,15 +444,12 @@ def create_folds_for_abalone():
     pp.load_raw_data_from_file(file_path, column_names, converters=feature_modifiers)
 
     cv = CrossValidation(pp.data, "rings", regression=True)
-    tuning_data = cv.get_tuning_set(0.005)
+    tuning_data = cv.get_tuning_set(0.1)
     training_data = pp.data.drop(tuning_data.index)
     cv = CrossValidation(training_data, "rings", regression=True)
-    sample_data = cv.get_tuning_set(0.05)
 
-    training_data = sample_data
-    cv = CrossValidation(sample_data, "rings", regression=True)
 
-    folded_training_data = cv.fold_data(2, True)
+    folded_training_data = cv.fold_data(10, True)
     training_test_data = cv.get_training_test_data_from_folds(folded_training_data)
 
     with open(save_folds_path, 'wb+') as f:
@@ -500,8 +497,6 @@ def create_folds_for_computer_hard():
 
 if __name__ == "__main__":
     print("Starting at:", datetime.datetime.now())
-    create_folds_for_abalone()
-    run_abalone_experiment(False, True, True)
-    #create_folds_for_computer_hard()
-    #run_computer_hardware_experiment(run_kmeans=True)
+    run_abalone_experiment(True, True, True)
+
 
