@@ -1,0 +1,268 @@
+Starting at: 2022-10-11 10:53:10.238219
+Starting on Fold 0
+Starting on Fold 1
+Starting on Fold 2
+Starting on Fold 3
+Starting on Fold 4
+Starting on Fold 5
+Starting on Fold 6
+Starting on Fold 7
+Starting on Fold 8
+Starting on Fold 9
+Preprocessing time: 0.006331205368041992
+Sigma 1
+k_range [1, 10]
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+Finished calculating results 1
+Finished calculating MSE 1
+Finished calculating results 8
+Finished calculating MSE 8
+Finished calculating results 6
+Finished calculating MSE 6
+Finished calculating results 2
+Finished calculating MSE 2
+Finished calculating results 7
+Finished calculating MSE 7
+Finished calculating results 9
+Finished calculating MSE 9
+Finished calculating results 10
+Finished calculating MSE 10
+Finished calculating results 4
+Finished calculating MSE 4
+Finished calculating results 5
+Finished calculating MSE 5
+Finished calculating results 3
+Finished calculating MSE 3
+{1: (1.0818181818181818, <source.Algorithms.KNN.KNN object at 0x7fab780b7370>), 8: (1.6749101503622381, <source.Algorithms.KNN.KNN object at 0x7fab780b7580>), 6: (1.6840132524285958, <source.Algorithms.KNN.KNN object at 0x7fab780b7220>), 2: (1.4386103247144237, <source.Algorithms.KNN.KNN object at 0x7fab780b73d0>), 7: (1.78718075313426, <source.Algorithms.KNN.KNN object at 0x7fab780b7280>), 9: (1.770410646416165, <source.Algorithms.KNN.KNN object at 0x7fab780b7610>), 10: (1.8099281090353565, <source.Algorithms.KNN.KNN object at 0x7fab780b73a0>), 4: (1.6016190452285268, <source.Algorithms.KNN.KNN object at 0x7fab780b75e0>), 5: (1.6264707550245523, <source.Algorithms.KNN.KNN object at 0x7fab780b75b0>), 3: (1.5302294754408432, <source.Algorithms.KNN.KNN object at 0x7fab780b7520>)}
+Best ks [1]
+current range:  (0, 6)
+Time to tune fold so far 72.8676347732544
+Model size 835
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished calculating results 3
+Finished calculating MSE 3
+Finished calculating results 4
+Finished calculating MSE 4
+Finished calculating results 1
+Finished calculating MSE 1
+Finished calculating results 5
+Finished calculating MSE 5
+Finished calculating results 2
+Finished calculating MSE 2
+Finished calculating results 6
+Finished calculating MSE 6
+{0: None, 3: (1.4786723740188723, <source.Algorithms.KNN.KNN object at 0x7fab780b73d0>), 4: (1.5368292371442958, <source.Algorithms.KNN.KNN object at 0x7fab780b72e0>), 1: (0.8090909090909091, <source.Algorithms.KNN.KNN object at 0x7fab780b7460>), 5: (1.6849929084614352, <source.Algorithms.KNN.KNN object at 0x7fab780b76a0>), 2: (1.302237027942477, <source.Algorithms.KNN.KNN object at 0x7fab780b7490>), 6: (1.6471228359465346, <source.Algorithms.KNN.KNN object at 0x7fab780b7580>)}
+Best ks [1, 1]
+current range:  (0, 6)
+Time to tune fold so far 128.28180480003357
+Model size 835
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished calculating results 3
+Finished calculating MSE 3
+Finished calculating results 1
+Finished calculating MSE 1
+Finished calculating results 2
+Finished calculating MSE 2
+Finished calculating results 4
+Finished calculating MSE 4
+Finished calculating results 5
+Finished calculating MSE 5
+Finished calculating results 6
+Finished calculating MSE 6
+{0: None, 3: (1.6443900648470382, <source.Algorithms.KNN.KNN object at 0x7fab77ff5cc0>), 1: (1.1272727272727272, <source.Algorithms.KNN.KNN object at 0x7fab77ff5cf0>), 2: (1.5022544706985674, <source.Algorithms.KNN.KNN object at 0x7fab77ff5d20>), 4: (1.666969971542439, <source.Algorithms.KNN.KNN object at 0x7fab77ff5e70>), 5: (1.5970349371244652, <source.Algorithms.KNN.KNN object at 0x7fab77ff61a0>), 6: (1.65320962432043, <source.Algorithms.KNN.KNN object at 0x7fab77ff5c30>)}
+Best ks [1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 183.71747994422913
+Model size 835
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished calculating results 4
+Finished calculating MSE 4
+Finished calculating results 1
+Finished calculating MSE 1
+Finished calculating results 2
+Finished calculating MSE 2
+Finished calculating results 6
+Finished calculating MSE 6
+Finished calculating results 5
+Finished calculating MSE 5
+Finished calculating results 3
+Finished calculating MSE 3
+{0: None, 4: (1.554464820154193, <source.Algorithms.KNN.KNN object at 0x7fab9641c700>), 1: (0.8727272727272727, <source.Algorithms.KNN.KNN object at 0x7fab9641c730>), 2: (1.3999646093442322, <source.Algorithms.KNN.KNN object at 0x7fab9641c790>), 6: (1.6733772741684065, <source.Algorithms.KNN.KNN object at 0x7fab9641c850>), 5: (1.6078953986523228, <source.Algorithms.KNN.KNN object at 0x7fab9641c910>), 3: (1.4969247176122227, <source.Algorithms.KNN.KNN object at 0x7fab9641ca00>)}
+Best ks [1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 239.47295308113098
+Model size 840
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished calculating results 6
+Finished calculating MSE 6
+Finished calculating results 4
+Finished calculating MSE 4
+Finished calculating results 1
+Finished calculating MSE 1
+Finished calculating results 5
+Finished calculating MSE 5
+Finished calculating results 3
+Finished calculating MSE 3
+Finished calculating results 2
+Finished calculating MSE 2
+{0: None, 6: (1.6556783117402671, <source.Algorithms.KNN.KNN object at 0x7fab77f0fee0>), 4: (1.528303037701733, <source.Algorithms.KNN.KNN object at 0x7fab77f0ff10>), 1: (0.6545454545454545, <source.Algorithms.KNN.KNN object at 0x7fab77f0fd30>), 5: (1.6260592564688046, <source.Algorithms.KNN.KNN object at 0x7fab77f0fbb0>), 3: (1.4140961422544656, <source.Algorithms.KNN.KNN object at 0x7fab77f0fe20>), 2: (1.2999670714110012, <source.Algorithms.KNN.KNN object at 0x7fab77f0fac0>)}
+Best ks [1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 295.35413908958435
+Model size 845
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished calculating results 5
+Finished calculating results 4
+Finished calculating MSE 5
+Finished calculating MSE 4
+Finished calculating results 2
+Finished calculating MSE 2
+Finished calculating results 3
+Finished calculating MSE 3
+Finished calculating results 6
+Finished calculating MSE 6
+Finished calculating results 1
+Finished calculating MSE 1
+{0: None, 5: (1.5991887945965275, <source.Algorithms.KNN.KNN object at 0x7fab77f4bfa0>), 4: (1.527194058996952, <source.Algorithms.KNN.KNN object at 0x7fab77f4bdc0>), 2: (1.352251281131661, <source.Algorithms.KNN.KNN object at 0x7fab96453010>), 3: (1.441349260085467, <source.Algorithms.KNN.KNN object at 0x7fab96452da0>), 6: (1.740199148226477, <source.Algorithms.KNN.KNN object at 0x7fab96452fe0>), 1: (0.7272727272727273, <source.Algorithms.KNN.KNN object at 0x7fab96452f80>)}
+Best ks [1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 351.4314148426056
+Model size 845
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished calculating results 1
+Finished calculating MSE 1
+Finished calculating results 5
+Finished calculating MSE 5
+Finished calculating results 3
+Finished calculating MSE 3
+Finished calculating results 2
+Finished calculating MSE 2
+Finished calculating results 6
+Finished calculating MSE 6
+Finished calculating results 4
+Finished calculating MSE 4
+{0: None, 1: (0.8818181818181818, <source.Algorithms.KNN.KNN object at 0x7fab9646cd60>), 5: (1.6267911037246199, <source.Algorithms.KNN.KNN object at 0x7fab9646c9a0>), 3: (1.4494368910319189, <source.Algorithms.KNN.KNN object at 0x7fab9646cdf0>), 2: (1.4112569293314248, <source.Algorithms.KNN.KNN object at 0x7fab9646cbe0>), 6: (1.6693224288843536, <source.Algorithms.KNN.KNN object at 0x7fab9646cc70>), 4: (1.633394583202491, <source.Algorithms.KNN.KNN object at 0x7fab9646cac0>)}
+Best ks [1, 1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 407.23570108413696
+Model size 845
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished calculating results 4
+Finished calculating MSE 4
+Finished calculating results 2
+Finished calculating MSE 2
+Finished calculating results 1
+Finished calculating MSE 1
+Finished calculating results 3
+Finished calculating MSE 3
+Finished calculating results 6
+Finished calculating MSE 6
+Finished calculating results 5
+Finished calculating MSE 5
+{0: None, 4: (1.502200521341274, <source.Algorithms.KNN.KNN object at 0x7fab96456a40>), 2: (1.3613074789830273, <source.Algorithms.KNN.KNN object at 0x7fab964569b0>), 1: (0.8909090909090909, <source.Algorithms.KNN.KNN object at 0x7fab9646cd90>), 3: (1.4403760557051641, <source.Algorithms.KNN.KNN object at 0x7fab9646cd00>), 6: (1.7266898714382959, <source.Algorithms.KNN.KNN object at 0x7fab96456da0>), 5: (1.6399045491534285, <source.Algorithms.KNN.KNN object at 0x7fab96484940>)}
+Best ks [1, 1, 1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 462.4180178642273
+Model size 845
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished calculating results 6
+Finished calculating MSE 6
+Finished calculating results 3
+Finished calculating MSE 3
+Finished calculating results 4
+Finished calculating MSE 4
+Finished calculating results 1
+Finished calculating MSE 1
+Finished calculating results 2
+Finished calculating MSE 2
+Finished calculating results 5
+Finished calculating MSE 5
+{0: None, 6: (1.7130405944164446, <source.Algorithms.KNN.KNN object at 0x7fab964b6c80>), 3: (1.4353066400660663, <source.Algorithms.KNN.KNN object at 0x7fab964b6bf0>), 4: (1.5845810800263345, <source.Algorithms.KNN.KNN object at 0x7fab964b6c50>), 1: (0.6909090909090909, <source.Algorithms.KNN.KNN object at 0x7fab964b6d10>), 2: (1.3045014213725903, <source.Algorithms.KNN.KNN object at 0x7fab964b6dd0>), 5: (1.663554009621643, <source.Algorithms.KNN.KNN object at 0x7fab964b6f80>)}
+Best ks [1, 1, 1, 1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 518.1565847396851
+Model size 845
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished calculating results 5
+Finished calculating MSE 5
+Finished calculating results 6
+Finished calculating MSE 6
+Finished calculating results 2
+Finished calculating MSE 2
+Finished calculating results 1
+Finished calculating MSE 1
+Finished calculating results 3
+Finished calculating MSE 3
+Finished calculating results 4
+Finished calculating MSE 4
+{0: None, 5: (1.599863386966193, <source.Algorithms.KNN.KNN object at 0x7fab964d6d10>), 6: (1.5781618286041046, <source.Algorithms.KNN.KNN object at 0x7fab964d6d40>), 2: (1.377237830932403, <source.Algorithms.KNN.KNN object at 0x7fab964d6c50>), 1: (0.7181818181818181, <source.Algorithms.KNN.KNN object at 0x7fab964d6e00>), 3: (1.5110419413542213, <source.Algorithms.KNN.KNN object at 0x7fab77fe4100>), 4: (1.4822793139986106, <source.Algorithms.KNN.KNN object at 0x7fab96313fa0>)}
+Best ks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 576.6172933578491
+Model size 845
+time to tune folds 576.61732172966
+Best results: {1: {'k': 1, 'sigma': 1, 'mse': 1.0818181818181818, 'model': <source.Algorithms.KNN.KNN object at 0x7fab780b7850>}, 2: {'k': 1, 'sigma': 1, 'mse': 0.8090909090909091, 'model': <source.Algorithms.KNN.KNN object at 0x7fab965f5480>}, 3: {'k': 1, 'sigma': 1, 'mse': 1.1272727272727272, 'model': <source.Algorithms.KNN.KNN object at 0x7fab780b70a0>}, 4: {'k': 1, 'sigma': 1, 'mse': 0.8727272727272727, 'model': <source.Algorithms.KNN.KNN object at 0x7fab9641c700>}, 5: {'k': 1, 'sigma': 1, 'mse': 0.6545454545454545, 'model': <source.Algorithms.KNN.KNN object at 0x7fab77f7aa10>}, 6: {'k': 1, 'sigma': 1, 'mse': 0.7272727272727273, 'model': <source.Algorithms.KNN.KNN object at 0x7fab77fd48b0>}, 7: {'k': 1, 'sigma': 1, 'mse': 0.8818181818181818, 'model': <source.Algorithms.KNN.KNN object at 0x7fab9646cdf0>}, 8: {'k': 1, 'sigma': 1, 'mse': 0.8909090909090909, 'model': <source.Algorithms.KNN.KNN object at 0x7fab96484880>}, 9: {'k': 1, 'sigma': 1, 'mse': 0.6909090909090909, 'model': <source.Algorithms.KNN.KNN object at 0x7fab96583d30>}, 10: {'k': 1, 'sigma': 1, 'mse': 0.7181818181818181, 'model': <source.Algorithms.KNN.KNN object at 0x7fab96458d90>}}
+KNN Tuning time: 576.6181700229645
