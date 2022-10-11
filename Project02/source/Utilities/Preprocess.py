@@ -1,9 +1,9 @@
 import math
-from typing import List, Callable
+from typing import List, Callable, Dict
 import pandas as pd
 
-Converter = dict[str, Callable]
-Bins = dict[str, int]
+Converter = Dict[str, Callable]
+Bins = Dict[str, int]
 
 
 class Preprocessor:

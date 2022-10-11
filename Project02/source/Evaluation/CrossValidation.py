@@ -175,6 +175,7 @@ class CrossValidation:
         stratify: bool = False,
         model_params=[],
         predict_params=[],
+        train_params=None,
     ) -> float:
         """Perform cross-validation using k=num_folds folds
 
@@ -206,6 +207,9 @@ class CrossValidation:
             # Instantiate the model
             self.algorithm = model(training_data, self.target_feature, *model_params)
 
+            # Train the model
+            if train_params is not None:
+                self.algorithm.train(*train_params)
             fold_results = self.calculate_results_for_fold(self.algorithm, test_data, predict_params=predict_params)
 
             overall_results.append(fold_results)
