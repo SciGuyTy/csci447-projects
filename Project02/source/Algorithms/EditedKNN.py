@@ -187,7 +187,7 @@ class EditedKNN(KNN):
             #print("Ending check performance for", k)
             # Return the performance of the model trained with the current training data
             return EvaluationMeasure.calculate_0_1_loss(results)
-    '''
+    
     def predict(
         self,
         instance: Iterable,
@@ -214,10 +214,10 @@ class EditedKNN(KNN):
             with which a predicted response value from a regression model
             will still be considered 'correct'
         """
-        #self.train(k, reduce_redundancy=reduce_redundancy)
+        self.train(k, reduce_redundancy=reduce_redundancy)
 
         # Report the prediction based on the minimized dataset
-        return self.predict(instance, k)'''
+        return self._predict_response(instance, k)
 
     def train(self, k: int, reduce_redundancy=False):
 
@@ -246,4 +246,5 @@ class EditedKNN(KNN):
         #print("K {} done after {} loops".format(k, count))
         # Set the training data to that of the previous edit
         self.training_data = previous_edit
+
 

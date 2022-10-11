@@ -3,7 +3,7 @@ import pickle
 
 import math
 
-from Project02.source.Utilities.Utilities import OneHotEncoding
+from source.Utilities.Utilities import CyclicalData, OneHotEncoding
 from source.Utilities.ExperimentHelper import ExperimentHelper
 from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
 from source.Algorithms.EditedKNN import EditedKNN
@@ -18,27 +18,8 @@ import time
 
 computer_hardware_save_folds_path = "../datasets/regression/ComputerHardware/folds.txt"
 abalone_save_folds_path = "../datasets/regression/Abalone/folds.txt"
+forest_fires_save_folds_path = "../datasets/regression/ForestFires/folds.txt"
 
-
-def project_demonstration():
-    # Show the Soybean dataset being split into ten folds
-
-    # Demonstrate the calculation of the Minkowski (Euclidean) Distance Function
-
-    # Demonstrate the calculation of the Kernel Function
-
-    # Demonstrate of k-NN classification for a data point (show point and neighbors)
-
-    # Demonstrate k-NN regression for a data point (show point and neighbors)
-
-    # Demonstrate editing out a data point using Edited k-NN
-
-    # Demonstrate a data point be associated with a cluster in k-Means Clustering
-
-    # Display average performance across ten folds for k-NN, k-Means, and ENN on a classification data set
-
-    # Display average performance across ten folds for k-NN, k-Means, and ENN on a regression data set
-    pass
 
 def run_breast_cancer_experiment():
     ### Preprocess ###
@@ -423,6 +404,108 @@ def run_computer_hardware_experiment(run_knn=False, run_eknn=False, run_kmeans=F
     print("Total time:", time.time()-start_time)
 
 
+def run_forest_fires_experiment(run_knn=False, run_eknn=False, run_kmeans=False):
+    start_time = time.time()
+
+    with open(forest_fires_save_folds_path, "rb") as f:
+        training_test_data, pp, training_data, tuning_data, cv = pickle.load(f)
+    pp_time = time.time()
+    print("Preprocessing time:", pp_time - start_time)
+
+    if run_knn:
+        knn_start_time = time.time()
+        tuning_utility = TuningUtility(
+            KNN, pp.data, target_feature="area", regression=True
+        )
+        all_results_knn = tuning_utility.tune_sigma_and_k_for_folds(
+            training_test_data, tuning_data, [1, 10], 1
+        )
+        tuned_parameters_knn = TuningUtility.get_best_parameters_and_results(
+            all_results_knn
+        )
+
+        print("Best results:", tuned_parameters_knn)
+        print("KNN Tuning time:", time.time() - knn_start_time)
+
+        final_raw_results_knn = cv.validate_for_folds(
+            training_test_data, tuned_parameters_knn
+        )
+        final_results = [
+            EvaluationMeasure.calculate_means_square_error(i)
+            for i in final_raw_results_knn
+        ]
+        print("Final raw performance for knn", final_raw_results_knn)
+
+        print("Final performance for knn", final_results)
+
+    if run_eknn:
+        eknn_time = time.time()
+        tuning_utility = TuningUtility(
+            EditedKNN, pp.data, target_feature="area", regression=True
+        )
+        all_params_eknn = tuning_utility.tune_sigma_k_and_epsilon_for_folds(
+            training_test_data,
+            tuning_data,
+            [1, 3],
+            1,
+            [10, 20],
+            5,
+            train=True,
+            k_range=[1, 12],
+        )
+        tuned_params_eknn = TuningUtility.get_best_parameters_and_results(
+            all_params_eknn
+        )
+        print("Best EKNN params", tuned_params_eknn)
+        with open("eknn-best-params.bin", "wb+") as f:
+            pickle.dump(tuned_params_eknn, f)
+
+        print("EKNN Tuning Time", time.time() - eknn_time)
+
+        final_raw_results_eknn = cv.validate_for_folds(
+            training_test_data, tuned_params_eknn
+        )
+        final_results = [
+            EvaluationMeasure.calculate_means_square_error(i)
+            for i in final_raw_results_eknn
+        ]
+        print("Final raw performance for eknn", final_raw_results_eknn)
+        print("Final performance for eknn", final_results)
+
+    if run_kmeans:
+        with open("eknn-best-params.bin", "rb") as f:
+            tuned_parameters_eknn = pickle.load(f)
+
+        clusters = [
+            len(item["model"].training_data) for item in tuned_parameters_eknn.values()
+        ]
+        tuning_utility_kmeans = TuningUtility(
+            KNN, pp.data, target_feature="area", regression=True
+        )
+
+        all_params_kmeans = tuning_utility_kmeans.tune_sigma_and_k_for_folds(
+            training_test_data, tuning_data, [0.005, 0.015], 0.001, clusters=clusters
+        )
+        tuned_params_kmeans = TuningUtility.get_best_parameters_and_results(
+            all_params_kmeans
+        )
+
+        print("Best K means params:", tuned_params_kmeans)
+        with open("kmeans-best-params.bin", "wb+") as f:
+            pickle.dump(tuned_params_kmeans, f)
+
+        final_raw_results_kmeans = cv.validate_for_folds(
+            training_test_data, tuned_params_kmeans
+        )
+        final_results_kmeans = [
+            EvaluationMeasure.calculate_means_square_error(i)
+            for i in final_raw_results_kmeans
+        ]
+        print("Final raw performance for kmeans", final_raw_results_kmeans)
+        print("Final performance for kmeans", final_results_kmeans)
+    print("Total time:", time.time() - start_time)
+
+
 def create_folds_for_abalone():
     file_path = '../datasets/regression/Abalone/abalone.data'
     save_folds_path = abalone_save_folds_path
@@ -497,11 +580,55 @@ def create_folds_for_computer_hard():
     with open(save_folds_path, 'wb+') as f:
         pickle.dump([training_test_data, pp, training_data, tuning_data, cv], f)
 
+def create_folds_for_forest_fires():
+    file_path = "../datasets/regression/ForestFires/forestfires.data"
+    save_folds_path = forest_fires_save_folds_path
+    column_names = [
+        "x",
+        "y",
+        "month",
+        "day",
+        "ffmc",
+        "dmc",
+        "dc",
+        "isi",
+        "temp",
+        "rh",
+        "wind",
+        "rain",
+        "area",
+    ]
+
+    pp = Preprocessor()
+
+    month_map = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
+    day_map = {"mon": 1, "tue": 2, "wed": 3, "thu": 4, "fri": 5, "sat": 6, "sun": 7}
+
+    feature_modifiers = {"month": lambda x: CyclicalData(month_map[x], 12), "day": lambda x: CyclicalData(day_map[x], 7)}
+
+    pp.load_raw_data_from_file(
+        file_path,
+        column_names,
+        converters=feature_modifiers
+    )
+    cv = CrossValidation(pp.data, "area", regression=True)
+    tuning_data = cv.get_tuning_set(0.1)
+    training_data = pp.data.drop(tuning_data.index)
+    cv = CrossValidation(training_data, "area", regression=True)
+
+    folded_training_data = cv.fold_data(2, True)
+    training_test_data = cv.get_training_test_data_from_folds(folded_training_data)
+
+    with open(save_folds_path, "wb+") as f:
+        pickle.dump([training_test_data, pp, training_data, tuning_data, cv], f)
 
 if __name__ == "__main__":
     print("Starting at:", datetime.datetime.now())
-    create_folds_for_abalone()
-    run_abalone_experiment(False, True, True)
+    # create_folds_for_abalone()
+    # run_abalone_experiment(False, True, True)
     #create_folds_for_computer_hard()
     #run_computer_hardware_experiment(run_kmeans=True)
+    
+    # create_folds_for_forest_fires()
+    run_forest_fires_experiment(False, True, False)
 
