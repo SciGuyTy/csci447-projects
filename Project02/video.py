@@ -255,10 +255,9 @@ def demonstrate_clustering(k):
 
     # Copy data into a training set
     training_data = pp.data.copy()
-    features = training_data.columns.drop("class")
     sample_point = training_data.sample(1)
 
-    kmeans = KMeans(features, training_data, k)
+    kmeans = KMeans("class", training_data, k)
 
     print("---- Associating a Point with a Cluster in K-Means ----")
     print("\nConsider the following point from the training set passed into the KMeans Clustering algorithm:")
@@ -292,41 +291,41 @@ def demonstrate_average_classification_performance():
     # Retrieve classification levels
     classification_levels = training_data["class"].unique()
 
-    # Perform 10-fold CV for K-NN
-    print("\nRunning on K-NN")
-    # Define hyper-parameters
-    num_neighbors = 5
+    # # Perform 10-fold CV for K-NN
+    # print("\nRunning on K-NN")
+    # # Define hyper-parameters
+    # num_neighbors = 5
 
-    knn_cv = CrossValidation(training_data, target_feature="class")
-    knn_results = knn_cv.validate(KNN, 10, True, predict_params=[num_neighbors])
+    # knn_cv = CrossValidation(training_data, target_feature="class")
+    # knn_results = knn_cv.validate(KNN, 10, True, predict_params=[num_neighbors])
 
-    # Convert the results to performance metrics
-    knn_measures = ExperimentHelper.convert_classification_results_to_measures(
-        knn_results, classification_levels
-    )
-    print("\nAverage Performance for Each Class (K-NN):")
+    # # Convert the results to performance metrics
+    # knn_measures = ExperimentHelper.convert_classification_results_to_measures(
+    #     knn_results, classification_levels
+    # )
+    # print("\nAverage Performance for Each Class (K-NN):")
 
-    # Report average performance from CV
-    for classification, performance in knn_measures.items():
-        print(f"Class Level: {classification}\n{performance.mean()}\n")
+    # # Report average performance from CV
+    # for classification, performance in knn_measures.items():
+    #     print(f"Class Level: {classification}\n{performance.mean()}\n")
 
-    # Perform 10-fold CV for E-NN
-    print("\nRunning on E-NN")
-    # Define hyper-parameters
-    num_neighbors = 5
+    # # Perform 10-fold CV for E-NN
+    # print("\nRunning on E-NN")
+    # # Define hyper-parameters
+    # num_neighbors = 5
 
-    eknn_cv = CrossValidation(training_data, target_feature="class")
-    eknn_results = eknn_cv.validate(EditedKNN, 10, True, predict_params=[num_neighbors, False, 0.0])
+    # eknn_cv = CrossValidation(training_data, target_feature="class")
+    # eknn_results = eknn_cv.validate(EditedKNN, 10, True, predict_params=[num_neighbors, False, 0.0])
 
-    # Convert the results to performance metrics
-    eknn_measures = ExperimentHelper.convert_classification_results_to_measures(
-        eknn_results, classification_levels
-    )
-    print("\nAverage Performance for Each Class (E-NN):")
+    # # Convert the results to performance metrics
+    # eknn_measures = ExperimentHelper.convert_classification_results_to_measures(
+    #     eknn_results, classification_levels
+    # )
+    # print("\nAverage Performance for Each Class (E-NN):")
 
-    # Report average performance from CV
-    for classification, performance in eknn_measures.items():
-        print(f"Class Level: {classification}\n{performance.mean()}\n")
+    # # Report average performance from CV
+    # for classification, performance in eknn_measures.items():
+    #     print(f"Class Level: {classification}\n{performance.mean()}\n")
 
     # Perform 10-fold CV for K-Means
     print("\nRunning on K-Means")
@@ -451,12 +450,12 @@ def project_demonstration():
     # demonstrate_clustering(3)
     # input("")
 
-    # # Display average performance across ten folds for k-NN, k-Means, and ENN on a classification data set
-    # demonstrate_average_classification_performance()
-    # input("")
+    # Display average performance across ten folds for k-NN, k-Means, and ENN on a classification data set
+    demonstrate_average_classification_performance()
+    input("")
 
     # Display average performance across ten folds for k-NN, k-Means, and ENN on a regression data set
-    demonstrate_average_regression_performance()
+    # demonstrate_average_regression_performance()
 
 
 if __name__ == "__main__":

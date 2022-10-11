@@ -62,9 +62,9 @@ class KNN:
 
         if self.cluster is not None:
             # If clustering is selected, apply KMeans clustering
-            kmeans = KMeans(self.features, self.training_data, self.cluster)
+            kmeans = KMeans(self.target_feature, self.training_data, self.cluster)
             centroids = kmeans.cluster(self.cluster)
-            self.training_data = centroids
+            self.training_data = pd.DataFrame(centroids)
 
     def predict(self, instance: pd.Series, k: int) -> Any:
         """
