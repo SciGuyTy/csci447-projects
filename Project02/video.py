@@ -296,16 +296,16 @@ def demonstrate_average_classification_performance():
     # Define hyper-parameters
     num_neighbors = 5
 
-    knn_cv = CrossValidation(training_data.copy(), target_feature="class")
+    knn_cv = CrossValidation(training_data, target_feature="class")
     knn_results = knn_cv.validate(KNN, 10, True, predict_params=[num_neighbors])
 
-    # # Convert the results to performance metrics
+    # Convert the results to performance metrics
     knn_measures = ExperimentHelper.convert_classification_results_to_measures(
         knn_results, classification_levels
-     )
+    )
     print("\nAverage Performance for Each Class (K-NN):")
 
-    # # Report average performance from CV
+    # Report average performance from CV
     for classification, performance in knn_measures.items():
         print(f"Class Level: {classification}\n{performance.mean()}\n")
 
@@ -323,7 +323,6 @@ def demonstrate_average_classification_performance():
         eknn_results, classification_levels
     )
     print("\nAverage Performance for Each Class (E-NN):")
-
 
     # Report average performance from CV
     for classification, performance in eknn_measures.items():
@@ -382,6 +381,7 @@ def demonstrate_average_regression_performance():
     # Define hyper-parameters
     num_neighbors = 5
     sigma = 5
+    epsilon = 5
     err_threshold = 1.0
 
     eknn_cv = CrossValidation(training_data, target_feature="ERP", regression=True)
@@ -389,7 +389,7 @@ def demonstrate_average_regression_performance():
         EditedKNN,
         10,
         True,
-        model_params=[True, sigma, None],
+        model_params=[True, sigma, epsilon],
         predict_params=[num_neighbors, False, err_threshold],
     )
 
@@ -424,33 +424,33 @@ def demonstrate_average_regression_performance():
 
 
 def project_demonstration():
-    # # Show the Soybean dataset being split into ten folds
-    #demonstrate_folding()
-    #input("")
+    # Show the Soybean dataset being split into ten folds
+    demonstrate_folding()
+    input("")
 
-    # # Demonstrate the calculation of the Minkowski (Euclidean) Distance Function
-    #distance = demonstrate_distance_calculation()
-    #input("")
+    # Demonstrate the calculation of the Minkowski (Euclidean) Distance Function
+    distance = demonstrate_distance_calculation()
+    input("")
 
-    # # Demonstrate the calculation of the Kernel Function
-    #demonstrate_kernel_calculation(distance, 10)
-    #input("")
+    # Demonstrate the calculation of the Kernel Function
+    demonstrate_kernel_calculation(distance, 10)
+    input("")
 
-    # # Demonstrate of k-NN classification for a data point (show point and neighbors)
-    #demonstrate_knn_classification(5)
-    #input("")
+    # Demonstrate of k-NN classification for a data point (show point and neighbors)
+    demonstrate_knn_classification(5)
+    input("")
 
-    # # Demonstrate k-NN regression for a data point (show point and neighbors)
-    #demonstrate_knn_regression(5, 0.01)
-    #input("")
+    # Demonstrate k-NN regression for a data point (show point and neighbors)
+    demonstrate_knn_regression(5, 0.01)
+    input("")
 
-    # # Demonstrate editing out a data point using Edited k-NN
-    #demonstrate_editing()
-    #input("")
+    # Demonstrate editing out a data point using Edited k-NN
+    demonstrate_editing()
+    input("")
 
-    # # Demonstrate a data point be associated with a cluster in k-Means Clustering
-    #demonstrate_clustering(3)
-    #input("")
+    # Demonstrate a data point be associated with a cluster in k-Means Clustering
+    demonstrate_clustering(3)
+    input("")
 
     # Display average performance across ten folds for k-NN, k-Means, and ENN on a classification data set
     demonstrate_average_classification_performance()
@@ -458,7 +458,7 @@ def project_demonstration():
 
 
     # Display average performance across ten folds for k-NN, k-Means, and ENN on a regression data set
-    # demonstrate_average_regression_performance()
+    demonstrate_average_regression_performance()
 
 
 if __name__ == "__main__":
