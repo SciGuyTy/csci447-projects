@@ -8,6 +8,8 @@ from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
 from source.Evaluation.CrossValidation import CrossValidation
 from source.Utilities.Preprocess import Preprocessor
 
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 
 pp = Preprocessor()

@@ -1,4 +1,6 @@
 from typing import Any, List, Tuple
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 import math
 from heapq import heappop, heappush, heapify

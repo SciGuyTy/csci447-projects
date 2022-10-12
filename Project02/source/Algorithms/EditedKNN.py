@@ -5,6 +5,8 @@ from source.Evaluation.CrossValidation import CrossValidation
 from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
 from source.Algorithms.DistanceFunctions.DistanceFunction import DistanceFunction
 from source.Algorithms.KNN import KNN
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 from itertools import count
 

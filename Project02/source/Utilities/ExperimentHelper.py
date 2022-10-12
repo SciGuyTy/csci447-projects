@@ -1,4 +1,6 @@
 from typing import Any, List, Tuple
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 from source.Evaluation.EvaluationMeasure import EvaluationMeasure as EM
 

@@ -1,0 +1,1351 @@
+Starting at: 2022-10-12 08:44:10.023379
+Preprocessing time: 0.0038535594940185547
+k_range (1, 13)
+k:  1
+k:  2
+k:  3
+calculating results for fold None
+k:  4
+calculating results for fold None
+calculating results for fold None
+k:  5
+calculating results for fold None
+k:  6
+calculating results for fold None
+k:  7
+calculating results for fold None
+calculating results for fold None
+k:  8
+k:  9
+calculating results for fold None
+k:  10
+calculating results for fold None
+calculating results for fold None
+k:  12
+calculating results for fold None
+k:  11
+calculating results for fold None
+k:  13
+calculating results for fold None
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>), 11: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772baa40>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>), 11: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772baa40>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a772bac80>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>), 11: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772baa40>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a772bac80>), 7: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772baec0>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>), 11: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772baa40>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a772bac80>), 7: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772baec0>), 13: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb100>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>), 11: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772baa40>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a772bac80>), 7: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772baec0>), 13: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb100>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb340>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>), 11: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772baa40>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a772bac80>), 7: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772baec0>), 13: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb100>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb340>), 8: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772bb580>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>), 11: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772baa40>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a772bac80>), 7: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772baec0>), 13: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb100>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb340>), 8: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772bb580>), 9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a772bb7c0>)}
+finished results for fold None
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>), 11: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772baa40>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a772bac80>), 7: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772baec0>), 13: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb100>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb340>), 8: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772bb580>), 9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a772bb7c0>), 10: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772bba00>)}
+{5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba050>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba230>), 12: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba560>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba5c0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba800>), 11: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772baa40>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a772bac80>), 7: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772baec0>), 13: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb100>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb340>), 8: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772bb580>), 9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a772bb7c0>), 10: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a772bba00>)}
+Best ks [1]
+current range:  (0, 6)
+Time to tune fold so far 3.892977237701416
+Model size 169
+k_range (0, 6)
+k:  1
+k:  2
+calculating results for fold None
+calculating results for fold None
+k:  3
+calculating results for fold None
+k:  4
+k:  5
+calculating results for fold None
+calculating results for fold None
+k:  6
+calculating results for fold None
+finished results for fold None
+{0: None, 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9fc0>)}
+finished results for fold None
+{0: None, 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9fc0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9c60>)}
+finished results for fold None
+{0: None, 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9fc0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9c60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9b10>)}
+finished results for fold None
+{0: None, 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9fc0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9c60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9b10>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a7730c370>)}
+finished results for fold None
+{0: None, 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9fc0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9c60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9b10>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a7730c370>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a7730c5b0>)}
+finished results for fold None
+{0: None, 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9fc0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9c60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9b10>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a7730c370>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a7730c5b0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a7730c7f0>)}
+{0: None, 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9fc0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9c60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9b10>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a7730c370>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a7730c5b0>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a7730c7f0>)}
+Best ks [1, 1]
+current range:  (0, 6)
+Time to tune fold so far 6.3015971183776855
+Model size 170
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+calculating results for fold None
+k:  4
+calculating results for fold None
+calculating results for fold None
+k:  5
+calculating results for fold None
+calculating results for fold None
+k:  6
+calculating results for fold None
+finished results for fold None
+{0: None, 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bba30>)}
+finished results for fold None
+{0: None, 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bba30>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb6a0>)}
+finished results for fold None
+{0: None, 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bba30>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb6a0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1c0>)}
+finished results for fold None
+{0: None, 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bba30>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb6a0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1c0>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba200>)}
+finished results for fold None
+{0: None, 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bba30>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb6a0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1c0>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba200>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba8c0>)}
+finished results for fold None
+{0: None, 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bba30>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb6a0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1c0>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba200>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba8c0>), 5: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>)}
+{0: None, 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bba30>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb6a0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1c0>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba200>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba8c0>), 5: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>)}
+Best ks [1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 8.734145402908325
+Model size 170
+k_range (0, 6)
+k:  1
+k:  2
+calculating results for fold None
+calculating results for fold None
+k:  3
+k:  4
+calculating results for fold None
+k:  5
+calculating results for fold None
+calculating results for fold None
+k:  6
+calculating results for fold None
+finished results for fold None
+{0: None, 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>)}
+finished results for fold None
+{0: None, 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb640>)}
+finished results for fold None
+{0: None, 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb640>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9ba0>)}
+finished results for fold None
+{0: None, 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb640>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9ba0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9330>)}
+finished results for fold None
+{0: None, 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb640>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9ba0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9330>), 6: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772b98d0>)}
+finished results for fold None
+{0: None, 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb640>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9ba0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9330>), 6: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772b98d0>), 5: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772b9cc0>)}
+{0: None, 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb640>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9ba0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9330>), 6: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772b98d0>), 5: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772b9cc0>)}
+Best ks [1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 11.180723190307617
+Model size 171
+k_range (0, 6)
+k:  1
+k:  2
+calculating results for fold None
+k:  3
+calculating results for fold None
+calculating results for fold None
+k:  4
+calculating results for fold None
+k:  5
+k:  6
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bbd60>)}
+finished results for fold None
+{0: None, 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bbd60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba680>)}
+finished results for fold None
+{0: None, 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bbd60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba680>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba4d0>)}
+finished results for fold None
+{0: None, 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bbd60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba680>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba4d0>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772ba530>)}
+finished results for fold None
+{0: None, 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bbd60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba680>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba4d0>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772ba530>), 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb7f0>)}
+finished results for fold None
+{0: None, 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bbd60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba680>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba4d0>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772ba530>), 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb7f0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba0b0>)}
+{0: None, 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bbd60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772ba680>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba4d0>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772ba530>), 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb7f0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba0b0>)}
+Best ks [1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 13.616698503494263
+Model size 171
+k_range (0, 6)
+k:  1
+calculating results for fold None
+k:  2
+calculating results for fold None
+k:  3
+k:  4
+calculating results for fold None
+calculating results for fold None
+k:  5
+calculating results for fold None
+k:  6
+calculating results for fold None
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bae60>)}
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bae60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9d80>)}
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bae60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9d80>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb970>)}
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bae60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9d80>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb970>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bb8b0>)}
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bae60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9d80>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb970>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bb8b0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772b9d50>)}
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bae60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9d80>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb970>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bb8b0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772b9d50>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba4a0>)}
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bae60>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9d80>), 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772bb970>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bb8b0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772b9d50>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba4a0>)}
+Best ks [1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 16.040528774261475
+Model size 172
+k_range (0, 6)
+k:  1
+calculating results for fold None
+k:  2
+calculating results for fold None
+k:  3
+calculating results for fold None
+k:  4
+calculating results for fold None
+k:  5
+calculating results for fold None
+k:  6
+calculating results for fold None
+finished results for fold None
+{0: None, 2: (0.8695652173913043, <source.Algorithms.KNN.KNN object at 0x7f3a772b9810>)}
+finished results for fold None
+{0: None, 2: (0.8695652173913043, <source.Algorithms.KNN.KNN object at 0x7f3a772b9810>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb040>)}
+finished results for fold None
+{0: None, 2: (0.8695652173913043, <source.Algorithms.KNN.KNN object at 0x7f3a772b9810>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb040>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba9b0>)}
+finished results for fold None
+{0: None, 2: (0.8695652173913043, <source.Algorithms.KNN.KNN object at 0x7f3a772b9810>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb040>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba9b0>), 5: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9b70>)}
+finished results for fold None
+{0: None, 2: (0.8695652173913043, <source.Algorithms.KNN.KNN object at 0x7f3a772b9810>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb040>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba9b0>), 5: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9b70>), 6: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba920>)}
+finished results for fold None
+{0: None, 2: (0.8695652173913043, <source.Algorithms.KNN.KNN object at 0x7f3a772b9810>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb040>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba9b0>), 5: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9b70>), 6: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba920>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772b9990>)}
+{0: None, 2: (0.8695652173913043, <source.Algorithms.KNN.KNN object at 0x7f3a772b9810>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb040>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba9b0>), 5: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772b9b70>), 6: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba920>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772b9990>)}
+Best ks [1, 1, 1, 1, 1, 1, 2]
+current range:  (0, 7)
+Time to tune fold so far 18.548105239868164
+Model size 173
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+calculating results for fold None
+calculating results for fold None
+k:  5
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+k:  6
+k:  7
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 6: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bae30>)}
+finished results for fold None
+{0: None, 6: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bae30>), 7: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>)}
+finished results for fold None
+{0: None, 6: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bae30>), 7: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb2b0>)}
+finished results for fold None
+{0: None, 6: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bae30>), 7: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb2b0>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>)}
+finished results for fold None
+{0: None, 6: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bae30>), 7: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb2b0>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772baf80>)}
+finished results for fold None
+{0: None, 6: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bae30>), 7: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb2b0>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772baf80>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb100>)}
+finished results for fold None
+{0: None, 6: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bae30>), 7: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb2b0>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772baf80>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb100>), 5: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a77304a90>)}
+{0: None, 6: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bae30>), 7: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb2b0>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bab00>), 4: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772baf80>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772bb100>), 5: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a77304a90>)}
+Best ks [1, 1, 1, 1, 1, 1, 2, 1]
+current range:  (0, 7)
+Time to tune fold so far 21.364601612091064
+Model size 173
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+calculating results for fold None
+k:  4
+k:  5
+calculating results for fold None
+calculating results for fold None
+k:  6
+calculating results for fold None
+calculating results for fold None
+k:  7
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 7: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>)}
+finished results for fold None
+{0: None, 7: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb490>)}
+finished results for fold None
+{0: None, 7: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb490>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba7d0>)}
+finished results for fold None
+{0: None, 7: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb490>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba7d0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb220>)}
+finished results for fold None
+{0: None, 7: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb490>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba7d0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb220>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bb340>)}
+finished results for fold None
+{0: None, 7: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb490>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba7d0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb220>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bb340>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a77304d30>)}
+finished results for fold None
+{0: None, 7: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb490>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba7d0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb220>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bb340>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a77304d30>), 5: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a77304f70>)}
+{0: None, 7: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a772ba6e0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb490>), 3: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a772ba7d0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb220>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772bb340>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a77304d30>), 5: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a77304f70>)}
+Best ks [1, 1, 1, 1, 1, 1, 2, 1, 3]
+current range:  (0, 8)
+Time to tune fold so far 24.31313133239746
+Model size 175
+k_range (0, 8)
+k:  1
+k:  2
+k:  3
+calculating results for foldcalculating results for fold  NoneNone
+
+k:  4
+calculating results for fold None
+k:  5
+calculating results for fold None
+calculating results for fold None
+k:  6
+calculating results for fold None
+k:  7
+calculating results for fold None
+k:  8
+calculating results for fold None
+finished results for fold None
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba860>)}
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba860>), 3: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1f0>)}
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba860>), 3: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1f0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bbc10>)}
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba860>), 3: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1f0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bbc10>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9900>)}
+finished results for fold None
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba860>), 3: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1f0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bbc10>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9900>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772babf0>)}
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba860>), 3: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1f0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bbc10>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9900>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772babf0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a77305450>)}
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba860>), 3: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1f0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bbc10>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9900>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772babf0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a77305450>), 8: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772bb190>)}
+finished results for fold None
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba860>), 3: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1f0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bbc10>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9900>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772babf0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a77305450>), 8: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772bb190>), 5: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a773051e0>)}
+{0: None, 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772ba860>), 3: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bb1f0>), 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a772bbc10>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772b9900>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a772babf0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a77305450>), 8: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a772bb190>), 5: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a773051e0>)}
+Best ks [1, 1, 1, 1, 1, 1, 2, 1, 3, 1]
+current range:  (0, 8)
+Time to tune fold so far 27.33729910850525
+Model size 175
+time to tune folds 27.337319374084473
+Best params: {1: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a772ba020>}, 2: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a772b9d20>}, 3: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a772bbc70>}, 4: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a772baaa0>}, 5: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a772ba5f0>}, 6: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a772ba710>}, 7: {'k': 2, 'loss': 0.8695652173913043, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a772b9e10>}, 8: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a772ba650>}, 9: {'k': 3, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a772ba6b0>}, 10: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a77304b50>}}
+KNN Tuning time: 27.33770775794983
+calculating results for fold 1
+calculating results for fold 2
+calculating results for fold 3
+calculating results for fold 4
+calculating results for fold 5
+calculating results for fold 6
+calculating results for fold 7
+calculating results for fold 8
+calculating results for fold 9
+calculating results for fold 10
+finished results for fold 7
+finished results for fold 10
+finished results for fold 9
+finished results for fold 1
+finished results for fold 8
+finished results for fold 6
+finished results for fold 5
+finished results for fold 4
+finished results for fold 3
+finished results for fold 2
+Final raw performance for knn [   1  2  3  5  6  7
+1  5  0  1  0  0  0
+2  1  5  0  0  0  1
+3  0  0  0  0  0  0
+5  0  1  0  0  0  0
+6  0  1  0  0  1  0
+7  0  0  0  1  0  1,    1  2  3  5  6  7
+1  5  0  0  0  0  0
+2  0  5  1  1  0  0
+3  1  0  0  0  0  0
+5  0  0  0  0  0  0
+6  0  1  0  0  0  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  6  1  1  0  0  0
+2  0  4  0  0  0  0
+3  0  1  0  0  0  0
+5  0  0  0  0  0  0
+6  0  0  0  0  0  1
+7  0  0  0  1  0  1,    1  2  3  5  6  7
+1  4  0  0  0  0  0
+2  1  6  0  0  0  0
+3  2  1  2  0  0  0
+5  0  0  0  2  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  3  1  0  0  0  0
+2  2  4  1  0  0  0
+3  1  1  0  0  0  0
+5  0  0  0  0  0  0
+6  0  1  0  1  1  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  4  0  0  0  0  0
+2  1  7  0  0  0  0
+3  1  0  1  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  3  1  2  0  0  0
+2  3  6  0  1  1  0
+3  0  0  0  0  0  0
+5  0  0  0  0  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  4  1  1  0  0  0
+2  0  4  0  0  0  0
+3  2  1  1  0  0  0
+5  0  1  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  7  4  1  0  0  1
+2  0  3  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  1
+7  0  0  0  0  0  1,    1  2  3  5  6  7
+1  3  1  1  0  0  0
+2  4  5  0  0  0  0
+3  0  1  1  0  0  0
+5  0  0  0  1  0  1
+6  0  0  0  0  1  0
+7  0  0  0  0  0  2]
+Final performance for knn (01, beta) [0.6666666666666666, 0.75, 0.6875, 0.8181818181818182, 0.5555555555555556, 0.8947368421052632, 0.6, 0.7, 0.6190476190476191, 0.6190476190476191] [0.8333333333333334, 0.9090909090909091, 0.8571428571428571, 0.7272727272727273, 0.6, 0.8, 0.5, 0.6666666666666666, 0.7000000000000001, 0.5]
+k_range [1, 5]
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+Finished training 5
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+Finished training 4
+calculating results for fold None
+Finished training 2
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+finished results for fold None
+{4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349570>)}
+finished results for fold None
+{4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349570>), 5: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773498a0>)}
+finished results for fold None
+{4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349570>), 5: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773498a0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77307910>)}
+finished results for fold None
+{4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349570>), 5: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773498a0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77307910>), 3: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77307dc0>)}
+finished results for fold None
+{4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349570>), 5: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773498a0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77307910>), 3: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77307dc0>), 1: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773078b0>)}
+{4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349570>), 5: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773498a0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77307910>), 3: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77307dc0>), 1: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773078b0>)}
+Best ks [1]
+current range:  (0, 6)
+Time to tune fold so far 437.84811758995056
+Model size 100
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished training 4
+calculating results for fold None
+Finished training 2
+calculating results for fold None
+Finished training 6
+calculating results for fold None
+Finished training 5
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+finished results for fold None
+{0: None, 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d90>)}
+finished results for fold None
+{0: None, 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d90>), 2: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773486d0>)}
+finished results for fold None
+{0: None, 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d90>), 2: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773486d0>), 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348580>)}
+finished results for fold None
+{0: None, 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d90>), 2: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773486d0>), 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348580>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483d0>)}
+finished results for fold None
+{0: None, 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d90>), 2: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773486d0>), 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348580>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483d0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349e10>)}
+finished results for fold None
+{0: None, 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d90>), 2: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773486d0>), 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348580>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483d0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349e10>), 1: (0.8695652173913043, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a050>)}
+{0: None, 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d90>), 2: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773486d0>), 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348580>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483d0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349e10>), 1: (0.8695652173913043, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a050>)}
+Best ks [1, 1]
+current range:  (0, 6)
+Time to tune fold so far 956.3270752429962
+Model size 109
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished training 6
+calculating results for fold None
+Finished training 5
+calculating results for fold None
+Finished training 4
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+Finished training 2
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773493c0>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773493c0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348bb0>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773493c0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348bb0>), 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348700>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773493c0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348bb0>), 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348700>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a050>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773493c0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348bb0>), 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348700>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a050>), 3: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a290>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773493c0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348bb0>), 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348700>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a050>), 3: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a290>), 1: (0.9130434782608695, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a4d0>)}
+{0: None, 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773493c0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348bb0>), 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348700>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a050>), 3: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a290>), 1: (0.9130434782608695, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a4d0>)}
+Best ks [1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 1475.3291590213776
+Model size 109
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished training 5
+calculating results for fold None
+Finished training 4
+calculating results for fold None
+Finished training 6
+calculating results for fold None
+Finished training 2
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773485b0>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773485b0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349660>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773485b0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349660>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348400>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773485b0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349660>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348400>), 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349210>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773485b0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349660>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348400>), 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349210>), 3: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a500>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773485b0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349660>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348400>), 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349210>), 3: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a500>), 1: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a740>)}
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773485b0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349660>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348400>), 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349210>), 3: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a500>), 1: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a740>)}
+Best ks [1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 2026.5862731933594
+Model size 114
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished training 6
+calculating results for fold None
+Finished training 5
+calculating results for fold None
+Finished training 2
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+Finished training 4
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a110>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a110>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349180>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a110>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349180>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773487f0>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a110>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349180>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773487f0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d30>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a110>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349180>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773487f0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d30>), 3: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a770>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a110>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349180>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773487f0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d30>), 3: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a770>), 1: (0.8695652173913043, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a9b0>)}
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a110>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349180>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773487f0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348d30>), 3: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a770>), 1: (0.8695652173913043, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a9b0>)}
+Best ks [1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 2504.8330359458923
+Model size 103
+k_range (0, 6)
+k:  1
+k:  2
+k:  4
+k:  3
+k:  5
+k:  6
+Finished training 5
+calculating results for fold None
+Finished training 6
+calculating results for fold None
+Finished training 2
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+Finished training 4
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494b0>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494b0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773488e0>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494b0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773488e0>), 4: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349000>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494b0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773488e0>), 4: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349000>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348b80>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494b0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773488e0>), 4: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349000>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348b80>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a9b0>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494b0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773488e0>), 4: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349000>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348b80>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a9b0>), 1: (0.8260869565217391, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734abf0>)}
+{0: None, 2: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494b0>), 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773488e0>), 4: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349000>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348b80>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734a9b0>), 1: (0.8260869565217391, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734abf0>)}
+Best ks [1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 2968.5333547592163
+Model size 102
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished training 2
+calculating results for fold None
+Finished training 6
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+Finished training 4
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+Finished training 5
+calculating results for fold None
+finished results for fold None
+{0: None, 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348730>)}
+finished results for fold None
+{0: None, 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348730>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483a0>)}
+finished results for fold None
+{0: None, 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348730>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483a0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349ae0>)}
+finished results for fold None
+{0: None, 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348730>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483a0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349ae0>), 3: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773482e0>)}
+finished results for fold None
+{0: None, 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348730>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483a0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349ae0>), 3: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773482e0>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734abf0>)}
+finished results for fold None
+{0: None, 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348730>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483a0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349ae0>), 3: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773482e0>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734abf0>), 1: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734ae30>)}
+{0: None, 2: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348730>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483a0>), 4: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349ae0>), 3: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773482e0>), 5: (0.5652173913043478, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734abf0>), 1: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734ae30>)}
+Best ks [1, 1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 3474.987063407898
+Model size 108
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished training 6
+calculating results for fold None
+Finished training 4
+calculating results for fold None
+Finished training 5
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+Finished training 2
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+finished results for fold None
+{0: None, 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349060>)}
+finished results for fold None
+{0: None, 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349060>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773499c0>)}
+finished results for fold None
+{0: None, 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349060>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773499c0>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349930>)}
+finished results for fold None
+{0: None, 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349060>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773499c0>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349930>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349ae0>)}
+finished results for fold None
+{0: None, 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349060>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773499c0>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349930>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349ae0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734ae60>)}
+finished results for fold None
+{0: None, 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349060>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773499c0>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349930>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349ae0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734ae60>), 1: (0.8695652173913043, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b0a0>)}
+{0: None, 6: (0.4782608695652174, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349060>), 4: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773499c0>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349930>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349ae0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734ae60>), 1: (0.8695652173913043, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b0a0>)}
+Best ks [1, 1, 1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 4038.3807759284973
+Model size 115
+k_range (0, 6)
+k:  1
+k:  2
+k:  4
+k:  3
+k:  5
+k:  6
+Finished training 6
+calculating results for fold None
+Finished training 5
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+Finished training 2
+calculating results for fold None
+Finished training 4
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348100>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348100>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349990>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348100>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349990>), 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348040>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348100>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349990>), 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348040>), 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494e0>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348100>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349990>), 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348040>), 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494e0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b0a0>)}
+finished results for fold None
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348100>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349990>), 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348040>), 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494e0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b0a0>), 1: (0.8260869565217391, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b2e0>)}
+{0: None, 6: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348100>), 2: (0.6956521739130435, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349990>), 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348040>), 5: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773494e0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b0a0>), 1: (0.8260869565217391, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b2e0>)}
+Best ks [1, 1, 1, 1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 4648.5764174461365
+Model size 118
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+Finished training 4
+calculating results for fold None
+Finished training 2
+calculating results for fold None
+Finished training 5
+calculating results for fold None
+Finished training 6
+calculating results for fold None
+Finished training 1
+calculating results for fold None
+Finished training 3
+calculating results for fold None
+finished results for fold None
+{0: None, 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348910>)}
+finished results for fold None
+{0: None, 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348910>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349810>)}
+finished results for fold None
+{0: None, 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348910>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349810>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773490f0>)}
+finished results for fold None
+{0: None, 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348910>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349810>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773490f0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773489d0>)}
+finished results for fold None
+{0: None, 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348910>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349810>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773490f0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773489d0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b2e0>)}
+finished results for fold None
+{0: None, 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348910>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349810>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773490f0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773489d0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b2e0>), 1: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b520>)}
+{0: None, 4: (0.6521739130434783, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348910>), 6: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349810>), 5: (0.5217391304347826, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773490f0>), 2: (0.6086956521739131, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773489d0>), 3: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b2e0>), 1: (0.7391304347826086, <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a7734b520>)}
+Best ks [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 5185.935956001282
+Model size 110
+time to tune folds 5185.93599319458
+Best params: {1: {'k': 1, 'loss': 0.6521739130434783, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773498d0>}, 2: {'k': 1, 'loss': 0.8695652173913043, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348490>}, 3: {'k': 1, 'loss': 0.9130434782608695, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349f00>}, 4: {'k': 1, 'loss': 0.7391304347826086, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773495d0>}, 5: {'k': 1, 'loss': 0.8695652173913043, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773488b0>}, 6: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348700>}, 7: {'k': 1, 'loss': 0.6956521739130435, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483d0>}, 8: {'k': 1, 'loss': 0.8695652173913043, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348bb0>}, 9: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348b20>}, 10: {'k': 1, 'loss': 0.7391304347826086, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773487f0>}}
+KNN Tuning time: 5185.936322927475
+calculating results for fold 1
+calculating results for fold 2
+calculating results for fold 3
+calculating results for fold 4
+calculating results for fold 5
+calculating results for fold 6
+calculating results for fold 7
+calculating results for fold 8
+calculating results for fold 9
+calculating results for fold 10
+finished results for fold 10
+finished results for fold 6
+finished results for fold 5
+finished results for fold 7
+finished results for fold 1
+finished results for fold 9
+finished results for fold 8
+finished results for fold 2
+finished results for fold 3
+finished results for fold 4
+Final raw performance for eknn [   1  2  3  5  6  7
+1  6  0  0  0  0  0
+2  0  5  1  1  0  0
+3  0  0  0  0  0  0
+5  0  1  0  0  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  6  2  1  0  0  0
+2  0  5  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  6  2  2  0  0  1
+2  0  5  0  1  0  0
+3  0  0  0  0  0  0
+5  0  0  0  0  1  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  4  1  1  0  0  0
+2  2  3  0  0  0  1
+3  0  0  0  0  0  0
+5  0  3  0  0  1  0
+6  0  0  0  0  0  0
+7  0  0  0  1  0  1,    1  2  3  5  6  7
+1  5  3  2  0  0  1
+2  2  4  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  0  0  0
+6  0  0  0  2  0  0
+7  0  0  0  0  1  2,    1  2  3  5  6  7
+1  6  2  1  0  0  0
+2  0  4  0  0  0  1
+3  0  0  0  0  0  0
+5  0  0  0  0  0  0
+6  0  0  0  0  0  0
+7  0  0  0  1  0  1,    1  2  3  5  6  7
+1  4  2  0  0  0  0
+2  2  4  1  0  0  0
+3  0  0  0  0  0  0
+5  0  1  0  0  0  0
+6  0  0  0  1  1  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  4  1  0  0  0  0
+2  3  6  2  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  1
+6  0  0  0  0  1  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  7  3  2  0  0  1
+2  0  4  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  1
+7  0  0  0  0  0  1,    1  2  3  5  6  7
+1  5  1  2  0  0  0
+2  1  6  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3]
+Final performance for eknn (01, beta) [0.8125, 0.8421052631578947, 0.65, 0.4444444444444444, 0.5, 0.6875, 0.6111111111111112, 0.6666666666666666, 0.6666666666666666, 0.8] [1.0, 0.8, 0.7058823529411764, 0.6666666666666666, 0.5555555555555556, 0.8, 0.6666666666666666, 0.6666666666666666, 0.7000000000000001, 0.7142857142857143]
+Best EKNN params {1: {'k': 1, 'loss': 0.6521739130434783, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773498d0>}, 2: {'k': 1, 'loss': 0.8695652173913043, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348490>}, 3: {'k': 1, 'loss': 0.9130434782608695, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77349f00>}, 4: {'k': 1, 'loss': 0.7391304347826086, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773495d0>}, 5: {'k': 1, 'loss': 0.8695652173913043, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773488b0>}, 6: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348700>}, 7: {'k': 1, 'loss': 0.6956521739130435, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773483d0>}, 8: {'k': 1, 'loss': 0.8695652173913043, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348bb0>}, 9: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a77348b20>}, 10: {'k': 1, 'loss': 0.7391304347826086, 'model': <source.Algorithms.EditedKNN.EditedKNN object at 0x7f3a773487f0>}}
+EKNN Tuning Time 5777.591503381729
+k_range [1, 10]
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+k:  8
+k:  9
+k:  10
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>)}
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>)}
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e0e0>)}
+calculating results for fold None
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e0e0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e350>)}
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e0e0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e350>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e5c0>)}
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e0e0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e350>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e5c0>), 7: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>)}
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e0e0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e350>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e5c0>), 7: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 10: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573eaa0>)}
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e0e0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e350>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e5c0>), 7: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 10: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573eaa0>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed10>)}
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e0e0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e350>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e5c0>), 7: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 10: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573eaa0>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed10>), 1: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573ef80>)}
+finished results for fold None
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e0e0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e350>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e5c0>), 7: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 10: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573eaa0>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed10>), 1: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573ef80>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f1f0>)}
+{9: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a95723190>), 8: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e0e0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e350>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e5c0>), 7: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 10: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573eaa0>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed10>), 1: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573ef80>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f1f0>)}
+Best ks [1]
+current range:  (0, 6)
+Time to tune fold so far 24.82817006111145
+Model size 100
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f6d0>)}
+finished results for fold None
+{0: None, 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f6d0>), 6: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f850>)}
+finished results for fold None
+{0: None, 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f6d0>), 6: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f850>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb20>)}
+finished results for fold None
+{0: None, 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f6d0>), 6: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f850>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb20>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fd90>)}
+finished results for fold None
+{0: None, 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f6d0>), 6: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f850>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb20>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fd90>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573fc10>)}
+finished results for fold None
+{0: None, 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f6d0>), 6: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f850>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb20>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fd90>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573fc10>), 2: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f5e0>)}
+{0: None, 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f6d0>), 6: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573f850>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb20>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fd90>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573fc10>), 2: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f5e0>)}
+Best ks [1, 1]
+current range:  (0, 6)
+Time to tune fold so far 45.920857191085815
+Model size 109
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e260>)}
+finished results for fold None
+{0: None, 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e260>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>)}
+finished results for fold None
+{0: None, 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e260>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573ded0>)}
+finished results for fold None
+{0: None, 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e260>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573ded0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e890>)}
+finished results for fold None
+{0: None, 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e260>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573ded0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e890>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573f250>)}
+finished results for fold None
+{0: None, 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e260>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573ded0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e890>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573f250>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed70>)}
+{0: None, 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e260>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573ded0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573e890>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573f250>), 6: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed70>)}
+Best ks [1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 67.00989317893982
+Model size 109
+k_range (0, 6)
+k:  1
+k:  2
+k:  4
+k:  3
+k:  5
+k:  6
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573feb0>)}
+finished results for fold None
+finished results for fold None
+{0: None, 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573feb0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e9b0>)}
+{0: None, 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573feb0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e9b0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573ead0>)}
+finished results for fold None
+{0: None, 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573feb0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e9b0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573ead0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573eda0>)}
+finished results for fold None
+{0: None, 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573feb0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e9b0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573ead0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573eda0>), 5: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573d8a0>)}
+finished results for fold None
+{0: None, 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573feb0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e9b0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573ead0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573eda0>), 5: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573d8a0>), 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573d300>)}
+{0: None, 3: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573feb0>), 4: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e9b0>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573ead0>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573eda0>), 5: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573d8a0>), 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573d300>)}
+Best ks [1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 89.52517938613892
+Model size 114
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 2: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f190>)}
+finished results for fold None
+{0: None, 2: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f190>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573de10>)}
+finished results for fold None
+{0: None, 2: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f190>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573de10>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f0d0>)}
+finished results for fold None
+{0: None, 2: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f190>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573de10>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f0d0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f760>)}
+finished results for fold None
+{0: None, 2: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f190>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573de10>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f0d0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f760>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573d300>)}
+finished results for fold None
+{0: None, 2: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f190>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573de10>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f0d0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f760>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573d300>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573f370>)}
+{0: None, 2: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f190>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573de10>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f0d0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f760>), 5: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573d300>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573f370>)}
+Best ks [1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 109.74186325073242
+Model size 103
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb50>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb50>), 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573da20>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb50>), 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573da20>), 4: (0.43478260869565216, <source.Algorithms.KNN.KNN object at 0x7f3a9573df60>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb50>), 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573da20>), 4: (0.43478260869565216, <source.Algorithms.KNN.KNN object at 0x7f3a9573df60>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e770>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb50>), 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573da20>), 4: (0.43478260869565216, <source.Algorithms.KNN.KNN object at 0x7f3a9573df60>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e770>), 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573e7a0>)}
+finished results for fold None
+{0: None, 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb50>), 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573da20>), 4: (0.43478260869565216, <source.Algorithms.KNN.KNN object at 0x7f3a9573df60>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e770>), 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573e7a0>), 6: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e860>)}
+{0: None, 2: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573fb50>), 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573da20>), 4: (0.43478260869565216, <source.Algorithms.KNN.KNN object at 0x7f3a9573df60>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e770>), 3: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573e7a0>), 6: (0.4782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e860>)}
+Best ks [1, 1, 1, 1, 1, 1]
+current range:  (0, 6)
+Time to tune fold so far 129.6050329208374
+Model size 102
+k_range (0, 6)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>)}
+finished results for fold None
+{0: None, 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573f370>)}
+finished results for fold None
+{0: None, 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573f370>), 1: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e560>)}
+finished results for fold None
+{0: None, 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573f370>), 1: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e560>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573d840>)}
+finished results for fold None
+finished results for fold None
+{0: None, 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573f370>), 1: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e560>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573d840>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573dd20>)}
+{0: None, 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573f370>), 1: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e560>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573d840>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573dd20>), 4: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ead0>)}
+{0: None, 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573e620>), 2: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573f370>), 1: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e560>), 5: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573d840>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573dd20>), 4: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ead0>)}
+Best ks [1, 1, 1, 1, 1, 1, 2]
+current range:  (0, 7)
+Time to tune fold so far 150.62092447280884
+Model size 108
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed40>)}
+finished results for fold None
+{0: None, 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed40>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f1c0>)}
+finished results for fold None
+{0: None, 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed40>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f1c0>), 7: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ecb0>)}
+finished results for fold None
+{0: None, 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed40>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f1c0>), 7: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ecb0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573cdc0>)}
+finished results for fold None
+{0: None, 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed40>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f1c0>), 7: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ecb0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573cdc0>), 1: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e530>)}
+calculating results for fold None
+finished results for fold None
+{0: None, 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed40>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f1c0>), 7: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ecb0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573cdc0>), 1: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e530>), 4: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573dcc0>)}
+calculating results for fold None
+finished results for fold None
+{0: None, 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed40>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f1c0>), 7: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ecb0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573cdc0>), 1: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e530>), 4: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573dcc0>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a957607c0>)}
+{0: None, 5: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ed40>), 3: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573f1c0>), 7: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573ecb0>), 6: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573cdc0>), 1: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573e530>), 4: (0.5217391304347826, <source.Algorithms.KNN.KNN object at 0x7f3a9573dcc0>), 2: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a957607c0>)}
+Best ks [1, 1, 1, 1, 1, 1, 2, 1]
+current range:  (0, 7)
+Time to tune fold so far 177.71615171432495
+Model size 115
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573fac0>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573fac0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fe80>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573fac0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fe80>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573fac0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fe80>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573c610>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573fac0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fe80>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573c610>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573d090>)}
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573fac0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fe80>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573c610>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573d090>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573fd90>)}
+finished results for fold None
+{0: None, 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573fac0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fe80>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573c610>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573d090>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573fd90>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a95760ca0>)}
+{0: None, 5: (0.6086956521739131, <source.Algorithms.KNN.KNN object at 0x7f3a9573fac0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573fe80>), 1: (0.8260869565217391, <source.Algorithms.KNN.KNN object at 0x7f3a9573e830>), 6: (0.7391304347826086, <source.Algorithms.KNN.KNN object at 0x7f3a9573c610>), 2: (0.5652173913043478, <source.Algorithms.KNN.KNN object at 0x7f3a9573d090>), 4: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573fd90>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a95760ca0>)}
+Best ks [1, 1, 1, 1, 1, 1, 2, 1, 1]
+current range:  (0, 7)
+Time to tune fold so far 205.38272786140442
+Model size 118
+k_range (0, 7)
+k:  1
+k:  2
+k:  3
+k:  4
+k:  5
+k:  6
+k:  7
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e590>)}
+finished results for fold None
+{0: None, 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e590>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f490>)}
+finished results for fold None
+{0: None, 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e590>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f490>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573eb60>)}
+finished results for fold None
+{0: None, 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e590>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f490>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573eb60>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f790>)}
+finished results for fold None
+{0: None, 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e590>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f490>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573eb60>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f790>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573f4c0>)}
+calculating results for fold None
+calculating results for fold None
+finished results for fold None
+{0: None, 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e590>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f490>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573eb60>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f790>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573f4c0>), 5: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a957607c0>)}
+finished results for fold None
+{0: None, 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e590>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f490>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573eb60>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f790>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573f4c0>), 5: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a957607c0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a95760f40>)}
+{0: None, 2: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573e590>), 6: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573f490>), 4: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a9573eb60>), 7: (0.6956521739130435, <source.Algorithms.KNN.KNN object at 0x7f3a9573f790>), 1: (0.782608695652174, <source.Algorithms.KNN.KNN object at 0x7f3a9573f4c0>), 5: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a957607c0>), 3: (0.6521739130434783, <source.Algorithms.KNN.KNN object at 0x7f3a95760f40>)}
+Best ks [1, 1, 1, 1, 1, 1, 2, 1, 1, 1]
+current range:  (0, 7)
+Time to tune fold so far 231.10424089431763
+Model size 110
+time to tune folds 231.1042764186859
+Best params: {1: {'k': 1, 'loss': 0.6956521739130435, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573ebf0>}, 2: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573f580>}, 3: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573dfc0>}, 4: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573fc70>}, 5: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573f640>}, 6: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573c8b0>}, 7: {'k': 2, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573f730>}, 8: {'k': 1, 'loss': 0.7391304347826086, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573e170>}, 9: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>}, 10: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573e9e0>}}
+KNN Tuning time: 231.10666513442993
+calculating results for fold 1
+calculating results for fold 2
+calculating results for fold 3
+calculating results for fold 4
+calculating results for fold 5
+calculating results for fold 6
+calculating results for fold 7
+calculating results for fold 8
+calculating results for fold 9
+calculating results for fold 10
+finished results for fold 10
+finished results for fold 8
+finished results for fold 9
+finished results for fold 7
+finished results for fold 6
+finished results for fold 5
+finished results for fold 1
+finished results for fold 2
+finished results for fold 4
+finished results for fold 3
+Final raw performance for kmeans [   1  2  3  5  6  7
+1  6  0  0  0  0  0
+2  0  5  1  1  0  0
+3  0  0  0  0  0  0
+5  0  0  0  0  0  0
+6  0  1  0  0  0  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  4  2  0  0  0  0
+2  2  4  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  1  0  0  1  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  6  3  1  0  0  0
+2  0  3  0  0  0  1
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  1,    1  2  3  5  6  7
+1  4  1  1  0  0  0
+2  2  4  0  0  0  1
+3  0  0  0  0  0  0
+5  0  2  0  0  0  0
+6  0  0  0  0  0  0
+7  0  0  0  1  1  1,    1  2  3  5  6  7
+1  5  3  0  0  0  0
+2  1  4  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  4  3  2  0  0  0
+2  2  4  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  1  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  5  2  0  0  0  0
+2  1  5  1  0  0  0
+3  1  0  1  0  0  0
+5  0  0  0  2  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  1  3,    1  2  3  5  6  7
+1  4  2  0  0  1  0
+2  3  4  1  0  0  0
+3  0  0  1  0  0  0
+5  0  1  0  1  0  1
+6  0  0  0  0  0  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  4  2  2  0  0  0
+2  0  4  0  0  0  0
+3  2  1  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  5  3  2  0  0  1
+2  1  4  0  0  1  0
+3  1  0  0  0  0  0
+5  0  0  0  1  0  1
+6  0  0  0  0  0  0
+7  0  0  0  0  0  1]
+Final performance for kmeans (01, beta) [0.8125, 0.6666666666666666, 0.6875, 0.5, 0.7368421052631579, 0.6, 0.7272727272727273, 0.5714285714285714, 0.65, 0.5238095238095238] [1.0, 0.6666666666666666, 0.7499999999999999, 0.6666666666666666, 0.7142857142857143, 0.5333333333333333, 0.7142857142857143, 0.5714285714285714, 0.5714285714285715, 0.5555555555555556]
+Best kmeans params {1: {'k': 1, 'loss': 0.6956521739130435, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573ebf0>}, 2: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573f580>}, 3: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573dfc0>}, 4: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573fc70>}, 5: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573f640>}, 6: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573c8b0>}, 7: {'k': 2, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573f730>}, 8: {'k': 1, 'loss': 0.7391304347826086, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573e170>}, 9: {'k': 1, 'loss': 0.8260869565217391, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573de70>}, 10: {'k': 1, 'loss': 0.782608695652174, 'model': <source.Algorithms.KNN.KNN object at 0x7f3a9573e9e0>}}
+kmeans Tuning Time 232.92647433280945
+Final raw performance for kmeans [   1  2  3  5  6  7
+1  6  0  0  0  0  0
+2  0  5  1  1  0  0
+3  0  0  0  0  0  0
+5  0  0  0  0  0  0
+6  0  1  0  0  0  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  4  2  0  0  0  0
+2  2  4  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  1  0  0  1  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  6  3  1  0  0  0
+2  0  3  0  0  0  1
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  1,    1  2  3  5  6  7
+1  4  1  1  0  0  0
+2  2  4  0  0  0  1
+3  0  0  0  0  0  0
+5  0  2  0  0  0  0
+6  0  0  0  0  0  0
+7  0  0  0  1  1  1,    1  2  3  5  6  7
+1  5  3  0  0  0  0
+2  1  4  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  4  3  2  0  0  0
+2  2  4  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  1  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  5  2  0  0  0  0
+2  1  5  1  0  0  0
+3  1  0  1  0  0  0
+5  0  0  0  2  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  1  3,    1  2  3  5  6  7
+1  4  2  0  0  1  0
+2  3  4  1  0  0  0
+3  0  0  1  0  0  0
+5  0  1  0  1  0  1
+6  0  0  0  0  0  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  4  2  2  0  0  0
+2  0  4  0  0  0  0
+3  2  1  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  5  3  2  0  0  1
+2  1  4  0  0  1  0
+3  1  0  0  0  0  0
+5  0  0  0  1  0  1
+6  0  0  0  0  0  0
+7  0  0  0  0  0  1]
+Final performance for eknn (01, beta) [0.8125, 0.6666666666666666, 0.6875, 0.5, 0.7368421052631579, 0.6, 0.7272727272727273, 0.5714285714285714, 0.65, 0.5238095238095238] [1.0, 0.6666666666666666, 0.7499999999999999, 0.6666666666666666, 0.7142857142857143, 0.5333333333333333, 0.7142857142857143, 0.5714285714285714, 0.5714285714285715, 0.5555555555555556]
+Total time: 6040.71701002121

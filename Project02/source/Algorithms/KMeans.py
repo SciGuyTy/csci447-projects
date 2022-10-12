@@ -3,6 +3,8 @@ from source.Algorithms.DistanceFunctions.Minkowski import Minkowski
 from source.Algorithms.DistanceFunctions.DistanceFunction import DistanceFunction
 
 import math
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 
 
