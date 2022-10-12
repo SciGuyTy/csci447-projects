@@ -1,6 +1,8 @@
 import math
 from typing import List
 
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 
 

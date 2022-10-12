@@ -1,3 +1,5 @@
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 
 class EvaluationMeasure:
@@ -125,7 +127,6 @@ class EvaluationMeasure:
         # For each result in the set, compute the square error and add it to the total_error
         for index, result in results.iterrows():
             total_error += (result["actual"] - result["predicted"]) ** 2
-
 
         # Divide the total_error by the number of results in the set to compute and return
         # the mean square error

@@ -4,6 +4,8 @@ import copy
 from Project02.source.Evaluation.CrossValidation import CrossValidation
 from Project02.source.Evaluation.EvaluationMeasure import EvaluationMeasure
 from Project02.source.Utilities.Utilities import Utilities
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor
 import multiprocessing
@@ -153,7 +155,7 @@ class TuningUtility:
                 args = [algorithm, self.CV, test_data, k, results]
                 # If the algorithm needs to be trained, have the new process train it
                 if train:
-                    args += [algorithm.train, [k]]
+                    args += [True, [k]]
                 process = multiprocessing.Process(target=TuningUtility.get_01_loss_for_k, args=args)
                 jobs.append(process)
                 process.start()
@@ -185,7 +187,7 @@ class TuningUtility:
         return dict(results)
 
     @staticmethod
-    def get_01_loss_for_k(algorithm, cv, test_data, k, results, train_callable=None, train_params=[]):
+    def get_01_loss_for_k(algorithm, cv, test_data, k, results, train=False, train_params=[]):
         # Don't run on k values less than one
         if k < 1:
             results[k] = None
@@ -193,8 +195,9 @@ class TuningUtility:
         print("k: ", k)
         algorithm = algorithm()
         # Train the model if possible
-        if train_callable is not None:
-            train_callable(*train_params)
+        if train:
+            algorithm.train(*train_params)
+            print("Finished training", k)
         # Calculate the results for the specific hyperparameters
         fold_results = cv.calculate_results_for_fold(algorithm, test_data, predict_params=[k])
         # Calculate the loss from the results
@@ -204,7 +207,7 @@ class TuningUtility:
         print(results)
 
     @staticmethod
-    def get_mean_squared_error_for_k(algorithm, cv, test_data, k, results, train_callable=None, train_params=[]):
+    def get_mean_squared_error_for_k(algorithm, cv, test_data, k, results, train=False, train_params=[]):
         # Don't run on k values less than one
         if k < 1:
             results[k] = None
@@ -212,8 +215,8 @@ class TuningUtility:
         print("k: ", k)
         algorithm = algorithm()
         # Train the model if possible
-        if train_callable is not None:
-            train_callable(*train_params)
+        if train:
+            algorithm.train(*train_params)
             print("Finished training", k)
         # Calculate the results for the specific hyperparameters
         fold_results = cv.calculate_results_for_fold(algorithm, test_data, predict_params=[k])
