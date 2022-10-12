@@ -112,6 +112,8 @@ class TuningUtility:
             k_range = TuningUtility.get_new_range(best_ks, 5)
             print("Best ks", best_ks)
             print("current range: ", k_range)
+            print("Time to tune fold so far", time.time()-start_time)
+            print("Model size", len(model.training_data))
         print("time to tune folds", time.time() - start_time)
         return best_results
 
@@ -142,9 +144,12 @@ class TuningUtility:
             manager = multiprocessing.Manager()
             # A dictionary proxy to handle the returned results from the multi-processing.
             results = manager.dict()
+            algs = manager.dict()
+
+
             # Spawn a new process to run validation again the tuning data for each k value we want to examine
             for k in range(k_range[0], k_range[1] + 1):
-                algorithm = self.model(training_data, self.target_feature, False, cluster=cluster, *model_params)
+                algorithm = lambda: self.model(training_data, self.target_feature, False, cluster=cluster, *model_params)
                 args = [algorithm, self.CV, test_data, k, results]
                 # If the algorithm needs to be trained, have the new process train it
                 if train:
@@ -161,7 +166,7 @@ class TuningUtility:
             results = manager.dict()
             # Spawn a new process to run validation again the tuning data for each k value we want to examine
             for k in range(k_range[0], k_range[1] + 1):
-                algorithm = self.model(training_data, self.target_feature, True, *model_params)
+                algorithm = lambda: self.model(training_data, self.target_feature, True, *model_params)
                 args = [algorithm, self.CV, test_data, k, results]
                 # If the algorithm needs to be trained, have the new process train it
                 if train:
@@ -185,7 +190,8 @@ class TuningUtility:
         if k < 1:
             results[k] = None
             return
-        # print("k: ", k)
+        print("k: ", k)
+        algorithm = algorithm()
         # Train the model if possible
         if train_callable is not None:
             train_callable(*train_params)
@@ -195,7 +201,7 @@ class TuningUtility:
         loss = EvaluationMeasure.calculate_0_1_loss(fold_results)
         # Add the results to the dictionary proxy
         results[k] = (loss, algorithm)
-        # print(results)
+        print(results)
 
     @staticmethod
     def get_mean_squared_error_for_k(algorithm, cv, test_data, k, results, train_callable=None, train_params=[]):
@@ -204,13 +210,18 @@ class TuningUtility:
             results[k] = None
             return
         print("k: ", k)
+        algorithm = algorithm()
         # Train the model if possible
         if train_callable is not None:
             train_callable(*train_params)
+            print("Finished training", k)
         # Calculate the results for the specific hyperparameters
         fold_results = cv.calculate_results_for_fold(algorithm, test_data, predict_params=[k])
+        print("Finished calculating results", k)
         # Calculate the MSE from the results
         MSE = EvaluationMeasure.calculate_means_square_error(fold_results)
+        print("Finished calculating MSE", k)
         # Add the results to the dictionary proxy
         results[k] = (MSE, algorithm)
         # print(results)
+

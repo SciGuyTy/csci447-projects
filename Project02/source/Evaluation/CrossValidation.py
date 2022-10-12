@@ -1,5 +1,5 @@
 import math
-
+import multiprocessing
 from Project02.source.Utilities.Utilities import Utilities
 from typing import Callable, Union
 
@@ -213,18 +213,24 @@ class CrossValidation:
 
     def validate_for_folds(self, training_test_data, tuned_params):
         # Results for all the folds
-        overall_results = []
 
+        jobs = []
+        manager = multiprocessing.Manager()
+        overall_results = manager.dict()
         # Iterate through the training and test data pairs
         for fold, (training_data, test_data, _) in enumerate(training_test_data, start=1):
-            self.algorithm = tuned_params[fold]['model']
+            algorithm = tuned_params[fold]['model']
+            process = multiprocessing.Process(target=self.calculate_results_for_fold, args=(algorithm, test_data, [int(tuned_params[fold]['k'])], overall_results, fold))
 
-            fold_results = self.calculate_results_for_fold(self.algorithm, test_data, predict_params=[int(tuned_params[fold]['k'])])
+            jobs.append(process)
+            process.start()
 
-            overall_results.append(fold_results)
+        # Pause the main thread until the k-values have all been evaluated
+        for j in jobs:
+            j.join()
 
         # Return the average loss value
-        return overall_results
+        return list(overall_results.values())
 
 
     def get_training_test_data_from_folds(self, folded_data):
@@ -253,7 +259,8 @@ class CrossValidation:
 
         return training_test_data
 
-    def calculate_results_for_fold(self, algorithm, test_data, predict_params=[]):
+    def calculate_results_for_fold(self, algorithm, test_data, predict_params=[], add_to_dict=None, id=None):
+        print("calculating results for fold", id)
         if self.regression:
             # DataFrame to store results for this fold
             fold_results = pd.DataFrame(columns=["actual", "predicted"])
@@ -275,8 +282,10 @@ class CrossValidation:
                 # Train and execute the model on the given training data and testing data
                 actual = sample[self.target_feature]
                 prediction = algorithm.predict(sample, *predict_params)
-                print("Prediction {}, Actual {}".format(prediction, actual))
+                #print("Prediction {}, Actual {}".format(prediction, actual))
                 # Increment the prediction/actual pair in the confusion matrix
                 fold_results[actual][prediction] += 1
-
+        if add_to_dict is not None:
+            add_to_dict[id] = fold_results
+        print("finished results for fold", id)
         return fold_results

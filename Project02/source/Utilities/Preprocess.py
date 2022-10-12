@@ -9,6 +9,15 @@ Bins = dict[str, int]
 class Preprocessor:
     data: pd.DataFrame = None
 
+    @staticmethod
+    def float_converter(na_values):
+        def value_to_float(x):
+            if x in na_values:
+                return x
+            return float(x)
+
+        return value_to_float
+
     def load_raw_data_from_file(
         self,
         file_path: str,
@@ -17,6 +26,7 @@ class Preprocessor:
         converters: Converter = dict(),
         bins: Bins = dict(),
         dropNA: List[str] = False,
+        columns_to_floats = []
     ):
         """Load the raw data from a CSV file
 
@@ -52,6 +62,9 @@ class Preprocessor:
             what values should be considered "NA" (in addition to NA values
             defined by python, such as NaN and None).
         """
+
+
+        [converters.update({col: self.float_converter(dropNA)}) for col in columns_to_floats]
 
         # Read the CSV file
         self.data = pd.read_csv(file_path, names=column_names, converters=converters)
