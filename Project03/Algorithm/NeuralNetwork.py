@@ -1,3 +1,4 @@
+import math
 from typing import List
 import numpy as np
 
@@ -5,6 +6,12 @@ NetworkShape = List[int]
 class NeuralNetwork:
 
     RANDOM_WEIGHT_RANGE = (-.01, 0.01)
+
+    @staticmethod
+    def logistic_function(x):
+        return 1 / (1 + math.e**(-x))
+
+    vector_logistic_function = np.vectorize(logistic_function)
 
     def __init__(self, shape: NetworkShape):
         self.shape: NetworkShape = shape
@@ -40,3 +47,15 @@ class NeuralNetwork:
         rng = np.random.default_rng()
         # Construct a random array with values in the range of RANDOM_WEIGHT_RANGE
         return rng.random((output_node_count, input_node_count)) * (self.RANDOM_WEIGHT_RANGE[1]-self.RANDOM_WEIGHT_RANGE[0]) + self.RANDOM_WEIGHT_RANGE[0]
+
+    def calculate_feed_forward(self, input_vector: np.array):
+        # Loop through each weight matrix and apply the weights
+        # to the previous output, and then apply the activation function.
+        # Skip the last layer in the loop to avoid performing the activation
+        # function on it
+        for weights in self.weight_matrices[:-1]:
+            vector = self.vector_logistic_function(weights @ input_vector)
+        # Apply the last layer's weights and return the resulting vector
+        return self.weight_matrices[-1] @ vector
+
+
