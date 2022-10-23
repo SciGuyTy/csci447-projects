@@ -18,6 +18,8 @@ class Layer:
         self.number_of_nodes = number_of_nodes
         self.output = []
 
+        # print(self.weights)
+
     def _compute_action_potential(self, input):
         if self.weights.size == 0:
             return input

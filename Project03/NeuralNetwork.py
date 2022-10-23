@@ -13,7 +13,6 @@ class NeuralNetwork:
 
     def _feed_forward(self):
         layer_input = self.input
-        print("forward")
 
         # Compute the output of each layer using the output of the previous layer as input
         for layer in self.layers:
@@ -32,46 +31,43 @@ class NeuralNetwork:
         return np.multiply(delta, observed)
 
     def _back_propagate(self, learning_rate):
-        # Compute error for output layer
-        output = self._feed_forward()
-        output_err = np.vectorize(self._compute_delta)(output, self.target)
+        for index in range(len(self.layers) - 2, 1, -1):
+            curr_layer = self.layers[index - 1]
+            prev_layer = self.layers[index]
 
-        # print(output)
-
-        weight_change = learning_rate * np.outer(output_err.T, self.layers[-2].output)
-
-        reversed_list = list(reversed(self.layers))
-
-        for index, layer in enumerate(reversed_list[1:2]):
-            # Output layer error
-            prev_output = reversed_list[index].output
-            weights = reversed_list[index].weights
-
-            weighted_sum = np.matmul(prev_output.T, weights)
+            print(curr_layer.number_of_nodes, prev_layer.number_of_nodes)
+        
+            weighted_sum = np.matmul(prev_layer.output.T, prev_layer.weights)
 
             # Compute error for layer
-            layer_err = np.multiply(np.vectorize(self._compute_delta_h)(output, self.target), weighted_sum)
-
-            # print(layer_err)
-            # print(layer.weights)
+            layer_err = np.multiply(
+                np.vectorize(self._compute_delta_h)(curr_layer.output, self.target), weighted_sum
+            )
 
             # Update weights
-            weight_change = learning_rate * np.outer(layer_err.T, layer.output)
-            layer.weights = layer.weights + weight_change 
-            pass
+            weight_change = learning_rate * np.multiply(layer_err, curr_layer.output)
 
-        self.layers[-1].weights = self.layers[-1].weights + weight_change
-
-        return output
-
+            self.layers[index - 1].weights = curr_layer.weights + weight_change
 
     def train(
         self,
-        training_data: pd.DataFrame,
-        tuning_data: pd.DataFrame,
+        # training_data: pd.DataFrame,
+        # tuning_data: pd.DataFrame,
         learning_rate: float,
     ):
-        pass
+        for i in range(100):
+            output = self._feed_forward()
+            output_err = np.vectorize(self._compute_delta)(output, self.target)
+
+            self._feed_forward()
+            self._back_propagate(learning_rate)
+
+            weight_change = learning_rate * np.outer(
+                output_err, self.layers[-2].output
+            )
+            self.layers[-1].weights = self.layers[-1].weights + weight_change
+
+        print(self.layers[-1].output)
 
 
 def Sigmoid(action_potential: float) -> float:
@@ -80,12 +76,14 @@ def Sigmoid(action_potential: float) -> float:
 
 if __name__ == "__main__":
     input_layer = Layer(2, 0, 0.0, None)
-    hidden_layer = Layer(2, 2, 0.0, np.vectorize(Sigmoid))
-    output_layer = Layer(1, 2, 0.0, np.vectorize(Sigmoid))
+    hidden_layer = Layer(4, 2, 0.0, np.vectorize(Sigmoid))
+    output_layer = Layer(3, 4, 0.0, np.vectorize(Sigmoid))
 
     NN = NeuralNetwork([input_layer, hidden_layer, output_layer], [0.05, 0.10], 0.4)
 
     # print(NN._feed_forward())
     # print(NN._compute_delta(1, 1.5))
-    for i in range(2):
-        NN._back_propagate(0.5)
+    # for i in range(2):
+    #     NN._back_propagate(0.5)
+
+    NN.train(0.5)
