@@ -54,13 +54,16 @@ class NeuralNetwork:
         # training_data: pd.DataFrame,
         # tuning_data: pd.DataFrame,
         learning_rate: float,
+        # batch_size: int
     ):
         for i in range(100):
             output = self._feed_forward()
             output_err = np.vectorize(self._compute_delta)(output, self.target)
 
             self._feed_forward()
-            self._back_propagate(learning_rate)
+            
+            if(len(self.layers) > 2):
+                self._back_propagate(learning_rate)
 
             weight_change = learning_rate * np.outer(
                 output_err, self.layers[-2].output
@@ -77,13 +80,8 @@ def Sigmoid(action_potential: float) -> float:
 if __name__ == "__main__":
     input_layer = Layer(2, 0, 0.0, None)
     hidden_layer = Layer(4, 2, 0.0, np.vectorize(Sigmoid))
-    output_layer = Layer(3, 4, 0.0, np.vectorize(Sigmoid))
+    output_layer = Layer(2, 4, 0.0, np.vectorize(Sigmoid))
 
-    NN = NeuralNetwork([input_layer, hidden_layer, output_layer], [0.05, 0.10], 0.4)
-
-    # print(NN._feed_forward())
-    # print(NN._compute_delta(1, 1.5))
-    # for i in range(2):
-    #     NN._back_propagate(0.5)
+    NN = NeuralNetwork([input_layer, hidden_layer, output_layer], [0.05, 0.10], [0.0, 0.4])
 
     NN.train(0.5)
