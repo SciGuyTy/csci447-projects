@@ -12,12 +12,13 @@ class Layer:
         bias: float,
         activation: ActivationFunction,
     ) -> None:
+        self.weight_change = np.zeros((number_of_nodes, prev_layer))
         self.weights = np.random.rand(number_of_nodes, prev_layer)
         self.bias = np.repeat(np.array(bias), number_of_nodes)
         self.activation_function = activation
         self.number_of_nodes = number_of_nodes
         self.output = []
-
+        self.error_signal = []
 
     def _compute_action_potential(self, input):
         if self.weights.size == 0:
@@ -34,4 +35,5 @@ class Layer:
             self.output = action_potential
 
     def update_weights(self):
+        self.weights = self.weights + self.weight_change
         pass
