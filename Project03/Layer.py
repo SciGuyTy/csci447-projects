@@ -1,4 +1,3 @@
-from typing import List
 import numpy as np
 
 from ActivationFunctions.ActivationFunction import ActivationFunction
@@ -30,10 +29,17 @@ class Layer:
         action_potential = self._compute_action_potential(input)
 
         if self.activation_function:
-            self.output = self.activation_function(action_potential)
+            self.output = self.activation_function.function(action_potential)
         else:
             self.output = action_potential
 
     def update_weights(self):
         self.weights = self.weights + self.weight_change
-        pass
+
+    def compute_delta(self, target = None):
+        if target:
+            loss = np.subtract(target, self.output)
+            return np.multiply(loss, self.activation_function.delta(self.output))
+        else:
+            loss = np.subtract((1 - self.output), self.output)
+            return np.multiply(loss, self.output)
