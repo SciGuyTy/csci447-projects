@@ -3,6 +3,7 @@ from Layer import Layer
 import numpy as np
 import pandas as pd
 from ActivationFunctions.Sigmoid import Sigmoid
+from ActivationFunctions.Softmax import Softmax
 
 from Utilities.Preprocess import Preprocessor
 
@@ -11,18 +12,40 @@ class NeuralNetwork:
     def __init__(self, layers: List[Layer]) -> None:
         self.layers = layers
 
-    def _feed_forward(self, input):
-        layer_input = input
+    def _feed_forward(self, input: List[float]):
+        """
+        Perform a feed forward pass on the network for a given input
+
+        Parameters
+        ----------
+        input: List[float] 
+            The input vector to pass through the network
+        """
 
         # Compute the output of each layer using the output of the previous layer as input
         for layer in self.layers:
-            layer.compute_output(layer_input)
-            layer_input = layer.output
+            layer.compute_output(input)
+            input = layer.output
 
         # Return the output of the model
         return self.layers[-1].output
 
-    def _back_propagate(self, learning_rate, momentum):
+    def _back_propagate(self, learning_rate: float, momentum: float):
+        """
+        Perform backpropagation on the network
+
+        Parameters
+        ----------
+        learning_rate: float
+            The learning rate used to guide the modify the 'strength' of
+            the change in weights for each backprop pass
+
+        momentum: float
+            The momentum used to modify the 'resiliance to change' of the 
+            change in weights for each backprop pass    
+
+        """
+
         for index in range(len(self.layers) - 2, 0, -1):
             # Get reference to current, preceding, and following layer
             curr_layer = self.layers[index]
@@ -47,7 +70,7 @@ class NeuralNetwork:
                 curr_layer.weight_change[-1] * momentum
             )
 
-            curr_layer.weight_change += weight_change
+            curr_layer.weight_change.append(weight_change)
 
     def train(
         self,
@@ -58,6 +81,33 @@ class NeuralNetwork:
         epochs: int,
         batch_size: int,
     ):
+        """
+        Train the network using backpropagation
+
+        Parameters
+        ----------
+        training_data: pd.DataFrame
+            The data with which to train the model on
+        
+        target_column: str
+            The label for the output column in the data
+
+        learning_rate: float
+            The learning rate used to guide the modify the 'strength' of
+            the change in weights for each backprop pass
+
+        momentum: float
+            The momentum used to modify the 'resiliance to change' of the 
+            change in weights for each backprop pass
+
+        epochs: int
+            The number of epochs to perform (number of times to run backprop
+            on the entire training data set)
+
+        batch_size: int
+            The size of each training batch
+        """
+
         training_columns = training_data.columns.drop(target_column)
         training_outputs = training_data[target_column].unique()
 
@@ -90,7 +140,7 @@ class NeuralNetwork:
                         output_layer.error_signal, self.layers[-2].output
                     )
 
-                    output_layer.weight_change += weight_change
+                    output_layer.weight_change.append(weight_change)
 
                     # Perform back propagation on any hidden layers
                     if len(self.layers) > 2:
@@ -154,7 +204,7 @@ if __name__ == "__main__":
 
     input_layer = Layer(35, 0, 0.0, None)
     hidden_layer1 = Layer(2, 35, 0.0, Sigmoid())
-    output_layer = Layer(4, 2, 0.0, Sigmoid())
+    output_layer = Layer(4, 2, 0.0, Softmax())
 
     NN = NeuralNetwork([input_layer, hidden_layer1, output_layer])
 

@@ -5,7 +5,7 @@ class ActivationFunction:
     delta = None
 
     def __init__(self) -> None:
-        self.function = np.vectorize(self._function)
+        self.function = self._function
         self.delta = np.vectorize(self._delta)
 
     @staticmethod
