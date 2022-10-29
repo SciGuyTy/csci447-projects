@@ -80,6 +80,7 @@ class NeuralNetwork:
         momentum: float,
         epochs: int,
         batch_size: int,
+        target_modifier: callable = lambda x: x.to_numpy()
     ):
         """
         Train the network using backpropagation
@@ -106,10 +107,13 @@ class NeuralNetwork:
 
         batch_size: int
             The size of each training batch
+
+        target_modifier: callable
+            A function that modifies the target pattern. Defaults to an identity
+            function that simply returns the input pattern
         """
 
         training_columns = training_data.columns.drop(target_column)
-        training_outputs = training_data[target_column].unique()
 
         # Split training data into batches
         num_batches = len(training_data.index) / batch_size
@@ -123,8 +127,7 @@ class NeuralNetwork:
                     _, pattern = sample
 
                     # Construct target vector
-                    target = [0] * len(training_outputs)
-                    target[pattern.loc[target_column] - 1] = 1
+                    target = target_modifier(pattern)
 
                     # Reference to the output layer of the network
                     output_layer = self.layers[-1]
@@ -208,7 +211,14 @@ if __name__ == "__main__":
 
     NN = NeuralNetwork([input_layer, hidden_layer1, output_layer])
 
-    NN.train(PP.data, "class", 0.01, 0.1, 100, 10)
+    classes = PP.data["class"].unique()
+
+    def classification_modifier(pattern: pd.Series):
+        target = [0] * len(classes)
+        target[pattern.loc["class"] - 1] = 1
+        return target
+
+    NN.train(PP.data, "class", 0.01, 0.1, 100, 10, classification_modifier)
 
     test = [
         0,

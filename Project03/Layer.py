@@ -76,7 +76,7 @@ class Layer:
             return 1.0
 
         # Handle computing derivative for layer
-        if target:
+        if type(target) == list:
             loss = np.subtract(target, self.output)
             return np.multiply(loss, self.activation_function.delta(self.output))
         else:
