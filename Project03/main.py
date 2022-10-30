@@ -14,7 +14,7 @@ def output_transformer(output_vector: np.array):
     return output_vector.argmax() + 1
 
 def output_transformer_test(output_vector: np.array):
-    return output_vector.argmax()
+    return 1 - output_vector.argmax()
 def test_experiment():
     file_path = "../datasets/classification/test-classification.data"
 
@@ -96,7 +96,7 @@ def breast_cancer_expirement():
         "learning_rate": .01,
         "momentum": 0,
         "batch_size": 25,
-        "epochs": 100,
+        "epochs": 50,
     }
     tu = TuningUtility(training_test_folds, tuning_data, "class", 9, 2, classification_modifier, output_transformer, True, training_params)
     best_models = tu.tune_for_h_hidden_layers(0)
@@ -171,7 +171,7 @@ def soybean_expirement():
         "learning_rate": 0.01,
         "momentum": 0.1,
         "batch_size": 1,
-        "epochs": 100,
+        "epochs": 1,
     }
     tu = TuningUtility(training_test_folds, tuning_data, "class", 35, 4, classification_modifier, output_transformer, True, training_params)
     best_models = tu.tune_for_h_hidden_layers(0)
@@ -179,4 +179,4 @@ def soybean_expirement():
 
 
 if __name__ == "__main__":
-    test_experiment()
+    soybean_expirement()

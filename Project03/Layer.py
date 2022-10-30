@@ -23,6 +23,7 @@ class Layer:
         self.bias = np.repeat(np.array(bias), number_of_nodes)
         self.activation_function = activation
         self.number_of_nodes = number_of_nodes
+        self.prev_layer = prev_layer
         self.output = []
         self.error_signal = []
 
@@ -70,6 +71,7 @@ class Layer:
         Update the weight matrix for this layer
         """
         self.weights = self.weights + sum(self.weight_change)
+        self.weight_change = [np.zeros((self.number_of_nodes, self.prev_layer))]
 
     def compute_delta(self, target: List[float]=None):
         """
@@ -82,14 +84,14 @@ class Layer:
         target: List[float]
             The target/expected output (only applicable for the output layer)
         """
-        # If no activation is specified, simply return 1 (derivative of constant)
-        if not self.activation_function:
-            return 1.0
 
         # Handle computing derivative for layer
         if type(target) == list:
             loss = np.subtract(target, self.output)
-            return np.multiply(loss, self.activation_function.delta(self.output))
+            if self.activation_function:
+                return np.multiply(loss, self.activation_function.delta(self.output))
+            else:
+                return loss
         else:
             loss = np.subtract(np.subtract(1, self.output), self.output)
             return np.multiply(loss, self.output)

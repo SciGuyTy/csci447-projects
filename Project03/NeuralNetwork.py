@@ -183,6 +183,7 @@ class NeuralNetwork:
                 for layer in self.layers:
                     layer.update_weights()
 
+
             print(f"Finished Epoch: {epoch}")
 
 if __name__ == "__main__":
