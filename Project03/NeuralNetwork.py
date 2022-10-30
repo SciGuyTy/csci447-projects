@@ -1,16 +1,45 @@
-from typing import List
-from Layer import Layer
+from typing import List, Callable
+from Project03.Layer import Layer
 import numpy as np
 import pandas as pd
-from ActivationFunctions.Sigmoid import Sigmoid
-from ActivationFunctions.Softmax import Softmax
+from Project03.ActivationFunctions.Sigmoid import Sigmoid
+from Project03.ActivationFunctions.Softmax import Softmax
 
-from Utilities.Preprocess import Preprocessor
+from Project03.Utilities.Preprocess import Preprocessor
 
 
 class NeuralNetwork:
-    def __init__(self, layers: List[Layer]) -> None:
-        self.layers = layers
+    def __init__(self, shape: List[int], output_transformer: Callable, regression: bool) -> None:
+        self.output_transformer = output_transformer
+        self.bias = 0
+        self.regression = regression
+        self.layers = self.construct_layers(shape)
+
+    def construct_layers(self, shape):
+        hidden_layers = shape[1:-1]
+
+        layers = [Layer(shape[0], 0, 0, None)]
+        if len(hidden_layers) != 0:
+            for i in range(1, len(shape)-1):
+                layer = Layer(shape[i], shape[i-1], self.bias, Sigmoid())
+                layers.append(layer)
+        if self.regression:
+            layers.append(Layer(shape[-1], shape[-2], self.bias, None))
+        else:
+            layers.append(Layer(shape[-1], shape[-2], self.bias, Softmax()))
+        return layers
+
+    def predict(self, input: List[float]):
+        """
+        Perform a feed forward pass on the network for a given input
+        and transform it according to the output_transformer
+
+        Parameters
+        ----------
+        input: List[float]
+            The input vector to pass through the network
+        """
+        return self.output_transformer(self._feed_forward(input))
 
     def _feed_forward(self, input: List[float]):
         """
@@ -28,7 +57,7 @@ class NeuralNetwork:
             input = layer.output
 
         # Return the output of the model
-        return self.layers[-1].output
+        return np.array(self.layers[-1].output)
 
     def _back_propagate(self, learning_rate: float, momentum: float):
         """
@@ -209,7 +238,11 @@ if __name__ == "__main__":
     hidden_layer1 = Layer(2, 35, 0.0, Sigmoid())
     output_layer = Layer(4, 2, 0.0, Softmax())
 
-    NN = NeuralNetwork([input_layer, hidden_layer1, output_layer])
+
+    def output_transformer(output_vector: np.array):
+        return output_vector.argmax() + 1
+
+    NN = NeuralNetwork([35, 2, 4], output_transformer, False)
 
     classes = PP.data["class"].unique()
 
@@ -220,7 +253,7 @@ if __name__ == "__main__":
 
     NN.train(PP.data, "class", 0.01, 0.1, 100, 10, classification_modifier)
 
-    test = [
+    test = np.array([
         0,
         1,
         2,
@@ -256,6 +289,6 @@ if __name__ == "__main__":
         0,
         0,
         1,
-    ]
-    NN._feed_forward(test)
+    ])
+    print(NN._feed_forward(test))
     print(NN.layers[-1].output)

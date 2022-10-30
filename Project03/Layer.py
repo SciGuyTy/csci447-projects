@@ -1,7 +1,8 @@
 from typing import List
 import numpy as np
+import pandas as pd
 
-from ActivationFunctions.ActivationFunction import ActivationFunction
+from Project03.ActivationFunctions.ActivationFunction import ActivationFunction
 
 
 class Layer:
@@ -47,7 +48,9 @@ class Layer:
         input: List[float]
             The output vector from the previous layer
         """
-        action_potential = self._compute_action_potential(input)
+        if type(input) == pd.Series:
+            pass
+        action_potential = self._compute_action_potential(input).astype(float)
 
         if self.activation_function:
             self.output = self.activation_function.function(action_potential)

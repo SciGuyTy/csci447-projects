@@ -1,5 +1,5 @@
 from typing import List
-from ActivationFunctions.ActivationFunction import ActivationFunction
+from Project03.ActivationFunctions.ActivationFunction import ActivationFunction
 import numpy as np
 
 
@@ -9,6 +9,7 @@ class Softmax(ActivationFunction):
 
     @staticmethod
     def _function(vector: List[float]) -> float:
+        vector = vector.astype(float)
         softmax_vector = np.exp(vector) / np.exp(vector).sum()
         bounded = ([0] * len(vector))
         bounded[np.argmax(softmax_vector)] = 1

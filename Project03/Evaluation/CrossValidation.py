@@ -157,7 +157,7 @@ class CrossValidation:
         overall_results = []
 
         # Iterate through the training and test data pairs
-        for fold, (training_data, test_data, _) in enumerate(training_test_data, start=1):
+        for fold, (training_data, test_data, _) in enumerate(training_test_data):
             self.algorithm = models[fold][2]
             fold_results = self.calculate_results_for_fold(self.algorithm, test_data)
             overall_results.append(fold_results)
@@ -190,16 +190,32 @@ class CrossValidation:
         return training_test_data
 
     def calculate_results_for_fold(self, model, test_data):
-        # DataFrame to store results for this fold
-        fold_results = pd.DataFrame(columns=["actual", "predicted"])
+        if self.regression:
+            # DataFrame to store results for this fold
+            fold_results = pd.DataFrame(columns=["actual", "predicted"])
 
-        for sample_index, sample in test_data.iterrows():
-            # Train and execute the model on the given training data and testing data
-            prediction = model.predict(sample)
+            for sample_index, sample in test_data.iterrows():
+                input = sample.drop(self.target_feature).to_numpy()
+                prediction = model.predict(input)
 
-            # Append the prediction and actual values to the fold_results
-            fold_results.loc[sample_index] = [
-                sample[self.target_feature],
-                prediction,
-            ]
+                # Append the prediction and actual values to the fold_results
+                fold_results.loc[sample_index] = [
+                    sample[self.target_feature],
+                    prediction,
+                ]
+        else:
+            # DataFrame to store results for this fold
+            fold_results = pd.DataFrame(0, columns=self.classes, index=self.classes)
+
+            # Perform prediction on all samples for this test fold
+            for sample_index, sample in test_data.iterrows():
+                # Train and execute the model on the given training data and testing data
+                actual = sample[self.target_feature]
+                input = sample.drop(self.target_feature).to_numpy()
+                prediction = model.predict(input)
+                # Increment the prediction/actual pair in the confusion matrix
+                fold_results[actual][prediction] += 1
+
         return fold_results
+
+

@@ -1,4 +1,4 @@
-from ActivationFunctions.ActivationFunction import ActivationFunction
+from Project03.ActivationFunctions.ActivationFunction import ActivationFunction
 import numpy as np
 
 
@@ -7,7 +7,7 @@ class Sigmoid(ActivationFunction):
         super().__init__()
 
     @staticmethod
-    def _function(action_potential: float) -> float:
+    def _function(action_potential) -> float:
         return 1 / (1 + np.exp(-action_potential))
 
     @staticmethod
