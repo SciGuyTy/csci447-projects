@@ -26,7 +26,7 @@ class NeuralNetwork:
         if self.regression:
             layers.append(Layer(shape[-1], shape[-2], self.bias, None))
         else:
-            layers.append(Layer(shape[-1], shape[-2], self.bias, Softmax()))
+            layers.append(Layer(shape[-1], shape[-2], self.bias, None))
         return layers
 
     def predict(self, input: List[float]):
