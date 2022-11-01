@@ -2,7 +2,7 @@ from typing import List
 import numpy as np
 import pandas as pd
 
-from Project03.ActivationFunctions.ActivationFunction import ActivationFunction
+from ActivationFunctions.ActivationFunction import ActivationFunction
 
 
 
@@ -91,7 +91,7 @@ class Layer:
             if self.activation_function:
                 return np.multiply(loss, self.activation_function.delta(self.output))
             else:
-                return loss
+                return np.multiply(loss, self.output)
         else:
-            loss = np.subtract(np.subtract(1, self.output), self.output)
+            loss = np.subtract(1, self.output)
             return np.multiply(loss, self.output)
