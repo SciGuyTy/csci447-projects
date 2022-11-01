@@ -33,6 +33,7 @@ class TuningUtility:
 
     def tune_for_h_hidden_layers(self, h):
         shapes = self._get_all_shapes_for_hidden_layers(h)
+        print("Trying {} shapes".format(len(shapes)))
         jobs = []
         manager = multiprocessing.Manager()
         fold_results = manager.dict()
@@ -60,11 +61,11 @@ class TuningUtility:
             tuning_results = cv.calculate_results_for_fold(nn, tuning_data)
             if self.classification:
                 cost = EvaluationMeasure.calculate_0_1_loss(tuning_results)
-                cost2 = EvaluationMeasure.calculate_0_1_loss(results_for_model_on_fold)
+                #cost2 = EvaluationMeasure.calculate_0_1_loss(results_for_model_on_fold)
             else:
                 cost = EvaluationMeasure.calculate_means_square_error(tuning_results)
-                cost2 = EvaluationMeasure.calculate_means_square_error(results_for_model_on_fold)
-            cost_for_shapes[tuple(shape)] = (cost, shape, nn, cost2)
+                #cost2 = EvaluationMeasure.calculate_means_square_error(results_for_model_on_fold)
+            cost_for_shapes[tuple(shape)] = (cost, shape, nn)
 
         if self.classification:
             fold_results[id] = (max(cost_for_shapes.values()))
