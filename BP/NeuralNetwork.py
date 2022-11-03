@@ -16,11 +16,6 @@ class NeuralNetwork():
     def backpropagate(self, target, learning_rate, momentum):
         self.layers[-1].error = 1/2 * np.subtract(target, self.layers[-1].output)**2
 
-        # Output delta
-        # print(-(target - self.layers[-1].output))
-        # print(self.layers[-1].output * (1 - self.layers[-1].output))
-        # print(self.layers[-2].output)
-
         for index in range(len(self.layers) - 1, 0, -1):
             # Get reference to current, preceding, and following layer
             curr_layer = self.layers[index]
@@ -32,19 +27,16 @@ class NeuralNetwork():
 
             # Compute delta for output layer
             if (prev_layer == None):
-                # print(-(target - self.layers[-1].output) * self.layers[-1].output * (1 - self.layers[-1].output))
                 curr_layer.delta = (-(target - self.layers[-1].output) * self.layers[-1].output * (1 - self.layers[-1].output))[:, np.newaxis] * np.tile(next_layer.output, (2, 1))
             else:
-                print(-(target - self.layers[-1].output))
-                # print(-(target - self.layers[-1].output) * self.layers[-1].output * (1 - self.layers[-1].output))
-                # print(-(target - self.layers[-1].output) * self.layers[-1].output * (1 - self.layers[-1].output)[:, np.newaxis] * prev_layer.weights)
+                weighted_sum = np.nan_to_num((
+                    prev_layer.weights * prev_layer.delta
+                ).sum(axis=0))
 
-            curr_layer.weight_change.append(learning_rate * curr_layer.delta)
+                curr_layer.delta = weighted_sum * curr_layer.output * (1-curr_layer.output) * next_layer.output
 
-        #     curr_layer.delta = np.matmul(prev_layer.delta, prev_layer.weights.T)
-
-        #     curr_layer.weights -= learning_rate * curr_layer.delta
-        #     # curr_layer.weight_change.append((learning_rate * curr_layer.delta * curr_layer.output))
+            # curr_layer.weight_change.append(learning_rate * curr_layer.delta)
+            curr_layer.weights -= learning_rate * curr_layer.delta
 
     def train(self, training_data, target_feature, epochs, batch_size, learning_rate, momentum):
         for i in range(epochs):
@@ -100,7 +92,14 @@ if __name__ == "__main__":
         network = NeuralNetwork(layers)
         # network.train(PP.data, "class", 50, 1, 0.1, 0.2)
 
+        layer1.output = [0.05, 0.1]
+
         network.feed_forward([0.05, 0.1])
         print(layer3.output)
-        network.backpropagate([0.01, 0.99], 0.1, 0.1)
-        print(layer3.error)
+
+        for i in range(100000):
+            network.backpropagate([0.01, 0.99], 0.1, 0.1)
+            network.feed_forward([0.05, 0.1])
+        print(layer3.output)
+
+        
