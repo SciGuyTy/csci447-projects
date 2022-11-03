@@ -223,7 +223,7 @@ class CrossValidation:
             for sample_index, sample in test_data.iterrows():
                 # Train and execute the model on the given training data and testing data
                 actual = sample[self.target_feature]
-                input = sample.drop(self.target_feature).to_numpy()
+                input = sample.drop(self.target_feature).to_numpy().astype(float)
                 prediction = model.predict(input)
                 # Increment the prediction/actual pair in the confusion matrix
                 fold_results[actual][prediction] += 1

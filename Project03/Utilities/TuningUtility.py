@@ -25,6 +25,7 @@ class TuningUtility:
         self.training_params = training_params
         self.learning_rate = training_params['learning_rate']
         self.momentum = training_params['momentum']
+        self.initial_weight_range = training_params['initial_weight_range']
 
         # Use 10 minibatches
         self.minibatch_size = training_params['batch_size']
@@ -52,12 +53,11 @@ class TuningUtility:
         tuning_data = Utilities.normalize_set_by_params(self.tuning_data.copy(), norm_params)
         for shape in shapes:
             print("Fold: {}, shape: {}".format(id, shape))
-            nn = NeuralNetwork(shape, self.output_transformer, not self.classification)
+            nn = NeuralNetwork(shape, self.output_transformer, not self.classification, self.initial_weight_range)
             nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
                      self.minibatch_size, self.target_modifer)
 
             cv = CrossValidation(tuning_data, self.target_column, not self.classification)
-            results_for_model_on_fold = cv.calculate_results_for_fold(nn, testing_data)
             tuning_results = cv.calculate_results_for_fold(nn, tuning_data)
             print(tuning_results)
             if self.classification:

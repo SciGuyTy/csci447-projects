@@ -45,14 +45,15 @@ def test_experiment():
 
     def classification_modifier(pattern: pd.Series):
         target = [0] * len(classes)
-        target[pattern.loc["class"] - 1] = 1
+        target[int(pattern.loc["class"] - 1)] = 1
         return target
 
     training_params = {
-        "learning_rate": .1,
-        "momentum": 0,
+        "learning_rate": 1,
+        "momentum": 0.1,
         "batch_size": 1,
-        "epochs": 100,
+        "epochs": 500,
+        "initial_weight_range": (-1, 1)
     }
     tu = TuningUtility(training_test_folds, tuning_data, "class", 2, 2, classification_modifier, output_transformer_test, True, training_params)
     best_models = tu.tune_for_h_hidden_layers(2)
@@ -85,9 +86,10 @@ def glass_identification_experiment():
 
     training_params = {
         "learning_rate": .01,
-        "momentum": 0.005,
+        "momentum": 0.0,
         "batch_size": 10,
         "epochs": 200,
+        "initial_weight_range": (-.01, 0.1)
     }
     tu = TuningUtility(training_test_folds, tuning_data, "class", 9, 7, classification_modifier, output_transformer,
                        True, training_params)
@@ -136,13 +138,14 @@ def breast_cancer_experiment():
         return target
 
     training_params = {
-        "learning_rate": .001,
+        "learning_rate": .1,
         "momentum": 0,
         "batch_size": 10,
         "epochs": 200,
+        "initial_weight_range": (-.1, 0.1)
     }
     tu = TuningUtility(training_test_folds, tuning_data, "class", 9, 2, classification_modifier, output_transformer, True, training_params)
-    best_models = tu.tune_for_h_hidden_layers(1)
+    best_models = tu.tune_for_h_hidden_layers(2)
     print(best_models)
 
     overall_results = cv.validate_for_folds(training_test_folds, best_models)
@@ -436,4 +439,4 @@ def single_abalone_experiment():
     print(results)
 
 if __name__ == "__main__":
-    test_experiment()
+    breast_cancer_experiment()
