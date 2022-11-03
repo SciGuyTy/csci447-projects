@@ -20,10 +20,11 @@ class Layer:
         self.weights = self._generate_random_weights()
         self.output = None
 
+        self.error = None
         self.delta = None
         
-        # if(prev_layer):
-        #     self.weight_change = [np.zeros((prev_layer.num_nodes, num_nodes))]
+        if(prev_layer):
+            self.weight_change = [np.zeros((prev_layer.num_nodes, num_nodes))]
 
         pass
 
@@ -37,7 +38,7 @@ class Layer:
 
     def compute_output(self, input):
         # Compute action potential
-        linear_combination = np.matmul(input, self.weights)
+        linear_combination = np.matmul(self.weights, input)
         
         if(self.bias):
             linear_combination += self.bias
