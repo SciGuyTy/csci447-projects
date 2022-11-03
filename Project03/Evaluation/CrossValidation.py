@@ -59,7 +59,19 @@ class CrossValidation:
             # Decompose data into 10 'bins' of consecutive data
             split_data = np.array_split(sorted_data, hold_out_size)
 
-            return split_data[0]
+            folded_data = [pd.DataFrame(columns=self.data.columns)] * int(1 / proportion)
+
+            fold_id = 0
+            for group in split_data:
+                # For each fold, select the corresponding value from each group in the
+                # split value array (so for example, the first fold will grab the first
+                # element from each group in the split value array)
+                folded_data[fold_id] = pd.concat(
+                    [folded_data[fold_id], group.iloc[fold_id].to_frame().T],
+                    ignore_index=True,
+                )
+
+            return folded_data[0]
 
         else:
             # Define the levels of classification in the data

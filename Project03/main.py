@@ -68,7 +68,7 @@ def glass_identification_experiment():
 
     # Process the data
     PP = Preprocessor()
-    PP.load_raw_data_from_file(file_path, column_names, converters=converters, dropNA=['?'], columns_to_drop=['ID'])
+    PP.load_raw_data_from_file(file_path, column_names,  dropNA=['?'], columns_to_drop=['ID'])
     cv = CrossValidation(PP.data, "class", False)
     tuning_data = cv.get_tuning_set(0.1)
     cv.data = cv.data.drop(tuning_data.index)
@@ -79,23 +79,24 @@ def glass_identification_experiment():
     classes = PP.data["class"].unique()
 
     def classification_modifier(pattern: pd.Series):
-        target = [0] * len(classes)
+        target = [0] * 7
         target[pattern.loc["class"] - 1] = 1
         return target
 
     training_params = {
-        "learning_rate": .1,
-        "momentum": 0.2,
+        "learning_rate": .01,
+        "momentum": 0.005,
         "batch_size": 10,
-        "epochs": 100,
+        "epochs": 200,
     }
     tu = TuningUtility(training_test_folds, tuning_data, "class", 9, 7, classification_modifier, output_transformer,
                        True, training_params)
-    best_models = tu.tune_for_h_hidden_layers(2)
+    best_models = tu.tune_for_h_hidden_layers(0)
     print(best_models)
 
     overall_results = cv.validate_for_folds(training_test_folds, best_models)
     print(overall_results)
+
 
 def breast_cancer_experiment():
     file_path = "../datasets/classification/BreastCancer/breast-cancer-wisconsin.data"
@@ -135,13 +136,13 @@ def breast_cancer_experiment():
         return target
 
     training_params = {
-        "learning_rate": .1,
-        "momentum": 0.2,
+        "learning_rate": .001,
+        "momentum": 0,
         "batch_size": 10,
-        "epochs": 100,
+        "epochs": 200,
     }
     tu = TuningUtility(training_test_folds, tuning_data, "class", 9, 2, classification_modifier, output_transformer, True, training_params)
-    best_models = tu.tune_for_h_hidden_layers(2)
+    best_models = tu.tune_for_h_hidden_layers(1)
     print(best_models)
 
     overall_results = cv.validate_for_folds(training_test_folds, best_models)
@@ -257,14 +258,14 @@ def abalone_experiment():
         return [pattern['rings']]
 
     training_params = {
-        "learning_rate": 0.1,
-        "momentum": 0.05,
-        "batch_size": 10,
+        "learning_rate": 0.001,
+        "momentum": 0.01,
+        "batch_size": 5,
         "epochs": 100,
     }
     tu = TuningUtility(training_test_data, tuning_data, "rings", 8, 1, regression_modifier,
                        regression_output_transformer, False, training_params)
-    best_models = tu.tune_for_h_hidden_layers(0)
+    best_models = tu.tune_for_h_hidden_layers(1)
     print(best_models)
 
     overall_results = cv.validate_for_folds(training_test_data, best_models)
@@ -328,5 +329,111 @@ def forest_fire_experiment():
     mse = [EvaluationMeasure.calculate_means_square_error(i) for i in overall_results]
     print(mse)
 
+
+def single_forest_fire_experiment():
+    pp = Preprocessor()
+
+    file_path = "../datasets/regression/ForestFires/forestfires.csv"
+    column_names = [
+        "x",
+        "y",
+        "month",
+        "day",
+        "ffmc",
+        "dmc",
+        "dc",
+        "isi",
+        "temp",
+        "rh",
+        "wind",
+        "rain",
+        "area",
+    ]
+    month_map = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10,
+                 "nov": 11, "dec": 12}
+    day_map = {"mon": 1, "tue": 2, "wed": 3, "thu": 4, "fri": 5, "sat": 6, "sun": 7}
+
+    feature_modifiers = {"month": lambda x: (month_map[x]), "day": lambda x: day_map[x],
+                         "area": lambda x: math.log(float(x) + 1)
+                         }
+
+    pp.load_raw_data_from_file(
+        file_path,
+        column_names,
+        converters=feature_modifiers
+    )
+    # pp.data = pp.data[pp.data.area != 0]
+    cv = CrossValidation(pp.data, "area", regression=True)
+    tuning_data = cv.get_tuning_set(0.1)
+    training_data = pp.data.drop(tuning_data.index)
+    cv = CrossValidation(training_data, "area", regression=True)
+
+    folded_training_data = cv.fold_data(10, True)
+    training_test_data = cv.get_training_test_data_from_folds(folded_training_data)
+
+    def regression_modifier(pattern: pd.Series):
+        return [pattern['area']]
+
+    training_params = {
+        "learning_rate": 0.01,
+        "momentum": 0.00,
+        "batch_size": 10,
+        "epochs": 250,
+    }
+    tu = TuningUtility(training_test_data, tuning_data, "area", 12, 1, regression_modifier,
+                       regression_output_transformer, False, training_params)
+    results = dict()
+    best_models = tu.tune_single_fold(1, [[12, 6, 3, 1]], training_test_data[0][0], tuning_data, training_test_data[0][2],
+                                      results)
+    print(results)
+
+def single_abalone_experiment():
+    pp = Preprocessor()
+
+    file_path = '../datasets/regression/Abalone/abalone.data'
+    column_names = [
+        'sex',
+        'length',
+        'diameter',
+        'height',
+        'whole_weight',
+        'shucked_weight',
+        'viscera_weight',
+        'shell_weight',
+        'rings',
+    ]
+    sex_map = {"M": 1, "F": 2, "I": 3}
+
+    feature_modifiers = {"sex": lambda x: sex_map[x]}
+
+    pp.load_raw_data_from_file(
+        file_path,
+        column_names,
+        converters=feature_modifiers
+    )
+    # pp.data = pp.data[pp.data.area != 0]
+    cv = CrossValidation(pp.data, "rings", regression=True)
+    tuning_data = cv.get_tuning_set(0.1)
+    training_data = pp.data.drop(tuning_data.index)
+    cv = CrossValidation(training_data, "rings", regression=True)
+
+    folded_training_data = cv.fold_data(10, True)
+    training_test_data = cv.get_training_test_data_from_folds(folded_training_data)
+
+    def regression_modifier(pattern: pd.Series):
+        return [pattern['rings']]
+
+    training_params = {
+        "learning_rate": 0.001,
+        "momentum": 0.01,
+        "batch_size": 5,
+        "epochs": 100,
+    }
+    tu = TuningUtility(training_test_data, tuning_data, "rings", 8, 1, regression_modifier,
+                       regression_output_transformer, False, training_params)
+    results = dict()
+    best_models = tu.tune_single_fold(1, [[8,8,1]], training_test_data[0][0], tuning_data, training_test_data[0][2], results)
+    print(results)
+
 if __name__ == "__main__":
-    abalone_experiment()
+    breast_cancer_experiment()

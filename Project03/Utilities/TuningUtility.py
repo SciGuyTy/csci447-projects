@@ -59,6 +59,7 @@ class TuningUtility:
             cv = CrossValidation(tuning_data, self.target_column, not self.classification)
             results_for_model_on_fold = cv.calculate_results_for_fold(nn, testing_data)
             tuning_results = cv.calculate_results_for_fold(nn, tuning_data)
+            print(tuning_results)
             if self.classification:
                 cost = EvaluationMeasure.calculate_0_1_loss(tuning_results)
                 #cost2 = EvaluationMeasure.calculate_0_1_loss(results_for_model_on_fold)

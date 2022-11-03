@@ -91,7 +91,7 @@ class Layer:
             if self.activation_function:
                 return np.multiply(loss, self.activation_function.delta(self.output))
             else:
-                return np.multiply(loss, self.output)
+                return loss
         else:
             loss = np.subtract(1, self.output)
             return np.multiply(loss, self.output)

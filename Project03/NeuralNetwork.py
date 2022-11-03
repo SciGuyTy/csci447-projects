@@ -86,6 +86,7 @@ class NeuralNetwork:
                 prev_layer.weights * prev_layer.error_signal[:, np.newaxis]
             ).sum(axis=0)
 
+            weighted_sum = np.nan_to_num(weighted_sum)
             # Compute error for layer
             curr_layer.error_signal = np.multiply(
                 curr_layer.compute_delta(),
@@ -98,7 +99,6 @@ class NeuralNetwork:
             ) * curr_layer.error_signal[:, np.newaxis] + (
                 curr_layer.weight_change[-1] * momentum
             )
-
             curr_layer.weight_change.append(weight_change)
 
     def train(
