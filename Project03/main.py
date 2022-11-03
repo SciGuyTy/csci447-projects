@@ -50,12 +50,12 @@ def test_experiment():
 
     training_params = {
         "learning_rate": .1,
-        "momentum": 0.7,
-        "batch_size": 10,
-        "epochs": 250,
+        "momentum": 0,
+        "batch_size": 1,
+        "epochs": 100,
     }
     tu = TuningUtility(training_test_folds, tuning_data, "class", 2, 2, classification_modifier, output_transformer_test, True, training_params)
-    best_models = tu.tune_for_h_hidden_layers(1)
+    best_models = tu.tune_for_h_hidden_layers(2)
     print(best_models)
 
     overall_results = cv.validate_for_folds(training_test_folds, best_models)
@@ -436,4 +436,4 @@ def single_abalone_experiment():
     print(results)
 
 if __name__ == "__main__":
-    breast_cancer_experiment()
+    test_experiment()
