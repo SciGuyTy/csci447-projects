@@ -37,7 +37,10 @@ class NeuralNetwork:
         self.outputs = [output]
         for layer in self.layers[1:]:
             action_potential = layer._compute_action_potential(output).astype(float)
-            output = layer.activation.function(action_potential)
+            if layer.activation is None:
+                output = action_potential
+            else:
+                output = layer.activation.function(action_potential)
             self.outputs.append(output)
         return output
 
@@ -46,7 +49,8 @@ class NeuralNetwork:
         training_data = training_data.sample(frac=1)
         training_size = training_data.shape[0]
         for iteration in range(iterations):
-            print("Starting Epoch {}/{}".format(iteration+1, iterations))
+            if iteration % 100 == 0:
+                print("Starting Epoch {}/{}".format(iteration+1, iterations))
             for i in range(int(training_size/batch_size)):
                 prebatch = training_data[i*batch_size:i*batch_size+batch_size]
                 if prebatch.shape[0] == 0:
@@ -89,7 +93,10 @@ class NeuralNetwork:
         dE_total_to_output_j = - (target - actual_output)
 
         # The partial derivatives of how much each of the inputs to the final nodes contributes to the total error
-        dE_total_to_input_j = [actual_output[j] * (1-actual_output[j]) * dE_total_to_output_j[j] for j in range(len(dE_total_to_output_j))]
+        if self.regression:
+            dE_total_to_input_j = dE_total_to_output_j
+        else:
+            dE_total_to_input_j = [actual_output[j] * (1-actual_output[j]) * dE_total_to_output_j[j] for j in range(len(dE_total_to_output_j))]
 
         # The partial derivatives of how much the output of each node in the previous layer contributes to the total error
         dE_total_to_output_prev_layer = layer.weights.T @ dE_total_to_input_j

@@ -31,9 +31,10 @@ class TuningUtility:
         self.minibatch_size = training_params['batch_size']
 
         self.iterations = training_params['epochs']
+        self.restricted_models = training_params.get('restrict_shapes', False)
 
     def tune_for_h_hidden_layers(self, h):
-        shapes = self._get_all_shapes_for_hidden_layers(h)
+        shapes = self._get_all_shapes_for_hidden_layers(h, self.restricted_models)
         print("Trying {} shapes".format(len(shapes)))
         jobs = []
         manager = multiprocessing.Manager()
@@ -72,12 +73,22 @@ class TuningUtility:
             fold_results[id] = (max(cost_for_shapes.values()))
         else:
             fold_results[id] = (min(cost_for_shapes.values()))
-    def _get_all_shapes_for_hidden_layers(self, num_hidden_layers):
-        shapes = self._generate_possible_configs(self.num_inputs, self.num_outputs, num_hidden_layers)
-        for i in range(len(shapes)):
-            shapes[i] = [self.num_inputs] + shapes[i] + [self.num_outputs]
+    def _get_all_shapes_for_hidden_layers(self, num_hidden_layers, restricted):
+        if not restricted:
+            shapes = self._generate_possible_configs(self.num_inputs, self.num_outputs, num_hidden_layers)
+            for i in range(len(shapes)):
+                shapes[i] = [self.num_inputs] + shapes[i] + [self.num_outputs]
 
-        return shapes
+            return shapes
+        else:
+            shapes = []
+            for i in range(self.num_outputs, self.num_inputs + 1):
+                shape = []
+                shape += [self.num_inputs]
+                shape += [i for _ in range(num_hidden_layers)]
+                shape += [self.num_outputs]
+                shapes.append(shape)
+            return shapes
 
     @staticmethod
     def _generate_possible_configs(num_of_inputs, num_of_outputs, num_of_hidden_layers):
