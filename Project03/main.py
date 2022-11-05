@@ -588,8 +588,8 @@ def abalone_experiment(zero, one, two):
         print("Measures " + "-" * 25)
         print("MSE: ", mse)
 
-
-def forest_fire_experiment():
+forest_fire_save_location = "./ExperimentSaves/forest_fire.objects"
+def initialize_forest_fire_experiment():
     pp = Preprocessor()
 
     file_path = "../datasets/regression/ForestFires/forestfires.csv"
@@ -607,12 +607,13 @@ def forest_fire_experiment():
         "wind",
         "rain",
         "area",
-        ]
-    month_map = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
+    ]
+    month_map = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10,
+                 "nov": 11, "dec": 12}
     day_map = {"mon": 1, "tue": 2, "wed": 3, "thu": 4, "fri": 5, "sat": 6, "sun": 7}
 
     feature_modifiers = {"month": lambda x: (month_map[x]), "day": lambda x: day_map[x],
-                         #"area": lambda x: math.log(float(x)+1)
+                         "area": lambda x: math.log(float(x)+1)
                          }
 
     pp.load_raw_data_from_file(
@@ -620,7 +621,6 @@ def forest_fire_experiment():
         column_names,
         converters=feature_modifiers
     )
-    #pp.data = pp.data[pp.data.area != 0]
     cv = CrossValidation(pp.data, "area", regression=True)
     tuning_data = cv.get_tuning_set(0.1)
     training_data = pp.data.drop(tuning_data.index)
@@ -629,24 +629,183 @@ def forest_fire_experiment():
     folded_training_data = cv.fold_data(10, True)
     training_test_data = cv.get_training_test_data_from_folds(folded_training_data)
 
+    with open(forest_fire_save_location, 'wb+') as f:
+        pickle.dump([training_test_data, pp, tuning_data, folded_training_data, cv], f)
+
+def forest_fire_experiment(zero, one, two):
+    with open(forest_fire_save_location, 'rb') as f:
+        training_test_data, pp, tuning_data, folded_training_data, cv = pickle.load(f)
+
     def regression_modifier(pattern: pd.Series):
         return [pattern['area']]
 
-    training_params = {
-        "learning_rate": 0.01,
-        "momentum": 0.0,
-        "batch_size": 10,
-        "epochs": 1000,
-        "initial_weight_range": (-0.01, 0.01)
-    }
-    tu = TuningUtility(training_test_data, tuning_data, "area", 12, 1, regression_modifier, regression_output_transformer, False, training_params)
-    best_models = tu.tune_for_h_hidden_layers(1)
-    print(best_models)
+    if zero:
+        layers = 0
+        training_params = {
+            "learning_rate": 0.01,
+            "momentum": 0.0,
+            "batch_size": 10,
+            "epochs": 1000,
+            "initial_weight_range": (-0.01, 0.01)
+        }
+        tu = TuningUtility(training_test_data, tuning_data, "area", 12, 1, regression_modifier, regression_output_transformer, False, training_params)
+        best_models = tu.tune_for_h_hidden_layers(layers)
+        print("Best Models for {} Hidden Layers".format(layers))
+        print(best_models)
 
-    overall_results = cv.validate_for_folds(training_test_data, best_models)
-    print(overall_results)
-    mse = [EvaluationMeasure.calculate_means_square_error(i) for i in overall_results]
-    print(mse)
+        overall_results = cv.validate_for_folds(training_test_data, best_models)
+        print("Overall results for {} Hidden Layers".format(layers))
+        print(overall_results)
+        mse = [EvaluationMeasure.calculate_means_square_error(i) for i in overall_results]
+        print("Measures " + "-" * 25)
+        print("MSE: ", mse)
+    if one:
+        layers = 1
+        training_params = {
+            "learning_rate": 0.01,
+            "momentum": 0.0,
+            "batch_size": 10,
+            "epochs": 1000,
+            "initial_weight_range": (-0.01, 0.01)
+        }
+        tu = TuningUtility(training_test_data, tuning_data, "area", 12, 1, regression_modifier, regression_output_transformer, False, training_params)
+        best_models = tu.tune_for_h_hidden_layers(layers)
+        print("Best Models for {} Hidden Layers".format(layers))
+        print(best_models)
+
+        overall_results = cv.validate_for_folds(training_test_data, best_models)
+        print("Overall results for {} Hidden Layers".format(layers))
+        print(overall_results)
+        mse = [EvaluationMeasure.calculate_means_square_error(i) for i in overall_results]
+        print("Measures " + "-" * 25)
+        print("MSE: ", mse)
+    if two:
+        layers = 2
+        training_params = {
+            "learning_rate": 0.01,
+            "momentum": 0.0,
+            "batch_size": 10,
+            "epochs": 1000,
+            "initial_weight_range": (-0.01, 0.01),
+            "restrict_shapes": True
+        }
+        tu = TuningUtility(training_test_data, tuning_data, "area", 12, 1, regression_modifier, regression_output_transformer, False, training_params)
+        best_models = tu.tune_for_h_hidden_layers(layers)
+        print("Best Models for {} Hidden Layers".format(layers))
+        print(best_models)
+
+        overall_results = cv.validate_for_folds(training_test_data, best_models)
+        print("Overall results for {} Hidden Layers".format(layers))
+        print(overall_results)
+        mse = [EvaluationMeasure.calculate_means_square_error(i) for i in overall_results]
+        print("Measures " + "-" * 25)
+        print("MSE: ", mse)
+
+computer_hardware_save_location = "./ExperimentSaves/computer_hardware.objects"
+def initialize_computer_hardware_experiment():
+
+    file_path = "../datasets/regression/ComputerHardware/machine.data"
+
+    column_names = [
+        "vendor_name",
+        "model_name",
+        "MYCT",
+        "MMIN",
+        "MMAX",
+        "CACH",
+        "CHMIN",
+        "CHMAX",
+        "PRP",
+        "ERP"
+    ]
+
+    pp = Preprocessor()
+
+    pp.load_raw_data_from_file(
+        file_path,
+        column_names,
+        columns_to_drop=["vendor_name", "model_name"],
+    )
+
+    cv = CrossValidation(pp.data, "ERP", regression=True)
+    tuning_data = cv.get_tuning_set(0.1)
+    training_data = pp.data.drop(tuning_data.index)
+    cv = CrossValidation(training_data, "ERP", regression=True)
+
+    folded_training_data = cv.fold_data(10, True)
+    training_test_data = cv.get_training_test_data_from_folds(folded_training_data)
+
+    with open(computer_hardware_save_location, 'wb+') as f:
+        pickle.dump([training_test_data, pp, tuning_data, folded_training_data, cv], f)
+
+def computer_hardware_experiment(zero, one, two):
+    with open(computer_hardware_save_location, 'rb') as f:
+        training_test_data, pp, tuning_data, folded_training_data, cv = pickle.load(f)
+
+    def regression_modifier(pattern: pd.Series):
+        return [pattern['ERP']]
+
+    if zero:
+        layers = 0
+        training_params = {
+            "learning_rate": 0.01,
+            "momentum": 0.0,
+            "batch_size": 10,
+            "epochs": 1000,
+            "initial_weight_range": (-0.01, 0.01)
+        }
+        tu = TuningUtility(training_test_data, tuning_data, "ERP", 7, 1, regression_modifier, regression_output_transformer, False, training_params)
+        best_models = tu.tune_for_h_hidden_layers(layers)
+        print("Best Models for {} Hidden Layers".format(layers))
+        print(best_models)
+
+        overall_results = cv.validate_for_folds(training_test_data, best_models)
+        print("Overall results for {} Hidden Layers".format(layers))
+        print(overall_results)
+        mse = [EvaluationMeasure.calculate_means_square_error(i) for i in overall_results]
+        print("Measures " + "-" * 25)
+        print("MSE: ", mse)
+    if one:
+        layers = 1
+        training_params = {
+            "learning_rate": 0.005,
+            "momentum": 0.0,
+            "batch_size": 10,
+            "epochs": 1000,
+            "initial_weight_range": (-0.01, 0.01)
+        }
+        tu = TuningUtility(training_test_data, tuning_data, "ERP", 7, 1, regression_modifier, regression_output_transformer, False, training_params)
+        best_models = tu.tune_for_h_hidden_layers(layers)
+        print("Best Models for {} Hidden Layers".format(layers))
+        print(best_models)
+
+        overall_results = cv.validate_for_folds(training_test_data, best_models)
+        print("Overall results for {} Hidden Layers".format(layers))
+        print(overall_results)
+        mse = [EvaluationMeasure.calculate_means_square_error(i) for i in overall_results]
+        print("Measures " + "-" * 25)
+        print("MSE: ", mse)
+    if two:
+        layers = 2
+        training_params = {
+            "learning_rate": 0.0001,
+            "momentum": 0.0,
+            "batch_size": 10,
+            "epochs": 1000,
+            "initial_weight_range": (-0.001, 0.001),
+            "restrict_shapes": True
+        }
+        tu = TuningUtility(training_test_data, tuning_data, "ERP", 7, 1, regression_modifier, regression_output_transformer, False, training_params)
+        best_models = tu.tune_for_h_hidden_layers(layers)
+        print("Best Models for {} Hidden Layers".format(layers))
+        print(best_models)
+
+        overall_results = cv.validate_for_folds(training_test_data, best_models)
+        print("Overall results for {} Hidden Layers".format(layers))
+        print(overall_results)
+        mse = [EvaluationMeasure.calculate_means_square_error(i) for i in overall_results]
+        print("Measures " + "-" * 25)
+        print("MSE: ", mse)
 
 
 def single_forest_fire_experiment():
@@ -756,4 +915,4 @@ def single_abalone_experiment():
     print(results)
 
 if __name__ == "__main__":
-    abalone_experiment(False, False, True)
+    computer_hardware_experiment(False, False, True)
