@@ -768,11 +768,11 @@ def computer_hardware_experiment(zero, one, two):
     if one:
         layers = 1
         training_params = {
-            "learning_rate": 0.005,
+            "learning_rate": 0.0001,
             "momentum": 0.0,
             "batch_size": 10,
             "epochs": 1000,
-            "initial_weight_range": (-0.01, 0.01)
+            "initial_weight_range": (-0.001, 0.001),
         }
         tu = TuningUtility(training_test_data, tuning_data, "ERP", 7, 1, regression_modifier, regression_output_transformer, False, training_params)
         best_models = tu.tune_for_h_hidden_layers(layers)
@@ -915,4 +915,4 @@ def single_abalone_experiment():
     print(results)
 
 if __name__ == "__main__":
-    computer_hardware_experiment(False, False, True)
+    computer_hardware_experiment(False, True, False)

@@ -22,4 +22,5 @@ class Layer:
                     self.RANDOM_WEIGHT_RANGE[1] - self.RANDOM_WEIGHT_RANGE[0]) + self.RANDOM_WEIGHT_RANGE[0]
 
     def _compute_action_potential(self, input):
+        # Compute the action potential for the layer
         return (self.weights @ input) + self.bias

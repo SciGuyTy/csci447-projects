@@ -1,0 +1,15 @@
+Contribution Document
+
+Programming: Braeden 60 - Tyler 40
+- Tuning Utility - Braeden
+- Neural Network - Tyler
+- Back Prop - Braeden 50 - Tyler 50
+
+Video: Braeden 50 - Tyler 50
+- Script/Programming - Braeden
+- Recording - Tyler
+
+Paper: Tyler 60 - Braeden 40
+- Introduction and Program Design - Tyler
+- Experiments and Results - Braeden
+- Conclusion, Discussion, Limitations, etc. - Braeden 50 - Tyler 50

@@ -1,0 +1,285 @@
+Trying 7 shapes
+Fold: 1, shape: [7, 1, 1]
+Fold: 0, shape: [7, 1, 1]
+Fold: 4, shape: [7, 1, 1]
+Fold: 2, shape: [7, 1, 1]
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 5, shape: [7, 1, 1]
+Starting Epoch 1/1000
+Fold: 3, shape: [7, 1, 1]
+Fold: 6, shape: [7, 1, 1]
+Starting Epoch 1/1000
+Fold: 8, shape: [7, 1, 1]
+Fold: 9, shape: [7, 1, 1]
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 7, shape: [7, 1, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Traceback (most recent call last):
+  File "/home/braeden/Git/csci447-project-01/Project03/main.py", line 918, in <module>
+Process Process-2:
+    computer_hardware_experiment(False, True, False)
+  File "/home/braeden/Git/csci447-project-01/Project03/main.py", line 778, in computer_hardware_experiment
+    best_models = tu.tune_for_h_hidden_layers(layers)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 49, in tune_for_h_hidden_layers
+    j.join()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 149, in join
+Process Process-4:
+    res = self._popen.wait(timeout)
+  File "/usr/lib/python3.10/multiprocessing/popen_fork.py", line 43, in wait
+    return self.poll(os.WNOHANG if timeout == 0.0 else 0)
+  File "/usr/lib/python3.10/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+KeyboardInterrupt
+Process Process-7:
+Process Process-9:
+Process Process-5:
+Process Process-6:
+Process Process-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 62, in train
+    self.backprop_batch(batch, learning_rate, momentum)
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 68, in backprop_batch
+    weight_changes.append(self.backprop_once(learning_rate, input, target))
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 117, in backprop_once
+    dE_to_outputs.append(dE_total_to_output_prev_layer)
+KeyboardInterrupt
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in train
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in <listcomp>
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/home/braeden/Git/csci447-project-01/Project03/main.py", line 746, in regression_modifier
+    return [pattern['ERP']]
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/series.py", line 958, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/series.py", line 1069, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 3619, in get_loc
+    casted_key = self._maybe_cast_indexer(key)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 6289, in _maybe_cast_indexer
+    if not self.is_floating():
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 2344, in is_floating
+    @final
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in train
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in <listcomp>
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 1324, in iterrows
+    s = klass(v, index=columns, name=k)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/series.py", line 451, in __init__
+    data = sanitize_array(data, index, dtype, copy)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/construction.py", line 570, in sanitize_array
+    subarr = _try_cast(data, dtype, copy, raise_cast_failure)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/construction.py", line 728, in _try_cast
+    if arr.dtype != object:
+KeyboardInterrupt
+Process Process-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in train
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in <listcomp>
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 1324, in iterrows
+    s = klass(v, index=columns, name=k)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/series.py", line 453, in __init__
+    manager = get_option("mode.data_manager")
+  File "/usr/local/lib/python3.10/dist-packages/pandas/_config/config.py", line 256, in __call__
+    return self.__func__(*args, **kwds)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/_config/config.py", line 127, in _get_option
+    def _get_option(pat: str, silent: bool = False):
+KeyboardInterrupt
+Process Process-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in train
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in <listcomp>
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/home/braeden/Git/csci447-project-01/Project03/main.py", line 746, in regression_modifier
+    return [pattern['ERP']]
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/series.py", line 944, in __getitem__
+    check_deprecated_indexers(key)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexing.py", line 2484, in check_deprecated_indexers
+    isinstance(key, set)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 58, in train
+    inputs = prebatch.drop(columns=target_column)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 4954, in drop
+    return super().drop(
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4267, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4311, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 6640, in drop
+    indexer = self.get_indexer_for(labels)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 5764, in get_indexer_for
+    return self.get_indexer(target)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 3784, in get_indexer
+    return self._get_indexer(target, method, limit, tolerance)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 3786, in _get_indexer
+    def _get_indexer(
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 58, in train
+    inputs = prebatch.drop(columns=target_column)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 4954, in drop
+    return super().drop(
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4267, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4311, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 6640, in drop
+    indexer = self.get_indexer_for(labels)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 5764, in get_indexer_for
+    return self.get_indexer(target)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 3726, in get_indexer
+    if not self._should_compare(target) and not self._should_partial_index(target):
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 6010, in _should_compare
+    if (other.is_boolean() and self.is_numeric()) or (
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 2306, in is_boolean
+    return self.inferred_type in ["boolean"]
+  File "pandas/_libs/properties.pyx", line 37, in pandas._libs.properties.CachedProperty.__get__
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 2601, in inferred_type
+    return lib.infer_dtype(self._values, skipna=False)
+  File "pandas/_libs/lib.pyx", line 1450, in pandas._libs.lib.infer_dtype
+  File "pandas/_libs/lib.pyx", line 1308, in pandas._libs.lib._try_infer_map
+  File "/home/braeden/.local/lib/python3.10/site-packages/numpy/core/_dtype.py", line 346, in _name_get
+    if dtype.type in (np.datetime64, np.timedelta64):
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in train
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in <listcomp>
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 1323, in iterrows
+    for k, v in zip(self.index, self.values):
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 10889, in values
+    return self._mgr.as_array()
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/internals/managers.py", line 1589, in as_array
+    arr = self._interleave(dtype=dtype, na_value=na_value)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/internals/managers.py", line 1614, in _interleave
+    dtype = interleaved_dtype(  # type: ignore[assignment]
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/internals/base.py", line 226, in interleaved_dtype
+    return find_common_type(dtypes)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/cast.py", line 1841, in find_common_type
+    return np.find_common_type(types, [])
+  File "/home/braeden/.local/lib/python3.10/site-packages/numpy/core/numerictypes.py", line 652, in find_common_type
+    maxa = _can_coerce_all(array_types)
+  File "/home/braeden/.local/lib/python3.10/site-packages/numpy/core/numerictypes.py", line 582, in _can_coerce_all
+    numcoerce = len([x for x in dtypelist if newdtype >= x])
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 58, in train
+    inputs = prebatch.drop(columns=target_column)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 4954, in drop
+    return super().drop(
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4267, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4311, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 6640, in drop
+    indexer = self.get_indexer_for(labels)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 5764, in get_indexer_for
+    return self.get_indexer(target)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 3784, in get_indexer
+    return self._get_indexer(target, method, limit, tolerance)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 3809, in _get_indexer
+    indexer = self._engine.get_indexer(tgt_values)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 58, in train
+    inputs = prebatch.drop(columns=target_column)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 4954, in drop
+    return super().drop(
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4267, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4311, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 6640, in drop
+    indexer = self.get_indexer_for(labels)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 5764, in get_indexer_for
+    return self.get_indexer(target)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 3768, in get_indexer
+    if is_dtype_equal(self.dtype, target.dtype) and self.equals(target):
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 5243, in equals
+    if is_object_dtype(self.dtype) and not is_object_dtype(other.dtype):
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/common.py", line 188, in is_object_dtype
+    return _is_dtype_type(arr_or_dtype, classes(np.object_))
+KeyboardInterrupt
