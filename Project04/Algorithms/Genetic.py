@@ -9,15 +9,14 @@ from Selection.Selection import Selection
 
 
 class Genetic():
-    def __init__(self, networks: List[NeuralNetwork], hyper_parameters: Dict[str, int],
-                 selection: Callable, crossover: Callable, mutation: Callable):
+    def __init__(self, networks: List[NeuralNetwork], hyper_parameters: Dict[str, int]):
         self.population = networks
 
         # TODO: Handle hyper parameters
         self.hyper_parameters = hyper_parameters
-        self.selection = selection(networks, self._evaluate_fitness)
-        self.crossover = crossover()
-        self.mutation = mutation((0, 1))
+        self.selection = self.hyper_parameters['selection'](networks, self._evaluate_fitness)
+        self.crossover = self.hyper_parameters['crossover']()
+        self.mutation = self.hyper_parameters['mutation']((0, 1))
 
     def _evaluate_fitness(self, chromosome: NeuralNetwork) -> float:
         # TODO: How to evaluate fitness?
@@ -63,5 +62,5 @@ if __name__ == "__main__":
         serialized_nn = Utilities.serialize_network(nn)
         networks.append(serialized_nn)
 
-    ga = Genetic(networks, {}, TournamentSelect, UniformCrossover, UniformMutation)
+    ga = Genetic(networks, {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation})
     ga.train(1, 0.0)
