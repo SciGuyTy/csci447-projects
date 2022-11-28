@@ -10,8 +10,8 @@ class TournamentSelect(Selection):
         super().__init__(population, fitness_function)
 
     def select(self, k: int = 3) -> NeuralNetwork:
-        # Select random chromosomes from population (with replacement
-        contestants = random.choices(self.population, k=k)
+        # Select random chromosomes from population (without replacement
+        contestants = random.sample(self.population, k)
 
         # Compute and compare fitness
         contestant_fitness = [self.fitness_function(contestant) for contestant in contestants]
