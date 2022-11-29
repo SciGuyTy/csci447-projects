@@ -9,7 +9,7 @@ from Selection.Selection import Selection
 
 
 class Genetic():
-    def __init__(self, networks: List[NeuralNetwork], hyper_parameters: Dict[str, int]):
+    def __init__(self, networks: List[NeuralNetwork], hyper_parameters: Dict[str, object]):
         self.population = networks
 
         # TODO: Handle hyper parameters
@@ -28,6 +28,10 @@ class Genetic():
 
         # Run for each sample in the training data
         for generation in range(num_generations):
+            # Perform selection on k networks, generating k new networks through crossover/mutation
+            # Replace the k selected parents with the k new networks
+            # End generation
+
             # Perform selection to get two parent chromosomes
             parents = [self.selection.select() for _ in range(2)]
 
@@ -53,6 +57,8 @@ class Genetic():
             # if(self._evaluate_fitness() >= fitness_threshold):
             #     break
 
+        # return best_network, fitness_of_best_network
+
 
 if __name__ == "__main__":
     networks = []
@@ -62,5 +68,13 @@ if __name__ == "__main__":
         serialized_nn = Utilities.serialize_network(nn)
         networks.append(serialized_nn)
 
+    def eval_for_fold1(network: NeuralNetwork):
+        # run through all the datapoints in fold1
+        # return inverse accuracy
+
+
+        pass
+
+    # TuningUtility(...., eval_for_fold1)
     ga = Genetic(networks, {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation})
     ga.train(1, 0.0)

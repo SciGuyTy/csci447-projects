@@ -20,7 +20,7 @@ class TuningUtility:
 
         # Dictionary of hyperparameters.
         # Key = string name of hyperparameter
-        # Value = [untuned_value, start_value final_value, step_size]
+        # Value = [untuned_value, start_value, final_value, step_size]
         self.hyperparameters = hyperparameters
         self.tuning_order = hyperparamters_tuning_order
 
@@ -56,8 +56,9 @@ class TuningUtility:
 
                     alg = self.algorithm(networks, best_hp, self.evaluation_method)
                     # Train the algorithm and get the best network and fitness
-                    network, fitness = alg.train(self.generations, self.evaluation_method)
+                    network, fitness = alg.train(self.generations)
 
+                    tuning_data_fitness = self.tuning_evaluation
                     # Sum the fitnesses
                     network_performances_sum += fitness
 
