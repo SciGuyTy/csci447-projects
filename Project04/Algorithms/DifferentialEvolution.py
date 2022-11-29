@@ -21,14 +21,10 @@ class Genetic():
 
         # Hyper-parameters
         self.hyper_parameters = hyper_parameters
-        self.probability_of_cross = self.hyper_parameters['probability_of_cross']
-        self.probability_of_mutation = self.hyper_parameters['probability_of_mutation']
-        self.mutation_range = self.hyper_parameters['mutation_range']
         self.selection = self.hyper_parameters['selection'](evaluation_method)
-        self.crossover = self.hyper_parameters['crossover'](self.probability_of_cross)
-        self.mutation = self.hyper_parameters['mutation'](self.mutation_range, self.probability_of_mutation)
+        self.crossover = self.hyper_parameters['crossover']()
+        self.mutation = self.hyper_parameters['mutation']((0, 1))
         self.num_replaced_parents = self.hyper_parameters['num_replaced_parents']
-        self.tournament_size = self.hyper_parameters['tournament_size']
 
     def train(self, num_generations: int) -> NeuralNetwork:
         # Breed and mutate the population for the given number of generations
@@ -52,11 +48,12 @@ class Genetic():
                     # Store the parent
                     parents.append(parent)
 
-                # Perform crossover to generate children chromosomes
-                children = self.crossover.cross(parents[0], parents[1])
-
                 # Mutate children chromosomes and store them in the children array
-                generation_children += (self.mutation.mutate(children))
+                children = self.mutation.mutate(parents)
+
+                # Perform crossover to generate children chromosomes
+                generation_children += (self.crossover.cross(parents[0], parents[1]))
+
 
             # Update population by inserting new children into population
             self.population += generation_children
@@ -77,5 +74,5 @@ if __name__ == "__main__":
         networks.append(serialized_nn)
 
     ga = Genetic(networks, {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation,
-                            'num_replaced_parents': 8, 'tournament_size': 3, 'probability_of_cross': 0.8, 'probability_of_mutation': 0.15, 'mutation_range': (0, 1)}, evaluation_method=lambda x: 0.0)
+                            'num_replaced_parents': 8}, evaluation_method=lambda x: 0.0)
     ga.train(10)
