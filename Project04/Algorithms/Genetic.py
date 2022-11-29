@@ -30,7 +30,7 @@ class Genetic():
         self.num_replaced_parents = self.hyper_parameters['num_replaced_parents']
         self.tournament_size = self.hyper_parameters['tournament_size']
 
-    def train(self, num_generations: int) -> NeuralNetwork:
+    def train(self, num_generations: int) -> tuple[NeuralNetwork, float]:
         # Breed and mutate the population for the given number of generations
         for generation in range(num_generations):
             # List to store children chromosomes
@@ -64,8 +64,11 @@ class Genetic():
         # Compute the fitness for each chromosome in the final population
         population_fitness = [self.evaluation_method(chromosome) for chromosome in self.population]
 
-        # return best_network, fitness_of_best_network
-        return min(population_fitness)
+        best_fitness = min(population_fitness)
+        best_fitness_index = population_fitness.index(best_fitness)
+
+        # Return the best network and its fitness
+        return self.population[best_fitness_index], best_fitness
 
 
 if __name__ == "__main__":
@@ -78,4 +81,4 @@ if __name__ == "__main__":
 
     ga = Genetic(networks, {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation,
                             'num_replaced_parents': 8, 'tournament_size': 3, 'probability_of_cross': 0.8, 'probability_of_mutation': 0.15, 'mutation_range': (0, 1)}, evaluation_method=lambda x: 0.0)
-    ga.train(10)
+    print(ga.train(10))
