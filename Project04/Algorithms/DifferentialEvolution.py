@@ -1,4 +1,5 @@
 import math
+import random
 from typing import List, Dict, Callable
 
 import numpy as np
@@ -21,48 +22,57 @@ class Genetic():
 
         # Hyper-parameters
         self.hyper_parameters = hyper_parameters
-        self.selection = self.hyper_parameters['selection'](evaluation_method)
-        self.crossover = self.hyper_parameters['crossover']()
-        self.mutation = self.hyper_parameters['mutation']((0, 1))
         self.num_replaced_parents = self.hyper_parameters['num_replaced_parents']
 
-    def train(self, num_generations: int) -> NeuralNetwork:
+        self.mutation_scale_factor = self.hyper_parameters['mutation_scale_factor']
+        self.crossover_rate = self.hyper_parameters['crossover_rate']
+
+    def _mutate(self, target, trial):
+        crossed_chromosome = []
+
+        for i in range(len(target)):
+            if random.random() > (1 - self.crossover_rate):
+                crossed_chromosome.append(trial[i])
+            else:
+                crossed_chromosome.append(target[i])
+
+        return crossed_chromosome
+
+    def train(self, num_generations: int) -> tuple[NeuralNetwork, float]:
         # Breed and mutate the population for the given number of generations
         for generation in range(num_generations):
-            # List to store children chromosomes
-            generation_children = []
+            for index, chromosome in enumerate(self.population):
+                # Remove target chromosome from population
+                del self.population[index]
 
-            # Replace parents with children
-            for _ in range(math.floor(self.num_replaced_parents / 2)):
-                parents = []
+                # Select three chromosomes without replacement from population
+                a, b, c = random.sample(self.population, 3)
 
-                # Perform selection to get two parent chromosomes and remove them from the current population
-                for _ in range(2):
-                    # Select a parent
-                    parent = self.selection.select(self.population)
+                # Perform mutation to produce trial chromosome
+                trial_chromosome = a + (self.mutation_scale_factor * (np.subtract(b, c)))
 
-                    # Remove the parent from the population (ran into weird issues with np.array and python list types)
-                    parent_index = [idx for idx, el in enumerate(self.population) if np.array_equal(el, parent)]
-                    del self.population[parent_index[0]]
+                # Perform crossover
+                trial_chromosome = self._mutate(chromosome, trial_chromosome)
 
-                    # Store the parent
-                    parents.append(parent)
+                # Compare trial vector and target vector using evaluation method
+                target_fitness = self.evaluation_method(chromosome)
+                trial_fitness = self.evaluation_method(trial_chromosome)
 
-                # Mutate children chromosomes and store them in the children array
-                children = self.mutation.mutate(parents)
-
-                # Perform crossover to generate children chromosomes
-                generation_children += (self.crossover.cross(parents[0], parents[1]))
-
-
-            # Update population by inserting new children into population
-            self.population += generation_children
+                if trial_fitness < target_fitness:
+                    # Replace target chromosome with trial chromosome in population
+                    self.population.insert(index, trial_chromosome)
+                else:
+                    # Reinsert the target chromosome in population
+                    self.population.insert(index, chromosome)
 
         # Compute the fitness for each chromosome in the final population
         population_fitness = [self.evaluation_method(chromosome) for chromosome in self.population]
 
-        # return best_network, fitness_of_best_network
-        return min(population_fitness)
+        best_fitness = min(population_fitness)
+        best_fitness_index = population_fitness.index(best_fitness)
+
+        # Return the best network and its fitness
+        return self.population[best_fitness_index], best_fitness
 
 
 if __name__ == "__main__":
@@ -73,6 +83,5 @@ if __name__ == "__main__":
         serialized_nn = Utilities.serialize_network(nn)
         networks.append(serialized_nn)
 
-    ga = Genetic(networks, {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation,
-                            'num_replaced_parents': 8}, evaluation_method=lambda x: 0.0)
-    ga.train(10)
+    ga = Genetic(networks, {'num_replaced_parents': 8, 'mutation_scale_factor': 1, 'crossover_rate': 0.5}, evaluation_method=lambda x: 0.0)
+    print(ga.train(10))
