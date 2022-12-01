@@ -5,14 +5,14 @@ from typing import List, Dict, Callable
 import numpy as np
 from Project04.NeuralNetwork import NeuralNetwork
 from Project04.Utilities.Utilities import Utilities
-from Selection.TournamentSelect import TournamentSelect
-
 
 class Particle():
 
     def __init__(self, network: NeuralNetwork, evaluation_method: Callable, inertia: float, c1: float, c2: float):
         # Save evaluation method
         self.evaluate_self = evaluation_method
+
+        self.original_network = network
 
         # Set the position as the serialized network
         self.position = Utilities.serialize_network(network)
@@ -30,7 +30,7 @@ class Particle():
         self.c2 = c2
 
     def evaluate(self):
-        return self.evaluate_self(self.position)
+        return self.evaluate_self(Utilities.deserialize_network(self.original_network, self.position))
 
     def update(self, global_best_position):
         r1 = random.random()
@@ -88,16 +88,9 @@ class PSO():
 
             # Delay updating the global best position until all particles are updated in the generation
             gbest_position = gbest_position_new
-
+            if generation % 10 == 0:
+                print("Finished generation: ", generation)
         return Utilities.deserialize_network(self.population[gbest_index], gbest_position), gbest_fitness
 
 
-if __name__ == "__main__":
-    networks = []
 
-    for i in range(10):
-        nn = NeuralNetwork([3, 3], lambda x: x, False, (0, 1))
-        networks.append(nn)
-
-    ga = Genetic(networks, {}, TournamentSelect, UniformCrossover, UniformMutation)
-    ga.train(1, 0.0)

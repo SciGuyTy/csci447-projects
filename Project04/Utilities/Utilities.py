@@ -34,4 +34,4 @@ class Utilities():
             layers.append(np.reshape(layer_weights, shape))
             curr_pointer += index_range
 
-        return layers
+        return network
