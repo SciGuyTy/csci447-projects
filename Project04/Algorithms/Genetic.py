@@ -27,8 +27,13 @@ class Genetic():
         self.selection = self.hyper_parameters['selection'](evaluation_method)
         self.crossover = self.hyper_parameters['crossover'](self.probability_of_cross)
         self.mutation = self.hyper_parameters['mutation'](self.mutation_range, self.probability_of_mutation)
-        self.num_replaced_parents = self.hyper_parameters['num_replaced_parents']
         self.tournament_size = self.hyper_parameters['tournament_size']
+
+        # Ensure that the number of couples being replaced is a valid value
+        self.num_replaced_couples = self.hyper_parameters['num_replaced_couples']
+        if self.num_replaced_couples >= (math.floor(len(self.population) / 2)):
+            raise ValueError("The number of couples being replaced exceeds the size of the population")
+
 
     def train(self, num_generations: int) -> tuple[NeuralNetwork, float]:
         """
@@ -43,14 +48,13 @@ class Genetic():
         -------
         A tuple containing the best weight configuration (serialized) and the associated fitness
         """
-
         # Breed and mutate the population for the given number of generations
         for generation in range(num_generations):
             # List to store children chromosomes
             generation_children = []
 
             # Replace parents with children
-            for _ in range(math.floor(self.num_replaced_parents / 2)):
+            for _ in range(self.num_replaced_couples):
                 parents = []
 
                 # Perform selection to get two parent chromosomes and remove them from the current population
@@ -93,5 +97,5 @@ if __name__ == "__main__":
         networks.append(serialized_nn)
 
     ga = Genetic(networks, {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation,
-                            'num_replaced_parents': 8, 'tournament_size': 3, 'probability_of_cross': 0.8, 'probability_of_mutation': 0.15, 'mutation_range': (0, 1)}, evaluation_method=lambda x: 0.0)
+                            'num_replaced_couples': 4, 'tournament_size': 3, 'probability_of_cross': 0.8, 'probability_of_mutation': 0.15, 'mutation_range': (0, 1)}, evaluation_method=lambda x: 0.0)
     print(ga.train(10))
