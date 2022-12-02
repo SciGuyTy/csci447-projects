@@ -1,3 +1,4 @@
+import multiprocessing
 import pickle
 
 import numpy as np
@@ -89,32 +90,51 @@ def breast_cancer_experiment(run_tuning):
     with open(breast_cancer_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
+    norm_params = [i[2] for i in training_test_folds]
+
     np = {'shape': [9, 9, 2], 'output_transformer': output_transformer, 'regression': False,
           'random_weight_range': (-.1, 0.1)}
 
     def individual_eval_method(fold, network):
         return 1-EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
 
+    hp = {'inertia': [0.1, 0.05, 0.15, 0.05], 'c1': [1.4, 1, 1.6, 0.2], 'c2': [0.8, .2, 1.0, 0.2]}
+    hp_order = ['inertia', 'c1', 'c2']
+    # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
+
     if run_tuning:
-        hp = {'inertia': [0.1, 0.05, 0.15, 0.05], 'c1': [1.4, 1, 1.6, 0.2], 'c2': [0.8, .2, 1.0, 0.2]}
-        hp_order = ['inertia', 'c1', 'c2']
-        tu = TuningUtility(PSO, folds, tuning_data, individual_eval_method, np, 30, 100, hp, hp_order)
-        # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
+        tu = TuningUtility(PSO, folds, tuning_data, norm_params, individual_eval_method, np, 30, 100, hp, hp_order)
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
         best_hp = {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
-    population_size = 100
+    population_size = 30
     generations = 100
+    tu = TuningUtility(PSO, folds, tuning_data, norm_params, individual_eval_method, np, population_size, generations, hp, hp_order)
 
-    results = []
-    for fold in folds:
-        network, fitness = tu.train_on_fold(best_hp, fold)
+    jobs = []
+    manager = multiprocessing.Manager()
+    fold_networks = manager.dict()
+    for i, (training_data, hold_out, norm_params) in enumerate(training_test_folds):
+        process = multiprocessing.Process(target=tu.train_on_fold, args=(best_hp, training_data, fold_networks, i))
+        jobs.append(process)
+        process.start()
 
+    for j in jobs:
+        j.join()
+
+    fold_results = [None] * len(training_test_folds)
+    for id, network in fold_networks.items():
+        fold_results[id] = cv.calculate_results_for_fold(network, hold_out)
+
+    loss = [EvaluationMeasure.calculate_0_1_loss(i) for i in fold_results]
+    f1 = [EvaluationMeasure.calculate_f_beta_score(i, 2) for i in fold_results]
+    print("Loss: ", loss)
+    print("F1", f1)
 
 
 if __name__ == "__main__":
-    breast_cancer_experiment(False)
+    breast_cancer_experiment(True)
 
     pass

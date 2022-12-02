@@ -88,8 +88,7 @@ class PSO():
 
             # Delay updating the global best position until all particles are updated in the generation
             gbest_position = gbest_position_new
-            if generation % 10 == 0:
-                print("Finished generation: ", generation)
+            print("Finished generation: ", generation)
         return Utilities.deserialize_network(self.population[gbest_index], gbest_position), gbest_fitness
 
 

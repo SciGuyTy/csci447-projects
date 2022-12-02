@@ -6,16 +6,18 @@ from Project04.Evaluation.EvaluationCallable import EvaluationCallable
 from Project04.NeuralNetwork import NeuralNetwork
 import copy
 
+from Project04.Utilities.Utilities import Utilities
+
+
 class TuningUtility:
 
-    def __init__(self, algorithm, folds, tuning_data, evaluation_method, network_parameters, population_size,
+    def __init__(self, algorithm, folds, tuning_data, norm_params, evaluation_method, network_parameters, population_size,
                  generations, hyperparameters, hyperparamters_tuning_order):
         self.algorithm = algorithm
 
         self.folds = folds
-
         self.tuning_data = tuning_data
-
+        self.norm_params = norm_params
         self.evaluation_method = evaluation_method
 
         self.network_parameters = network_parameters
@@ -50,8 +52,8 @@ class TuningUtility:
                 jobs = []
                 manager = multiprocessing.Manager()
                 fold_results = manager.dict()
-                for fold in self.folds:
-                    process = multiprocessing.Process(target=self.tune_single_fold, args=(id, best_hp, fold, fold_results))
+                for i, fold in enumerate(self.folds):
+                    process = multiprocessing.Process(target=self.tune_single_fold, args=(i, best_hp, fold, fold_results))
                     jobs.append(process)
                     process.start()
 
@@ -68,14 +70,15 @@ class TuningUtility:
 
         return best_hp
 
-    def tune_single_fold(self, id, best_hp, fold, results):
+    def tune_single_fold(self, i, best_hp, fold, results):
 
         # Train the algorithm and get the best network and fitness
         network, fitness = self.train_on_fold(best_hp, fold)
-        tuning_fitness = self.evaluation_method(self.tuning_data, network)
-        results[id] = tuning_fitness
+        tuning_data = Utilities.normalize_set_by_params(self.tuning_data.copy(), self.norm_params[i])
+        tuning_fitness = self.evaluation_method(tuning_data, network)
+        results[i] = tuning_fitness
 
-    def train_on_fold(self, best_hp, fold):
+    def train_on_fold(self, best_hp, fold, best_networks=None, id=None):
         # Create a population of networks
         networks = []
         for _ in range(self.population_size):
@@ -87,4 +90,7 @@ class TuningUtility:
         method = EvaluationCallable(fold, self.evaluation_method)
         alg = self.algorithm(networks, best_hp, method)
         # Train the algorithm and get the best network and fitness
-        return alg.train(self.generations)
+        network, fitness = alg.train(self.generations)
+        if best_networks is not None and id is not None:
+            best_networks[id] = network
+        return network, fitness
