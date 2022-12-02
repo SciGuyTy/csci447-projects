@@ -2,14 +2,29 @@ import random
 from typing import List, Callable
 
 from Project04.Algorithms.Selection.Selection import Selection
-from Project04.NeuralNetwork import NeuralNetwork
 
 
 class TournamentSelect(Selection):
     def __init__(self, fitness_function: Callable):
         super().__init__(fitness_function)
 
-    def select(self, population: List[NeuralNetwork], k: int = 3) -> NeuralNetwork:
+    def select(self, population: List[float], k: int = 3) -> List[float]:
+        """
+        Perform tournament selection on a population of chromosomes
+
+        Parameters
+        ----------
+        population: List[float]
+            The target population to select from
+
+        k: int
+            The number of chromosomes to participate in the tournament (defaults to 5)
+
+        Returns
+        -------
+        The champion chromosome from the tournament
+        """
+
         # Select random chromosomes from population (without replacement)
         contestants = random.sample(population, k)
 

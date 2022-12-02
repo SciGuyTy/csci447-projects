@@ -9,6 +9,19 @@ class UniformMutation(Mutation):
         super().__init__(mutation_range, probability_of_mutation)
 
     def mutate(self, chromosomes: List[List[float]]) -> List[List[float]]:
+        """
+        Perform uniform mutation for a list of chromosomes
+
+        Parameters
+        ----------
+        chromosomes: List[List[float]]
+            The chromosomes to uniformly mutate
+
+        Returns
+        -------
+        A list mutated chromosomes
+        """
+
         # Create a copy of the chromosome objects for data consistency
         chromosomes = chromosomes.copy()
 

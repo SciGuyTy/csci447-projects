@@ -4,11 +4,9 @@ from typing import List, Dict, Callable
 
 import numpy as np
 
-from Project04.Algorithms.Crossover.UniformCrossover import UniformCrossover
-from Project04.Algorithms.Mutation.UniformMutation import UniformMutation
+from Project04.Algorithms.Crossover.BinomialCrossover import BinomialCrossover
 from Project04.NeuralNetwork import NeuralNetwork
 from Project04.Utilities.Utilities import Utilities
-from Selection.TournamentSelect import TournamentSelect
 
 
 class Genetic():
@@ -23,22 +21,29 @@ class Genetic():
         # Hyper-parameters
         self.hyper_parameters = hyper_parameters
         self.num_replaced_parents = self.hyper_parameters['num_replaced_parents']
-
         self.mutation_scale_factor = self.hyper_parameters['mutation_scale_factor']
         self.crossover_rate = self.hyper_parameters['crossover_rate']
 
-    def _mutate(self, target, trial):
-        crossed_chromosome = []
+        # Crossover method
+        self.crossover = self.hyper_parameters['crossover'](self.crossover_rate)
 
-        for i in range(len(target)):
-            if random.random() > (1 - self.crossover_rate):
-                crossed_chromosome.append(trial[i])
-            else:
-                crossed_chromosome.append(target[i])
-
-        return crossed_chromosome
 
     def train(self, num_generations: int) -> tuple[NeuralNetwork, float]:
+        """
+        Train a neural network using differential evolution
+
+        Parameters
+        ----------
+        num_generations: int
+            The number of generations to run the training algorithm
+
+        Returns
+        -------
+        A tuple containing the best weight configuration (serialized) and the associated fitness
+        """
+        # Keep track of the best chromosome
+        best_chromosome = ([], math.inf)
+
         # Breed and mutate the population for the given number of generations
         for generation in range(num_generations):
             for index, chromosome in enumerate(self.population):
@@ -48,11 +53,11 @@ class Genetic():
                 # Select three chromosomes without replacement from population
                 a, b, c = random.sample(self.population, 3)
 
-                # Perform mutation to produce trial chromosome
+                # Perform differential mutation to produce trial chromosome
                 trial_chromosome = a + (self.mutation_scale_factor * (np.subtract(b, c)))
 
                 # Perform crossover
-                trial_chromosome = self._mutate(chromosome, trial_chromosome)
+                trial_chromosome = self.crossover.cross(chromosome, trial_chromosome)
 
                 # Compare trial vector and target vector using evaluation method
                 target_fitness = self.evaluation_method(chromosome)
@@ -61,18 +66,20 @@ class Genetic():
                 if trial_fitness < target_fitness:
                     # Replace target chromosome with trial chromosome in population
                     self.population.insert(index, trial_chromosome)
+
+                    # Keep track of the best chromosome
+                    if trial_fitness < best_chromosome[1]:
+                        best_chromosome = trial_chromosome, trial_fitness
                 else:
                     # Reinsert the target chromosome in population
                     self.population.insert(index, chromosome)
 
-        # Compute the fitness for each chromosome in the final population
-        population_fitness = [self.evaluation_method(chromosome) for chromosome in self.population]
-
-        best_fitness = min(population_fitness)
-        best_fitness_index = population_fitness.index(best_fitness)
+                    # Keep track of the best chromosome
+                    if target_fitness < best_chromosome[1]:
+                        best_chromosome = chromosome, target_fitness
 
         # Return the best network and its fitness
-        return self.population[best_fitness_index], best_fitness
+        return best_chromosome
 
 
 if __name__ == "__main__":
@@ -83,5 +90,5 @@ if __name__ == "__main__":
         serialized_nn = Utilities.serialize_network(nn)
         networks.append(serialized_nn)
 
-    ga = Genetic(networks, {'num_replaced_parents': 8, 'mutation_scale_factor': 1, 'crossover_rate': 0.5}, evaluation_method=lambda x: 0.0)
+    ga = Genetic(networks, {'crossover': BinomialCrossover,  'num_replaced_parents': 8, 'mutation_scale_factor': 1, 'crossover_rate': 0.5}, evaluation_method=lambda x: 0.0)
     print(ga.train(10))

@@ -31,6 +31,19 @@ class Genetic():
         self.tournament_size = self.hyper_parameters['tournament_size']
 
     def train(self, num_generations: int) -> tuple[NeuralNetwork, float]:
+        """
+        Train a neural network using the genetic algorithm
+
+        Parameters
+        ----------
+        num_generations: int
+            The number of generations to run the training algorithm
+
+        Returns
+        -------
+        A tuple containing the best weight configuration (serialized) and the associated fitness
+        """
+
         # Breed and mutate the population for the given number of generations
         for generation in range(num_generations):
             # List to store children chromosomes

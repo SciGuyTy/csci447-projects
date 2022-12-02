@@ -9,6 +9,22 @@ class UniformCrossover(Crossover):
         super().__init__(probability_of_cross)
 
     def cross(self, parent_one: List[float], parent_two: List[float]) -> List[list[float]]:
+        """
+        Perform uniform crossover using two chromosomes
+
+        Parameters
+        ----------
+        parent_one: List[float]
+            The first parent to cross
+
+        parent_two: List[float]
+            The second parent to cross
+
+        Returns
+        -------
+        A list of the children (crossed) chromosomes
+        """
+
         child_one = parent_one.copy()
         child_two = parent_two.copy()
 
