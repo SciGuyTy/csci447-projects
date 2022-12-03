@@ -32,8 +32,10 @@ class Utilities():
             layer_weights = chromosome[curr_pointer: curr_pointer + index_range]
 
             # Construct array with rebuilt weight matrices
-            layers.append(np.reshape(layer_weights, shape))
+            #layers.append(np.reshape(layer_weights, shape))
+            layer.weights = np.reshape(layer_weights, shape)
             curr_pointer += index_range
+
 
         return network
 

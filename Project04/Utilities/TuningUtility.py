@@ -11,13 +11,12 @@ from Project04.Utilities.Utilities import Utilities
 
 class TuningUtility:
 
-    def __init__(self, algorithm, folds, tuning_data, norm_params, evaluation_method, network_parameters, population_size,
+    def __init__(self, algorithm, training_test_folds, tuning_data, evaluation_method, network_parameters, population_size,
                  generations, hyperparameters, hyperparamters_tuning_order):
         self.algorithm = algorithm
 
-        self.folds = folds
+        self.training_test_folds = training_test_folds
         self.tuning_data = tuning_data
-        self.norm_params = norm_params
         self.evaluation_method = evaluation_method
 
         self.network_parameters = network_parameters
@@ -52,8 +51,8 @@ class TuningUtility:
                 jobs = []
                 manager = multiprocessing.Manager()
                 fold_results = manager.dict()
-                for i, fold in enumerate(self.folds):
-                    process = multiprocessing.Process(target=self.tune_single_fold, args=(i, best_hp, fold, fold_results))
+                for i, (training_data, hold_out, norm_params) in enumerate(self.training_test_folds):
+                    process = multiprocessing.Process(target=self.tune_single_fold, args=(i, best_hp, training_data, norm_params, fold_results))
                     jobs.append(process)
                     process.start()
 
@@ -61,7 +60,7 @@ class TuningUtility:
                     j.join()
 
                 # Add the average performance of the hyperparameters to the dict
-                performances[value] = sum(fold_results.values()) / len(self.folds)
+                performances[value] = sum(fold_results.values()) / len(self.train_on_fold())
                 print("Finished hp: ", hp, " for value: ", value)
                 print("Performance: ", performances[value])
             print("Best ", hp, ": ", best_hp[hp])
@@ -70,12 +69,13 @@ class TuningUtility:
 
         return best_hp
 
-    def tune_single_fold(self, i, best_hp, fold, results):
+    def tune_single_fold(self, i, best_hp, training_data, norm_params, results):
 
         # Train the algorithm and get the best network and fitness
-        network, fitness = self.train_on_fold(best_hp, fold)
-        tuning_data = Utilities.normalize_set_by_params(self.tuning_data.copy(), self.norm_params[i])
+        network, fitness = self.train_on_fold(best_hp, training_data)
+        tuning_data = Utilities.normalize_set_by_params(self.tuning_data.copy(), norm_params)
         tuning_fitness = self.evaluation_method(tuning_data, network)
+        print(f"{i=}, {fitness=}, {tuning_fitness=} ")
         results[i] = tuning_fitness
 
     def train_on_fold(self, best_hp, fold, best_networks=None, id=None):
@@ -87,6 +87,7 @@ class TuningUtility:
                                           self.network_parameters['regression'],
                                           self.network_parameters['random_weight_range']))
 
+        inital_serialized_networks = [Utilities.serialize_network(i) for i in networks]
         method = EvaluationCallable(fold, self.evaluation_method)
         alg = self.algorithm(networks, best_hp, method)
         # Train the algorithm and get the best network and fitness

@@ -12,6 +12,8 @@ from Project04.Evaluation.CrossValidation import CrossValidation
 from Project04.NeuralNetwork import NeuralNetwork
 from Project04.Evaluation.EvaluationCallable import EvaluationCallable
 from Project04.Utilities.Preprocess import Preprocessor
+from Project04.Utilities.Utilities import Utilities
+
 
 def output_transformer(output_vector: np.array):
     return output_vector.argmax() + 1
@@ -34,7 +36,7 @@ def test_PSO():
 
     networks = []
 
-    num_of_gen = 1000
+    num_of_gen = 100
     population_size = 100
 
     for i in range(population_size):
@@ -43,9 +45,10 @@ def test_PSO():
     hp = {'inertia': 0.1, 'c1': 1.5, 'c2': 3}
 
     def evaluation_method(fold, network):
+        network = Utilities.serialize_network(network)
         return abs(np.sum(network)) + fold
 
-    method = EvaluationCallable(1, evaluation_method)
+    method = EvaluationCallable(2, evaluation_method)
 
     pso = PSO(networks, hp, method)
 
@@ -90,20 +93,18 @@ def breast_cancer_experiment(run_tuning):
     with open(breast_cancer_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
-    norm_params = [i[2] for i in training_test_folds]
-
     np = {'shape': [9, 9, 2], 'output_transformer': output_transformer, 'regression': False,
           'random_weight_range': (-.1, 0.1)}
 
     def individual_eval_method(fold, network):
         return 1-EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
 
-    hp = {'inertia': [0.1, 0.05, 0.15, 0.05], 'c1': [1.4, 1, 1.6, 0.2], 'c2': [0.8, .2, 1.0, 0.2]}
+    hp = {'inertia': [0.6, 0.2, 1, 0.2], 'c1': [1.5, 1, 2, 0.2], 'c2': [1.5, 1, 2, 0.2]}
     hp_order = ['inertia', 'c1', 'c2']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
-        tu = TuningUtility(PSO, folds, tuning_data, norm_params, individual_eval_method, np, 30, 100, hp, hp_order)
+        tu = TuningUtility(PSO, training_test_folds, tuning_data, individual_eval_method, np, 30, 100, hp, hp_order)
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
@@ -111,7 +112,7 @@ def breast_cancer_experiment(run_tuning):
 
     population_size = 30
     generations = 100
-    tu = TuningUtility(PSO, folds, tuning_data, norm_params, individual_eval_method, np, population_size, generations, hp, hp_order)
+    tu = TuningUtility(PSO, training_test_folds, tuning_data, individual_eval_method, np, population_size, generations, hp, hp_order)
 
     jobs = []
     manager = multiprocessing.Manager()
@@ -135,6 +136,7 @@ def breast_cancer_experiment(run_tuning):
 
 
 if __name__ == "__main__":
+    #test_PSO()
     breast_cancer_experiment(True)
 
     pass
