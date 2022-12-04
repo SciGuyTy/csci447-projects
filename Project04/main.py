@@ -58,7 +58,6 @@ def test_PSO():
 
 
 if __name__ == "__main__":
-    #breast_cancer_experiment(True)
-    #soybean_experiment(False)
+    SoybeanExperiment.soybean_experiment_ga(True)
 
     pass

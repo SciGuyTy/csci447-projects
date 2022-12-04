@@ -7,7 +7,7 @@ from Project04.Algorithms.Crossover.UniformCrossover import UniformCrossover
 from Project04.Algorithms.Mutation.UniformMutation import UniformMutation
 from Project04.NeuralNetwork import NeuralNetwork
 from Project04.Utilities.Utilities import Utilities
-from Selection.TournamentSelect import TournamentSelect
+from Project04.Algorithms.Selection.TournamentSelect import TournamentSelect
 
 
 class Genetic():
@@ -64,19 +64,27 @@ class Genetic():
 
                     # Remove the parent from the population (ran into weird issues with np.array and python list types)
                     parent_index = [idx for idx, el in enumerate(self.population) if np.array_equal(el, parent)]
-                    del self.population[parent_index[0]]
+                    #del self.population[parent_index[0]]
 
                     # Store the parent
-                    parents.append(parent)
+                    parents.append((parent, parent_index[0]))
 
                 # Perform crossover to generate children chromosomes
-                children = self.crossover.cross(parents[0], parents[1])
+                children = self.crossover.cross(Utilities.serialize_network(parents[0][0]),
+                                                Utilities.serialize_network(parents[1][0]))
 
-                # Mutate children chromosomes and store them in the children array
-                generation_children += (self.mutation.mutate(children))
+                # # Mutate children chromosomes and store them in the children array
+                # generation_children += (self.mutation.mutate(children))
 
-            # Update population by inserting new children into population
-            self.population += generation_children
+                # Mutate the children
+                children = self.mutation.mutate(children)
+
+                # Replace the parents' weights with their children's weights
+                Utilities.deserialize_network(self.population[parents[0][1]], children[0])
+                Utilities.deserialize_network(self.population[parents[1][1]], children[1])
+
+            # # Update population by inserting new children into population
+            # self.population[parent[0][1]] = children
 
         # Compute the fitness for each chromosome in the final population
         population_fitness = [self.evaluation_method(chromosome) for chromosome in self.population]

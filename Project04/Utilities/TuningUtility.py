@@ -87,7 +87,6 @@ class TuningUtility:
                                           self.network_parameters['regression'],
                                           self.network_parameters['random_weight_range']))
 
-        inital_serialized_networks = [Utilities.serialize_network(i) for i in networks]
         method = EvaluationCallable(fold, self.evaluation_method)
         alg = self.algorithm(networks, best_hp, method)
         # Train the algorithm and get the best network and fitness
