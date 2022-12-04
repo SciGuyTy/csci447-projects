@@ -4,9 +4,8 @@ from Project04.NeuralNetwork import NeuralNetwork
 
 
 class Selection:
-    def __init__(self, population: List[NeuralNetwork], fitness_function: Callable):
-        self.population = population
+    def __init__(self, fitness_function: Callable):
         self.fitness_function = fitness_function
 
-    def select(self) -> List:
+    def select(self, population: List[NeuralNetwork]) -> List:
         pass
