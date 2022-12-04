@@ -60,7 +60,7 @@ class TuningUtility:
                     j.join()
 
                 # Add the average performance of the hyperparameters to the dict
-                performances[value] = sum(fold_results.values()) / len(self.train_on_fold())
+                performances[value] = sum(fold_results.values()) / len(self.training_test_folds)
                 print("Finished hp: ", hp, " for value: ", value)
                 print("Performance: ", performances[value])
             print("Best ", hp, ": ", best_hp[hp])
