@@ -93,14 +93,16 @@ def breast_cancer_experiment_pso(run_tuning, network_shape):
         j.join()
 
     fold_results = [None] * len(training_test_folds)
-    for id, network in fold_networks.items():
-        print(Utilities.serialize_network(network))
+    training_results = [None] * len(training_test_folds)
+    for id, (network, fitness) in fold_networks.items():
+        training_results[id] = 1-fitness
         fold_results[id] = cv.calculate_results_for_fold(network, training_test_folds[id][1])
 
     loss = [EvaluationMeasure.calculate_0_1_loss(i) for i in fold_results]
     f1 = [EvaluationMeasure.calculate_f_beta_score(i, 2) for i in fold_results]
     print("Loss: ", loss)
     print("F1", f1)
+    print("Training Loss", training_results)
 
 def breast_cancer_experiment_ga(run_tuning, network_shape):
 
