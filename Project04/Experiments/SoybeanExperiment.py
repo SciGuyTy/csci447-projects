@@ -152,7 +152,7 @@ def soybean_experiment_ga(run_tuning, network_shape):
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
-        best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 4, 'tournament_size': 3, 'probability_of_cross': 0.8, 'probability_of_mutation': 0.15, 'mutation_range': (-1, 1)}
+        best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 4, 'tournament_size': 3, 'probability_of_cross': 0.8, 'probability_of_mutation': 0.15, 'mutation_range': 1}
 
     population_size = 30
     generations = 100
@@ -201,8 +201,8 @@ def soybean_experiment_de(run_tuning, network_shape):
         print(best_hp)
     else:
         best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 1.5, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
-    population_size = 10
-    generations = 1
+    population_size = 30
+    generations = 100
     tu = TuningUtility(DifferentialEvolution, training_test_folds, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
 
@@ -228,8 +228,11 @@ def soybean_experiment_de(run_tuning, network_shape):
     print("F1", f1)
     
 if __name__ == "__main__":
-    print("Datetime: ", datetime.datetime.now())
-    soybean_experiment_pso(False, [35, 4])
+    #print("Datetime: ", datetime.datetime.now())
+    #soybean_experiment_pso(False, [35, 4])
+    #Loss:  [0.8, 0.8, 0.6, 0.8, 0.8, 0.5, 0.75, 0.75, 1.0, 1.0]
+    #F1 [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0]
+
     print("Datetime: ", datetime.datetime.now())
 
     soybean_experiment_ga(False, [35, 4])
