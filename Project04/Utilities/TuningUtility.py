@@ -63,9 +63,9 @@ class TuningUtility:
                 performances[value] = sum(fold_results.values()) / len(self.training_test_folds)
                 print("Finished hp: ", hp, " for value: ", value)
                 print("Performance: ", performances[value])
-            print("Best ", hp, ": ", best_hp[hp])
             # Keep the best hyperparameter
             best_hp[hp] = min(performances, key=performances.get)
+            print("Best ", hp, ": ", best_hp[hp])
 
         return best_hp
 
@@ -92,5 +92,5 @@ class TuningUtility:
         # Train the algorithm and get the best network and fitness
         network, fitness = alg.train(self.generations)
         if best_networks is not None and id is not None:
-            best_networks[id] = network
+            best_networks[id] = network, fitness
         return network, fitness

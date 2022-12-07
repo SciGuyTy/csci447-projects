@@ -1,5 +1,6 @@
 import multiprocessing
 import pickle
+from datetime import time, datetime
 
 import numpy as np
 
@@ -58,6 +59,29 @@ def test_PSO():
 
 
 if __name__ == "__main__":
-    SoybeanExperiment.soybean_experiment_ga(True)
+    #SoybeanExperiment.soybean_experiment_pso(False)
+    # SoybeanExperiment.soybean_experiment_ga(False)
+    # SoybeanExperiment.soybean_experiment_de(False)
+    
+    #BreastCancerExperiment.breast_cancer_experiment_pso(False)
+    print(datetime.now())
+    BreastCancerExperiment.breast_cancer_experiment_ga(False, [9, 9, 9, 2])
+    print(datetime.now())
+
+    BreastCancerExperiment.breast_cancer_experiment_ga(False, [9, 9, 2])
+    print(datetime.now())
+
+    BreastCancerExperiment.breast_cancer_experiment_ga(False, [9, 2])
+    print(datetime.now())
+
+    BreastCancerExperiment.breast_cancer_experiment_pso(False, [9, 9, 9, 2])
+    print(datetime.now())
+
+    BreastCancerExperiment.breast_cancer_experiment_pso(False, [9, 9, 2])
+    print(datetime.now())
+
+    BreastCancerExperiment.breast_cancer_experiment_pso(False, [9, 2])
+    print(datetime.now())
+
 
     pass
