@@ -23,7 +23,8 @@ class Genetic():
         self.hyper_parameters = hyper_parameters
         self.probability_of_cross = self.hyper_parameters['probability_of_cross']
         self.probability_of_mutation = self.hyper_parameters['probability_of_mutation']
-        self.mutation_range = self.hyper_parameters['mutation_range']
+        mutation = abs(self.hyper_parameters['mutation_range'])
+        self.mutation_range = (-mutation, mutation)
         self.selection = self.hyper_parameters['selection'](evaluation_method)
         self.crossover = self.hyper_parameters['crossover'](self.probability_of_cross)
         self.mutation = self.hyper_parameters['mutation'](self.mutation_range, self.probability_of_mutation)
@@ -52,7 +53,7 @@ class Genetic():
         for generation in range(num_generations):
             # List to store children chromosomes
             generation_children = []
-
+            print(f'{generation=}')
             # Replace parents with children
             for _ in range(self.num_replaced_couples):
                 parents = []
