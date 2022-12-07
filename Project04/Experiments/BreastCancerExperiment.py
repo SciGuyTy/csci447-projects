@@ -108,14 +108,14 @@ def breast_cancer_experiment_ga(run_tuning, network_shape):
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
     network_params = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
-          'random_weight_range': (-0.1, 0.1)}
+          'random_weight_range': (-0.7, 0.7)}
 
     def individual_eval_method(fold, network):
         return 1 - EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
 
 
-    hp = {'num_replaced_couples': 14, 'tournament_size': 4, 'probability_of_cross': 0.5, 'probability_of_mutation': 0.05, 'mutation_range': [.1, 0.3, 1, .2], 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
-    hp_order = ['mutation_range']
+    hp = {'num_replaced_couples': [1, 1, 10, 2], 'tournament_size': 4, 'probability_of_cross': 0.5, 'probability_of_mutation': 0.05, 'mutation_range': .7, 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
+    hp_order = ['num_replaced_couples']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
@@ -123,7 +123,7 @@ def breast_cancer_experiment_ga(run_tuning, network_shape):
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
-        best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 9, 'tournament_size': 3, 'probability_of_cross': 0.5000000000000001, 'probability_of_mutation': 0.1, 'mutation_range': (-1, 1)}
+        best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 7, 'tournament_size': 4, 'probability_of_cross': 0.5, 'probability_of_mutation': 0.05, 'mutation_range': 0.7}
 
     population_size = 30
     generations = 100
@@ -142,12 +142,15 @@ def breast_cancer_experiment_ga(run_tuning, network_shape):
         j.join()
 
     fold_results = [None] * len(training_test_folds)
-    for id, network in fold_networks.items():
-        #print(Utilities.serialize_network(network))
+    tuning_results = [None] * len(training_test_folds)
+    for id, (network, fitness) in fold_networks.items():
+        tuning_results[id] = fitness
         fold_results[id] = cv.calculate_results_for_fold(network, training_test_folds[id][1])
 
+    tuning_results = [1-i for i in tuning_results]
     loss = [EvaluationMeasure.calculate_0_1_loss(i) for i in fold_results]
     f1 = [EvaluationMeasure.calculate_f_beta_score(i, 2) for i in fold_results]
+    print("Tuning Loss", tuning_results)
     print("Loss: ", loss)
     print("F1", f1)
 
