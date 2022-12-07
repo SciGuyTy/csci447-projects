@@ -105,8 +105,8 @@ def soybean_experiment_pso(runPSOTuning, network_shape):
     else:
         best_hp = {'inertia': 0.25, 'c1': 1.7999999999999998, 'c2': 1.0}
 
-    population_size = 100
-    generations = 200
+    population_size = 30
+    generations = 100
     tu = TuningUtility(PSO, training_test_folds, tuning_data, individual_eval_method, np, population_size, generations,
                        hp, hp_order)
 
@@ -122,7 +122,7 @@ def soybean_experiment_pso(runPSOTuning, network_shape):
         j.join()
 
     fold_results = [None] * len(training_test_folds)
-    for id, network in fold_networks.items():
+    for id, (network, fitness) in fold_networks.items():
         #print(Utilities.serialize_network(network))
         fold_results[id] = cv.calculate_results_for_fold(network, training_test_folds[id][1])
 
@@ -154,7 +154,7 @@ def soybean_experiment_ga(run_tuning, network_shape):
     else:
         best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 4, 'tournament_size': 3, 'probability_of_cross': 0.8, 'probability_of_mutation': 0.15, 'mutation_range': (-1, 1)}
 
-    population_size = 100
+    population_size = 30
     generations = 100
     tu = TuningUtility(Genetic, training_test_folds, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
@@ -171,7 +171,7 @@ def soybean_experiment_ga(run_tuning, network_shape):
         j.join()
 
     fold_results = [None] * len(training_test_folds)
-    for id, network in fold_networks.items():
+    for id, (network, fitness) in fold_networks.items():
         #print(Utilities.serialize_network(network))
         fold_results[id] = cv.calculate_results_for_fold(network, training_test_folds[id][1])
 
@@ -218,7 +218,7 @@ def soybean_experiment_de(run_tuning, network_shape):
         j.join()
 
     fold_results = [None] * len(training_test_folds)
-    for id, network in fold_networks.items():
+    for id, (network, fitness) in fold_networks.items():
         #print(training_test_folds[id][1])
         fold_results[id] = cv.calculate_results_for_fold(network, training_test_folds[id][1])
 

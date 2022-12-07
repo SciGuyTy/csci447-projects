@@ -53,7 +53,7 @@ class Genetic():
         for generation in range(num_generations):
             # List to store children chromosomes
             generation_children = []
-            #print(f'{generation=}')
+            print(f'{generation=}')
             # Replace parents with children
             for _ in range(self.num_replaced_couples):
                 parents = []
