@@ -2992,3 +2992,34 @@ Finished generation:  96
 Finished generation:  97
 Finished generation:  97
 Finished generation:  96
+Finished generation:  97
+Finished generation:  96
+Finished generation:  96
+Finished generation:  99
+Finished generation:  97
+Finished generation:  99
+Finished generation:  96
+Finished generation:  98
+Finished generation:  97
+Finished generation:  98
+Finished generation:  98
+Finished generation:  97
+Finished generation:  97
+Finished generation:  98
+Finished generation:  97
+Finished generation:  98
+Finished generation:  99
+Finished generation:  99
+Finished generation:  99
+Finished generation:  98
+Finished generation:  99
+Finished generation:  98
+Finished generation:  99
+Finished generation:  98
+Finished generation:  99
+Finished generation:  99
+Finished generation:  99
+Loss:  [0.8548387096774194, 0.8387096774193549, 0.8548387096774194, 0.9032258064516129, 0.8225806451612904, 0.9180327868852459, 0.9016393442622951, 0.819672131147541, 0.8852459016393442, 0.9]
+F1 [0.8, 0.7916666666666666, 0.823529411764706, 0.8695652173913043, 0.7924528301886793, 0.888888888888889, 0.8571428571428571, 0.7659574468085107, 0.8510638297872339, 0.8571428571428571]
+Training Loss [0.894927536231884, 0.9003623188405797, 0.8623188405797102, 0.8967391304347826, 0.9094202898550725, 0.8896925858951176, 0.8933092224231465, 0.8481012658227848, 0.8734177215189873, 0.8935018050541517]
+2022-12-07 14:52:43.981621

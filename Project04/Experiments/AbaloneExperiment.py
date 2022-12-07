@@ -33,7 +33,7 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
           'random_weight_range': (-0.5, 0.5)}
 
     def individual_eval_method(fold, network):
-        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.25)))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.25)))
 
     hp = {'inertia': [0.1, 0.05, 0.3, 0.05], 'c1': [1.4, 1, 2, 0.2], 'c2': [1.4, 1, 2, 0.2]}
     hp_order = ['inertia', 'c1', 'c2']
@@ -50,7 +50,7 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
     generations = 100
     
     def individual_eval_method(fold, network):
-        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
 
     tu = TuningUtility(PSO, training_test_data, tuning_data, individual_eval_method, np, population_size, generations,
                        hp, hp_order)
@@ -71,10 +71,8 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
         #print(Utilities.serialize_network(network))
         fold_results[id] = cv.calculate_results_for_fold(network, training_test_data[id][1])
 
-    loss = [EvaluationMeasure.calculate_0_1_loss(i) for i in fold_results]
-    f1 = [EvaluationMeasure.calculate_f_beta_score(i, 2) for i in fold_results]
-    print("Loss: ", loss)
-    print("F1", f1)
+    mse = [EvaluationMeasure.calculate_means_square_error(i) for i in fold_results]
+    print("MSE: ", mse)
 
 def abalone_experiment_ga(run_tuning, network_shape):
 
@@ -85,7 +83,7 @@ def abalone_experiment_ga(run_tuning, network_shape):
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
-        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.25)))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.25)))
 
 
     hp = {'num_replaced_couples': [4, 1, 10, 2], 'tournament_size': [3, 2, 6, 1], 'probability_of_cross': [0.8, 0.1, 1, 0.2], 'probability_of_mutation': [0.15, 0.05, 0.25, 0.05], 'mutation_range': (-1, 1), 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
@@ -103,7 +101,7 @@ def abalone_experiment_ga(run_tuning, network_shape):
     generations = 100
     
     def individual_eval_method(fold, network):
-        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
     tu = TuningUtility(Genetic, training_test_data, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
 
@@ -123,10 +121,8 @@ def abalone_experiment_ga(run_tuning, network_shape):
         #print(Utilities.serialize_network(network))
         fold_results[id] = cv.calculate_results_for_fold(network, training_test_data[id][1])
 
-    loss = [EvaluationMeasure.calculate_0_1_loss(i) for i in fold_results]
-    f1 = [EvaluationMeasure.calculate_f_beta_score(i, 2) for i in fold_results]
-    print("Loss: ", loss)
-    print("F1", f1)
+    mse = [EvaluationMeasure.calculate_means_square_error(i) for i in fold_results]
+    print("MSE: ", mse)
 
 def abalone_experiment_de(run_tuning, network_shape):
 
@@ -137,7 +133,7 @@ def abalone_experiment_de(run_tuning, network_shape):
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
-        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=.25)))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=.25)))
 
     hp = {'num_replaced_parents': [1, 1, 5, 1], 'mutation_scale_factor': [1.6, 0.5, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
     hp_order = ['num_replaced_parents', 'mutation_scale_factor', 'crossover_rate']
@@ -153,7 +149,7 @@ def abalone_experiment_de(run_tuning, network_shape):
     generations = 100
     
     def individual_eval_method(fold, network):
-        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
 
     tu = TuningUtility(DifferentialEvolution, training_test_data, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
