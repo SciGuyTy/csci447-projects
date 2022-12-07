@@ -81,7 +81,7 @@ def abalone_experiment_ga(run_tuning, network_shape):
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
-        return 1 - EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
+        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.25)))
 
 
     hp = {'num_replaced_couples': [4, 1, 10, 2], 'tournament_size': [3, 2, 6, 1], 'probability_of_cross': [0.8, 0.1, 1, 0.2], 'probability_of_mutation': [0.15, 0.05, 0.25, 0.05], 'mutation_range': (-1, 1), 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
@@ -97,6 +97,9 @@ def abalone_experiment_ga(run_tuning, network_shape):
 
     population_size = 30
     generations = 100
+    
+    def individual_eval_method(fold, network):
+        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
     tu = TuningUtility(Genetic, training_test_data, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
 
