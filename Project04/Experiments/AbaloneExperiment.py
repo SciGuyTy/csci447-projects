@@ -17,84 +17,25 @@ from Project04.Utilities.Preprocess import Preprocessor
 from Project04.Utilities.TuningUtility import TuningUtility
 from Project04.Utilities.Utilities import Utilities
 
-soybean_save_location = "./Project04/ExperimentSaves/soybean.objects"
+abalone_save_location = "./Project04/ExperimentSaves/abalone.objects"
 
 
-def output_transformer(output_vector: np.array):
-    return output_vector.argmax() + 1
+def regression_output_transformer(output_vector: np.array):
+    return output_vector[0]
 
 
-def initialize_soybean_experiment():
-    file_path = "../datasets/classification/Soybean/soybean-small.data"
-    column_names = [
-        "date",
-        "plant_stand",
-        "precip",
-        "temp",
-        "hail",
-        "crop_hist",
-        "area_damaged",
-        "severity",
-        "seed_tmt",
-        "germination",
-        "plant_growth",
-        "leaves",
-        "leafspots_halo",
-        "leafspots_marg",
-        "leafspot_size",
-        "leaf_shread",
-        "leaf_malf",
-        "leaf_mild",
-        "stem",
-        "lodging",
-        "stem_cankers",
-        "canker_lesion",
-        "fruiting_bodies",
-        "external_decay",
-        "mycelium",
-        "int_discolor",
-        "sclerotia",
-        "fruit_pods",
-        "fruit_spots",
-        "seed",
-        "mold_growth",
-        "seed_discolor",
-        "seed_size",
-        "shriveling",
-        "roots",
-        "class",
-    ]
+def abalone_experiment_pso(runPSOTuning, network_shape):
 
-    converters = {
-        "class": lambda x: int(x[1])
-    }
-
-    # Process the data
-    PP = Preprocessor()
-    PP.load_raw_data_from_file(file_path, column_names, converters=converters)
-    cv = CrossValidation(PP.data, "class", False)
-    tuning_data = cv.get_tuning_set(0.1)
-    cv.data = cv.data.drop(tuning_data.index)
-
-    folds = cv.fold_data(10, True)
-    training_test_folds = cv.get_training_test_data_from_folds(folds)
-
-    with open(soybean_save_location, 'wb+') as f:
-        pickle.dump([training_test_folds, PP, tuning_data, folds, training_test_folds, cv], f)
-
-
-def soybean_experiment_pso(runPSOTuning, network_shape):
-
-    with open(soybean_save_location, 'rb') as f:
+    with open(abalone_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
-    np = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
+    np = {'shape': network_shape, 'output_transformer': regression_output_transformer, 'regression': True,
           'random_weight_range': (-0.5, 0.5)}
 
     def individual_eval_method(fold, network):
         return 1 - EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
 
-    hp = {'inertia': [0.2, 0.05, 0.3, 0.05], 'c1': [1.6, 1, 2, 0.2], 'c2': [1.6, 1, 2, 0.2]}
+    hp = {'inertia': [0.1, 0.05, 0.3, 0.05], 'c1': [1.4, 1, 2, 0.2], 'c2': [1.4, 1, 2, 0.2]}
     hp_order = ['inertia', 'c1', 'c2']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
@@ -131,12 +72,12 @@ def soybean_experiment_pso(runPSOTuning, network_shape):
     print("Loss: ", loss)
     print("F1", f1)
 
-def soybean_experiment_ga(run_tuning, network_shape):
+def abalone_experiment_ga(run_tuning, network_shape):
 
-    with open(soybean_save_location, 'rb') as f:
+    with open(abalone_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
-    network_params = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
+    network_params = {'shape': network_shape, 'output_transformer': regression_output_transformer, 'regression': True,
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
@@ -180,18 +121,18 @@ def soybean_experiment_ga(run_tuning, network_shape):
     print("Loss: ", loss)
     print("F1", f1)
 
-def soybean_experiment_de(run_tuning, network_shape):
+def abalone_experiment_de(run_tuning, network_shape):
 
-    with open(soybean_save_location, 'rb') as f:
+    with open(abalone_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
-    network_params = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
+    network_params = {'shape': network_shape, 'output_transformer': regression_output_transformer, 'regression': True,
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
-        return 1 - EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
+        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=.25)))
 
-    hp = {'num_replaced_parents': [1, 1, 4, 1], 'mutation_scale_factor': [1.6, 0.5, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
+    hp = {'num_replaced_parents': [1, 1, 5, 1], 'mutation_scale_factor': [1.6, 0.5, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
     hp_order = ['num_replaced_parents', 'mutation_scale_factor', 'crossover_rate']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
@@ -203,6 +144,10 @@ def soybean_experiment_de(run_tuning, network_shape):
         best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 1.5, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
     population_size = 30
     generations = 100
+    
+    def individual_eval_method(fold, network):
+        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
+
     tu = TuningUtility(DifferentialEvolution, training_test_folds, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
 
@@ -222,64 +167,10 @@ def soybean_experiment_de(run_tuning, network_shape):
         #print(training_test_folds[id][1])
         fold_results[id] = cv.calculate_results_for_fold(network, training_test_folds[id][1])
 
-    loss = [EvaluationMeasure.calculate_0_1_loss(i) for i in fold_results]
-    f1 = [EvaluationMeasure.calculate_f_beta_score(i, 2) for i in fold_results]
-    print("Loss: ", loss)
-    print("F1", f1)
+    mse = [EvaluationMeasure.calculate_means_square_error(i) for i in fold_results]
+    print("MSE: ", mse)
     
 if __name__ == "__main__":
-    #print("Datetime: ", datetime.datetime.now())
-    #soybean_experiment_pso(False, [35, 4])
-    #Loss:  [0.8, 0.8, 0.6, 0.8, 0.8, 0.5, 0.75, 0.75, 1.0, 1.0]
-    #F1 [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0]
-
-    # print("Datetime: ", datetime.datetime.now())
-    # 
-    # soybean_experiment_ga(False, [35, 4])
-    # Loss: [0.4, 0.4, 0.6, 0.4, 0.6, 0.5, 0.25, 0.25, 0.5, 0.0]
-    # F1[0.6666666666666666, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.4, 1.0, 1.0]
-    # print("Datetime: ", datetime.datetime.now())
-
-    # soybean_experiment_de(False, [35, 4])
-    # Loss: [0.8, 0.2, 0.4, 0.6, 0.4, 0.5, 0.25, 0.25, 0.75, 1.0]
-    # F1[1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0]
-    # 
-    # print("Datetime: ", datetime.datetime.now())
-    
-    # print("Datetime: ", datetime.datetime.now())
-    # soybean_experiment_pso(False, [35, 35, 4])
-    # Loss: [0.2, 0.6, 0.4, 0.6, 0.4, 0.25, 0.25, 0.0, 0.5, 1.0]
-    # F1[0.0, 0.0, 0.0, 0.6666666666666666, 0.5, 0.0, 0.0, 0.0, 0.0, 1.0]
-    #print("Datetime: ", datetime.datetime.now())
-
-    # soybean_experiment_ga(False, [35, 35, 4])
-    # Loss: [0.2, 0.4, 0.4, 0.6, 0.4, 0.0, 0.0, 0.25, 0.5, 1.0]
-    # F1[0.33333333333333337, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
-
-    # print("Datetime: ", datetime.datetime.now())
-    # 
-    # soybean_experiment_de(False, [35, 35, 4])
-    # Loss: [0.4, 0.4, 0.2, 0.2, 0.2, 0.25, 0.5, 0.0, 0.5, 0.0]
-    # F1[0.0, 0.0, 0.33333333333333337, 0.0, 0.33333333333333337, 0.0, 1.0, 0.0, 1.0, 1.0]
-    # 
-    # print("Datetime: ", datetime.datetime.now())
-    
-    # print("Datetime: ", datetime.datetime.now())
-    # soybean_experiment_pso(False, [35, 35, 35, 4])
-    # Loss: [0.4, 0.6, 0.6, 0.6, 0.4, 0.25, 0.5, 0.5, 0.25, 1.0]
-    # F1[0.0, 0.0, 0.0, 0.0, 0.6666666666666666, 0.0, 0.0, 1.0, 0.0, 1.0]
-    # print("Datetime: ", datetime.datetime.now())
-    # 
-    # soybean_experiment_ga(False, [35, 35, 35, 4])
-    # Loss: [0.2, 0.0, 0.4, 0.2, 0.6, 0.25, 0.25, 0.5, 0.5, 1.0]
-    # F1[0.33333333333333337, 0.0, 0.0, 0.6666666666666666, 0.5, 0.0, 0.0, 0.0, 0.0, 1.0]
-    # Datetime: 2022 - 12 - 07
-    # 21: 26:23.639798
-
-    # print("Datetime: ", datetime.datetime.now())
-    # 
-    # soybean_experiment_de(False, [35, 35, 35, 4])
-    # Loss: [0.4, 0.2, 0.2, 0.4, 0.2, 0.25, 0.25, 0.25, 0.25, 0.0]
-    # F1[0.0, 0.33333333333333337, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.0, 1.0]
-
-    print("Datetime: ", datetime.datetime.now())
+    print(datetime.datetime.now())
+    print("Starting ablone tuning pso")
+    abalone_experiment_pso(True, [8,8,1])
