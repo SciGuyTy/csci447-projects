@@ -1,3 +1,4 @@
+import datetime
 import multiprocessing
 import pickle
 
@@ -16,7 +17,7 @@ from Project04.Utilities.Preprocess import Preprocessor
 from Project04.Utilities.TuningUtility import TuningUtility
 from Project04.Utilities.Utilities import Utilities
 
-soybean_save_location = "./ExperimentSaves/soybean.objects"
+soybean_save_location = "./Project04/ExperimentSaves/soybean.objects"
 
 
 def output_transformer(output_vector: np.array):
@@ -82,12 +83,12 @@ def initialize_soybean_experiment():
         pickle.dump([training_test_folds, PP, tuning_data, folds, training_test_folds, cv], f)
 
 
-def soybean_experiment_pso(runPSOTuning):
+def soybean_experiment_pso(runPSOTuning, network_shape):
 
     with open(soybean_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
-    np = {'shape': [35, 4], 'output_transformer': output_transformer, 'regression': False,
+    np = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
           'random_weight_range': (-0.5, 0.5)}
 
     def individual_eval_method(fold, network):
@@ -130,12 +131,12 @@ def soybean_experiment_pso(runPSOTuning):
     print("Loss: ", loss)
     print("F1", f1)
 
-def soybean_experiment_ga(run_tuning):
+def soybean_experiment_ga(run_tuning, network_shape):
 
     with open(soybean_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
-    network_params = {'shape': [35, 4], 'output_transformer': output_transformer, 'regression': False,
+    network_params = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
@@ -179,12 +180,12 @@ def soybean_experiment_ga(run_tuning):
     print("Loss: ", loss)
     print("F1", f1)
 
-def soybean_experiment_de(run_tuning):
+def soybean_experiment_de(run_tuning, network_shape):
 
     with open(soybean_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
-    network_params = {'shape': [35, 4], 'output_transformer': output_transformer, 'regression': False,
+    network_params = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
@@ -225,3 +226,34 @@ def soybean_experiment_de(run_tuning):
     f1 = [EvaluationMeasure.calculate_f_beta_score(i, 2) for i in fold_results]
     print("Loss: ", loss)
     print("F1", f1)
+    
+if __name__ == "__main__":
+    print("Datetime: ", datetime.datetime.now())
+    soybean_experiment_pso(False, [35, 4])
+    print("Datetime: ", datetime.datetime.now())
+
+    soybean_experiment_ga(False, [35, 4])
+    print("Datetime: ", datetime.datetime.now())
+
+    soybean_experiment_de(False, [35, 4])
+    print("Datetime: ", datetime.datetime.now())
+    
+    print("Datetime: ", datetime.datetime.now())
+    soybean_experiment_pso(False, [35, 35, 4])
+    print("Datetime: ", datetime.datetime.now())
+
+    soybean_experiment_ga(False, [35, 35, 4])
+    print("Datetime: ", datetime.datetime.now())
+
+    soybean_experiment_de(False, [35, 35, 4])
+    print("Datetime: ", datetime.datetime.now())
+    
+    print("Datetime: ", datetime.datetime.now())
+    soybean_experiment_pso(False, [35, 35, 35, 4])
+    print("Datetime: ", datetime.datetime.now())
+
+    soybean_experiment_ga(False, [35, 35, 35, 4])
+    print("Datetime: ", datetime.datetime.now())
+
+    soybean_experiment_de(False, [35, 35, 35, 4])
+    print("Datetime: ", datetime.datetime.now())
