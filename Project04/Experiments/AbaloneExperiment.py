@@ -33,7 +33,7 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
           'random_weight_range': (-0.5, 0.5)}
 
     def individual_eval_method(fold, network):
-        return 1 - EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
+        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.25)))
 
     hp = {'inertia': [0.1, 0.05, 0.3, 0.05], 'c1': [1.4, 1, 2, 0.2], 'c2': [1.4, 1, 2, 0.2]}
     hp_order = ['inertia', 'c1', 'c2']
@@ -48,6 +48,10 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
 
     population_size = 30
     generations = 100
+    
+    def individual_eval_method(fold, network):
+        return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
+
     tu = TuningUtility(PSO, training_test_data, tuning_data, individual_eval_method, np, population_size, generations,
                        hp, hp_order)
 
