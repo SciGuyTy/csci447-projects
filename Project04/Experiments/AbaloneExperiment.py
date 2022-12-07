@@ -27,7 +27,7 @@ def regression_output_transformer(output_vector: np.array):
 def abalone_experiment_pso(runPSOTuning, network_shape):
 
     with open(abalone_save_location, 'rb') as f:
-        training_test_data, pp, tuning_data, folded_training_data, cv = pickle.load(f)
+        training_test_data, pp, tuning_data, ___, cv = pickle.load(f)
 
     np = {'shape': network_shape, 'output_transformer': regression_output_transformer, 'regression': True,
           'random_weight_range': (-0.5, 0.5)}
@@ -40,7 +40,7 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if runPSOTuning:
-        tu = TuningUtility(PSO, folded_training_data, tuning_data, individual_eval_method, np, 30, 100, hp, hp_order)
+        tu = TuningUtility(PSO, training_test_data, tuning_data, individual_eval_method, np, 30, 100, hp, hp_order)
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
@@ -48,13 +48,13 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
 
     population_size = 30
     generations = 100
-    tu = TuningUtility(PSO, folded_training_data, tuning_data, individual_eval_method, np, population_size, generations,
+    tu = TuningUtility(PSO, training_test_data, tuning_data, individual_eval_method, np, population_size, generations,
                        hp, hp_order)
 
     jobs = []
     manager = multiprocessing.Manager()
     fold_networks = manager.dict()
-    for i, (training_data, hold_out, norm_params) in enumerate(folded_training_data):
+    for i, (training_data, hold_out, norm_params) in enumerate(training_test_data):
         process = multiprocessing.Process(target=tu.train_on_fold, args=(best_hp, training_data, fold_networks, i))
         jobs.append(process)
         process.start()
@@ -62,10 +62,10 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
     for j in jobs:
         j.join()
 
-    fold_results = [None] * len(folded_training_data)
+    fold_results = [None] * len(training_test_data)
     for id, (network, fitness) in fold_networks.items():
         #print(Utilities.serialize_network(network))
-        fold_results[id] = cv.calculate_results_for_fold(network, folded_training_data[id][1])
+        fold_results[id] = cv.calculate_results_for_fold(network, training_test_data[id][1])
 
     loss = [EvaluationMeasure.calculate_0_1_loss(i) for i in fold_results]
     f1 = [EvaluationMeasure.calculate_f_beta_score(i, 2) for i in fold_results]
@@ -75,7 +75,7 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
 def abalone_experiment_ga(run_tuning, network_shape):
 
     with open(abalone_save_location, 'rb') as f:
-        training_test_data, pp, tuning_data, folded_training_data, cv = pickle.load(f)
+        training_test_data, pp, tuning_data, ___, cv = pickle.load(f)
 
     network_params = {'shape': network_shape, 'output_transformer': regression_output_transformer, 'regression': True,
           'random_weight_range': (-0.1, 0.1)}
@@ -89,7 +89,7 @@ def abalone_experiment_ga(run_tuning, network_shape):
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
-        tu = TuningUtility(Genetic, folded_training_data, tuning_data, individual_eval_method, network_params, 100, 100, hp, hp_order)
+        tu = TuningUtility(Genetic, training_test_data, tuning_data, individual_eval_method, network_params, 100, 100, hp, hp_order)
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
@@ -97,13 +97,13 @@ def abalone_experiment_ga(run_tuning, network_shape):
 
     population_size = 30
     generations = 100
-    tu = TuningUtility(Genetic, folded_training_data, tuning_data, individual_eval_method, network_params, population_size, generations,
+    tu = TuningUtility(Genetic, training_test_data, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
 
     jobs = []
     manager = multiprocessing.Manager()
     fold_networks = manager.dict()
-    for i, (training_data, hold_out, norm_params) in enumerate(folded_training_data):
+    for i, (training_data, hold_out, norm_params) in enumerate(training_test_data):
         process = multiprocessing.Process(target=tu.train_on_fold, args=(best_hp, training_data, fold_networks, i))
         jobs.append(process)
         process.start()
@@ -111,10 +111,10 @@ def abalone_experiment_ga(run_tuning, network_shape):
     for j in jobs:
         j.join()
 
-    fold_results = [None] * len(folded_training_data)
+    fold_results = [None] * len(training_test_data)
     for id, (network, fitness) in fold_networks.items():
         #print(Utilities.serialize_network(network))
-        fold_results[id] = cv.calculate_results_for_fold(network, folded_training_data[id][1])
+        fold_results[id] = cv.calculate_results_for_fold(network, training_test_data[id][1])
 
     loss = [EvaluationMeasure.calculate_0_1_loss(i) for i in fold_results]
     f1 = [EvaluationMeasure.calculate_f_beta_score(i, 2) for i in fold_results]
@@ -124,7 +124,7 @@ def abalone_experiment_ga(run_tuning, network_shape):
 def abalone_experiment_de(run_tuning, network_shape):
 
     with open(abalone_save_location, 'rb') as f:
-        training_test_data, pp, tuning_data, folded_training_data, cv = pickle.load(f)
+        training_test_data, pp, tuning_data, ___, cv = pickle.load(f)
 
     network_params = {'shape': network_shape, 'output_transformer': regression_output_transformer, 'regression': True,
           'random_weight_range': (-0.1, 0.1)}
@@ -137,7 +137,7 @@ def abalone_experiment_de(run_tuning, network_shape):
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
-        tu = TuningUtility(DifferentialEvolution, folded_training_data, tuning_data, individual_eval_method, network_params, 100, 100, hp, hp_order)
+        tu = TuningUtility(DifferentialEvolution, training_test_data, tuning_data, individual_eval_method, network_params, 100, 100, hp, hp_order)
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
@@ -148,13 +148,13 @@ def abalone_experiment_de(run_tuning, network_shape):
     def individual_eval_method(fold, network):
         return 1 - EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
 
-    tu = TuningUtility(DifferentialEvolution, folded_training_data, tuning_data, individual_eval_method, network_params, population_size, generations,
+    tu = TuningUtility(DifferentialEvolution, training_test_data, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
 
     jobs = []
     manager = multiprocessing.Manager()
     fold_networks = manager.dict()
-    for i, (training_data, hold_out, norm_params) in enumerate(folded_training_data):
+    for i, (training_data, hold_out, norm_params) in enumerate(training_test_data):
         process = multiprocessing.Process(target=tu.train_on_fold, args=(best_hp, training_data, fold_networks, i))
         jobs.append(process)
         process.start()
@@ -162,10 +162,10 @@ def abalone_experiment_de(run_tuning, network_shape):
     for j in jobs:
         j.join()
 
-    fold_results = [None] * len(folded_training_data)
+    fold_results = [None] * len(training_test_data)
     for id, (network, fitness) in fold_networks.items():
         #print(training_test_folds[id][1])
-        fold_results[id] = cv.calculate_results_for_fold(network, folded_training_data[id][1])
+        fold_results[id] = cv.calculate_results_for_fold(network, training_test_data[id][1])
 
     mse = [EvaluationMeasure.calculate_means_square_error(i) for i in fold_results]
     print("MSE: ", mse)
