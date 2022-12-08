@@ -91,7 +91,7 @@ def abalone_experiment_ga(run_tuning, network_shape):
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
-        tu = TuningUtility(Genetic, training_test_data, tuning_data, individual_eval_method, network_params, 100, 100, hp, hp_order)
+        tu = TuningUtility(Genetic, training_test_data, tuning_data, individual_eval_method, network_params, 15, 50, hp, hp_order)
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
@@ -140,13 +140,13 @@ def abalone_experiment_de(run_tuning, network_shape):
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
-        tu = TuningUtility(DifferentialEvolution, training_test_data, tuning_data, individual_eval_method, network_params, 100, 100, hp, hp_order)
+        tu = TuningUtility(DifferentialEvolution, training_test_data, tuning_data, individual_eval_method, network_params, 15, 50, hp, hp_order)
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
         best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 1.5, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
-    population_size = 30
-    generations = 100
+    population_size = 15
+    generations = 50
     
     def individual_eval_method(fold, network):
         return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
