@@ -87,7 +87,7 @@ def abalone_experiment_ga(run_tuning, network_shape):
 
 
     hp = {'num_replaced_couples': [4, 1, 10, 3], 'tournament_size': [3, 2, 6, 2], 'probability_of_cross': [0.5, 0.1, 0.7, 0.2], 'probability_of_mutation': [0.05, 0.05, 0.25, 0.05], 'mutation_range': [0.1, 0.1, 0.5, 0.2], 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
-    hp_order = ['num_replaced_couples', 'tournament_size', 'probability_of_cross', 'probability_of_mutation', 'probability_of_mutation']
+    hp_order = ['num_replaced_couples', 'tournament_size', 'probability_of_cross', 'probability_of_mutation', 'probability_of_mutation', 'mutation_range']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
