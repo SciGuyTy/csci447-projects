@@ -176,7 +176,7 @@ def glass_experiment_de(run_tuning, network_shape):
     print("F1", f1)
 
 if __name__ == "__main__":
-    glass_save_location = "../ExperimentSaves/glass.objects"
+    glass_save_location = "./Project04/ExperimentSaves/glass.objects"
 
     print("Tuning glass pso")
     glass_experiment_pso(True, [9, 9, 7])
