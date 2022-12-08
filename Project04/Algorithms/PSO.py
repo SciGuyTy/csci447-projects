@@ -73,6 +73,7 @@ class PSO():
         gbest_position_new = gbest_position
         # Run for each generation
         for generation in range(num_generations):
+            print("Starting generation: ", generation)
 
             # Loop through the particles
             for i, particle in enumerate(self.particles):
