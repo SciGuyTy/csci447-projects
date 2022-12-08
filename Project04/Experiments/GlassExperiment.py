@@ -20,43 +20,12 @@ from Project04.Utilities.Utilities import Utilities
 def output_transformer(output_vector: np.array):
     return output_vector.argmax() + 1
 
-breast_cancer_save_location = "./ExperimentSaves/breast_cancer.objects"
-def initialize_breast_cancer_experiment():
-    file_path = "../datasets/classification/BreastCancer/breast-cancer-wisconsin.data"
+glass_save_location = "./ExperimentSaves/glass.objects"
 
-    column_names = [
-        "id",
-        "clump",
-        "size",
-        "shape",
-        "adhesion",
-        "epithelial_size",
-        "nuclei",
-        "chromatin",
-        "nucleoli",
-        "mitoses",
-        "class",
-    ]
 
-    # Define a converter that converts the class values into True or False
-    converters = {"class": lambda x: 2 if int(x) == 4 else 1}
+def glass_experiment_pso(run_tuning, network_shape):
 
-    # Process the data
-    PP = Preprocessor()
-    PP.load_raw_data_from_file(file_path, column_names, converters=converters, dropNA=['?'], columns_to_drop=['id'])
-    cv = CrossValidation(PP.data, "class", False)
-    tuning_data = cv.get_tuning_set(0.1)
-    cv.data = cv.data.drop(tuning_data.index)
-
-    folds = cv.fold_data(10, True)
-    training_test_folds = cv.get_training_test_data_from_folds(folds)
-
-    with open(breast_cancer_save_location, 'wb+') as f:
-        pickle.dump([training_test_folds, PP, tuning_data, folds, training_test_folds, cv], f)
-
-def breast_cancer_experiment_pso(run_tuning, network_shape):
-
-    with open(breast_cancer_save_location, 'rb') as f:
+    with open(glass_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
     np = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
@@ -65,7 +34,7 @@ def breast_cancer_experiment_pso(run_tuning, network_shape):
     def individual_eval_method(fold, network):
         return 1-EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
 
-    hp = {'inertia': [0.2, 0.1, 0.4, 0.1], 'c1': [1.4, 1, 2, 0.2], 'c2': [1.0, 0.5, 1.1, 0.1]}
+    hp = {'inertia': [0.2, 0.1, 0.4, 0.1], 'c1': [1.4, 1, 2, 0.2], 'c2': [1.4, 1, 2, 0.2]}
     hp_order = ['inertia', 'c1', 'c2']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
@@ -104,9 +73,9 @@ def breast_cancer_experiment_pso(run_tuning, network_shape):
     print("F1", f1)
     print("Training Loss", training_results)
 
-def breast_cancer_experiment_ga(run_tuning, network_shape):
+def glass_experiment_ga(run_tuning, network_shape):
 
-    with open(breast_cancer_save_location, 'rb') as f:
+    with open(glass_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
     network_params = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
@@ -116,8 +85,8 @@ def breast_cancer_experiment_ga(run_tuning, network_shape):
         return 1 - EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
 
 
-    hp = {'num_replaced_couples': 2, 'tournament_size': 4, 'probability_of_cross': 0.5, 'probability_of_mutation': 0.05, 'mutation_range': .3, 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
-    hp_order = ['num_replaced_couples']
+    hp = {'num_replaced_couples': [1, 1, 6, 1], 'tournament_size': [2, 2, 5, 1], 'probability_of_cross': 0.5, 'probability_of_mutation': 0.05, 'mutation_range': [.3, 0.1, 1, 0.2], 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
+    hp_order = ['num_replaced_couples', 'tournament_size', 'mutation_range']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
@@ -156,9 +125,9 @@ def breast_cancer_experiment_ga(run_tuning, network_shape):
     print("Loss: ", loss)
     print("F1", f1)
 
-def breast_cancer_experiment_de(run_tuning, network_shape):
+def glass_experiment_de(run_tuning, network_shape):
 
-    with open(breast_cancer_save_location, 'rb') as f:
+    with open(glass_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
 
     network_params = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
@@ -167,8 +136,8 @@ def breast_cancer_experiment_de(run_tuning, network_shape):
     def individual_eval_method(fold, network):
         return 1 - EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
 
-    hp = {'num_replaced_parents': 1, 'mutation_scale_factor': [0.1, 0.1, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
-    hp_order = ['mutation_scale_factor', 'crossover_rate']
+    hp = {'num_replaced_parents': [1, 1, 4, 1], 'mutation_scale_factor': [0.1, 0.1, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
+    hp_order = ['num_replaced_parents', 'mutation_scale_factor', 'crossover_rate']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
@@ -205,19 +174,10 @@ def breast_cancer_experiment_de(run_tuning, network_shape):
     print("F1", f1)
 
 if __name__ == "__main__":
-    breast_cancer_save_location = "../ExperimentSaves/breast_cancer.objects"
-    breast_cancer_experiment_ga(False, [9, 2])
-    breast_cancer_experiment_ga(False, [9, 2,2])
-    breast_cancer_experiment_ga(False, [9, 2,2,2])
+    print("Tuning glass pso")
+    glass_experiment_pso(True, [9, 9,7])
+    print("Tuning glass ga")
+    glass_experiment_ga(True, [9, 9, 7])
+    print("Tuning glass de")
+    glass_experiment_de(True, [9, 9, 7])
 
-    
-    
-    #Loss:  [0.43548387096774194, 0.6290322580645161, 0.5483870967741935, 0.5806451612903226, 0.5483870967741935, 0.6065573770491803, 0.819672131147541, 0.8688524590163934, 0.6885245901639344, 0.8]
-    #F1 [0.5569620253164557, 0.0, 0.6111111111111112, 0.6060606060606061, 0.6111111111111112, 0.5555555555555556, 0.7843137254901961, 0.8260869565217391, 0.6885245901639345, 0.75]
-    #breast_cancer_experiment_de(False, [9, 9, 2])
-    #Loss: [0.6451612903225806, 0.6451612903225806, 0.3548387096774194, 0.3548387096774194, 0.3548387096774194,  0.3442622950819672, 0.6557377049180327, 0.3442622950819672, 0.3442622950819672, 0.65]
-    #F1[        0.0, 0.0, 0.5238095238095238, 0.5238095238095238, 0.5238095238095238, 0.5121951219512195, 0.0, 0.5121951219512195, 0.5121951219512195, 0.0]
-    #breast_cancer_experiment_de(False, [9,9, 9, 2])
-    # Loss: [0.6451612903225806, 0.3548387096774194, 0.3548387096774194, 0.6451612903225806, 0.3548387096774194,
-    #        0.3442622950819672, 0.6557377049180327, 0.6557377049180327, 0.6557377049180327, 0.65]
-    # F1[0.0, 0.5238095238095238, 0.5238095238095238, 0.0, 0.5238095238095238, 0.5121951219512195, 0.0, 0.0, 0.0, 0.0]

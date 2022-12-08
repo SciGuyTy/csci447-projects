@@ -998,4 +998,4 @@ generation=996
 generation=997
 generation=998
 generation=999
-(<Project04.NeuralNetwork.NeuralNetwork object at 0x7fbe56890d60>, 0.03781831196699026)
+(<Project04.NeuralNetwork.NeuralNetwork object at 0x7f67bbc59b40>, 0.1264453706663529)

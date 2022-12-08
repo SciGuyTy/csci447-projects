@@ -83,6 +83,27 @@ def test_GA():
     print(ga.train(num_of_gen))
 
 
+def test_DE():
+    networks = []
+
+    num_of_gen = 50
+    population_size = 4
+
+    for i in range(population_size):
+        networks.append(NeuralNetwork([2, 1], lambda x: x, True, (0, 1)))
+
+    hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 0.1, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
+
+    def evaluation_method(fold, network):
+        network = Utilities.serialize_network(network)
+        return np.sum(np.abs(network))
+
+    method = EvaluationCallable(2, evaluation_method)
+
+    de = Genetic(networks, hp, method)
+
+    print(de.train(num_of_gen))
+
 
 
 if __name__ == "__main__":
