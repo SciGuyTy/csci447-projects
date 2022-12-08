@@ -95,7 +95,7 @@ def abalone_experiment_ga(run_tuning, network_shape):
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
-        best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 4, 'tournament_size': 3, 'probability_of_cross': 0.8, 'probability_of_mutation': 0.15, 'mutation_range': 1}
+        best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 2, 'tournament_size': 2, 'probability_of_cross': 0.5, 'probability_of_mutation': 0.05, 'mutation_range': 1}
 
     population_size = 15
     generations = 50
@@ -175,5 +175,12 @@ def abalone_experiment_de(run_tuning, network_shape):
     
 if __name__ == "__main__":
     print(datetime.datetime.now())
-    print("Starting ablone tuning pso")
-    abalone_experiment_ga(True, [8,8,1])
+    print("Starting ablone tuning ga 0")
+    abalone_experiment_ga(False, [8,1])
+    print("Starting ablone tuning ga 1")
+
+    abalone_experiment_ga(False, [8,8,1])
+    print("Starting ablone tuning ga 2")
+
+    abalone_experiment_ga(False, [8,8,8,1])
+
