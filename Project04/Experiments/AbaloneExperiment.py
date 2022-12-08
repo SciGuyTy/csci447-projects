@@ -83,10 +83,10 @@ def abalone_experiment_ga(run_tuning, network_shape):
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
-        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.25)))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.2)))
 
 
-    hp = {'num_replaced_couples': [4, 1, 10, 2], 'tournament_size': [3, 2, 6, 1], 'probability_of_cross': [0.8, 0.1, 1, 0.2], 'probability_of_mutation': [0.15, 0.05, 0.25, 0.05], 'mutation_range': (-1, 1), 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
+    hp = {'num_replaced_couples': [4, 1, 10, 3], 'tournament_size': [3, 2, 6, 2], 'probability_of_cross': [0.5, 0.1, 0.7, 0.2], 'probability_of_mutation': [0.05, 0.05, 0.25, 0.05], 'mutation_range': [0.1, 0.1, 0.5, 0.2], 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
     hp_order = ['num_replaced_couples', 'tournament_size', 'probability_of_cross', 'probability_of_mutation', 'probability_of_mutation']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
@@ -97,8 +97,8 @@ def abalone_experiment_ga(run_tuning, network_shape):
     else:
         best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 4, 'tournament_size': 3, 'probability_of_cross': 0.8, 'probability_of_mutation': 0.15, 'mutation_range': 1}
 
-    population_size = 30
-    generations = 100
+    population_size = 15
+    generations = 50
     
     def individual_eval_method(fold, network):
         return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
@@ -176,4 +176,4 @@ def abalone_experiment_de(run_tuning, network_shape):
 if __name__ == "__main__":
     print(datetime.datetime.now())
     print("Starting ablone tuning pso")
-    abalone_experiment_pso(True, [8,8,1])
+    abalone_experiment_ga(True, [8,8,1])

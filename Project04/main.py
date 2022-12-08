@@ -65,22 +65,7 @@ if __name__ == "__main__":
     
     #BreastCancerExperiment.breast_cancer_experiment_pso(False)
     print(datetime.now())
-    BreastCancerExperiment.breast_cancer_experiment_ga(False, [9, 9, 9, 2])
-    print(datetime.now())
-
-    BreastCancerExperiment.breast_cancer_experiment_ga(False, [9, 9, 2])
-    print(datetime.now())
-
-    BreastCancerExperiment.breast_cancer_experiment_ga(False, [9, 2])
-    print(datetime.now())
-
-    BreastCancerExperiment.breast_cancer_experiment_pso(False, [9, 9, 9, 2])
-    print(datetime.now())
-
-    BreastCancerExperiment.breast_cancer_experiment_pso(False, [9, 9, 2])
-    print(datetime.now())
-
-    BreastCancerExperiment.breast_cancer_experiment_pso(False, [9, 2])
+    BreastCancerExperiment.breast_cancer_experiment_de(True, [9,9,2])
     print(datetime.now())
 
 

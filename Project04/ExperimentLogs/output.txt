@@ -1,3025 +1,441 @@
-2022-12-07 12:17:53.413704
-Tuning Loss [0.6503623188405797, 0.6503623188405797, 0.6503623188405797, 0.8931159420289855, 0.9130434782608695, 0.6491862567811935, 0.650994575045208, 0.6491862567811935, 0.6491862567811935, 0.6516245487364621]
-Loss:  [0.6451612903225806, 0.6451612903225806, 0.6451612903225806, 0.8709677419354839, 0.8870967741935484, 0.6557377049180327, 0.6557377049180327, 0.6557377049180327, 0.6557377049180327, 0.65]
-F1 [0.0, 0.0, 0.0, 0.8181818181818182, 0.8205128205128205, 0.0, 0.0, 0.0, 0.0, 0.0]
-2022-12-07 12:48:11.941364
-Tuning Loss [0.6503623188405797, 0.8641304347826086, 0.7644927536231884, 0.6612318840579711, 0.6503623188405797, 0.9168173598553345, 0.6763110307414105, 0.6491862567811935, 0.7992766726943942, 0.6498194945848376]
-Loss:  [0.6451612903225806, 0.8225806451612904, 0.8064516129032258, 0.6612903225806451, 0.6451612903225806, 0.9180327868852459, 0.7213114754098361, 0.6557377049180327, 0.8688524590163934, 0.65]
-F1 [0.0, 0.7441860465116279, 0.625, 0.08695652173913045, 0.0, 0.8837209302325582, 0.32, 0.0, 0.7647058823529412, 0.0]
-2022-12-07 13:20:04.716279
-Tuning Loss [0.6721014492753623, 0.6503623188405797, 0.8188405797101449, 0.5688405797101449, 0.855072463768116, 0.7305605786618445, 0.6546112115732369, 0.759493670886076, 0.6347197106690777, 0.759927797833935]
-Loss:  [0.6774193548387096, 0.6290322580645161, 0.8387096774193549, 0.4838709677419355, 0.8064516129032258, 0.7213114754098361, 0.639344262295082, 0.7049180327868853, 0.6557377049180327, 0.75]
-F1 [0.6774193548387099, 0.5818181818181818, 0.8076923076923077, 0.1111111111111111, 0.7500000000000001, 0.6666666666666666, 0.5217391304347826, 0.5263157894736842, 0.08695652173913042, 0.6341463414634146]
-2022-12-07 13:49:18.767966
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation: Finished generation:   3737
-
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  39
-Finished generation:  38
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  40
-Finished generation:  39
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  41
-Finished generation:  40
-Finished generation:  40
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  42
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  43
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  44
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  45
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  46
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  47
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  48
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  49
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  50
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  51
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  52
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  53
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  54
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  55
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  56
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  57
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  58
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  59
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  60
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  61
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  62
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  63
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  64
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  65
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  66
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  67
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  68
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  69
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  70
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  71
-Finished generation:  70
-Finished generation:  70
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  72
-Finished generation:  71
-Finished generation:  71
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  73
-Finished generation:  72
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  74
-Finished generation:  73
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  75
-Finished generation:  74
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  76
-Finished generation:  75
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  77
-Finished generation:  76
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  78
-Finished generation:  77
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  79
-Finished generation:  78
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  80
-Finished generation:  79
-Finished generation:  80
-Finished generation:  79
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  81
-Finished generation:  81
-Finished generation:  80
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  82
-Finished generation:  81
-Finished generation:  82
-Finished generation:  81
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  83
-Finished generation:  82
-Finished generation:  83
-Finished generation:  82
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  84
-Finished generation:  83
-Finished generation:  84
-Finished generation:  83
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  85
-Finished generation:  85
-Finished generation:  84
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  86
-Finished generation:  85
-Finished generation:  86
-Finished generation:  85
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  87
-Finished generation:  87
-Finished generation:  86
-Finished generation:  86
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  88
-Finished generation:  88
-Finished generation:  87
-Finished generation:  87
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  89
-Finished generation:  89
-Finished generation:  88
-Finished generation:  88
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  90
-Finished generation:  90
-Finished generation:  89
-Finished generation:  89
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  91
-Finished generation:  91
-Finished generation:  90
-Finished generation:  90
-Finished generation:  91
-Finished generation:  91
-Finished generation:  91
-Finished generation:  91
-Finished generation:  91
-Finished generation:  91
-Finished generation:  92
-Finished generation:  92
-Finished generation:  91
-Finished generation:  91
-Finished generation:  92
-Finished generation:  92
-Finished generation:  92
-Finished generation:  92
-Finished generation:  92
-Finished generation:  92
-Finished generation:  93
-Finished generation:  93
-Finished generation:  92
-Finished generation:  93
-Finished generation:  92
-Finished generation:  93
-Finished generation:  93
-Finished generation:  93
-Finished generation:  93
-Finished generation:  93
-Finished generation:  94
-Finished generation:  94
-Finished generation:  94
-Finished generation:  93
-Finished generation:  93
-Finished generation:  94
-Finished generation:  94
-Finished generation:  94
-Finished generation:  94
-Finished generation:  94
-Finished generation:  95
-Finished generation:  95
-Finished generation:  95
-Finished generation:  94
-Finished generation:  94
-Finished generation:  95
-Finished generation:  95
-Finished generation:  95
-Finished generation:  95
-Finished generation:  95
-Finished generation:  96
-Finished generation:  96
-Finished generation:  96
-Finished generation:  95
-Finished generation:  95
-Finished generation:  96
-Finished generation:  96
-Finished generation:  96
-Finished generation:  96
-Finished generation:  97
-Finished generation:  96
-Finished generation:  97
-Finished generation:  96
-Finished generation:  97
-Finished generation:  96
-Finished generation:  97
-Finished generation:  97
-Finished generation:  97
-Finished generation:  97
-Finished generation:  98
-Finished generation:  97
-Finished generation:  98
-Finished generation:  97
-Finished generation:  98
-Finished generation:  98
-Finished generation:  97
-Finished generation:  98
-Finished generation:  98
-Finished generation:  98
-Finished generation:  99
-Finished generation:  98
-Finished generation:  99
-Finished generation:  98
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Finished generation:  98
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Loss:  [0.9354838709677419, 0.6774193548387096, 0.9516129032258065, 0.9516129032258065, 0.8870967741935484, 0.9344262295081968, 0.9836065573770492, 0.9016393442622951, 0.639344262295082, 0.65]
-F1 [0.9047619047619048, 0.37499999999999994, 0.9361702127659575, 0.9361702127659575, 0.8444444444444444, 0.909090909090909, 0.9767441860465117, 0.8333333333333333, 0.6333333333333333, 0.0]
-Training Loss [0.9510869565217391, 0.7771739130434783, 0.9547101449275363, 0.9764492753623188, 0.9637681159420289, 0.9439421338155516, 0.9566003616636528, 0.9385171790235082, 0.8860759493670886, 0.6498194945848376]
-2022-12-07 14:10:53.735162
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  24
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  25
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  26
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  27
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  28
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  38
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  39
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  40
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  43
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  45
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  61
-Finished generation:  60
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  61
-Finished generation:  62
-Finished generation:  61
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  62
-Finished generation:  63
-Finished generation:  62
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  63
-Finished generation:  64
-Finished generation:  63
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  64
-Finished generation:  65
-Finished generation:  64
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  65
-Finished generation:  66
-Finished generation:  65
-Finished generation:  65
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  66
-Finished generation:  67
-Finished generation:  66
-Finished generation:  66
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  67
-Finished generation:  68
-Finished generation:  67
-Finished generation:  67
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  68
-Finished generation:  69
-Finished generation:  68
-Finished generation:  68
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  69
-Finished generation:  70
-Finished generation:  69
-Finished generation:  69
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  70
-Finished generation:  71
-Finished generation:  70
-Finished generation:  70
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  71
-Finished generation:  72
-Finished generation:  71
-Finished generation:  71
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  72
-Finished generation:  73
-Finished generation:  72
-Finished generation:  72
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  73
-Finished generation:  74
-Finished generation:  73
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  74
-Finished generation:  75
-Finished generation:  74
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  75
-Finished generation:  76
-Finished generation:  75
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  77
-Finished generation:  76
-Finished generation:  76
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  78
-Finished generation:  77
-Finished generation:  77
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  78
-Finished generation:  79
-Finished generation:  78
-Finished generation:  78
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  79
-Finished generation:  80
-Finished generation:  79
-Finished generation:  79
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  80
-Finished generation:  81
-Finished generation:  80
-Finished generation:  80
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  81
-Finished generation:  82
-Finished generation:  81
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  83
-Finished generation:  82
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  84
-Finished generation:  83
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  84
-Finished generation:  85
-Finished generation:  84
-Finished generation:  84
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  85
-Finished generation:  86
-Finished generation:  85
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  86
-Finished generation:  87
-Finished generation:  86
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  87
-Finished generation:  88
-Finished generation:  87
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  88
-Finished generation:  89
-Finished generation:  88
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  89
-Finished generation:  90
-Finished generation:  89
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  90
-Finished generation:  91
-Finished generation:  90
-Finished generation:  91
-Finished generation:  91
-Finished generation:  91
-Finished generation:  91
-Finished generation:  91
-Finished generation:  91
-Finished generation:  92
-Finished generation:  91
-Finished generation:  91
-Finished generation:  91
-Finished generation:  92
-Finished generation:  92
-Finished generation:  92
-Finished generation:  92
-Finished generation:  92
-Finished generation:  92
-Finished generation:  93
-Finished generation:  92
-Finished generation:  92
-Finished generation:  92
-Finished generation:  93
-Finished generation:  93
-Finished generation:  93
-Finished generation:  93
-Finished generation:  93
-Finished generation:  93
-Finished generation:  93
-Finished generation:  94
-Finished generation:  93
-Finished generation:  94
-Finished generation:  93
-Finished generation:  94
-Finished generation:  94
-Finished generation:  94
-Finished generation:  94
-Finished generation:  94
-Finished generation:  94
-Finished generation:  95
-Finished generation:  94
-Finished generation:  95
-Finished generation:  94
-Finished generation:  95
-Finished generation:  95
-Finished generation:  95
-Finished generation:  95
-Finished generation:  95
-Finished generation:  95
-Finished generation:  96
-Finished generation:  95
-Finished generation:  96
-Finished generation:  95
-Finished generation:  96
-Finished generation:  96
-Finished generation:  96
-Finished generation:  96
-Finished generation:  96
-Finished generation:  96
-Finished generation:  97
-Finished generation:  96
-Finished generation:  97
-Finished generation:  96
-Finished generation:  97
-Finished generation:  97
-Finished generation:  97
-Finished generation:  97
-Finished generation:  97
-Finished generation:  97
-Finished generation:  98
-Finished generation:  97
-Finished generation:  98
-Finished generation:  98
-Finished generation:  98
-Finished generation:  97
-Finished generation:  98
-Finished generation:  98
-Finished generation:  98
-Finished generation:  98
-Finished generation:  99
-Finished generation:  98
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Finished generation:  98
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Loss:  [0.967741935483871, 0.8548387096774194, 0.9516129032258065, 0.9516129032258065, 0.9354838709677419, 0.9016393442622951, 0.9508196721311475, 0.8524590163934426, 1.0, 0.95]
-F1 [0.9545454545454546, 0.8, 0.9361702127659575, 0.9333333333333332, 0.9166666666666666, 0.8421052631578947, 0.9268292682926829, 0.7272727272727273, 1.0, 0.9268292682926829]
-Training Loss [0.9547101449275363, 0.9402173913043478, 0.9347826086956522, 0.9583333333333334, 0.947463768115942, 0.8860759493670886, 0.969258589511754, 0.9529837251356239, 0.9638336347197106, 0.9512635379061372]
-2022-12-07 14:32:33.797469
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  0
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  1
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  2
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  3
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  4
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  5
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  6
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  7
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  8
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  9
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  10
-Finished generation:  11
-Finished generation:  10
-Finished generation:  10
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  11
-Finished generation:  12
-Finished generation:  11
-Finished generation:  11
-Finished generation:  12
-Finished generation:  11
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  13
-Finished generation:  12
-Finished generation:  13
-Finished generation:  12
-Finished generation:  12
-Finished generation:  12
-Finished generation:  13
-Finished generation:  13
-Finished generation:  14
-Finished generation:  13
-Finished generation:  13
-Finished generation:  14
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  13
-Finished generation:  14
-Finished generation:  14
-Finished generation:  15
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  15
-Finished generation:  15
-Finished generation:  14
-Finished generation:  14
-Finished generation:  14
-Finished generation:  15
-Finished generation:  15
-Finished generation:  16
-Finished generation:  16
-Finished generation:  15
-Finished generation:  15
-Finished generation:  16
-Finished generation:  16
-Finished generation:  15
-Finished generation:  15
-Finished generation:  15
-Finished generation:  17
-Finished generation:  16
-Finished generation:  17
-Finished generation:  17
-Finished generation:  16
-Finished generation:  17
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  16
-Finished generation:  18
-Finished generation:  18
-Finished generation:  17
-Finished generation:  18
-Finished generation:  17
-Finished generation:  18
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  17
-Finished generation:  19
-Finished generation:  19
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  19
-Finished generation:  19
-Finished generation:  18
-Finished generation:  18
-Finished generation:  18
-Finished generation:  20
-Finished generation:  19
-Finished generation:  20
-Finished generation:  19
-Finished generation:  19
-Finished generation:  19
-Finished generation:  20
-Finished generation:  20
-Finished generation:  19
-Finished generation:  19
-Finished generation:  20
-Finished generation:  21
-Finished generation:  21
-Finished generation:  20
-Finished generation:  20
-Finished generation:  21
-Finished generation:  21
-Finished generation:  20
-Finished generation:  20
-Finished generation:  20
-Finished generation:  21
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  21
-Finished generation:  21
-Finished generation:  22
-Finished generation:  21
-Finished generation:  21
-Finished generation:  21
-Finished generation:  23
-Finished generation:  22
-Finished generation:  23
-Finished generation:  23
-Finished generation:  22
-Finished generation:  22
-Finished generation:  22
-Finished generation:  23
-Finished generation:  22
-Finished generation:  22
-Finished generation:  24
-Finished generation:  23
-Finished generation:  24
-Finished generation:  24
-Finished generation:  23
-Finished generation:  23
-Finished generation:  23
-Finished generation:  24
-Finished generation:  23
-Finished generation:  23
-Finished generation:  25
-Finished generation:  24
-Finished generation:  24
-Finished generation:  25
-Finished generation:  25
-Finished generation:  24
-Finished generation:  24
-Finished generation:  25
-Finished generation:  24
-Finished generation:  24
-Finished generation:  26
-Finished generation:  25
-Finished generation:  25
-Finished generation:  26
-Finished generation:  26
-Finished generation:  25
-Finished generation:  25
-Finished generation:  27
-Finished generation:  26
-Finished generation:  25
-Finished generation:  25
-Finished generation:  26
-Finished generation:  26
-Finished generation:  27
-Finished generation:  27
-Finished generation:  28
-Finished generation:  26
-Finished generation:  26
-Finished generation:  27
-Finished generation:  26
-Finished generation:  26
-Finished generation:  27
-Finished generation:  29
-Finished generation:  27
-Finished generation:  28
-Finished generation:  28
-Finished generation:  27
-Finished generation:  27
-Finished generation:  28
-Finished generation:  27
-Finished generation:  28
-Finished generation:  27
-Finished generation:  30
-Finished generation:  28
-Finished generation:  29
-Finished generation:  29
-Finished generation:  28
-Finished generation:  29
-Finished generation:  28
-Finished generation:  29
-Finished generation:  28
-Finished generation:  28
-Finished generation:  31
-Finished generation:  29
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  29
-Finished generation:  30
-Finished generation:  29
-Finished generation:  29
-Finished generation:  29
-Finished generation:  32
-Finished generation:  30
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  30
-Finished generation:  33
-Finished generation:  32
-Finished generation:  31
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  31
-Finished generation:  34
-Finished generation:  33
-Finished generation:  32
-Finished generation:  33
-Finished generation:  33
-Finished generation:  32
-Finished generation:  33
-Finished generation:  32
-Finished generation:  32
-Finished generation:  32
-Finished generation:  35
-Finished generation:  34
-Finished generation:  33
-Finished generation:  33
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  33
-Finished generation:  33
-Finished generation:  33
-Finished generation:  36
-Finished generation:  35
-Finished generation:  34
-Finished generation:  34
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  34
-Finished generation:  34
-Finished generation:  34
-Finished generation:  37
-Finished generation:  36
-Finished generation:  35
-Finished generation:  35
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  35
-Finished generation:  35
-Finished generation:  35
-Finished generation:  38
-Finished generation:  36
-Finished generation:  37
-Finished generation:  37
-Finished generation:  36
-Finished generation:  37
-Finished generation:  37
-Finished generation:  36
-Finished generation:  36
-Finished generation:  36
-Finished generation:  39
-Finished generation:  37
-Finished generation:  38
-Finished generation:  38
-Finished generation:  37
-Finished generation:  38
-Finished generation:  38
-Finished generation:  37
-Finished generation:  37
-Finished generation:  37
-Finished generation:  40
-Finished generation:  38
-Finished generation:  39
-Finished generation:  39
-Finished generation:  38
-Finished generation:  39
-Finished generation:  39
-Finished generation:  38
-Finished generation:  38
-Finished generation:  39
-Finished generation:  38
-Finished generation:  41
-Finished generation:  40
-Finished generation:  40
-Finished generation:  39
-Finished generation:  40
-Finished generation:  40
-Finished generation:  39
-Finished generation:  40
-Finished generation:  39
-Finished generation:  39
-Finished generation:  42
-Finished generation:  41
-Finished generation:  41
-Finished generation:  40
-Finished generation:  40
-Finished generation:  41
-Finished generation:  41
-Finished generation:  41
-Finished generation:  40
-Finished generation:  40
-Finished generation:  43
-Finished generation:  42
-Finished generation:  42
-Finished generation:  41
-Finished generation:  41
-Finished generation:  42
-Finished generation:  42
-Finished generation:  42
-Finished generation:  41
-Finished generation:  41
-Finished generation:  44
-Finished generation:  43
-Finished generation:  42
-Finished generation:  43
-Finished generation:  43
-Finished generation:  42
-Finished generation:  43
-Finished generation:  43
-Finished generation:  42
-Finished generation:  45
-Finished generation:  42
-Finished generation:  43
-Finished generation:  44
-Finished generation:  44
-Finished generation:  44
-Finished generation:  43
-Finished generation:  44
-Finished generation:  44
-Finished generation:  46
-Finished generation:  43
-Finished generation:  43
-Finished generation:  45
-Finished generation:  44
-Finished generation:  45
-Finished generation:  45
-Finished generation:  44
-Finished generation:  45
-Finished generation:  45
-Finished generation:  47
-Finished generation:  44
-Finished generation:  44
-Finished generation:  45
-Finished generation:  46
-Finished generation:  46
-Finished generation:  45
-Finished generation:  46
-Finished generation:  46
-Finished generation:  46
-Finished generation:  45
-Finished generation:  48
-Finished generation:  45
-Finished generation:  46
-Finished generation:  46
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  47
-Finished generation:  49
-Finished generation:  46
-Finished generation:  46
-Finished generation:  47
-Finished generation:  47
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  48
-Finished generation:  47
-Finished generation:  50
-Finished generation:  47
-Finished generation:  48
-Finished generation:  48
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  49
-Finished generation:  48
-Finished generation:  51
-Finished generation:  48
-Finished generation:  49
-Finished generation:  49
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  50
-Finished generation:  49
-Finished generation:  52
-Finished generation:  49
-Finished generation:  50
-Finished generation:  50
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  51
-Finished generation:  50
-Finished generation:  53
-Finished generation:  50
-Finished generation:  51
-Finished generation:  51
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  52
-Finished generation:  51
-Finished generation:  51
-Finished generation:  54
-Finished generation:  52
-Finished generation:  52
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  53
-Finished generation:  52
-Finished generation:  52
-Finished generation:  55
-Finished generation:  53
-Finished generation:  53
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  54
-Finished generation:  53
-Finished generation:  56
-Finished generation:  53
-Finished generation:  54
-Finished generation:  54
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  55
-Finished generation:  54
-Finished generation:  54
-Finished generation:  57
-Finished generation:  55
-Finished generation:  55
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  56
-Finished generation:  55
-Finished generation:  56
-Finished generation:  55
-Finished generation:  58
-Finished generation:  56
-Finished generation:  57
-Finished generation:  57
-Finished generation:  56
-Finished generation:  57
-Finished generation:  57
-Finished generation:  57
-Finished generation:  56
-Finished generation:  56
-Finished generation:  59
-Finished generation:  57
-Finished generation:  58
-Finished generation:  58
-Finished generation:  57
-Finished generation:  58
-Finished generation:  58
-Finished generation:  58
-Finished generation:  57
-Finished generation:  57
-Finished generation:  60
-Finished generation:  59
-Finished generation:  58
-Finished generation:  59
-Finished generation:  58
-Finished generation:  59
-Finished generation:  59
-Finished generation:  59
-Finished generation:  58
-Finished generation:  58
-Finished generation:  60
-Finished generation:  61
-Finished generation:  60
-Finished generation:  59
-Finished generation:  59
-Finished generation:  60
-Finished generation:  60
-Finished generation:  60
-Finished generation:  59
-Finished generation:  61
-Finished generation:  59
-Finished generation:  62
-Finished generation:  61
-Finished generation:  60
-Finished generation:  61
-Finished generation:  60
-Finished generation:  61
-Finished generation:  61
-Finished generation:  60
-Finished generation:  60
-Finished generation:  62
-Finished generation:  62
-Finished generation:  63
-Finished generation:  61
-Finished generation:  62
-Finished generation:  61
-Finished generation:  62
-Finished generation:  62
-Finished generation:  61
-Finished generation:  61
-Finished generation:  63
-Finished generation:  63
-Finished generation:  64
-Finished generation:  62
-Finished generation:  63
-Finished generation:  62
-Finished generation:  63
-Finished generation:  63
-Finished generation:  64
-Finished generation:  62
-Finished generation:  62
-Finished generation:  64
-Finished generation:  65
-Finished generation:  63
-Finished generation:  64
-Finished generation:  64
-Finished generation:  63
-Finished generation:  64
-Finished generation:  65
-Finished generation:  63
-Finished generation:  63
-Finished generation:  65
-Finished generation:  66
-Finished generation:  64
-Finished generation:  65
-Finished generation:  65
-Finished generation:  64
-Finished generation:  65
-Finished generation:  66
-Finished generation:  64
-Finished generation:  64
-Finished generation:  66
-Finished generation:  67
-Finished generation:  65
-Finished generation:  66
-Finished generation:  66
-Finished generation:  65
-Finished generation:  66
-Finished generation:  67
-Finished generation:  65
-Finished generation:  65
-Finished generation:  68
-Finished generation:  67
-Finished generation:  66
-Finished generation:  67
-Finished generation:  67
-Finished generation:  66
-Finished generation:  67
-Finished generation:  68
-Finished generation:  69
-Finished generation:  66
-Finished generation:  66
-Finished generation:  68
-Finished generation:  68
-Finished generation:  67
-Finished generation:  68
-Finished generation:  67
-Finished generation:  68
-Finished generation:  70
-Finished generation:  69
-Finished generation:  67
-Finished generation:  67
-Finished generation:  69
-Finished generation:  69
-Finished generation:  68
-Finished generation:  69
-Finished generation:  68
-Finished generation:  71
-Finished generation:  69
-Finished generation:  70
-Finished generation:  68
-Finished generation:  70
-Finished generation:  68
-Finished generation:  70
-Finished generation:  69
-Finished generation:  70
-Finished generation:  72
-Finished generation:  69
-Finished generation:  70
-Finished generation:  71
-Finished generation:  71
-Finished generation:  69
-Finished generation:  69
-Finished generation:  71
-Finished generation:  70
-Finished generation:  73
-Finished generation:  71
-Finished generation:  70
-Finished generation:  71
-Finished generation:  72
-Finished generation:  72
-Finished generation:  70
-Finished generation:  74
-Finished generation:  70
-Finished generation:  72
-Finished generation:  71
-Finished generation:  72
-Finished generation:  71
-Finished generation:  72
-Finished generation:  73
-Finished generation:  73
-Finished generation:  75
-Finished generation:  71
-Finished generation:  71
-Finished generation:  73
-Finished generation:  72
-Finished generation:  73
-Finished generation:  72
-Finished generation:  73
-Finished generation:  76
-Finished generation:  74
-Finished generation:  74
-Finished generation:  72
-Finished generation:  74
-Finished generation:  74
-Finished generation:  73
-Finished generation:  72
-Finished generation:  73
-Finished generation:  74
-Finished generation:  77
-Finished generation:  75
-Finished generation:  75
-Finished generation:  73
-Finished generation:  75
-Finished generation:  75
-Finished generation:  74
-Finished generation:  73
-Finished generation:  74
-Finished generation:  75
-Finished generation:  78
-Finished generation:  76
-Finished generation:  76
-Finished generation:  76
-Finished generation:  74
-Finished generation:  76
-Finished generation:  75
-Finished generation:  74
-Finished generation:  75
-Finished generation:  76
-Finished generation:  79
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  77
-Finished generation:  75
-Finished generation:  76
-Finished generation:  75
-Finished generation:  76
-Finished generation:  77
-Finished generation:  78
-Finished generation:  78
-Finished generation:  80
-Finished generation:  78
-Finished generation:  78
-Finished generation:  76
-Finished generation:  77
-Finished generation:  76
-Finished generation:  77
-Finished generation:  78
-Finished generation:  79
-Finished generation:  79
-Finished generation:  77
-Finished generation:  81
-Finished generation:  79
-Finished generation:  79
-Finished generation:  77
-Finished generation:  78
-Finished generation:  78
-Finished generation:  79
-Finished generation:  80
-Finished generation:  80
-Finished generation:  78
-Finished generation:  80
-Finished generation:  82
-Finished generation:  80
-Finished generation:  78
-Finished generation:  79
-Finished generation:  79
-Finished generation:  80
-Finished generation:  81
-Finished generation:  81
-Finished generation:  79
-Finished generation:  81
-Finished generation:  83
-Finished generation:  81
-Finished generation:  80
-Finished generation:  79
-Finished generation:  80
-Finished generation:  81
-Finished generation:  82
-Finished generation:  82
-Finished generation:  82
-Finished generation:  80
-Finished generation:  82
-Finished generation:  84
-Finished generation:  81
-Finished generation:  80
-Finished generation:  81
-Finished generation:  82
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  83
-Finished generation:  81
-Finished generation:  82
-Finished generation:  85
-Finished generation:  81
-Finished generation:  82
-Finished generation:  83
-Finished generation:  84
-Finished generation:  84
-Finished generation:  83
-Finished generation:  84
-Finished generation:  84
-Finished generation:  82
-Finished generation:  82
-Finished generation:  86
-Finished generation:  83
-Finished generation:  84
-Finished generation:  85
-Finished generation:  84
-Finished generation:  85
-Finished generation:  85
-Finished generation:  83
-Finished generation:  85
-Finished generation:  83
-Finished generation:  87
-Finished generation:  84
-Finished generation:  85
-Finished generation:  86
-Finished generation:  86
-Finished generation:  85
-Finished generation:  86
-Finished generation:  84
-Finished generation:  86
-Finished generation:  84
-Finished generation:  88
-Finished generation:  85
-Finished generation:  87
-Finished generation:  87
-Finished generation:  86
-Finished generation:  86
-Finished generation:  87
-Finished generation:  85
-Finished generation:  85
-Finished generation:  87
-Finished generation:  89
-Finished generation:  86
-Finished generation:  88
-Finished generation:  88
-Finished generation:  87
-Finished generation:  87
-Finished generation:  86
-Finished generation:  88
-Finished generation:  86
-Finished generation:  88
-Finished generation:  90
-Finished generation:  89
-Finished generation:  87
-Finished generation:  89
-Finished generation:  87
-Finished generation:  88
-Finished generation:  88
-Finished generation:  89
-Finished generation:  87
-Finished generation:  89
-Finished generation:  90
-Finished generation:  91
-Finished generation:  88
-Finished generation:  88
-Finished generation:  90
-Finished generation:  89
-Finished generation:  89
-Finished generation:  88
-Finished generation:  90
-Finished generation:  91
-Finished generation:  90
-Finished generation:  92
-Finished generation:  89
-Finished generation:  89
-Finished generation:  91
-Finished generation:  90
-Finished generation:  90
-Finished generation:  89
-Finished generation:  92
-Finished generation:  91
-Finished generation:  91
-Finished generation:  93
-Finished generation:  90
-Finished generation:  90
-Finished generation:  93
-Finished generation:  92
-Finished generation:  91
-Finished generation:  91
-Finished generation:  90
-Finished generation:  92
-Finished generation:  92
-Finished generation:  94
-Finished generation:  91
-Finished generation:  94
-Finished generation:  91
-Finished generation:  93
-Finished generation:  91
-Finished generation:  92
-Finished generation:  92
-Finished generation:  93
-Finished generation:  93
-Finished generation:  95
-Finished generation:  92
-Finished generation:  95
-Finished generation:  92
-Finished generation:  92
-Finished generation:  94
-Finished generation:  93
-Finished generation:  93
-Finished generation:  94
-Finished generation:  94
-Finished generation:  96
-Finished generation:  93
-Finished generation:  93
-Finished generation:  96
-Finished generation:  93
-Finished generation:  95
-Finished generation:  94
-Finished generation:  94
-Finished generation:  95
-Finished generation:  95
-Finished generation:  97
-Finished generation:  94
-Finished generation:  97
-Finished generation:  94
-Finished generation:  94
-Finished generation:  96
-Finished generation:  95
-Finished generation:  96
-Finished generation:  95
-Finished generation:  96
-Finished generation:  95
-Finished generation:  98
-Finished generation:  95
-Finished generation:  98
-Finished generation:  95
-Finished generation:  96
-Finished generation:  97
-Finished generation:  97
-Finished generation:  96
-Finished generation:  97
-Finished generation:  96
-Finished generation:  96
-Finished generation:  99
-Finished generation:  97
-Finished generation:  99
-Finished generation:  96
-Finished generation:  98
-Finished generation:  97
-Finished generation:  98
-Finished generation:  98
-Finished generation:  97
-Finished generation:  97
-Finished generation:  98
-Finished generation:  97
-Finished generation:  98
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Finished generation:  98
-Finished generation:  99
-Finished generation:  98
-Finished generation:  99
-Finished generation:  98
-Finished generation:  99
-Finished generation:  99
-Finished generation:  99
-Loss:  [0.8548387096774194, 0.8387096774193549, 0.8548387096774194, 0.9032258064516129, 0.8225806451612904, 0.9180327868852459, 0.9016393442622951, 0.819672131147541, 0.8852459016393442, 0.9]
-F1 [0.8, 0.7916666666666666, 0.823529411764706, 0.8695652173913043, 0.7924528301886793, 0.888888888888889, 0.8571428571428571, 0.7659574468085107, 0.8510638297872339, 0.8571428571428571]
-Training Loss [0.894927536231884, 0.9003623188405797, 0.8623188405797102, 0.8967391304347826, 0.9094202898550725, 0.8896925858951176, 0.8933092224231465, 0.8481012658227848, 0.8734177215189873, 0.8935018050541517]
-2022-12-07 14:52:43.981621
+2022-12-07 16:03:42.221907
+generation=0
+generation=0
+generation=0
+generation=0
+generation=0
+generation=0
+generation=0
+generation=0
+generation=0
+generation=0
+generation=1
+generation=1
+generation=1
+generation=1
+generation=1
+generation=1
+generation=1
+generation=1
+generation=1
+generation=1
+generation=2
+generation=2
+generation=2
+generation=2
+generation=2
+generation=2
+generation=2
+generation=2
+generation=2
+generation=2
+generation=3
+generation=3
+generation=3
+generation=3
+generation=3
+generation=3
+generation=3
+generation=3
+generation=3
+generation=3
+generation=4
+generation=4
+generation=4
+generation=4
+generation=4
+generation=4
+generation=4
+generation=4
+generation=4
+generation=4
+generation=5
+generation=5
+generation=5
+generation=5
+generation=5
+generation=5
+generation=5
+generation=5
+generation=5
+generation=5
+generation=6
+generation=6
+generation=6
+generation=6
+generation=6
+generation=6
+generation=6
+generation=6
+generation=6
+generation=6
+generation=7
+generation=7
+generation=7
+generation=7
+generation=7
+generation=7
+generation=7
+generation=7
+generation=7
+generation=7
+generation=8
+generation=8
+generation=8
+generation=8
+generation=8
+generation=8
+generation=8
+generation=8
+generation=8
+generation=8
+generation=9
+generation=9
+generation=9
+generation=9
+generation=9
+generation=9
+generation=9
+generation=9
+generation=9
+generation=9
+generation=10
+generation=10
+generation=10
+generation=10
+generation=10
+generation=10
+generation=10
+generation=10
+generation=10
+generation=10
+generation=11
+generation=11
+generation=11
+generation=11
+generation=11
+generation=11
+generation=11
+generation=11
+generation=11
+generation=11
+generation=12
+generation=12
+generation=12
+generation=12
+generation=12
+generation=12
+generation=12
+generation=12
+generation=12
+generation=12
+generation=13
+generation=13
+generation=13
+generation=13
+generation=13
+generation=13
+generation=13
+generation=13
+generation=13
+generation=13
+generation=14
+generation=14
+generation=14
+generation=14
+generation=14
+generation=14
+generation=14
+generation=14
+generation=14
+generation=14
+generation=15
+generation=15
+generation=15
+generation=15
+generation=15
+generation=15
+generation=15
+generation=15
+generation=15
+generation=15
+generation=16
+generation=16
+generation=16
+generation=16
+generation=16
+generation=16
+generation=16
+generation=16
+generation=16
+generation=16
+generation=17
+generation=17
+generation=17
+generation=17
+generation=17
+generation=17
+generation=17
+generation=17
+generation=17
+generation=17
+generation=18
+generation=18
+generation=18
+generation=18
+generation=18
+generation=18
+generation=18
+generation=18
+generation=18
+generation=18
+generation=19
+generation=19
+generation=19
+generation=19
+generation=19
+generation=19
+generation=19
+generation=19
+generation=19
+generation=19
+generation=20
+generation=20
+generation=20
+generation=20
+generation=20
+generation=20
+generation=20
+generation=20
+generation=20
+generation=20
+generation=21
+generation=21
+generation=21
+generation=21
+generation=21
+generation=21
+generation=21
+generation=21
+generation=21
+generation=21
+generation=22
+generation=22
+generation=22
+generation=22
+generation=22
+generation=22
+generation=22
+generation=22
+generation=22
+generation=22
+generation=23
+generation=23
+generation=23
+generation=23
+generation=23
+generation=23
+generation=23
+generation=23
+generation=23
+generation=23
+generation=24
+generation=24
+generation=24
+generation=24
+generation=24
+generation=24
+generation=24
+generation=24
+generation=24
+generation=24
+generation=25
+generation=25
+generation=25
+generation=25
+generation=25
+generation=25
+generation=25
+generation=25
+generation=25
+generation=26
+generation=25
+generation=26
+generation=26
+generation=26
+generation=26
+generation=26
+generation=26
+generation=26
+generation=26
+generation=27
+generation=26
+generation=27
+generation=27
+generation=27
+generation=27
+generation=27
+generation=27
+generation=27
+generation=27
+generation=28
+generation=27
+generation=28
+generation=28
+generation=28
+generation=28
+generation=28
+generation=28
+generation=28
+generation=28
+generation=29
+generation=28
+generation=29
+generation=29
+generation=29
+generation=29
+generation=29
+generation=29
+generation=29
+generation=29
+generation=30
+generation=29
+generation=30
+generation=30
+generation=30
+generation=30
+generation=30
+generation=30
+generation=30
+generation=30
+generation=31
+generation=30
+generation=31
+generation=31
+generation=31
+generation=31
+generation=31
+generation=31
+generation=31
+generation=31
+generation=32
+generation=31
+generation=32
+generation=32
+generation=32
+generation=32
+generation=32
+generation=32
+generation=32
+generation=32
+generation=33
+generation=32
+generation=33
+generation=33
+generation=33
+generation=33
+generation=33
+generation=33
+generation=33
+generation=33
+generation=34
+generation=33
+generation=34
+generation=34
+generation=34
+generation=34
+generation=34
+generation=34
+generation=34
+generation=35
+generation=34
+generation=34
+generation=35
+generation=35
+generation=35
+generation=35
+generation=35
+generation=35
+generation=35
+generation=36
+generation=35
+generation=35
+generation=36
+generation=36
+generation=36
+generation=36
+generation=36
+generation=36
+generation=36
+generation=37
+generation=36
+generation=36
+generation=37
+generation=37
+generation=37
+generation=37
+generation=37
+generation=37
+generation=37
+generation=38
+generation=37
+generation=37
+generation=38
+generation=38
+generation=38
+generation=38
+generation=38
+generation=38
+generation=38
+generation=39
+generation=38
+generation=38
+generation=39
+generation=39
+generation=39
+generation=39
+generation=39
+generation=39
+generation=39
+generation=40
+generation=39
+generation=39
+generation=40
+generation=40
+generation=40
+generation=40
+generation=40
+generation=40
+generation=40
+generation=41
+generation=40
+generation=40
+generation=41
+generation=41
+generation=41
+generation=41
+generation=41
+generation=41
+generation=41
+generation=42
+generation=41
+generation=41
+generation=42
+generation=42
+generation=42
+generation=42
+generation=42
+generation=42
+generation=42
+generation=43
+generation=42
+generation=42
+generation=43
+generation=43
+generation=43
+generation=43
+generation=43
+generation=43
+generation=43
+generation=44
+generation=43

@@ -167,7 +167,7 @@ def breast_cancer_experiment_de(run_tuning, network_shape):
     def individual_eval_method(fold, network):
         return 1 - EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
 
-    hp = {'num_replaced_parents': [1, 1, 4, 1], 'mutation_scale_factor': [1.6, 0.5, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
+    hp = {'num_replaced_parents': [1, 1, 4, 1], 'mutation_scale_factor': [0.1, 0.1, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
     hp_order = ['num_replaced_parents', 'mutation_scale_factor', 'crossover_rate']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
@@ -177,8 +177,8 @@ def breast_cancer_experiment_de(run_tuning, network_shape):
         print(best_hp)
     else:
         best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 1.5, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
-    population_size = 10
-    generations = 1
+    population_size = 30
+    generations = 100
     tu = TuningUtility(DifferentialEvolution, training_test_folds, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
 
