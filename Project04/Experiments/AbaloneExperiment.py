@@ -135,7 +135,7 @@ def abalone_experiment_de(run_tuning, network_shape):
     def individual_eval_method(fold, network):
         return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=.25)))
 
-    hp = {'num_replaced_parents': [1, 1, 5, 1], 'mutation_scale_factor': [1.6, 0.5, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
+    hp = {'num_replaced_parents': [1, 1, 5, 1], 'mutation_scale_factor': [0.5, 0.5, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
     hp_order = ['num_replaced_parents', 'mutation_scale_factor', 'crossover_rate']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
