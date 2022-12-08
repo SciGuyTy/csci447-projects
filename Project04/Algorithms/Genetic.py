@@ -1,4 +1,6 @@
+import copy
 import math
+from random import random
 from typing import List, Dict, Callable
 
 import numpy as np
@@ -61,14 +63,14 @@ class Genetic():
                 # Perform selection to get two parent chromosomes and remove them from the current population
                 for _ in range(2):
                     # Select a parent
-                    parent = self.selection.select(self.population)
+                    parent, fitness = self.selection.select(self.population)
 
                     # Remove the parent from the population (ran into weird issues with np.array and python list types)
                     parent_index = [idx for idx, el in enumerate(self.population) if np.array_equal(el, parent)]
                     #del self.population[parent_index[0]]
 
                     # Store the parent
-                    parents.append((parent, parent_index[0]))
+                    parents.append((parent, parent_index[0], fitness))
 
                 # Perform crossover to generate children chromosomes
                 children = self.crossover.cross(Utilities.serialize_network(parents[0][0]),
@@ -81,8 +83,15 @@ class Genetic():
                 children = self.mutation.mutate(children)
 
                 # Replace the parents' weights with their children's weights
-                Utilities.deserialize_network(self.population[parents[0][1]], children[0])
-                Utilities.deserialize_network(self.population[parents[1][1]], children[1])
+                child1 = Utilities.deserialize_network(copy.copy(parents[0][0]), children[0])
+                child2 = Utilities.deserialize_network(copy.copy(parents[1][0]), children[1])
+                fitnesses = [(self.evaluation_method(child), random(), child) for child in (child1, child2)]
+                fitnesses.append((parents[0][2], random(),parents[0][0]))
+                fitnesses.append((parents[0][2], random(), parents[0][0]))
+                fitnesses.sort()
+
+                self.population[parents[0][1]] = fitnesses[0][2]
+                self.population[parents[1][1]] = fitnesses[1][2]
 
             # # Update population by inserting new children into population
             # self.population[parent[0][1]] = children

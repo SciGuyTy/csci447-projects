@@ -44,7 +44,7 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
-        best_hp = {'inertia': 0.25, 'c1': 1.7999999999999998, 'c2': 1.0}
+        best_hp = {'inertia': 0.25, 'c1': 1.6, 'c2': 1.6}
 
     population_size = 15
     generations = 50

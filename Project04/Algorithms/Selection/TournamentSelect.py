@@ -36,4 +36,4 @@ class TournamentSelect(Selection):
         index_of_selection = contestant_fitness.index(best_fitness)
 
         # Return the best contestant
-        return contestants[index_of_selection]
+        return contestants[index_of_selection], best_fitness
