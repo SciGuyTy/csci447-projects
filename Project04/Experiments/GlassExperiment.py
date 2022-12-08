@@ -178,8 +178,19 @@ def glass_experiment_de(run_tuning, network_shape):
 if __name__ == "__main__":
     glass_save_location = "./Project04/ExperimentSaves/glass.objects"
 
-    print("Tuning glass pso")
-    glass_experiment_pso(True, [9, 9, 7])
+    #print("Running 0 glass pso")
+    #glass_experiment_pso(False, [9, 7])
+    #print("Running 2 glass pso")
+    #glass_experiment_pso(False, [9,9,9, 7])
+    # 1 layer pso
+    # Loss: [0.13636363636363635, 0.47619047619047616, 0.47619047619047616, 0.35, 0.35, 0.3684210526315789,
+    #        0.3888888888888889, 0.3888888888888889, 0.375, 0.1875]
+    # F1[
+    #     0.19047619047619047, 0.2, 0.0, 0.5185185185185185, 0.5185185185185185, 0.2, 0.56, 0.5454545454545455, 0.5454545454545454, 0.0]
+    # Training
+    # Loss[
+    #     0.4497041420118344, 0.48235294117647065, 0.4529411764705882, 0.35672514619883033, 0.35672514619883033, 0.5116279069767442, 0.35260115606936415, 0.47976878612716756, 0.3542857142857143, 0.3771428571428572]
+
     print("Tuning glass ga")
     glass_experiment_ga(True, [9, 9, 7])
     print("Tuning glass de")

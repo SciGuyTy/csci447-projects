@@ -164,13 +164,13 @@ def breast_cancer_experiment_de(run_tuning, network_shape):
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
-        tu = TuningUtility(DifferentialEvolution, training_test_folds, tuning_data, individual_eval_method, network_params, 30, 100, hp, hp_order)
+        tu = TuningUtility(DifferentialEvolution, training_test_folds, tuning_data, individual_eval_method, network_params, 15, 50, hp, hp_order)
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
         best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 0.1, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
-    population_size = 30
-    generations = 100
+    population_size = 15
+    generations = 50
     tu = TuningUtility(DifferentialEvolution, training_test_folds, tuning_data, individual_eval_method, network_params, population_size, generations,
                        hp, hp_order)
 
@@ -207,4 +207,4 @@ if __name__ == "__main__":
     #        0.3442622950819672, 0.6557377049180327, 0.6557377049180327, 0.6557377049180327, 0.65]
     # F1[0.0, 0.5238095238095238, 0.5238095238095238, 0.0, 0.5238095238095238, 0.5121951219512195, 0.0, 0.0, 0.0, 0.0]
     initialize_test_experiment()
-    test_experiment_ga(True, [2, 1])
+    test_experiment_ga(False, [2, 1])
