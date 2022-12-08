@@ -176,4 +176,4 @@ def abalone_experiment_de(run_tuning, network_shape):
 if __name__ == "__main__":
     print(datetime.datetime.now())
     print("Starting ablone tuning pso")
-    abalone_experiment_de(True, [8,8,1])
+    abalone_experiment_ga(True, [8,8,1])
