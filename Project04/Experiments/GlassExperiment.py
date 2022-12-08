@@ -79,6 +79,7 @@ def glass_experiment_ga(run_tuning, network_shape):
 
     with open(glass_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
+    cv.classes = [i for i in range(1,8)]
 
     network_params = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
           'random_weight_range': (-0.1, 0.1)}
@@ -131,6 +132,7 @@ def glass_experiment_de(run_tuning, network_shape):
 
     with open(glass_save_location, 'rb') as f:
         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
+    cv.classes = [i for i in range(1,8)]
 
     network_params = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
           'random_weight_range': (-0.7, 0.7)}
