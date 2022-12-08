@@ -30,6 +30,8 @@ def glass_experiment_pso(run_tuning, network_shape):
 
     np = {'shape': network_shape, 'output_transformer': output_transformer, 'regression': False,
           'random_weight_range': (-1, 1)}
+    
+    cv.classes = [i for i in range(1,8)]
 
     def individual_eval_method(fold, network):
         return 1-EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
@@ -174,10 +176,10 @@ def glass_experiment_de(run_tuning, network_shape):
     print("F1", f1)
 
 if __name__ == "__main__":
-    glass_save_location = "./Project04/ExperimentSaves/glass.objects"
+    glass_save_location = "../ExperimentSaves/glass.objects"
 
     print("Tuning glass pso")
-    glass_experiment_pso(True, [9, 9,7])
+    glass_experiment_pso(True, [9, 9, 7])
     print("Tuning glass ga")
     glass_experiment_ga(True, [9, 9, 7])
     print("Tuning glass de")
