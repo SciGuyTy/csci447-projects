@@ -10,7 +10,7 @@ from Project04.Algorithms.Crossover.UniformCrossover import UniformCrossover
 from Project04.Algorithms.DifferentialEvolution import DifferentialEvolution
 from Project04.Algorithms.Genetic import Genetic
 from Project04.Algorithms.Mutation.UniformMutation import UniformMutation
-from Project04.Algorithms.PSO import Particle
+from Project04.Algorithms.PSO import Particle, PSO
 from Project04.Algorithms.Selection.TournamentSelect import TournamentSelect
 from Project04.Evaluation.EvaluationCallable import EvaluationCallable
 from Project04.Evaluation.EvaluationMeasure import EvaluationMeasure
@@ -19,11 +19,14 @@ from Project04.Utilities.TuningUtility import TuningUtility
 from Project04.Utilities.Utilities import Utilities
 
 soybean_save_location = "./ExperimentSaves/soybean.objects"
+abalone_save_location = "./ExperimentSaves/abalone.objects"
 
 
 def output_transformer(output_vector: np.array):
     return output_vector.argmax() + 1
 
+def regression_output_transformer(output_vector: np.array):
+    return output_vector[0]
 
 def demonstrate_test_fold_output_classification():
     print("------ Demonstrate Output/Performance of Test Folds ------")
@@ -80,6 +83,8 @@ def demonstrate_test_fold_output_classification():
     hp = {'num_replaced_parents': [1, 1, 4, 1], 'mutation_scale_factor': [1.6, 0.5, 2.5, 0.5],
           'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
     hp_order = ['num_replaced_parents', 'mutation_scale_factor', 'crossover_rate']
+    best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 1.5, 'crossover_rate': 0.2,
+               'crossover': BinomialCrossover}
 
     population_size = 30
     generations = 2
@@ -103,9 +108,76 @@ def demonstrate_test_fold_output_classification():
     print(f"\t\tF1 Score = {f1}")
     print("\n\n")
 
+    # ----- PARTICLE SWARM OPTIMIZATION -----
+    hp = {'inertia': [0.2, 0.05, 0.3, 0.05], 'c1': [1.6, 1, 2, 0.2], 'c2': [1.6, 1, 2, 0.2]}
+    hp_order = ['inertia', 'c1', 'c2']
+    best_hp = {'inertia': 0.25, 'c1': 1.7999999999999998, 'c2': 1.0}
 
-# def demonstrate_test_fold_output_regression():
-#     pass
+    population_size = 30
+    generations = 2
+    tu = TuningUtility(PSO, training_test_folds, tuning_data, individual_eval_method, network_params, population_size, generations,
+                       hp, hp_order)
+
+    network, fitness = tu.train_on_fold(best_hp, training_data)
+
+
+    fold_results = cv.calculate_results_for_fold(network, training_test_folds[0][1])
+
+    loss = EvaluationMeasure.calculate_0_1_loss(fold_results)
+    f1 = EvaluationMeasure.calculate_f_beta_score(fold_results, 2)
+
+    print(f"Particle Swarm Optimization algorithm results on network with shape [35, 4], trained for 50 generations and a population of size 30")
+    print(f"\tNetwork Weights:")
+    for layer_num, layer in enumerate(network.layers):
+        print(f"\t\tLayer {layer_num + 1}: \n{layer.weights}".replace("\n", "\n\t\t"))
+    print("\n\tPerformance:")
+    print(f"\t\t0-1 Loss = {loss}")
+    print(f"\t\tF1 Score = {f1}")
+    print("\n\n")
+
+
+def demonstrate_test_fold_output_regression():
+    print("------ Demonstrate Output/Performance of Test Folds ------")
+
+    with open(abalone_save_location, 'rb') as f:
+        training_test_data, pp, tuning_data, folds, cv = pickle.load(f)
+
+    print(f"Consider the following fold used for training the following algorithms: \n{folds}".replace("\n", "\n\t\t"))
+    print("")
+
+    training_data = pp.data
+
+    network_params = {'shape': [8, 8, 1], 'output_transformer': regression_output_transformer, 'regression': True,
+          'random_weight_range': (-0.1, 0.1)}
+
+    def individual_eval_method(fold, network):
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
+
+    # ----- Genetic Algorithm -----
+    hp = {'inertia': [0.1, 0.05, 0.3, 0.1], 'c1': [1.4, 1, 2, 0.3], 'c2': [1.4, 1, 2, 0.3]}
+    hp_order = ['inertia', 'c1', 'c2']
+    best_hp = {'inertia': 0.25, 'c1': 1.6, 'c2': 1.6}
+
+    population_size = 5
+    generations = 1
+    tu = TuningUtility(PSO, training_test_data, tuning_data, individual_eval_method, network_params, population_size, generations,
+                       hp, hp_order)
+
+    network, fitness = tu.train_on_fold(best_hp, training_data)
+
+
+    fold_results = cv.calculate_results_for_fold(network, folds[0])
+
+    mse = EvaluationMeasure.calculate_means_square_error(fold_results)
+
+    print(f"Genetic algorithm results on network with shape [35, 4], trained for 50 generations and a population of size 30")
+    print(f"\tNetwork Weights:")
+    for layer_num, layer in enumerate(network.layers):
+        print(f"\t\tLayer {layer_num + 1}: \n{layer.weights}".replace("\n", "\n\t\t"))
+    print("\n\tPerformance:")
+    print(f"\t\tMSE = {mse}")
+    print("\n\n")
+
 
 def demonstrate_GA_operations():
     print("------ Demonstrate Operations for the Genetic Algorithm ------")
@@ -321,17 +393,17 @@ def demonstrate_PSO_operations():
     particle.pbest_position = initial_best_position
     particle.pbest_fitness = method(Utilities.deserialize_network(particle.original_network, particle.pbest_position))
 
-    cognitive = particle.c1 + r1 * (initial_gbest_position - particle.position)
-    social = particle.c2 + r2 * (particle.pbest_position - particle.position)
+    cognitive = particle.c1 * r1 * (initial_gbest_position - particle.position)
+    social = particle.c2 * r2 * (particle.pbest_position - particle.position)
 
     print("\nComputing the cognitive component yields")
     print(f"Let r1 = {r1}")
-    print(f"c1 + r1 * (global_best_position - current_position) = {particle.c1} + {r1} * (initial_gbest_position - particle.position)")
+    print(f"c1 + r1 * (global_best_position - current_position) = {particle.c1} * {r1} * (initial_gbest_position - particle.position)")
     print(f"Which equals: {cognitive}")
 
     print(f"\nComputing the social component yields")
     print(f"Let r2 = {r2}")
-    print(f"c2 + r2 * (particle_best_position - current_position) = {particle.c2} + {r2} * (particle_best_position - particle.position)")
+    print(f"c2 + r2 * (particle_best_position - current_position) = {particle.c2} * {r2} * (particle_best_position - particle.position)")
     print(f"Which equals: {social}")
 
     particle.velocity = particle.inertia * particle.velocity + cognitive + social
@@ -359,19 +431,19 @@ def demonstrate_average_performance():
 
     algos = {
         "Genetic": {
-            "[35, 4]": {"loss": "", "f1": ""},
-            "[35, 5]": {"loss": "", "f1": ""},
-            "[35, 6]": {"loss": "", "f1": ""}
+            "[9, 2]": {"Avg. loss": "0.6966499206768906", "Avg. f1": "0.16386946386946386"},
+            "[9, 9, 2]": {"Avg. loss": "0.7394579587519831", "Avg. f1": "0.3424569380836257"},
+            "[9, 9, 9, 2]": {"Avg. loss": "0.6906795346377578", "Avg. f1": "0.5363865405237989"}
         },
         "Differential Evolution": {
-            "[35, 4]": {"loss": "", "f1": ""},
-            "[35, 5]": {"loss": "", "f1": ""},
-            "[35, 6]": {"loss": "", "f1": ""}
+            "[9, 2]": {"Avg. loss": "0.6525542041248017", "Avg. f1": "0.5989725681330709"},
+            "[9, 9, 2]": {"Avg. loss": "0.46933632998413544", "Avg. f1": "0.310801393728223"},
+            "[9, 9, 9, 2]": {"Avg. loss": "0.5316314119513486", "Avg. f1": "0.2083623693379791"}
         },
         "Particle Swarm Optimization": {
-            "[35, 4]": {"loss": "", "f1": ""},
-            "[35, 5]": {"loss": "", "f1": ""},
-            "[35, 6]": {"loss": "", "f1": ""}
+            "[9, 2]": {"Avg. loss": "0.8512242199894237", "Avg. f1": "0.7349048536542352"},
+            "[9, 9, 2]": {"Avg. loss": "0.9316208355367529", "Avg. f1": "0.8963752194327398"},
+            "[9, 9, 9, 2]": {"Avg. loss": "0.8698783712321523", "Avg. f1": "0.8297410005781705"}
         },
     }
 
@@ -382,44 +454,12 @@ def demonstrate_average_performance():
             print(f"F1: {metrics['f1']}")
 
 
-    # knn_cv = CrossValidation(training_data, target_feature="class")
-    # knn_results = knn_cv.validate(KNN, 10, True, predict_params=[num_neighbors])
-
-    # knn_measures = ExperimentHelper.convert_classification_results_to_measures(knn_results, classification_levels)
-    # print("\nAverage Performance for Each Class (K-NN):")
-
-    # for classification, performance in knn_measures.items():
-    #     print(f"Class Level: {classification}\n{performance.mean()}\n")
-
-    # EKNN
-    # print("\nRunning on E-NN")
-    # eknn_cv = CrossValidation(training_data, target_feature="class")
-    # eknn_results = eknn_cv.validate(EditedKNN, 10, True, predict_params=[num_neighbors, False])
-
-    # eknn_measures = ExperimentHelper.convert_classification_results_to_measures(eknn_results, classification_levels)
-    # print("\nAverage Performance for Each Class (E-NN):")
-
-    # for classification, performance in eknn_measures.items():
-    #     print(f"Class Level: {classification}\n{performance.mean()}\n")
-
-    # KMeans
-    # print("\nRunning on K-Means")
-    # kmeans_cv = CrossValidation(training_data, target_feature="class")
-    # kmeans_results = kmeans_cv.validate(KNN, 10, True, model_params=[False, None, Minkowski(), True],
-    #                                     predict_params=[num_neighbors])
-    #
-    # kmeans_measures = ExperimentHelper.convert_classification_results_to_measures(kmeans_results, classification_levels)
-    # print("\nAverage Performance for Each Class (K-Means):")
-
-    # for classification, performance in kmeans_measures.items():
-    #     print(f"Class Level: {classification}\n{performance.mean()}\n")
-
 def project_demonstration():
-    demonstrate_test_fold_output_classification()
-    input("")
-
-    # demonstrate_test_fold_output_regression()
+    # demonstrate_test_fold_output_classification()
     # input("")
+
+    demonstrate_test_fold_output_regression()
+    input("")
 
     # demonstrate_GA_operations()
     # input("")
