@@ -17,7 +17,7 @@ from Project04.Utilities.Preprocess import Preprocessor
 from Project04.Utilities.TuningUtility import TuningUtility
 from Project04.Utilities.Utilities import Utilities
 
-forest_fire_save_location = "./Project04/ExperimentSaves/forest_fire.objects"
+forest_fire_save_location = "../ExperimentSaves/forest_fire.objects"
 
 
 def regression_output_transformer(output_vector: np.array):
@@ -188,15 +188,18 @@ if __name__ == "__main__":
     # print("de 0 ^^")
     # forest_fire_experiment_de(False, [7, 7, 7, 1])
     # print("de 2 ^^")
-    forest_fire_experiment_pso(False, [12, 1])
-    print("PSO 0 ^^")
-    forest_fire_experiment_pso(False, [12, 6, 1])
-    print("PSO 1 ^^")
-    forest_fire_experiment_pso(False, [12, 3, 3, 1])
-    print("PSO 2 ^^")
-    #forest_fire_experiment_ga(True, [12, 6, 1])
-    #print("GA 1 ^^")
-
-    #forest_fire_experiment_de(True, [12, 6, 1])
-    #print("DE 1 ^^")
+    # forest_fire_experiment_pso(False, [12, 1])
+    # print("PSO 0 ^^")
+    # forest_fire_experiment_pso(False, [12, 6, 1])
+    # print("PSO 1 ^^")
+    # forest_fire_experiment_pso(False, [12, 3, 3, 1])
+    # print("PSO 2 ^^")
+    forest_fire_experiment_ga(False, [12, 1])
+    print("GA 0 ^^")
+    forest_fire_experiment_ga(False, [12, 3, 3, 1])
+    print("GA 2 ^^")
+    forest_fire_experiment_de(False, [12, 1])
+    print("DE 0 ^^")
+    forest_fire_experiment_de(False, [12,3,3, 1])
+    print("DE 2 ^^")
 
