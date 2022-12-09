@@ -7,12 +7,15 @@ import pandas as pd
 
 from Project04.Algorithms.Crossover.BinomialCrossover import BinomialCrossover
 from Project04.Algorithms.Crossover.UniformCrossover import UniformCrossover
+from Project04.Algorithms.DifferentialEvolution import DifferentialEvolution
+from Project04.Algorithms.Genetic import Genetic
 from Project04.Algorithms.Mutation.UniformMutation import UniformMutation
 from Project04.Algorithms.PSO import Particle
 from Project04.Algorithms.Selection.TournamentSelect import TournamentSelect
 from Project04.Evaluation.EvaluationCallable import EvaluationCallable
 from Project04.Evaluation.EvaluationMeasure import EvaluationMeasure
 from Project04.NeuralNetwork import NeuralNetwork
+from Project04.Utilities.TuningUtility import TuningUtility
 from Project04.Utilities.Utilities import Utilities
 
 soybean_save_location = "./ExperimentSaves/soybean.objects"
@@ -22,83 +25,87 @@ def output_transformer(output_vector: np.array):
     return output_vector.argmax() + 1
 
 
-# def demonstrate_test_fold_output_classification():
-#     print("------ Demonstrate Output/Performance of Test Folds ------")
-#
-#     soybean_save_location = "./ExperimentSaves/soybean.objects"
-#
-#     with open(soybean_save_location, 'rb') as f:
-#         training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
-#
-#     classes = PP.data["class"].unique()
-#
-#     def classification_modifier(pattern: pd.Series):
-#         target = [0] * len(classes)
-#         target[pattern.loc["class"] - 1] = 1
-#         return target
-#
-#     print("Consider a classification network for the Soybean dataset:")
-#     for num_layers in range(3):
-#         layers = num_layers
-#         training_params = {
-#             "learning_rate": 0.01,
-#             "momentum": 0.1,
-#             "batch_size": 1,
-#             "epochs": 1,
-#             "initial_weight_range": (-.1, 0.1)
-#         }
-#
-#         tu = TuningUtility(training_test_folds, tuning_data, "class", 35, 4, classification_modifier, output_transformer, True, training_params)
-#         best_models = tu.tune_for_h_hidden_layers(layers)
-#
-#         output = cv.validate_for_folds(training_test_folds, best_models)
-#
-#         loss = [EvaluationMeasure.calculate_0_1_loss(i) for i in output]
-#         f1 = [EvaluationMeasure.calculate_f_beta_score(i, 1) for i in output]
-#         print(f"Test Fold #1 from Soybean CV with {num_layers} Hidden Layers")
-#         print(f"\tFold: \n{training_test_folds[0][1]}".replace("\n", "\n\t\t"))
-#         print("")
-#         print(f"\tOutput: \n{output[0]}".replace("\n", "\n\t\t"))
-#         print("\n\tPerformance:")
-#         print(f"\t\t0-1 Loss = {loss[0]}")
-#         print(f"\t\tF1 Score = {f1[0]}")
-#         print("\n\n")
-#
+def demonstrate_test_fold_output_classification():
+    print("------ Demonstrate Output/Performance of Test Folds ------")
+
+    with open(soybean_save_location, 'rb') as f:
+        training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
+
+    print(f"Consider the following fold used for training the following algorithms: \n{training_test_folds[0][1]}".replace("\n", "\n\t\t"))
+    print("")
+
+    training_data = PP.data
+
+    network_params = {'shape': [35, 4], 'output_transformer': output_transformer, 'regression': False,
+          'random_weight_range': (-0.1, 0.1)}
+
+    def individual_eval_method(fold, network):
+        return 1 - EvaluationMeasure.calculate_0_1_loss(cv.calculate_results_for_fold(network, fold))
+
+    # ----- Genetic Algorithm -----
+    hp = {'num_replaced_couples': [4, 1, 10, 2], 'tournament_size': [3, 2, 6, 1],
+          'probability_of_cross': [0.8, 0.1, 1, 0.2], 'probability_of_mutation': [0.15, 0.05, 0.25, 0.05],
+          'mutation_range': (-1, 1), 'selection': TournamentSelect, 'crossover': UniformCrossover,
+          'mutation': UniformMutation}
+    best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation,
+               'num_replaced_couples': 4, 'tournament_size': 3, 'probability_of_cross': 0.8,
+               'probability_of_mutation': 0.15, 'mutation_range': 1}
+    hp_order = ['num_replaced_couples', 'tournament_size', 'probability_of_cross', 'probability_of_mutation',
+                'probability_of_mutation']
+
+    population_size = 30
+    generations = 2
+    tu = TuningUtility(Genetic, training_test_folds, tuning_data, individual_eval_method, network_params,
+                       population_size, generations,
+                       hp, hp_order)
+
+    network, fitness = tu.train_on_fold(best_hp, training_data)
+
+
+    fold_results = cv.calculate_results_for_fold(network, training_test_folds[0][1])
+
+    loss = EvaluationMeasure.calculate_0_1_loss(fold_results)
+    f1 = EvaluationMeasure.calculate_f_beta_score(fold_results, 2)
+
+    print(f"Genetic algorithm results on network with shape [35, 4], trained for 50 generations and a population of size 30")
+    print(f"\tNetwork Weights:")
+    for layer_num, layer in enumerate(network.layers):
+        print(f"\t\tLayer {layer_num + 1}: \n{layer.weights}".replace("\n", "\n\t\t"))
+    print("\n\tPerformance:")
+    print(f"\t\t0-1 Loss = {loss}")
+    print(f"\t\tF1 Score = {f1}")
+    print("\n\n")
+
+    # ----- DIFFERENTIAL EVOLUTION -----
+    hp = {'num_replaced_parents': [1, 1, 4, 1], 'mutation_scale_factor': [1.6, 0.5, 2.5, 0.5],
+          'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
+    hp_order = ['num_replaced_parents', 'mutation_scale_factor', 'crossover_rate']
+
+    population_size = 30
+    generations = 2
+    tu = TuningUtility(DifferentialEvolution, training_test_folds, tuning_data, individual_eval_method, network_params, population_size, generations,
+                       hp, hp_order)
+
+    network, fitness = tu.train_on_fold(best_hp, training_data)
+
+
+    fold_results = cv.calculate_results_for_fold(network, training_test_folds[0][1])
+
+    loss = EvaluationMeasure.calculate_0_1_loss(fold_results)
+    f1 = EvaluationMeasure.calculate_f_beta_score(fold_results, 2)
+
+    print(f"Differential Evolution algorithm results on network with shape [35, 4], trained for 50 generations and a population of size 30")
+    print(f"\tNetwork Weights:")
+    for layer_num, layer in enumerate(network.layers):
+        print(f"\t\tLayer {layer_num + 1}: \n{layer.weights}".replace("\n", "\n\t\t"))
+    print("\n\tPerformance:")
+    print(f"\t\t0-1 Loss = {loss}")
+    print(f"\t\tF1 Score = {f1}")
+    print("\n\n")
+
+
 # def demonstrate_test_fold_output_regression():
-#     abalone_save_location = './ExperimentSaves/abalone.objects'
-#
-#     with open(abalone_save_location, 'rb') as f:
-#         training_test_data, pp, tuning_data, folded_training_data, cv = pickle.load(f)
-#
-#     def regression_modifier(pattern: pd.Series):
-#         return [pattern['rings']]
-#
-#     print("\nConsider a regression network for the Abalone dataset:")
-#     for num_layers in range(3):
-#         layers = num_layers
-#         training_params = {
-#             "learning_rate": 0.001,
-#             "momentum": 0.01,
-#             "batch_size": 5,
-#             "epochs": 1,
-#             "initial_weight_range": (-0.1, 0.1)
-#         }
-#
-#         tu = TuningUtility(training_test_data, tuning_data, "rings", 8, 1, regression_modifier,
-#                            regression_output_transformer, False, training_params)
-#         best_models = tu.tune_for_h_hidden_layers(layers)
-#
-#         output = cv.validate_for_folds(training_test_data, best_models)
-#
-#         mse = [EvaluationMeasure.calculate_means_square_error(i) for i in output]
-#
-#         print(f"Test Fold #1 from Breast Cancer CV with {num_layers} Hidden Layers")
-#         print(f"\tFold: \n{training_test_data[0][1]}".replace("\n", "\n\t\t"))
-#         print("")
-#         print(f"\tOutput: \n{output[0]}".replace("\n", "\n\t\t"))
-#         print("\n\tPerformance:")
-#         print(f"\t\tMSE = {mse[0]}")
-#         print("\n\n")
+#     pass
 
 def demonstrate_GA_operations():
     print("------ Demonstrate Operations for the Genetic Algorithm ------")
@@ -340,13 +347,77 @@ def demonstrate_PSO_operations():
     print(f"Which equals: {particle.position + particle.velocity}")
 
 
-# def demonstrate_average_performance():
-#     pass
+def demonstrate_average_performance():
+    with open(soybean_save_location, 'rb') as f:
+        training_test_folds, PP, tuning_data, folds, training_test_folds, cv = pickle.load(f)
+
+    print("---- Average Performance across Ten Folds for Each Algorithm ----")
+    print("The following performance metrics were computed using these folds for the Soybean dataset:")
+
+    for fold in folds:
+        print(fold)
+
+    algos = {
+        "Genetic": {
+            "[35, 4]": {"loss": "", "f1": ""},
+            "[35, 5]": {"loss": "", "f1": ""},
+            "[35, 6]": {"loss": "", "f1": ""}
+        },
+        "Differential Evolution": {
+            "[35, 4]": {"loss": "", "f1": ""},
+            "[35, 5]": {"loss": "", "f1": ""},
+            "[35, 6]": {"loss": "", "f1": ""}
+        },
+        "Particle Swarm Optimization": {
+            "[35, 4]": {"loss": "", "f1": ""},
+            "[35, 5]": {"loss": "", "f1": ""},
+            "[35, 6]": {"loss": "", "f1": ""}
+        },
+    }
+
+    for algo, results in algos.items():
+        for shape, metrics in results.items():
+            print(f"\nAverage performance for the {algo} Algorithm on a network of shape {shape}")
+            print(f"Loss: {metrics['loss']}")
+            print(f"F1: {metrics['f1']}")
+
+
+    # knn_cv = CrossValidation(training_data, target_feature="class")
+    # knn_results = knn_cv.validate(KNN, 10, True, predict_params=[num_neighbors])
+
+    # knn_measures = ExperimentHelper.convert_classification_results_to_measures(knn_results, classification_levels)
+    # print("\nAverage Performance for Each Class (K-NN):")
+
+    # for classification, performance in knn_measures.items():
+    #     print(f"Class Level: {classification}\n{performance.mean()}\n")
+
+    # EKNN
+    # print("\nRunning on E-NN")
+    # eknn_cv = CrossValidation(training_data, target_feature="class")
+    # eknn_results = eknn_cv.validate(EditedKNN, 10, True, predict_params=[num_neighbors, False])
+
+    # eknn_measures = ExperimentHelper.convert_classification_results_to_measures(eknn_results, classification_levels)
+    # print("\nAverage Performance for Each Class (E-NN):")
+
+    # for classification, performance in eknn_measures.items():
+    #     print(f"Class Level: {classification}\n{performance.mean()}\n")
+
+    # KMeans
+    # print("\nRunning on K-Means")
+    # kmeans_cv = CrossValidation(training_data, target_feature="class")
+    # kmeans_results = kmeans_cv.validate(KNN, 10, True, model_params=[False, None, Minkowski(), True],
+    #                                     predict_params=[num_neighbors])
+    #
+    # kmeans_measures = ExperimentHelper.convert_classification_results_to_measures(kmeans_results, classification_levels)
+    # print("\nAverage Performance for Each Class (K-Means):")
+
+    # for classification, performance in kmeans_measures.items():
+    #     print(f"Class Level: {classification}\n{performance.mean()}\n")
 
 def project_demonstration():
-    # demonstrate_test_fold_output_classification()
-    # input("")
-    #
+    demonstrate_test_fold_output_classification()
+    input("")
+
     # demonstrate_test_fold_output_regression()
     # input("")
 
@@ -356,8 +427,8 @@ def project_demonstration():
     # demonstrate_DE_operations()
     # input("")
 
-    demonstrate_PSO_operations()
-    input("")
+    # demonstrate_PSO_operations()
+    # input("")
 
     # demonstrate_average_performance()
     # input("")
