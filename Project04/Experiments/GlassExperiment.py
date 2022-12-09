@@ -20,7 +20,7 @@ from Project04.Utilities.Utilities import Utilities
 def output_transformer(output_vector: np.array):
     return output_vector.argmax() + 1
 
-glass_save_location = "./ExperimentSaves/glass.objects"
+glass_save_location = "../ExperimentSaves/glass.objects"
 
 
 def glass_experiment_pso(run_tuning, network_shape):
@@ -179,7 +179,6 @@ def glass_experiment_de(run_tuning, network_shape):
     print("F1", f1)
 
 if __name__ == "__main__":
-    glass_save_location = "./Project04/ExperimentSaves/glass.objects"
 
     #print("Running 0 glass pso")
     #glass_experiment_pso(False, [9, 7])
@@ -194,14 +193,17 @@ if __name__ == "__main__":
     # Loss[
     #     0.4497041420118344, 0.48235294117647065, 0.4529411764705882, 0.35672514619883033, 0.35672514619883033, 0.5116279069767442, 0.35260115606936415, 0.47976878612716756, 0.3542857142857143, 0.3771428571428572]
 
-    print("Tuning glass ga")
+    #print("Tuning glass ga")
     # glass_experiment_ga(False, [9, 9, 7])
        # Loss: [0.13636363636363635, 0.3333333333333333, 0.3333333333333333, 0.3, 0.15, 0.3684210526315789,
     #        0.3888888888888889, 0.3888888888888889, 0.375, 0.375]
     # F1[0.0, 0.5, 0.0, 0.0, 0.0, 0.5384615384615384, 0.56, 0.56, 0.0, 0.0]
 
+    print("Running 0 glass ga")
+    glass_experiment_ga(False, [9,7])
+    print("Running 2 glass ga")
+    glass_experiment_ga(False, [9,9,9,7])
 
-
-    print("Tuning glass de")
-    glass_experiment_de(True, [9, 9, 7])
+    #print("Tuning glass de")
+    #glass_experiment_de(True, [9, 9, 7])
 

@@ -135,8 +135,8 @@ def abalone_experiment_de(run_tuning, network_shape):
     def individual_eval_method(fold, network):
         return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=.2)))
 
-    hp = {'num_replaced_parents': [1, 1, 5, 1], 'mutation_scale_factor': [0.5, 0.5, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
-    hp_order = ['num_replaced_parents', 'mutation_scale_factor', 'crossover_rate']
+    hp = {'num_replaced_parents': [1, 1, 5, 1], 'mutation_scale_factor': 0.5, 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
+    hp_order = ['num_replaced_parents', 'crossover_rate']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
@@ -144,7 +144,7 @@ def abalone_experiment_de(run_tuning, network_shape):
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
-        best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 1.5, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
+        best_hp = {'num_replaced_parents': 3, 'mutation_scale_factor': 0.5, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
     population_size = 15
     generations = 50
     
@@ -189,3 +189,5 @@ if __name__ == "__main__":
     abalone_experiment_ga(False, [8,8,8,1])
     #MSE:  [97.0083592104536, 87.76732377933072, 93.82328066985096, 94.42286487239113, 88.24536272942275, 104.1578407995285, 99.76684413738005, 105.40079802670999, 92.6852413204904, 98.07797209960378]
 
+
+    

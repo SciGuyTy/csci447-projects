@@ -232,10 +232,10 @@ if __name__ == "__main__":
     #soybean_experiment_pso(False, [35, 4])
     #Loss:  [0.8, 0.8, 0.6, 0.8, 0.8, 0.5, 0.75, 0.75, 1.0, 1.0]
     #F1 [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0]
-
+    soybean_save_location = "../ExperimentSaves/soybean.objects"
     # print("Datetime: ", datetime.datetime.now())
     # 
-    # soybean_experiment_ga(False, [35, 4])
+    soybean_experiment_ga(False, [35, 4])
     # Loss: [0.4, 0.4, 0.6, 0.4, 0.6, 0.5, 0.25, 0.25, 0.5, 0.0]
     # F1[0.6666666666666666, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.4, 1.0, 1.0]
     # print("Datetime: ", datetime.datetime.now())
@@ -252,7 +252,7 @@ if __name__ == "__main__":
     # F1[0.0, 0.0, 0.0, 0.6666666666666666, 0.5, 0.0, 0.0, 0.0, 0.0, 1.0]
     #print("Datetime: ", datetime.datetime.now())
 
-    # soybean_experiment_ga(False, [35, 35, 4])
+    soybean_experiment_ga(False, [35, 35, 4])
     # Loss: [0.2, 0.4, 0.4, 0.6, 0.4, 0.0, 0.0, 0.25, 0.5, 1.0]
     # F1[0.33333333333333337, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
 
@@ -270,7 +270,7 @@ if __name__ == "__main__":
     # F1[0.0, 0.0, 0.0, 0.0, 0.6666666666666666, 0.0, 0.0, 1.0, 0.0, 1.0]
     # print("Datetime: ", datetime.datetime.now())
     # 
-    # soybean_experiment_ga(False, [35, 35, 35, 4])
+    soybean_experiment_ga(False, [35, 35, 35, 4])
     # Loss: [0.2, 0.0, 0.4, 0.2, 0.6, 0.25, 0.25, 0.5, 0.5, 1.0]
     # F1[0.33333333333333337, 0.0, 0.0, 0.6666666666666666, 0.5, 0.0, 0.0, 0.0, 0.0, 1.0]
     # Datetime: 2022 - 12 - 07

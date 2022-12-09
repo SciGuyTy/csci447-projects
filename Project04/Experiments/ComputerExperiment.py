@@ -17,37 +17,37 @@ from Project04.Utilities.Preprocess import Preprocessor
 from Project04.Utilities.TuningUtility import TuningUtility
 from Project04.Utilities.Utilities import Utilities
 
-abalone_save_location = "./Project04/ExperimentSaves/computer.objects"
+computer_save_location = "../ExperimentSaves/computer_hardware.objects"
 
 
 def regression_output_transformer(output_vector: np.array):
     return output_vector[0]
 
 
-def abalone_experiment_pso(runPSOTuning, network_shape):
+def computer_experiment_pso(runPSOTuning, network_shape):
 
-    with open(abalone_save_location, 'rb') as f:
+    with open(computer_save_location, 'rb') as f:
         training_test_data, pp, tuning_data, ___, cv = pickle.load(f)
 
     np = {'shape': network_shape, 'output_transformer': regression_output_transformer, 'regression': True,
           'random_weight_range': (-0.5, 0.5)}
 
     def individual_eval_method(fold, network):
-        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.2)))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
 
-    hp = {'inertia': [0.1, 0.05, 0.3, 0.1], 'c1': [1.4, 1, 2, 0.3], 'c2': [1.4, 1, 2, 0.3]}
+    hp = {'inertia': [0.1, 0.05, 0.3, 0.1], 'c1': [1.4, 1, 2, 0.2], 'c2': [1.4, 1, 2, 0.2]}
     hp_order = ['inertia', 'c1', 'c2']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if runPSOTuning:
-        tu = TuningUtility(PSO, training_test_data, tuning_data, individual_eval_method, np, 15, 50, hp, hp_order)
+        tu = TuningUtility(PSO, training_test_data, tuning_data, individual_eval_method, np, 30, 100, hp, hp_order)
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
-        best_hp = {'inertia': 0.25, 'c1': 1.6, 'c2': 1.6}
+        best_hp = {'inertia': 0.25, 'c1': 1.4, 'c2': 1.8}
 
-    population_size = 15
-    generations = 50
+    population_size = 30
+    generations = 100
     
     def individual_eval_method(fold, network):
         return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
@@ -74,16 +74,16 @@ def abalone_experiment_pso(runPSOTuning, network_shape):
     mse = [EvaluationMeasure.calculate_means_square_error(i) for i in fold_results]
     print("MSE: ", mse)
 
-def abalone_experiment_ga(run_tuning, network_shape):
+def computer_experiment_ga(run_tuning, network_shape):
 
-    with open(abalone_save_location, 'rb') as f:
+    with open(computer_save_location, 'rb') as f:
         training_test_data, pp, tuning_data, ___, cv = pickle.load(f)
 
     network_params = {'shape': network_shape, 'output_transformer': regression_output_transformer, 'regression': True,
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
-        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=0.2)))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
 
 
     hp = {'num_replaced_couples': [4, 1, 10, 3], 'tournament_size': [3, 2, 6, 2], 'probability_of_cross': [0.5, 0.1, 0.7, 0.2], 'probability_of_mutation': [0.05, 0.05, 0.25, 0.05], 'mutation_range': [0.1, 0.1, 0.5, 0.2], 'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation}
@@ -97,8 +97,8 @@ def abalone_experiment_ga(run_tuning, network_shape):
     else:
         best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 2, 'tournament_size': 2, 'probability_of_cross': 0.5, 'probability_of_mutation': 0.05, 'mutation_range': 1}
 
-    population_size = 15
-    generations = 50
+    population_size = 30
+    generations = 100
     
     def individual_eval_method(fold, network):
         return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
@@ -124,19 +124,19 @@ def abalone_experiment_ga(run_tuning, network_shape):
     mse = [EvaluationMeasure.calculate_means_square_error(i) for i in fold_results]
     print("MSE: ", mse)
 
-def abalone_experiment_de(run_tuning, network_shape):
+def computer_experiment_de(run_tuning, network_shape):
 
-    with open(abalone_save_location, 'rb') as f:
+    with open(computer_save_location, 'rb') as f:
         training_test_data, pp, tuning_data, ___, cv = pickle.load(f)
 
     network_params = {'shape': network_shape, 'output_transformer': regression_output_transformer, 'regression': True,
           'random_weight_range': (-0.1, 0.1)}
 
     def individual_eval_method(fold, network):
-        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold.sample(frac=.2)))
+        return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
 
-    hp = {'num_replaced_parents': [1, 1, 5, 1], 'mutation_scale_factor': [0.5, 0.5, 2.5, 0.5], 'crossover_rate': [0.2, 0.1, 0.3, 0.05], 'crossover': BinomialCrossover}
-    hp_order = ['num_replaced_parents', 'mutation_scale_factor', 'crossover_rate']
+    hp = {'num_replaced_parents': [1, 1, 5, 1], 'mutation_scale_factor': [0.2, 0.1, 0.3, 0.05], 'crossover_rate': 0.5, 'crossover': BinomialCrossover}
+    hp_order = ['num_replaced_parents', 'mutation_scale_factor']
     # {'inertia': 0.1, 'c1': 1.4, 'c2': 0.6}
 
     if run_tuning:
@@ -145,8 +145,8 @@ def abalone_experiment_de(run_tuning, network_shape):
         print(best_hp)
     else:
         best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 1.5, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
-    population_size = 15
-    generations = 50
+    population_size = 30
+    generations = 100
     
     def individual_eval_method(fold, network):
         return EvaluationMeasure.calculate_means_square_error(cv.calculate_results_for_fold(network, fold))
@@ -175,12 +175,10 @@ def abalone_experiment_de(run_tuning, network_shape):
     
 if __name__ == "__main__":
     print(datetime.datetime.now())
-    print("Starting ablone tuning ga 0")
-    abalone_experiment_ga(False, [8,1])
-    print("Starting ablone tuning ga 1")
-
-    abalone_experiment_ga(False, [8,8,1])
-    print("Starting ablone tuning ga 2")
-
-    abalone_experiment_ga(False, [8,8,8,1])
+    print("Starting computer tuning pso 0")
+    #computer_experiment_pso(False, [7, 1])
+    print("Starting computer tuning pso 2")
+    #computer_experiment_pso(False, [7,7,7, 1])
+    computer_experiment_ga(True, [7, 3, 1])
+    computer_experiment_de(True, [7, 3, 1])
 
