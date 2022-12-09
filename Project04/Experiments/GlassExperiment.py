@@ -150,7 +150,7 @@ def glass_experiment_de(run_tuning, network_shape):
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
-        best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 0.1, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
+        best_hp = {'num_replaced_parents': 4, 'mutation_scale_factor': 1.6, 'crossover_rate': 0.5, 'crossover': BinomialCrossover}
     population_size = 30
     generations = 100
     tu = TuningUtility(DifferentialEvolution, training_test_folds, tuning_data, individual_eval_method, network_params, population_size, generations,
@@ -199,11 +199,22 @@ if __name__ == "__main__":
     #        0.3888888888888889, 0.3888888888888889, 0.375, 0.375]
     # F1[0.0, 0.5, 0.0, 0.0, 0.0, 0.5384615384615384, 0.56, 0.56, 0.0, 0.0]
 
-    print("Running 0 glass ga")
-    glass_experiment_ga(False, [9,7])
-    print("Running 2 glass ga")
-    glass_experiment_ga(False, [9,9,9,7])
+    # print("Running 0 glass ga")
+    # glass_experiment_ga(False, [9,7])
+    # print("Running 2 glass ga")
+    # glass_experiment_ga(False, [9,9,9,7])
+    # 
+    # #print("Tuning glass de")
+    # #glass_experiment_de(True, [9, 9, 7])
+    
+    print("Running 0 glass de")
+    glass_experiment_de(False, [9,7])
+    print("DE 0 ^^")
 
-    #print("Tuning glass de")
-    #glass_experiment_de(True, [9, 9, 7])
+    print("Running 1 glass de")
+    glass_experiment_de(False, [9, 9, 7])
+    print("DE 1 ^^")
 
+    print("Running 2 glass de")
+    glass_experiment_de(False, [9,9,9, 7])
+    print("DE 2 ^^")

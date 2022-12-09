@@ -95,7 +95,7 @@ def computer_experiment_ga(run_tuning, network_shape):
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
-        best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 2, 'tournament_size': 2, 'probability_of_cross': 0.5, 'probability_of_mutation': 0.05, 'mutation_range': 1}
+        best_hp = {'selection': TournamentSelect, 'crossover': UniformCrossover, 'mutation': UniformMutation, 'num_replaced_couples': 7, 'tournament_size': 2, 'probability_of_cross': 0.1, 'probability_of_mutation': 0.05, 'mutation_range': 0.1}
 
     population_size = 30
     generations = 100
@@ -144,7 +144,7 @@ def computer_experiment_de(run_tuning, network_shape):
         best_hp = tu.tune_hyperparameters()
         print(best_hp)
     else:
-        best_hp = {'num_replaced_parents': 1, 'mutation_scale_factor': 1.5, 'crossover_rate': 0.2, 'crossover': BinomialCrossover}
+        best_hp = {'num_replaced_parents': 3, 'mutation_scale_factor': 0.25, 'crossover_rate': 0.5, 'crossover': BinomialCrossover}
     population_size = 30
     generations = 100
     
@@ -174,11 +174,18 @@ def computer_experiment_de(run_tuning, network_shape):
     print("MSE: ", mse)
     
 if __name__ == "__main__":
-    print(datetime.datetime.now())
-    print("Starting computer tuning pso 0")
+    #print(datetime.datetime.now())
+    #print("Starting computer tuning pso 0")
     #computer_experiment_pso(False, [7, 1])
-    print("Starting computer tuning pso 2")
+    #print("Starting computer tuning pso 2")
     #computer_experiment_pso(False, [7,7,7, 1])
-    computer_experiment_ga(True, [7, 3, 1])
-    computer_experiment_de(True, [7, 3, 1])
+    computer_experiment_ga(False, [7, 1])
+    print("Ga 0 ^^")
+    computer_experiment_ga(False, [7,7,7, 1])
+    print("Ga 2 ^^")
+
+    computer_experiment_de(False, [7, 1])
+    print("de 0 ^^")
+    computer_experiment_de(False, [7, 7, 7, 1])
+    print("de 2 ^^")
 
