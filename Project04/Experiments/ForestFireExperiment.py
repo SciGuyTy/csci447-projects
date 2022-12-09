@@ -17,7 +17,7 @@ from Project04.Utilities.Preprocess import Preprocessor
 from Project04.Utilities.TuningUtility import TuningUtility
 from Project04.Utilities.Utilities import Utilities
 
-forest_fire_save_location = "../ExperimentSaves/forest_fire.objects"
+forest_fire_save_location = "./Project04/ExperimentSaves/forest_fire.objects"
 
 
 def regression_output_transformer(output_vector: np.array):
