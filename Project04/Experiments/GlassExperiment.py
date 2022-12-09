@@ -20,7 +20,7 @@ from Project04.Utilities.Utilities import Utilities
 def output_transformer(output_vector: np.array):
     return output_vector.argmax() + 1
 
-glass_save_location = "../ExperimentSaves/glass.objects"
+glass_save_location = "./Project04/ExperimentSaves/glass.objects"
 
 
 def glass_experiment_pso(run_tuning, network_shape):
