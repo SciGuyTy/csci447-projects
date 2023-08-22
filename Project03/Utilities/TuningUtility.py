@@ -25,14 +25,16 @@ class TuningUtility:
         self.training_params = training_params
         self.learning_rate = training_params['learning_rate']
         self.momentum = training_params['momentum']
+        self.initial_weight_range = training_params['initial_weight_range']
 
         # Use 10 minibatches
         self.minibatch_size = training_params['batch_size']
 
         self.iterations = training_params['epochs']
+        self.restricted_models = training_params.get('restrict_shapes', False)
 
     def tune_for_h_hidden_layers(self, h):
-        shapes = self._get_all_shapes_for_hidden_layers(h)
+        shapes = self._get_all_shapes_for_hidden_layers(h, self.restricted_models)
         print("Trying {} shapes".format(len(shapes)))
         jobs = []
         manager = multiprocessing.Manager()
@@ -52,13 +54,13 @@ class TuningUtility:
         tuning_data = Utilities.normalize_set_by_params(self.tuning_data.copy(), norm_params)
         for shape in shapes:
             print("Fold: {}, shape: {}".format(id, shape))
-            nn = NeuralNetwork(shape, self.output_transformer, not self.classification)
+            nn = NeuralNetwork(shape, self.output_transformer, not self.classification, self.initial_weight_range)
             nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
                      self.minibatch_size, self.target_modifer)
 
             cv = CrossValidation(tuning_data, self.target_column, not self.classification)
-            results_for_model_on_fold = cv.calculate_results_for_fold(nn, testing_data)
             tuning_results = cv.calculate_results_for_fold(nn, tuning_data)
+            print(tuning_results)
             if self.classification:
                 cost = EvaluationMeasure.calculate_0_1_loss(tuning_results)
                 #cost2 = EvaluationMeasure.calculate_0_1_loss(results_for_model_on_fold)
@@ -71,12 +73,22 @@ class TuningUtility:
             fold_results[id] = (max(cost_for_shapes.values()))
         else:
             fold_results[id] = (min(cost_for_shapes.values()))
-    def _get_all_shapes_for_hidden_layers(self, num_hidden_layers):
-        shapes = self._generate_possible_configs(self.num_inputs, self.num_outputs, num_hidden_layers)
-        for i in range(len(shapes)):
-            shapes[i] = [self.num_inputs] + shapes[i] + [self.num_outputs]
+    def _get_all_shapes_for_hidden_layers(self, num_hidden_layers, restricted):
+        if not restricted:
+            shapes = self._generate_possible_configs(self.num_inputs, self.num_outputs, num_hidden_layers)
+            for i in range(len(shapes)):
+                shapes[i] = [self.num_inputs] + shapes[i] + [self.num_outputs]
 
-        return shapes
+            return shapes
+        else:
+            shapes = []
+            for i in range(self.num_outputs, self.num_inputs + 1):
+                shape = []
+                shape += [self.num_inputs]
+                shape += [i for _ in range(num_hidden_layers)]
+                shape += [self.num_outputs]
+                shapes.append(shape)
+            return shapes
 
     @staticmethod
     def _generate_possible_configs(num_of_inputs, num_of_outputs, num_of_hidden_layers):

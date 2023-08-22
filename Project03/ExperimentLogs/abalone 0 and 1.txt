@@ -1,0 +1,2730 @@
+Trying 1 shapes
+Fold: 1, shape: [8, 1]Fold: 0, shape: [8, 1]
+
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 2, shape: [8, 1]
+Starting Epoch 1/1000
+Fold: 5, shape: [8, 1]
+Fold: 4, shape: [8, 1]
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 3, shape: [8, 1]
+Starting Epoch 1/1000
+Fold: 6, shape: [8, 1]
+Fold: 7, shape: [8, 1]
+Starting Epoch 1/1000
+Fold: 8, shape: [8, 1]
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 9, shape: [8, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0  -0.325546
+1       3.0   3.376897
+2       4.0   3.029712
+3       4.0   4.221523
+4       4.0   5.581831
+..      ...        ...
+412    20.0  13.462318
+413    20.0  13.241799
+414    21.0  15.093962
+415    22.0  12.028141
+416    23.0  13.648095
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0  -0.850403
+1       3.0   2.891963
+2       4.0   2.562824
+3       4.0   3.537631
+4       4.0   5.449407
+..      ...        ...
+412    20.0  13.022573
+413    20.0  13.108442
+414    21.0  15.440058
+415    22.0  12.141845
+416    23.0  14.417467
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0  -0.714967
+1       3.0   2.985716
+2       4.0   2.662732
+3       4.0   3.622592
+4       4.0   5.526833
+..      ...        ...
+412    20.0  12.896814
+413    20.0  12.979765
+414    21.0  15.276579
+415    22.0  12.075891
+416    23.0  14.448842
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0  -0.755830
+1       3.0   2.955916
+2       4.0   2.633120
+3       4.0   3.643802
+4       4.0   5.505877
+..      ...        ...
+412    20.0  12.993030
+413    20.0  13.100759
+414    21.0  15.402002
+415    22.0  12.148237
+416    23.0  14.281097
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0  -1.069422
+1       3.0   2.725900
+2       4.0   2.396745
+3       4.0   3.390731
+4       4.0   5.375358
+..      ...        ...
+412    20.0  12.911312
+413    20.0  13.066442
+414    21.0  15.488341
+415    22.0  12.149924
+416    23.0  14.407334
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0  -0.762261
+1       3.0   2.924622
+2       4.0   2.606504
+3       4.0   3.622514
+4       4.0   5.468917
+..      ...        ...
+412    20.0  12.962053
+413    20.0  13.080990
+414    21.0  15.413605
+415    22.0  12.110449
+416    23.0  14.274143
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0  -0.827808
+1       3.0   2.903933
+2       4.0   2.576534
+3       4.0   3.658752
+4       4.0   5.454612
+..      ...        ...
+412    20.0  13.052299
+413    20.0  13.131994
+414    21.0  15.392906
+415    22.0  12.206228
+416    23.0  14.379704
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0  -0.825206
+1       3.0   2.927805
+2       4.0   2.597830
+3       4.0   3.681291
+4       4.0   5.484802
+..      ...        ...
+412    20.0  13.082467
+413    20.0  13.175132
+414    21.0  15.423299
+415    22.0  12.247065
+416    23.0  14.248661
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0  -0.793952
+1       3.0   2.942308
+2       4.0   2.621184
+3       4.0   3.686157
+4       4.0   5.507309
+..      ...        ...
+412    20.0  13.013118
+413    20.0  13.126548
+414    21.0  15.373282
+415    22.0  12.199437
+416    23.0  14.192701
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0  -0.847568
+1       3.0   2.890556
+2       4.0   2.571719
+3       4.0   3.678469
+4       4.0   5.474628
+..      ...        ...
+412    20.0  13.059967
+413    20.0  13.181723
+414    21.0  15.452200
+415    22.0  12.251261
+416    23.0  14.304543
+
+[417 rows x 2 columns]
+Best Models for 0 Hidden Layers
+[(5.0103954393073735, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394594be0>), (5.271736776441633, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394594f40>), (5.227001488927726, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe3945952a0>), (5.235170508100366, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394595600>), (5.3754985391081265, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394595960>), (5.244047096534154, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394595cc0>), (5.218383282077836, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394596020>), (5.224893229067852, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394596380>), (5.217121193569591, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe3945966e0>), (5.209528687933384, [8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394596a40>)]
+Overall results for 0 Hidden Layers
+[     actual  predicted
+0       2.0   0.703167
+1       3.0   1.433850
+2       4.0   4.136277
+3       4.0   1.757609
+4       4.0   1.925819
+..      ...        ...
+371    19.0  12.808185
+372    20.0  10.600439
+373    20.0  10.863664
+374    21.0   7.165627
+375    23.0   9.261732
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   1.238011
+1       3.0   2.606737
+2       4.0   2.993274
+3       4.0   1.245694
+4       4.0   1.919631
+..      ...        ...
+371    19.0  12.538990
+372    20.0  12.487201
+373    20.0  13.246480
+374    21.0  14.698214
+375    23.0  12.236672
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   2.411728
+1       3.0   1.134678
+2       4.0   0.726548
+3       4.0   3.094622
+4       4.0   2.170504
+..      ...        ...
+371    19.0  12.514220
+372    20.0  12.061926
+373    20.0  13.711543
+374    21.0  14.901926
+375    23.0  11.268026
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   0.840222
+1       4.0   4.151543
+2       4.0   3.688063
+3       4.0   1.860071
+4       4.0   1.342822
+..      ...        ...
+371    19.0  13.577869
+372    20.0  14.563144
+373    20.0  12.852526
+374    21.0  12.817919
+375    23.0  10.653780
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   2.019913
+1       4.0   3.629221
+2       4.0   4.817154
+3       4.0   3.505468
+4       4.0   3.814338
+..      ...        ...
+371    19.0  12.270591
+372    20.0  12.849257
+373    21.0  17.507709
+374    21.0  11.387668
+375    24.0  16.506090
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   2.907717
+1       4.0   1.578572
+2       4.0   3.681511
+3       4.0   1.116820
+4       4.0   1.355626
+..      ...        ...
+371    19.0   9.951917
+372    20.0  10.733831
+373    21.0  12.437300
+374    22.0  11.719208
+375    24.0  16.953813
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   3.074311
+1       4.0   7.239654
+2       4.0   4.080478
+3       4.0   4.386418
+4       4.0   5.289652
+..      ...        ...
+371    19.0  17.428546
+372    20.0  15.165225
+373    21.0  13.959764
+374    22.0  17.922833
+375    25.0  22.787900
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   1.975752
+1       4.0   1.124617
+2       4.0   1.173180
+3       4.0   1.364612
+4       4.0   3.596648
+..      ...        ...
+371    20.0  13.070447
+372    20.0  13.276945
+373    21.0  15.411819
+374    23.0  14.248661
+375    27.0  16.539015
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   2.576738
+1       4.0   3.935248
+2       4.0   4.006672
+3       4.0   1.587909
+4       4.0   3.795648
+..      ...        ...
+371    20.0  12.903767
+372    20.0  14.940114
+373    21.0  16.781962
+374    23.0  11.269219
+375    27.0  18.065490
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   3.537279
+1       4.0   2.637727
+2       4.0   3.178347
+3       4.0   1.773148
+4       4.0   3.080693
+..      ...        ...
+371    20.0  11.420955
+372    20.0  15.320912
+373    21.0  16.681884
+374    23.0  15.977728
+375    29.0  14.145061
+
+[376 rows x 2 columns]]
+Measures -------------------------
+MSE:  [13.93932845645417, 4.668783047845233, 5.76460529152142, 5.686156219823519, 4.774040081287909, 5.957155411501955, 23.874043970785802, 5.590356242974559, 5.379726940848768, 5.362429109597868]
+Trying 8 shapes
+Fold: 0, shape: [8, 1, 1]
+Starting Epoch 1/1000
+Fold: 1, shape: [8, 1, 1]
+Fold: 4, shape: [8, 1, 1]
+Fold: 2, shape: [8, 1, 1]
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 3, shape: [8, 1, 1]
+Starting Epoch 1/1000
+Fold: 6, shape: [8, 1, 1]
+Fold: 7, shape: [8, 1, 1]
+Fold: 5, shape: [8, 1, 1]
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 8, shape: [8, 1, 1]
+Starting Epoch 1/1000
+Fold: 9, shape: [8, 1, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   5.967340
+1       3.0   6.077437
+2       4.0   6.124432
+3       4.0   7.745714
+4       4.0   6.573177
+..      ...        ...
+412    20.0  13.458501
+413    20.0  13.432978
+414    21.0  14.071260
+415    22.0  12.450254
+416    23.0  14.123606
+
+[417 rows x 2 columns]
+Fold: 8, shape: [8, 2, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.260936
+1       3.0   6.368840
+2       4.0   6.417731
+3       4.0   7.720276
+4       4.0   6.871775
+..      ...        ...
+412    20.0  13.579313
+413    20.0  13.526280
+414    21.0  14.171253
+415    22.0  12.543315
+416    23.0  14.354662
+
+[417 rows x 2 columns]
+Fold: 2, shape: [8, 2, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.251182
+1       3.0   6.345239
+2       4.0   6.390298
+3       4.0   7.694282
+4       4.0   6.824852
+..      ...        ...
+412    20.0  13.431316
+413    20.0  13.401903
+414    21.0  14.052810
+415    22.0  12.400907
+416    23.0  14.133340
+
+[417 rows x 2 columns]
+Fold: 4, shape: [8, 2, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.202416
+1       3.0   6.355622
+2       4.0   6.395426
+3       4.0   7.745747
+4       4.0   6.882421
+..      ...        ...
+412    20.0  13.486392
+413    20.0  13.456634
+414    21.0  14.092146
+415    22.0  12.490557
+416    23.0  14.181772
+
+[417 rows x 2 columns]
+Fold: 1, shape: [8, 2, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.014726
+1       3.0   6.131730
+2       4.0   6.172934
+3       4.0   7.676196
+4       4.0   6.619587
+..      ...        ...
+412    20.0  13.388639
+413    20.0  13.349024
+414    21.0  13.989204
+415    22.0  12.377888
+416    23.0  14.095094
+
+[417 rows x 2 columns]
+Fold: 9, shape: [8, 2, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.171064
+1       3.0   6.274511
+2       4.0   6.313106
+3       4.0   7.708217
+4       4.0   6.741560
+..      ...        ...
+412    20.0  13.496212
+413    20.0  13.446775
+414    21.0  14.077001
+415    22.0  12.472508
+416    23.0  14.202994
+
+[417 rows x 2 columns]
+Fold: 5, shape: [8, 2, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.211702
+1       3.0   6.347864
+2       4.0   6.371617
+3       4.0   7.723823
+4       4.0   6.775604
+..      ...        ...
+412    20.0  13.498474
+413    20.0  13.453837
+414    21.0  14.107166
+415    22.0  12.431554
+416    23.0  14.150778
+
+[417 rows x 2 columns]
+Fold: 3, shape: [8, 2, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.318997
+1       3.0   6.445410
+2       4.0   6.501252
+3       4.0   7.779774
+4       4.0   6.981446
+..      ...        ...
+412    20.0  13.512997
+413    20.0  13.487402
+414    21.0  14.104126
+415    22.0  12.518016
+416    23.0  14.199766
+
+[417 rows x 2 columns]
+Fold: 0, shape: [8, 2, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   5.936622
+1       3.0   6.063215
+2       4.0   6.103826
+3       4.0   7.710300
+4       4.0   6.536730
+..      ...        ...
+412    20.0  13.485919
+413    20.0  13.416852
+414    21.0  13.998531
+415    22.0  12.498348
+416    23.0  14.178264
+
+[417 rows x 2 columns]
+Fold: 7, shape: [8, 2, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.198265
+1       3.0   6.210800
+2       4.0   6.264949
+3       4.0   7.710985
+4       4.0   6.622424
+..      ...        ...
+412    20.0  13.485940
+413    20.0  13.426917
+414    21.0  14.086890
+415    22.0  12.392067
+416    23.0  14.244698
+
+[417 rows x 2 columns]
+Fold: 6, shape: [8, 2, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   6.635676
+1       3.0   5.775032
+2       4.0   5.910226
+3       4.0   7.925966
+4       4.0   6.097656
+..      ...        ...
+412    20.0  14.820847
+413    20.0  14.987843
+414    21.0  15.766343
+415    22.0  13.193116
+416    23.0  14.130269
+
+[417 rows x 2 columns]
+Fold: 8, shape: [8, 3, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.785394
+1       3.0   5.864727
+2       4.0   6.005559
+3       4.0   7.813969
+4       4.0   6.123148
+..      ...        ...
+412    20.0  14.793321
+413    20.0  14.907107
+414    21.0  15.683175
+415    22.0  13.122490
+416    23.0  14.325462
+
+[417 rows x 2 columns]
+Fold: 2, shape: [8, 3, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.761833
+1       3.0   5.900673
+2       4.0   6.028166
+3       4.0   7.834396
+4       4.0   6.189626
+..      ...        ...
+412    20.0  14.726196
+413    20.0  14.864982
+414    21.0  15.625966
+415    22.0  13.123830
+416    23.0  14.164125
+
+[417 rows x 2 columns]
+Fold: 4, shape: [8, 3, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.767381
+1       3.0   5.829532
+2       4.0   5.941148
+3       4.0   7.787869
+4       4.0   6.054397
+..      ...        ...
+412    20.0  14.774050
+413    20.0  14.900261
+414    21.0  15.699103
+415    22.0  13.078071
+416    23.0  14.323701
+
+[417 rows x 2 columns]
+Fold: 3, shape: [8, 3, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.765704
+1       3.0   5.835589
+2       4.0   5.967047
+3       4.0   7.817271
+4       4.0   6.075248
+..      ...        ...
+412    20.0  14.695594
+413    20.0  14.879039
+414    21.0  15.683120
+415    22.0  13.080821
+416    23.0  13.871399
+
+[417 rows x 2 columns]
+Fold: 1, shape: [8, 3, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.832126
+1       3.0   5.783305
+2       4.0   5.959966
+3       4.0   7.822546
+4       4.0   6.035493
+..      ...        ...
+412    20.0  14.729720
+413    20.0  14.878455
+414    21.0  15.652367
+415    22.0  13.062675
+416    23.0  14.122013
+
+[417 rows x 2 columns]
+Fold: 0, shape: [8, 3, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.743294
+1       3.0   5.928139
+2       4.0   6.044193
+3       4.0   7.889931
+4       4.0   6.186333
+..      ...        ...
+412    20.0  14.665987
+413    20.0  14.813741
+414    21.0  15.616241
+415    22.0  13.098199
+416    23.0  14.170711
+
+[417 rows x 2 columns]
+Fold: 9, shape: [8, 3, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.722058
+1       3.0   5.825859
+2       4.0   5.960498
+3       4.0   7.885569
+4       4.0   6.109675
+..      ...        ...
+412    20.0  14.770865
+413    20.0  14.867331
+414    21.0  15.617028
+415    22.0  13.124317
+416    23.0  14.337976
+
+[417 rows x 2 columns]
+Fold: 7, shape: [8, 3, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.881340
+1       3.0   5.924521
+2       4.0   6.059445
+3       4.0   7.764349
+4       4.0   6.162893
+..      ...        ...
+412    20.0  14.899072
+413    20.0  15.043895
+414    21.0  15.752837
+415    22.0  13.336815
+416    23.0  13.971485
+
+[417 rows x 2 columns]
+Fold: 5, shape: [8, 3, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.801408
+1       3.0   5.879973
+2       4.0   6.016274
+3       4.0   7.751406
+4       4.0   6.169225
+..      ...        ...
+412    20.0  14.807276
+413    20.0  14.902427
+414    21.0  15.697228
+415    22.0  13.062322
+416    23.0  14.309453
+
+[417 rows x 2 columns]
+Fold: 6, shape: [8, 3, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   6.584826
+1       3.0   5.569404
+2       4.0   5.694273
+3       4.0   8.670571
+4       4.0   5.989486
+..      ...        ...
+412    20.0  15.134818
+413    20.0  15.362424
+414    21.0  16.203913
+415    22.0  13.465131
+416    23.0  12.633708
+
+[417 rows x 2 columns]
+Fold: 8, shape: [8, 4, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.570820
+1       3.0   5.561314
+2       4.0   5.668956
+3       4.0   8.455588
+4       4.0   5.878352
+..      ...        ...
+412    20.0  15.095272
+413    20.0  15.320436
+414    21.0  16.187953
+415    22.0  13.372330
+416    23.0  12.526779
+
+[417 rows x 2 columns]
+Fold: 3, shape: [8, 4, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.696724
+1       3.0   5.654594
+2       4.0   5.782280
+3       4.0   8.577510
+4       4.0   6.042298
+..      ...        ...
+412    20.0  15.207139
+413    20.0  15.393548
+414    21.0  16.220022
+415    22.0  13.500432
+416    23.0  12.762954
+
+[417 rows x 2 columns]
+Fold: 2, shape: [8, 4, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.545567
+1       3.0   5.583236
+2       4.0   5.699734
+3       4.0   8.570079
+4       4.0   5.982926
+..      ...        ...
+412    20.0  15.010746
+413    20.0  15.225390
+414    21.0  16.081206
+415    22.0  13.350524
+416    23.0  12.445854
+
+[417 rows x 2 columns]
+Fold: 4, shape: [8, 4, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.596364
+1       3.0   5.631198
+2       4.0   5.739778
+3       4.0   8.621799
+4       4.0   5.967700
+..      ...        ...
+412    20.0  14.933274
+413    20.0  15.153417
+414    21.0  16.022324
+415    22.0  13.271752
+416    23.0  12.165281
+
+[417 rows x 2 columns]
+Fold: 9, shape: [8, 4, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.724884
+1       3.0   5.600470
+2       4.0   5.753568
+3       4.0   8.532022
+4       4.0   5.976982
+..      ...        ...
+412    20.0  15.074578
+413    20.0  15.334738
+414    21.0  16.104096
+415    22.0  13.445864
+416    23.0  12.460965
+
+[417 rows x 2 columns]
+Fold: 0, shape: [8, 4, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.617417
+1       3.0   5.588513
+2       4.0   5.707734
+3       4.0   8.582915
+4       4.0   6.000266
+..      ...        ...
+412    20.0  15.080906
+413    20.0  15.335788
+414    21.0  16.170966
+415    22.0  13.439195
+416    23.0  12.371017
+
+[417 rows x 2 columns]
+Fold: 1, shape: [8, 4, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.583694
+1       3.0   5.644594
+2       4.0   5.758275
+3       4.0   8.562398
+4       4.0   5.984963
+..      ...        ...
+412    20.0  15.222954
+413    20.0  15.427563
+414    21.0  16.239775
+415    22.0  13.566574
+416    23.0  12.257452
+
+[417 rows x 2 columns]
+Fold: 5, shape: [8, 4, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.601593
+1       3.0   5.662694
+2       4.0   5.780796
+3       4.0   8.557035
+4       4.0   6.035607
+..      ...        ...
+412    20.0  15.068199
+413    20.0  15.267949
+414    21.0  16.098426
+415    22.0  13.406032
+416    23.0  12.348966
+
+[417 rows x 2 columns]
+Fold: 7, shape: [8, 4, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.689450
+1       3.0   5.602767
+2       4.0   5.721313
+3       4.0   8.689202
+4       4.0   5.999288
+..      ...        ...
+412    20.0  15.123106
+413    20.0  15.277975
+414    21.0  16.134941
+415    22.0  13.330027
+416    23.0  12.666747
+
+[417 rows x 2 columns]
+Fold: 6, shape: [8, 4, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   6.478261
+1       3.0   5.445268
+2       4.0   5.571178
+3       4.0   8.581872
+4       4.0   5.820337
+..      ...        ...
+412    20.0  14.920988
+413    20.0  15.182995
+414    21.0  16.068062
+415    22.0  13.200229
+416    23.0  12.316411
+
+[417 rows x 2 columns]
+Fold: 8, shape: [8, 5, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.530617
+1       3.0   5.557885
+2       4.0   5.659591
+3       4.0   8.417894
+4       4.0   5.895324
+..      ...        ...
+412    20.0  14.843878
+413    20.0  15.098714
+414    21.0  16.050126
+415    22.0  13.084944
+416    23.0  12.192422
+
+[417 rows x 2 columns]
+Fold: 3, shape: [8, 5, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.674906
+1       3.0   5.554185
+2       4.0   5.700254
+3       4.0   8.522260
+4       4.0   5.964597
+..      ...        ...
+412    20.0  14.856215
+413    20.0  15.131734
+414    21.0  15.901751
+415    22.0  13.221495
+416    23.0  12.225986
+
+[417 rows x 2 columns]
+Fold: 0, shape: [8, 5, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.711047
+1       3.0   5.644582
+2       4.0   5.770403
+3       4.0   8.485016
+4       4.0   6.014171
+..      ...        ...
+412    20.0  14.926413
+413    20.0  15.142820
+414    21.0  15.987209
+415    22.0  13.198551
+416    23.0  12.374954
+
+[417 rows x 2 columns]
+Fold: 2, shape: [8, 5, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.577963
+1       3.0   5.604676
+2       4.0   5.719070
+3       4.0   8.507975
+4       4.0   5.957019
+..      ...        ...
+412    20.0  14.817580
+413    20.0  15.078165
+414    21.0  16.013111
+415    22.0  13.085715
+416    23.0  12.152115
+
+[417 rows x 2 columns]
+Fold: 1, shape: [8, 5, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.085318
+1       3.0   5.225165
+2       4.0   5.306003
+3       4.0   8.510431
+4       4.0   5.832110
+..      ...        ...
+412    20.0  14.845973
+413    20.0  15.108451
+414    21.0  15.916329
+415    22.0  13.236418
+416    23.0  11.746709
+
+[417 rows x 2 columns]
+Fold: 9, shape: [8, 5, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.566378
+1       3.0   5.601987
+2       4.0   5.717864
+3       4.0   8.474914
+4       4.0   5.949430
+..      ...        ...
+412    20.0  14.767333
+413    20.0  14.997707
+414    21.0  15.908766
+415    22.0  13.056044
+416    23.0  12.276008
+
+[417 rows x 2 columns]
+Fold: 4, shape: [8, 5, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   5.190837
+1       3.0   5.083632
+2       4.0   5.133935
+3       4.0   7.311610
+4       4.0   5.849227
+..      ...        ...
+412    20.0  15.074513
+413    20.0  15.313875
+414    21.0  16.257072
+415    22.0  13.566118
+416    23.0  11.947969
+
+[417 rows x 2 columns]
+Fold: 5, shape: [8, 5, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.670807
+1       3.0   5.560858
+2       4.0   5.681716
+3       4.0   8.550153
+4       4.0   5.898707
+..      ...        ...
+412    20.0  14.858925
+413    20.0  15.058005
+414    21.0  15.997500
+415    22.0  13.021746
+416    23.0  12.386402
+
+[417 rows x 2 columns]
+Fold: 6, shape: [8, 5, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.109826
+1       3.0   5.529755
+2       4.0   5.608511
+3       4.0   8.424235
+4       4.0   5.968578
+..      ...        ...
+412    20.0  14.881235
+413    20.0  15.113381
+414    21.0  16.042880
+415    22.0  13.189528
+416    23.0  11.991570
+
+[417 rows x 2 columns]
+Fold: 7, shape: [8, 5, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   3.075619
+1       3.0   4.690352
+2       4.0   4.607636
+3       4.0   6.929210
+4       4.0   6.149458
+..      ...        ...
+412    20.0  15.567823
+413    20.0  15.688263
+414    21.0  16.550121
+415    22.0  14.021029
+416    23.0  12.500500
+
+[417 rows x 2 columns]
+Fold: 8, shape: [8, 6, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.134732
+1       3.0   5.281259
+2       4.0   5.357519
+3       4.0   8.296451
+4       4.0   5.831204
+..      ...        ...
+412    20.0  15.016849
+413    20.0  15.235973
+414    21.0  15.991600
+415    22.0  13.310353
+416    23.0  12.466293
+
+[417 rows x 2 columns]
+Fold: 3, shape: [8, 6, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   5.110035
+1       3.0   5.000201
+2       4.0   5.055855
+3       4.0   8.220130
+4       4.0   5.969775
+..      ...        ...
+412    20.0  15.015414
+413    20.0  15.302037
+414    21.0  16.162977
+415    22.0  13.296176
+416    23.0  11.937364
+
+[417 rows x 2 columns]
+Fold: 0, shape: [8, 6, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.704287
+1       3.0   5.586182
+2       4.0   5.715105
+3       4.0   8.520873
+4       4.0   5.910027
+..      ...        ...
+412    20.0  15.026165
+413    20.0  15.238805
+414    21.0  16.130746
+415    22.0  13.248851
+416    23.0  12.653232
+
+[417 rows x 2 columns]
+Fold: 2, shape: [8, 6, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   4.332705
+1       3.0   4.897937
+2       4.0   4.882943
+3       4.0   7.640833
+4       4.0   6.036523
+..      ...        ...
+412    20.0  15.152173
+413    20.0  15.446526
+414    21.0  16.534556
+415    22.0  13.472949
+416    23.0  12.085808
+
+[417 rows x 2 columns]
+Fold: 9, shape: [8, 6, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.729350
+1       3.0   5.518410
+2       4.0   5.643083
+3       4.0   8.641537
+4       4.0   5.863763
+..      ...        ...
+412    20.0  14.667800
+413    20.0  15.018780
+414    21.0  16.024008
+415    22.0  12.930127
+416    23.0  12.101273
+
+[417 rows x 2 columns]
+Fold: 1, shape: [8, 6, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   5.171688
+1       3.0   5.052843
+2       4.0   5.096435
+3       4.0   7.855470
+4       4.0   5.855515
+..      ...        ...
+412    20.0  15.164943
+413    20.0  15.359211
+414    21.0  16.409481
+415    22.0  13.291719
+416    23.0  12.506555
+
+[417 rows x 2 columns]
+Fold: 6, shape: [8, 6, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.633414
+1       3.0   5.540104
+2       4.0   5.660080
+3       4.0   8.572969
+4       4.0   5.933318
+..      ...        ...
+412    20.0  14.868483
+413    20.0  15.151774
+414    21.0  16.055876
+415    22.0  13.165067
+416    23.0  12.310511
+
+[417 rows x 2 columns]
+Fold: 4, shape: [8, 6, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   6.577427
+1       3.0   5.619120
+2       4.0   5.730429
+3       4.0   8.551954
+4       4.0   5.916431
+..      ...        ...
+412    20.0  15.104450
+413    20.0  15.331151
+414    21.0  16.213897
+415    22.0  13.354542
+416    23.0  12.236961
+
+[417 rows x 2 columns]
+Fold: 5, shape: [8, 6, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.972445
+1       3.0   4.675062
+2       4.0   4.642584
+3       4.0   7.028609
+4       4.0   6.014082
+..      ...        ...
+412    20.0  15.480605
+413    20.0  15.472283
+414    21.0  16.414547
+415    22.0  13.908219
+416    23.0  12.516092
+
+[417 rows x 2 columns]
+Fold: 7, shape: [8, 6, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   6.763846
+1       3.0   5.628371
+2       4.0   5.737301
+3       4.0   8.629380
+4       4.0   5.915696
+..      ...        ...
+412    20.0  14.739439
+413    20.0  15.075895
+414    21.0  16.130495
+415    22.0  12.941826
+416    23.0  12.438272
+
+[417 rows x 2 columns]
+Fold: 3, shape: [8, 7, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.364437
+1       3.0   4.469341
+2       4.0   4.377865
+3       4.0   6.426751
+4       4.0   5.942557
+..      ...        ...
+412    20.0  15.285057
+413    20.0  15.152419
+414    21.0  15.816284
+415    22.0  13.811487
+416    23.0  12.215772
+
+[417 rows x 2 columns]
+Fold: 9, shape: [8, 7, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.210425
+1       3.0   4.422975
+2       4.0   4.344126
+3       4.0   6.694650
+4       4.0   5.909987
+..      ...        ...
+412    20.0  15.512320
+413    20.0  15.530623
+414    21.0  16.017920
+415    22.0  14.067771
+416    23.0  12.519746
+
+[417 rows x 2 columns]
+Fold: 8, shape: [8, 7, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   4.647611
+1       3.0   4.976334
+2       4.0   4.956383
+3       4.0   8.072920
+4       4.0   5.956686
+..      ...        ...
+412    20.0  15.050274
+413    20.0  15.229740
+414    21.0  16.199907
+415    22.0  13.230896
+416    23.0  11.944656
+
+[417 rows x 2 columns]
+Fold: 6, shape: [8, 7, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   5.131571
+1       3.0   5.061901
+2       4.0   5.086341
+3       4.0   8.286346
+4       4.0   5.969003
+..      ...        ...
+412    20.0  14.981112
+413    20.0  15.277039
+414    21.0  16.233907
+415    22.0  13.282565
+416    23.0  11.930935
+
+[417 rows x 2 columns]
+Fold: 1, shape: [8, 7, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.292878
+1       3.0   4.684582
+2       4.0   4.622191
+3       4.0   6.160300
+4       4.0   6.201590
+..      ...        ...
+412    20.0  15.384624
+413    20.0  15.434603
+414    21.0  16.077902
+415    22.0  13.962235
+416    23.0  12.538623
+
+[417 rows x 2 columns]
+Fold: 0, shape: [8, 7, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.172873
+1       3.0   4.957859
+2       4.0   4.839946
+3       4.0   6.407321
+4       4.0   6.303514
+..      ...        ...
+412    20.0  15.604583
+413    20.0  15.768503
+414    21.0  16.665712
+415    22.0  14.014103
+416    23.0  12.611812
+
+[417 rows x 2 columns]
+Fold: 2, shape: [8, 7, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.455656
+1       3.0   4.630135
+2       4.0   4.544746
+3       4.0   6.350766
+4       4.0   6.009956
+..      ...        ...
+412    20.0  15.747018
+413    20.0  15.828384
+414    21.0  16.554678
+415    22.0  14.399208
+416    23.0  12.385031
+
+[417 rows x 2 columns]
+Fold: 5, shape: [8, 7, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.723948
+1       3.0   4.792660
+2       4.0   4.715845
+3       4.0   6.465283
+4       4.0   6.192016
+..      ...        ...
+412    20.0  15.607427
+413    20.0  15.546282
+414    21.0  16.219584
+415    22.0  14.202970
+416    23.0  12.598060
+
+[417 rows x 2 columns]
+Fold: 4, shape: [8, 7, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   2.913723
+1       3.0   4.410480
+2       4.0   4.302598
+3       4.0   6.480118
+4       4.0   5.955363
+..      ...        ...
+412    20.0  15.606967
+413    20.0  15.451797
+414    21.0  16.012189
+415    22.0  14.085616
+416    23.0  12.407230
+
+[417 rows x 2 columns]
+Fold: 7, shape: [8, 7, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   3.110105
+1       3.0   4.428514
+2       4.0   4.325285
+3       4.0   6.288299
+4       4.0   5.986864
+..      ...        ...
+412    20.0  15.402059
+413    20.0  15.288926
+414    21.0  15.964760
+415    22.0  13.945411
+416    23.0  12.148824
+
+[417 rows x 2 columns]
+Fold: 9, shape: [8, 8, 1]
+Starting Epoch 1/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   2.848988
+1       3.0   4.531840
+2       4.0   4.397141
+3       4.0   6.223181
+4       4.0   6.013102
+..      ...        ...
+412    20.0  15.279608
+413    20.0  15.060849
+414    21.0  15.704818
+415    22.0  13.632725
+416    23.0  12.273043
+
+[417 rows x 2 columns]
+Fold: 6, shape: [8, 8, 1]
+Starting Epoch 1/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   2.986077
+1       3.0   4.468704
+2       4.0   4.341867
+3       4.0   6.442563
+4       4.0   5.988370
+..      ...        ...
+412    20.0  15.255453
+413    20.0  15.371094
+414    21.0  16.404742
+415    22.0  13.897420
+416    23.0  12.495533
+
+[417 rows x 2 columns]
+Fold: 3, shape: [8, 8, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.076348
+1       3.0   4.525338
+2       4.0   4.423955
+3       4.0   6.529539
+4       4.0   6.075048
+..      ...        ...
+412    20.0  15.325866
+413    20.0  15.266650
+414    21.0  16.047398
+415    22.0  13.817324
+416    23.0  12.363661
+
+[417 rows x 2 columns]
+Fold: 1, shape: [8, 8, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.360653
+1       3.0   4.585286
+2       4.0   4.523361
+3       4.0   6.362149
+4       4.0   6.126740
+..      ...        ...
+412    20.0  15.312839
+413    20.0  15.319339
+414    21.0  16.120201
+415    22.0  13.843056
+416    23.0  12.494044
+
+[417 rows x 2 columns]
+Fold: 0, shape: [8, 8, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.126285
+1       3.0   4.570275
+2       4.0   4.477378
+3       4.0   6.793889
+4       4.0   6.099000
+..      ...        ...
+412    20.0  15.356527
+413    20.0  15.610154
+414    21.0  16.774655
+415    22.0  13.576655
+416    23.0  12.225340
+
+[417 rows x 2 columns]
+Fold: 2, shape: [8, 8, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+     actual  predicted
+0       1.0   3.515959
+1       3.0   4.625395
+2       4.0   4.563543
+3       4.0   6.490647
+4       4.0   5.912488
+..      ...        ...
+412    20.0  15.474489
+413    20.0  15.521468
+414    21.0  15.888527
+415    22.0  14.061652
+416    23.0  12.573191
+
+[417 rows x 2 columns]
+Fold: 8, shape: [8, 8, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   4.573506
+1       3.0   4.936430
+2       4.0   4.921581
+3       4.0   7.917405
+4       4.0   5.929930
+..      ...        ...
+412    20.0  14.996385
+413    20.0  15.353734
+414    21.0  16.212842
+415    22.0  13.383258
+416    23.0  11.808293
+
+[417 rows x 2 columns]
+Fold: 5, shape: [8, 8, 1]
+Starting Epoch 1/1000
+     actual  predicted
+0       1.0   3.161820
+1       3.0   4.671830
+2       4.0   4.569741
+3       4.0   6.351679
+4       4.0   6.004838
+..      ...        ...
+412    20.0  15.138312
+413    20.0  15.315978
+414    21.0  16.104791
+415    22.0  13.768950
+416    23.0  13.156437
+
+[417 rows x 2 columns]
+Fold: 4, shape: [8, 8, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+     actual  predicted
+0       1.0   2.546395
+1       3.0   4.528501
+2       4.0   4.396633
+3       4.0   6.236714
+4       4.0   6.136401
+..      ...        ...
+412    20.0  15.319660
+413    20.0  15.224060
+414    21.0  15.672113
+415    22.0  14.007493
+416    23.0  13.014311
+
+[417 rows x 2 columns]
+Fold: 7, shape: [8, 8, 1]
+Starting Epoch 1/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 101/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 201/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 301/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 401/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 501/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 601/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 701/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 801/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   3.259161
+1       3.0   4.759429
+2       4.0   4.644700
+3       4.0   6.014363
+4       4.0   6.264200
+..      ...        ...
+412    20.0  15.502110
+413    20.0  15.359635
+414    21.0  16.000266
+415    22.0  14.037055
+416    23.0  12.455687
+
+[417 rows x 2 columns]
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   2.735691
+1       3.0   4.596921
+2       4.0   4.445699
+3       4.0   6.162174
+4       4.0   6.103688
+..      ...        ...
+412    20.0  15.557393
+413    20.0  15.300216
+414    21.0  15.852169
+415    22.0  13.917235
+416    23.0  12.602491
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0   3.050528
+1       3.0   4.568007
+2       4.0   4.452117
+3       4.0   6.684449
+4       4.0   6.158429
+..      ...        ...
+412    20.0  15.664688
+413    20.0  15.688082
+414    21.0  16.309465
+415    22.0  14.210098
+416    23.0  12.623892
+
+[417 rows x 2 columns]
+Starting Epoch 901/1000
+     actual  predicted
+0       1.0   3.015282
+1       3.0   4.804395
+2       4.0   4.672553
+3       4.0   6.314465
+4       4.0   6.137681
+..      ...        ...
+412    20.0  15.296451
+413    20.0  15.674546
+414    21.0  16.911815
+415    22.0  13.805712
+416    23.0  13.336464
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0   4.134799
+1       3.0   4.779973
+2       4.0   4.763346
+3       4.0   6.107185
+4       4.0   5.978593
+..      ...        ...
+412    20.0  15.598532
+413    20.0  15.576040
+414    21.0  16.065778
+415    22.0  14.185522
+416    23.0  12.690182
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0   2.415648
+1       3.0   4.614075
+2       4.0   4.461390
+3       4.0   6.300742
+4       4.0   6.312749
+..      ...        ...
+412    20.0  15.764744
+413    20.0  15.717135
+414    21.0  16.361585
+415    22.0  14.271465
+416    23.0  12.517517
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0   3.026940
+1       3.0   4.908736
+2       4.0   4.793446
+3       4.0   6.675683
+4       4.0   6.262376
+..      ...        ...
+412    20.0  15.501001
+413    20.0  15.758801
+414    21.0  16.556063
+415    22.0  13.990550
+416    23.0  13.071880
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0   3.618594
+1       3.0   4.759303
+2       4.0   4.683148
+3       4.0   5.961761
+4       4.0   5.994527
+..      ...        ...
+412    20.0  15.278252
+413    20.0  15.364131
+414    21.0  15.919784
+415    22.0  14.072416
+416    23.0  12.712849
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0   2.818509
+1       3.0   4.536243
+2       4.0   4.408791
+3       4.0   6.224168
+4       4.0   6.115900
+..      ...        ...
+412    20.0  15.550837
+413    20.0  15.619564
+414    21.0  16.069432
+415    22.0  14.258155
+416    23.0  12.761961
+
+[417 rows x 2 columns]
+     actual  predicted
+0       1.0   1.820733
+1       3.0   4.510295
+2       4.0   4.326980
+3       4.0   6.094599
+4       4.0   6.298419
+..      ...        ...
+412    20.0  15.601737
+413    20.0  15.480750
+414    21.0  15.970222
+415    22.0  14.189635
+416    23.0  12.594717
+
+[417 rows x 2 columns]
+Best Models for 1 Hidden Layers
+[(4.126874366226369, [8, 8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394613520>), (4.090063367675347, [8, 8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394613760>), (4.10010100541339, [8, 8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394613940>), (4.102302135940701, [8, 8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394613b20>), (4.14835452204954, [8, 8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394613d00>), (4.063946988145207, [8, 8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe394613ee0>), (4.061197830892741, [8, 8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe3b2b38100>), (4.08296978142126, [8, 7, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe3b2b382e0>), (4.098809707445282, [8, 8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe3b2b384c0>), (4.067173987047639, [8, 8, 1], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fe3b2b386a0>)]
+Overall results for 1 Hidden Layers
+[     actual  predicted
+0       2.0   3.906520
+1       3.0   4.429385
+2       4.0   7.575448
+3       4.0   4.637107
+4       4.0   4.671092
+..      ...        ...
+371    19.0  18.103192
+372    20.0  16.434858
+373    20.0  15.256493
+374    21.0  11.281915
+375    23.0  14.019109
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   3.654309
+1       3.0   3.942725
+2       4.0   4.109471
+3       4.0   3.365533
+4       4.0   3.682031
+..      ...        ...
+371    19.0  11.168455
+372    20.0  13.065965
+373    20.0  12.382166
+374    21.0  15.140937
+375    23.0  14.101068
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   4.251390
+1       3.0   3.610835
+2       4.0   3.446996
+3       4.0   4.585978
+4       4.0   4.192473
+..      ...        ...
+371    19.0  13.065636
+372    20.0  11.923672
+373    20.0  14.956897
+374    21.0  14.333168
+375    23.0  11.694724
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   3.890674
+1       4.0   5.509125
+2       4.0   5.266844
+3       4.0   4.391200
+4       4.0   4.915670
+..      ...        ...
+371    19.0  14.642269
+372    20.0  15.290022
+373    20.0  15.674546
+374    21.0  15.357730
+375    23.0  14.126717
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   4.468289
+1       4.0   4.944264
+2       4.0   5.530816
+3       4.0   5.018512
+4       4.0   5.020029
+..      ...        ...
+371    19.0  14.184113
+372    20.0  13.671741
+373    21.0  16.052967
+374    21.0  15.181965
+375    24.0  17.097949
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   4.684821
+1       4.0   3.862518
+2       4.0   5.137628
+3       4.0   3.653244
+4       4.0   3.805816
+..      ...        ...
+371    19.0   9.687057
+372    20.0  12.806648
+373    21.0  11.473446
+374    22.0  13.364186
+375    24.0  17.343659
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   4.861896
+1       4.0   6.899288
+2       4.0   5.337522
+3       4.0   5.361819
+4       4.0   5.935582
+..      ...        ...
+371    19.0  14.520743
+372    20.0  13.397893
+373    21.0  11.920455
+374    22.0  16.921353
+375    25.0  19.987983
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   5.268099
+1       4.0   3.910122
+2       4.0   3.925030
+3       4.0   4.126054
+4       4.0   5.096856
+..      ...        ...
+371    20.0  13.095553
+372    20.0  14.048434
+373    21.0  13.923193
+374    23.0  12.947818
+375    27.0  18.196800
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   5.397508
+1       4.0   5.285342
+2       4.0   5.348438
+3       4.0   4.761737
+4       4.0   5.244464
+..      ...        ...
+371    20.0  16.794353
+372    20.0  18.083680
+373    21.0  19.885806
+374    23.0  15.738604
+375    27.0  19.697625
+
+[376 rows x 2 columns],      actual  predicted
+0       3.0   4.949866
+1       4.0   4.437821
+2       4.0   4.857364
+3       4.0   3.793407
+4       4.0   5.434949
+..      ...        ...
+371    20.0  10.989423
+372    20.0  16.341099
+373    21.0  17.534643
+374    23.0  16.950666
+375    29.0  13.608538
+
+[376 rows x 2 columns]]
+Measures -------------------------
+MSE:  [3.747433287152573, 3.977484178711729, 4.103639664652535, 4.161607759873299, 3.2550942944806156, 4.624701438602229, 5.3586557343627925, 4.266786129578206, 4.995587461093037, 4.367421311420779]
+Trying 36 shapes
+Fold: 0, shape: [8, 1, 1, 1]
+Fold: 1, shape: [8, 1, 1, 1]
+Fold: 2, shape: [8, 1, 1, 1]
+Starting Epoch 1/1000Starting Epoch 1/1000
+
+Fold: 3, shape: [8, 1, 1, 1]
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 5, shape: [8, 1, 1, 1]
+Fold: 6, shape: [8, 1, 1, 1]
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 7, shape: [8, 1, 1, 1]
+Fold: 4, shape: [8, 1, 1, 1]
+Starting Epoch 1/1000
+Starting Epoch 1/1000
+Fold: 8, shape: [8, 1, 1, 1]
+Starting Epoch 1/1000
+Fold: 9, shape: [8, 1, 1, 1]
+Starting Epoch 1/1000
+Traceback (most recent call last):
+  File "/home/braeden/Git/csci447-project-01/Project03/main.py", line 758, in <module>
+    abalone_experiment(True, True, True)
+  File "/home/braeden/Git/csci447-project-01/Project03/main.py", line 579, in abalone_experiment
+    best_models = tu.tune_for_h_hidden_layers(layers)
+Process Process-25:
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 49, in tune_for_h_hidden_layers
+    j.join()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 149, in join
+Process Process-24:
+    res = self._popen.wait(timeout)
+  File "/usr/lib/python3.10/multiprocessing/popen_fork.py", line 43, in wait
+    return self.poll(os.WNOHANG if timeout == 0.0 else 0)
+  File "/usr/lib/python3.10/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+KeyboardInterrupt
+Process Process-31:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 62, in train
+    self.backprop_batch(batch, learning_rate, momentum)
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 75, in backprop_batch
+    accumulated_weight_changes[i] = np.add(accumulated_weight_changes[i], weights[i])
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 62, in train
+    self.backprop_batch(batch, learning_rate, momentum)
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 75, in backprop_batch
+    accumulated_weight_changes[i] = np.add(accumulated_weight_changes[i], weights[i])
+KeyboardInterrupt
+Process Process-27:
+Process Process-30:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 62, in train
+    self.backprop_batch(batch, learning_rate, momentum)
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 81, in backprop_batch
+    self.layers[i].prev_weight_change = accumulated_weight_changes[-i]
+KeyboardInterrupt
+Process Process-28:
+Process Process-26:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 62, in train
+    self.backprop_batch(batch, learning_rate, momentum)
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 81, in backprop_batch
+    self.layers[i].prev_weight_change = accumulated_weight_changes[-i]
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 62, in train
+    self.backprop_batch(batch, learning_rate, momentum)
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 80, in backprop_batch
+    accumulated_weight_changes[-i] + (np.multiply(momentum, self.layers[i].prev_weight_change)[0]))
+KeyboardInterrupt
+Process Process-33:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/inference.py", line 352, in is_hashable
+    hash(obj)
+TypeError: unhashable type: 'slice'
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 55, in train
+    prebatch = training_data[i*batch_size:i*batch_size+batch_size]
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 3468, in __getitem__
+    if is_hashable(key) and not is_iterator(key):
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/inference.py", line 352, in is_hashable
+    hash(obj)
+KeyboardInterrupt
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in train
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in <listcomp>
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 1324, in iterrows
+    s = klass(v, index=columns, name=k)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/series.py", line 451, in __init__
+    data = sanitize_array(data, index, dtype, copy)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/construction.py", line 601, in sanitize_array
+    subarr = _sanitize_ndim(subarr, data, dtype, index, allow_2d=allow_2d)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/construction.py", line 641, in _sanitize_ndim
+    if getattr(result, "ndim", 0) == 0:
+KeyboardInterrupt
+Process Process-29:
+Process Process-32:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 62, in train
+    self.backprop_batch(batch, learning_rate, momentum)
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 68, in backprop_batch
+    weight_changes.append(self.backprop_once(learning_rate, input, target))
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 85, in backprop_once
+    actual_output = self._internal_predict(input)
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 39, in _internal_predict
+    action_potential = layer._compute_action_potential(output).astype(float)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 58, in train
+    inputs = prebatch.drop(columns=target_column)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 4954, in drop
+    return super().drop(
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4267, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 4311, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 6640, in drop
+    indexer = self.get_indexer_for(labels)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 5764, in get_indexer_for
+    return self.get_indexer(target)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 3784, in get_indexer
+    return self._get_indexer(target, method, limit, tolerance)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py", line 3809, in _get_indexer
+    indexer = self._engine.get_indexer(tgt_values)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/braeden/Git/csci447-project-01/Project03/Utilities/TuningUtility.py", line 58, in tune_single_fold
+    nn.train(training_data, self.target_column, self.learning_rate, self.momentum, self.iterations,
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in train
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/home/braeden/Git/csci447-project-01/Project03/NeuralNetwork.py", line 59, in <listcomp>
+    targets = [target_modifier(row) for _, row in prebatch.iterrows()]
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 1324, in iterrows
+    s = klass(v, index=columns, name=k)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/series.py", line 459, in __init__
+    NDFrame.__init__(self, data)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 247, in __init__
+    object.__setattr__(self, "_is_copy", None)
+KeyboardInterrupt

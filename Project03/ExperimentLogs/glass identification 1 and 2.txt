@@ -1,0 +1,2656 @@
+Trying 3 shapes
+Fold: 2, shape: [9, 7, 7]
+Starting Epoch 1/2000
+Fold: 0, shape: [9, 7, 7]
+Fold: 1, shape: [9, 7, 7]
+Fold: 6, shape: [9, 7, 7]
+Fold: 4, shape: [9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1/2000
+Starting Epoch 1/2000
+Starting Epoch 1/2000
+Fold: 3, shape: [9, 7, 7]
+Fold: 8, shape: [9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1/2000
+Fold: 7, shape: [9, 7, 7]
+Fold: 9, shape: [9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1/2000
+Fold: 5, shape: [9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1301/2000
+Starting Epoch 1201/2000
+Starting Epoch 1301/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1701/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  3  2
+1  0  0  0  1  4  5
+Fold: 4, shape: [9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  3
+1  0  0  0  1  2  4
+Fold: 3, shape: [9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 101/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  4  2
+1  0  0  0  1  3  5
+Fold: 0, shape: [9, 8, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  0  1  0  0  0
+6  0  0  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  1  1  0  1  7  1
+1  0  0  0  1  0  6
+Fold: 7, shape: [9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 101/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  2
+1  0  0  0  1  1  5
+Fold: 1, shape: [9, 8, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  7  1
+1  0  0  0  1  0  6
+Fold: 9, shape: [9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 201/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  0  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  1
+1  0  0  0  1  2  6
+Fold: 2, shape: [9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  1
+1  0  0  0  1  1  6
+Fold: 5, shape: [9, 8, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  0  1  0  0  0
+6  0  1  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  0  4  1
+1  0  0  0  2  3  6
+Fold: 8, shape: [9, 8, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  3  1  0  0  0  0
+6  0  0  0  0  0  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  7  1
+1  0  0  0  1  1  6
+Fold: 6, shape: [9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 201/2000
+Starting Epoch 301/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 101/2000
+Starting Epoch 301/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 401/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 301/2000
+Starting Epoch 401/2000
+Starting Epoch 301/2000
+Starting Epoch 201/2000
+Starting Epoch 501/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 401/2000
+Starting Epoch 301/2000
+Starting Epoch 501/2000
+Starting Epoch 601/2000
+Starting Epoch 401/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 401/2000
+Starting Epoch 601/2000
+Starting Epoch 401/2000
+Starting Epoch 501/2000
+Starting Epoch 401/2000
+Starting Epoch 701/2000
+Starting Epoch 501/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 701/2000
+Starting Epoch 501/2000
+Starting Epoch 801/2000
+Starting Epoch 501/2000
+Starting Epoch 601/2000
+Starting Epoch 501/2000
+Starting Epoch 601/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 801/2000
+Starting Epoch 901/2000
+Starting Epoch 701/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 701/2000
+Starting Epoch 601/2000
+Starting Epoch 901/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 1001/2000
+Starting Epoch 801/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 1001/2000
+Starting Epoch 801/2000
+Starting Epoch 1101/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 901/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 901/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1001/2000
+Starting Epoch 901/2000
+Starting Epoch 1201/2000
+Starting Epoch 901/2000
+Starting Epoch 1301/2000
+Starting Epoch 901/2000
+Starting Epoch 1001/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1101/2000
+Starting Epoch 1301/2000
+Starting Epoch 1001/2000
+Starting Epoch 1401/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1101/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1201/2000
+Starting Epoch 1401/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1501/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 1101/2000
+Starting Epoch 1501/2000
+Starting Epoch 1101/2000
+Starting Epoch 1301/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 1301/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1401/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1701/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1701/2000
+Starting Epoch 1401/2000
+Starting Epoch 1301/2000
+Starting Epoch 1501/2000
+Starting Epoch 1301/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1401/2000
+Starting Epoch 1501/2000
+Starting Epoch 1601/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1901/2000
+Starting Epoch 1501/2000
+Starting Epoch 1901/2000
+Starting Epoch 1501/2000
+Starting Epoch 1701/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  1
+2  1  0  0  1  6  1
+1  0  0  0  1  1  5
+Fold: 3, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  3  2
+1  0  0  0  1  4  5
+Fold: 4, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 1601/2000
+Starting Epoch 1801/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1601/2000
+Starting Epoch 101/2000
+Starting Epoch 1601/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 101/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+Starting Epoch 201/2000
+Starting Epoch 1801/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+Starting Epoch 201/2000
+Starting Epoch 1801/2000
+Starting Epoch 301/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  2
+1  0  0  0  1  2  5
+Fold: 0, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 1901/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+   7  6  5  3  2  1
+7  3  0  1  0  0  0
+6  0  1  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  4  1
+1  0  0  0  1  3  6
+Fold: 8, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 401/2000
+Starting Epoch 1901/2000
+Starting Epoch 301/2000
+Starting Epoch 101/2000
+Starting Epoch 1901/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  7  2
+1  0  0  0  1  0  5
+Fold: 7, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 101/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  5  2
+1  0  0  0  1  2  5
+Fold: 1, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 501/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  1
+1  0  0  0  1  2  6
+Fold: 9, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 401/2000
+Starting Epoch 201/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  5  1
+1  0  0  0  1  2  6
+Fold: 2, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 101/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  7  1
+1  0  0  0  1  0  6
+Fold: 5, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 201/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  1  0  0  0  0  0
+2  0  0  0  1  7  2
+1  0  0  0  1  0  5
+Fold: 6, shape: [9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 601/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 301/2000
+Starting Epoch 501/2000
+Starting Epoch 101/2000
+Starting Epoch 301/2000
+Starting Epoch 201/2000
+Starting Epoch 701/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 201/2000
+Starting Epoch 401/2000
+Starting Epoch 201/2000
+Starting Epoch 601/2000
+Starting Epoch 201/2000
+Starting Epoch 401/2000
+Starting Epoch 801/2000
+Starting Epoch 301/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 301/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 301/2000
+Starting Epoch 701/2000
+Starting Epoch 901/2000
+Starting Epoch 301/2000
+Starting Epoch 401/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 401/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 1001/2000
+Starting Epoch 401/2000
+Starting Epoch 801/2000
+Starting Epoch 401/2000
+Starting Epoch 501/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 701/2000
+Starting Epoch 501/2000
+Starting Epoch 1101/2000
+Starting Epoch 701/2000
+Starting Epoch 501/2000
+Starting Epoch 901/2000
+Starting Epoch 501/2000
+Starting Epoch 601/2000
+Starting Epoch 801/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 1201/2000
+Starting Epoch 601/2000
+Starting Epoch 801/2000
+Starting Epoch 601/2000
+Starting Epoch 1001/2000
+Starting Epoch 601/2000
+Starting Epoch 901/2000
+Starting Epoch 1301/2000
+Starting Epoch 701/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 901/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 1101/2000
+Starting Epoch 1001/2000
+Starting Epoch 701/2000
+Starting Epoch 1401/2000
+Starting Epoch 801/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 1001/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 1501/2000
+Starting Epoch 801/2000
+Starting Epoch 901/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1101/2000
+Starting Epoch 901/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 901/2000
+Starting Epoch 1301/2000
+Starting Epoch 901/2000
+Starting Epoch 1001/2000
+Starting Epoch 901/2000
+Starting Epoch 1201/2000
+Starting Epoch 901/2000
+Starting Epoch 1001/2000
+Starting Epoch 1301/2000
+Starting Epoch 1701/2000
+Starting Epoch 1001/2000
+Starting Epoch 1401/2000
+Starting Epoch 1001/2000
+Starting Epoch 1101/2000
+Starting Epoch 1301/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1401/2000
+Starting Epoch 1801/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1501/2000
+Starting Epoch 1101/2000
+Starting Epoch 1401/2000
+Starting Epoch 1501/2000
+Starting Epoch 1201/2000
+Starting Epoch 1101/2000
+Starting Epoch 1901/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  7  2
+1  0  0  0  1  0  5
+Starting Epoch 1301/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1301/2000
+Starting Epoch 1601/2000
+Starting Epoch 1401/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1401/2000
+Starting Epoch 1801/2000
+Starting Epoch 1401/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1401/2000
+Starting Epoch 1501/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1501/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+Starting Epoch 1901/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1901/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  3
+1  0  0  0  1  1  4
+Starting Epoch 1601/2000
+Starting Epoch 1701/2000
+   7  6  5  3  2  1
+7  3  0  1  0  0  0
+6  0  1  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  2
+1  0  0  0  1  1  5
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  3
+1  0  0  0  1  1  4
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+Starting Epoch 1801/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  0
+1  0  0  0  1  1  7
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  3
+1  0  0  0  1  1  4
+Starting Epoch 1901/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  7  1
+1  0  0  0  1  0  6
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  0
+1  0  0  0  1  1  7
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  0
+1  0  0  0  1  1  7
+   7  6  5  3  2  1
+7  3  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  1
+1  0  0  0  1  1  6
+Best Models for 1 Hidden Layers
+[(0.782608695652174, [9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a3e70a0>), (0.6521739130434783, [9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a3e7310>), (0.6956521739130435, [9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a3e7820>), (0.6521739130434783, [9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a3e7d90>), (0.8260869565217391, [9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a40c340>), (0.7391304347826086, [9, 7, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a40c8b0>), (0.8260869565217391, [9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a40ce20>), (0.8260869565217391, [9, 7, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a40d390>), (0.8260869565217391, [9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a40d900>), (0.782608695652174, [9, 7, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a40de70>)]
+Overall results for 1 Hidden Layers
+[   1  2  3  5  6  7
+1  6  3  1  0  0  0
+2  1  4  0  0  0  0
+3  0  0  1  0  0  0
+5  0  0  0  2  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  6  2  1  0  0  0
+2  1  5  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  3  1  1  0  0  0
+2  4  6  0  0  0  0
+3  0  0  1  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  4  2  1  0  0  0
+2  2  5  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  4  0  2  0  0  0
+2  2  7  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  5  2  1  0  0  0
+2  1  5  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  6  1  0  0  0  1
+2  0  6  1  1  0  0
+3  0  0  0  0  0  0
+5  0  0  0  0  0  1
+6  0  0  0  0  1  0
+7  0  0  0  0  0  0,    1  2  3  5  6  7
+1  6  2  0  0  0  0
+2  0  5  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  6  1  0  0  0  0
+2  0  5  0  0  0  0
+3  0  0  1  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  6  0  1  0  0  0
+2  0  6  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  2]
+Measures -------------------------
+Loss:  [0.7727272727272727, 0.7619047619047619, 0.7142857142857143, 0.7, 0.8, 0.7894736842105263, 0.7222222222222222, 0.8333333333333334, 0.9375, 0.9375]
+F1:  [0.6666666666666666, 0.7142857142857143, 0.7058823529411764, 0.6666666666666666, 0.8750000000000001, 0.7692307692307692, 0.7999999999999999, 0.7692307692307692, 0.9090909090909091, 1.0]
+Trying 6 shapes
+Fold: 5, shape: [9, 7, 7, 7]
+Starting Epoch 1/2000
+Fold: 0, shape: [9, 7, 7, 7]
+Fold: 6, shape: [9, 7, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1/2000
+Fold: 1, shape: [9, 7, 7, 7]Fold: 2, shape: [9, 7, 7, 7]
+
+Fold: 3, shape: [9, 7, 7, 7]
+Fold: 8, shape: [9, 7, 7, 7]
+Fold: 9, shape: [9, 7, 7, 7]
+Starting Epoch 1/2000Starting Epoch 1/2000
+
+Fold: 4, shape: [9, 7, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1/2000
+Starting Epoch 1/2000
+Starting Epoch 1/2000
+Fold: 7, shape: [9, 7, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000Starting Epoch 101/2000
+
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000Starting Epoch 201/2000
+
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 701/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 801/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 901/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1101/2000
+Starting Epoch 1001/2000
+Starting Epoch 1101/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1201/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1201/2000
+Starting Epoch 1101/2000
+Starting Epoch 1301/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1301/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1301/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1401/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1501/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1701/2000
+Starting Epoch 1401/2000
+Starting Epoch 1701/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1801/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1801/2000
+Starting Epoch 1501/2000
+Starting Epoch 1901/2000
+Starting Epoch 1701/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1901/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  0  0
+5  0  0  2  0  1  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  1
+1  0  0  0  1  1  6
+Fold: 3, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1801/2000
+   7  6  5  3  2  1
+7  2  0  1  0  0  0
+6  0  1  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  0  1  0
+1  0  0  0  2  6  7
+Fold: 7, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 1901/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  4  1
+1  0  0  0  1  3  6
+Fold: 0, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 301/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 301/2000
+Starting Epoch 101/2000
+Starting Epoch 401/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  4  0
+1  0  0  0  1  3  7
+Fold: 5, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  0  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  0
+1  0  0  0  1  3  7
+Fold: 9, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  3  1
+1  0  0  0  1  4  6
+Fold: 4, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  7  3
+1  0  0  0  1  0  4
+Fold: 1, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  3  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  5  1
+1  0  0  0  1  2  6
+Fold: 2, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  7  3
+1  0  0  0  1  0  4
+Fold: 6, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 401/2000
+   7  6  5  3  2  1
+7  2  0  1  0  0  0
+6  0  1  0  0  1  0
+5  1  0  1  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  4  1
+1  0  0  0  1  3  6
+Fold: 8, shape: [9, 8, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 201/2000
+Starting Epoch 101/2000
+Starting Epoch 501/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 501/2000
+Starting Epoch 101/2000
+Starting Epoch 301/2000
+Starting Epoch 201/2000
+Starting Epoch 601/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 601/2000
+Starting Epoch 201/2000
+Starting Epoch 301/2000
+Starting Epoch 701/2000
+Starting Epoch 401/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 401/2000
+Starting Epoch 801/2000
+Starting Epoch 301/2000
+Starting Epoch 701/2000
+Starting Epoch 301/2000
+Starting Epoch 501/2000
+Starting Epoch 401/2000
+Starting Epoch 501/2000
+Starting Epoch 901/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 801/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 1001/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 901/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 1101/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 1001/2000
+Starting Epoch 801/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 801/2000
+Starting Epoch 1201/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 901/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 1101/2000
+Starting Epoch 901/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 1301/2000
+Starting Epoch 801/2000
+Starting Epoch 1001/2000
+Starting Epoch 801/2000
+Starting Epoch 1001/2000
+Starting Epoch 1401/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1201/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1101/2000
+Starting Epoch 1501/2000
+Starting Epoch 901/2000
+Starting Epoch 1101/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1301/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 1201/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1401/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1701/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1101/2000
+Starting Epoch 1501/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1401/2000
+Starting Epoch 1801/2000
+Starting Epoch 1401/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1501/2000
+Starting Epoch 1201/2000
+Starting Epoch 1901/2000
+Starting Epoch 1501/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1701/2000
+Starting Epoch 1601/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  0  0
+5  0  0  2  0  1  0
+3  0  0  0  0  0  0
+2  1  0  0  0  3  0
+1  0  0  0  2  4  7
+Fold: 3, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1601/2000
+Starting Epoch 1401/2000
+Starting Epoch 1701/2000
+Starting Epoch 1401/2000
+Starting Epoch 1801/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 101/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1901/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 201/2000
+Starting Epoch 1901/2000
+Starting Epoch 1801/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+   7  6  5  3  2  1
+7  3  1  1  0  0  0
+6  0  0  0  0  2  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  0  0  1
+1  0  0  0  2  6  6
+Fold: 7, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  3  0
+1  0  0  0  1  4  7
+Fold: 5, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 301/2000
+Starting Epoch 1901/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 101/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 101/2000
+Starting Epoch 1801/2000
+Starting Epoch 401/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  1
+1  0  0  0  1  1  6
+Fold: 0, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1801/2000
+Starting Epoch 201/2000
+Starting Epoch 1801/2000
+Starting Epoch 201/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+Starting Epoch 1801/2000
+Starting Epoch 101/2000
+Starting Epoch 501/2000
+Starting Epoch 301/2000
+Starting Epoch 1901/2000
+Starting Epoch 301/2000
+Starting Epoch 1901/2000
+   7  6  5  3  2  1
+7  3  0  1  0  0  0
+6  0  1  0  0  1  1
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  0  3  1
+1  0  0  0  2  4  5
+Fold: 8, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 201/2000
+Starting Epoch 601/2000
+Starting Epoch 401/2000
+Starting Epoch 101/2000
+   7  6  5  3  2  1
+7  2  1  2  0  0  0
+6  0  0  0  0  1  0
+5  0  0  0  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  7  0
+1  0  0  0  1  0  7
+Fold: 6, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 401/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  3  0
+1  0  0  0  1  4  7
+Fold: 9, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  2  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  0  1  1
+1  0  0  0  2  5  6
+Fold: 4, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  0  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  0
+1  0  0  0  1  2  7
+Fold: 2, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  3  1
+1  0  0  0  1  4  6
+Fold: 1, shape: [9, 8, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 301/2000
+Starting Epoch 701/2000
+Starting Epoch 501/2000
+Starting Epoch 201/2000
+Starting Epoch 101/2000
+Starting Epoch 501/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 401/2000
+Starting Epoch 601/2000
+Starting Epoch 801/2000
+Starting Epoch 301/2000
+Starting Epoch 201/2000
+Starting Epoch 601/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 701/2000
+Starting Epoch 501/2000
+Starting Epoch 201/2000
+Starting Epoch 401/2000
+Starting Epoch 901/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 801/2000
+Starting Epoch 701/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 601/2000
+Starting Epoch 301/2000
+Starting Epoch 501/2000
+Starting Epoch 1001/2000
+Starting Epoch 401/2000
+Starting Epoch 901/2000
+Starting Epoch 401/2000
+Starting Epoch 801/2000
+Starting Epoch 401/2000
+Starting Epoch 701/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 601/2000
+Starting Epoch 1101/2000
+Starting Epoch 501/2000
+Starting Epoch 1001/2000
+Starting Epoch 501/2000
+Starting Epoch 901/2000
+Starting Epoch 801/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 701/2000
+Starting Epoch 601/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 601/2000
+Starting Epoch 1001/2000
+Starting Epoch 901/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 701/2000
+Starting Epoch 1201/2000
+Starting Epoch 601/2000
+Starting Epoch 801/2000
+Starting Epoch 1301/2000
+Starting Epoch 1101/2000
+Starting Epoch 1001/2000
+Starting Epoch 701/2000
+Starting Epoch 801/2000
+Starting Epoch 701/2000
+Starting Epoch 1301/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 901/2000
+Starting Epoch 1401/2000
+Starting Epoch 901/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 1401/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1001/2000
+Starting Epoch 1501/2000
+Starting Epoch 1001/2000
+Starting Epoch 1501/2000
+Starting Epoch 1201/2000
+Starting Epoch 1301/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1101/2000
+Starting Epoch 1601/2000
+Starting Epoch 1101/2000
+Starting Epoch 1401/2000
+Starting Epoch 1301/2000
+Starting Epoch 1601/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1201/2000
+Starting Epoch 1001/2000
+Starting Epoch 1201/2000
+Starting Epoch 1701/2000
+Starting Epoch 1501/2000
+Starting Epoch 1701/2000
+Starting Epoch 1401/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1301/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1301/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+Starting Epoch 1401/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1901/2000
+Starting Epoch 1201/2000
+Starting Epoch 1401/2000
+Starting Epoch 1901/2000
+Starting Epoch 1701/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  4  0
+1  0  0  0  1  3  7
+Fold: 5, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1501/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  3
+1  0  0  0  1  2  4
+Fold: 3, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1601/2000
+Starting Epoch 101/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1601/2000
+Starting Epoch 1801/2000
+Starting Epoch 1701/2000
+Starting Epoch 101/2000
+Starting Epoch 1901/2000
+Starting Epoch 201/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1801/2000
+Starting Epoch 1501/2000
+Starting Epoch 1901/2000
+Starting Epoch 1701/2000
+Starting Epoch 201/2000
+Starting Epoch 301/2000
+   7  6  5  3  2  1
+7  2  1  1  0  0  0
+6  0  0  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  2  5  0
+1  0  0  0  0  2  7
+Fold: 7, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1901/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  1  0  0  0
+5  0  0  1  0  1  0
+3  0  0  0  0  0  0
+2  1  0  0  0  6  3
+1  0  0  0  2  1  4
+Fold: 0, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 401/2000
+Starting Epoch 1801/2000
+Starting Epoch 301/2000
+Starting Epoch 101/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  1
+1  0  0  0  1  1  6
+Fold: 9, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 501/2000
+Starting Epoch 101/2000
+Starting Epoch 1701/2000
+Starting Epoch 1901/2000
+Starting Epoch 401/2000
+Starting Epoch 201/2000
+Starting Epoch 101/2000
+Starting Epoch 1801/2000
+Starting Epoch 601/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 201/2000
+Starting Epoch 1801/2000
+   7  6  5  3  2  1
+7  3  1  0  0  1  0
+6  0  0  0  0  0  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  4  1
+1  0  0  0  1  3  6
+Fold: 8, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 501/2000
+Starting Epoch 301/2000
+Starting Epoch 201/2000
+Starting Epoch 701/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 301/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 301/2000
+Starting Epoch 101/2000
+Starting Epoch 601/2000
+Starting Epoch 401/2000
+Starting Epoch 801/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  0  0
+5  0  0  2  0  1  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  1
+1  0  0  0  1  2  6
+Fold: 6, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  0  0
+5  0  0  2  0  1  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  2
+1  0  0  0  1  2  5
+Fold: 4, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 401/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  1
+1  0  0  0  1  2  6
+Fold: 2, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 401/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  0  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  1
+1  0  0  0  1  3  6
+Fold: 1, shape: [9, 9, 7, 7]
+Starting Epoch 1/2000
+Starting Epoch 201/2000
+Starting Epoch 701/2000
+Starting Epoch 901/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 501/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 1001/2000
+Starting Epoch 301/2000
+Starting Epoch 801/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 1101/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 401/2000
+Starting Epoch 901/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 1201/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 501/2000
+Starting Epoch 1001/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1301/2000
+Starting Epoch 801/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 901/2000
+Starting Epoch 601/2000
+Starting Epoch 1101/2000
+Starting Epoch 901/2000
+Starting Epoch 1401/2000
+Starting Epoch 901/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 1001/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 1501/2000
+Starting Epoch 701/2000
+Starting Epoch 1201/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1101/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 1601/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 801/2000
+Starting Epoch 1301/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 1701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 901/2000
+Starting Epoch 1401/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1301/2000
+Starting Epoch 1801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1401/2000
+Starting Epoch 1001/2000
+Starting Epoch 1501/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1501/2000
+Starting Epoch 901/2000
+Starting Epoch 1401/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  0
+1  0  0  0  1  1  7
+Fold: 5, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1401/2000
+Starting Epoch 1101/2000
+Starting Epoch 1601/2000
+Starting Epoch 1001/2000
+Starting Epoch 1601/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 101/2000
+Starting Epoch 1001/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1201/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 201/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1301/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 301/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1701/2000
+Starting Epoch 1201/2000
+Starting Epoch 1701/2000
+Starting Epoch 1401/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 401/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1301/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  1  1
+2  1  0  0  1  4  0
+1  0  0  0  1  2  6
+Fold: 9, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1501/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  2  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  2  0
+1  0  0  0  1  4  7
+Fold: 3, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 501/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1901/2000
+Starting Epoch 101/2000
+Starting Epoch 1401/2000
+Starting Epoch 1901/2000
+Starting Epoch 1401/2000
+Starting Epoch 601/2000
+Starting Epoch 1601/2000
+Starting Epoch 101/2000
+Starting Epoch 201/2000
+Starting Epoch 1501/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  3
+1  0  0  0  1  2  4
+Fold: 0, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+   7  6  5  3  2  1
+7  2  0  1  0  0  0
+6  0  0  0  0  1  0
+5  0  1  1  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  3  0
+1  0  0  0  1  4  7
+Fold: 7, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 701/2000
+Starting Epoch 1501/2000
+Starting Epoch 1701/2000
+Starting Epoch 201/2000
+Starting Epoch 301/2000
+Starting Epoch 1601/2000
+Starting Epoch 101/2000
+Starting Epoch 801/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 101/2000
+Starting Epoch 1601/2000
+Starting Epoch 301/2000
+Starting Epoch 1801/2000
+Starting Epoch 401/2000
+Starting Epoch 901/2000
+Starting Epoch 201/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 201/2000
+Starting Epoch 1701/2000
+Starting Epoch 501/2000
+Starting Epoch 401/2000
+Starting Epoch 1901/2000
+Starting Epoch 1001/2000
+Starting Epoch 301/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 301/2000
+Starting Epoch 1801/2000
+Starting Epoch 601/2000
+Starting Epoch 1801/2000
+Starting Epoch 501/2000
+   7  6  5  3  2  1
+7  2  1  1  0  0  0
+6  0  0  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  0  5  3
+1  0  0  0  2  2  4
+Fold: 8, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1101/2000
+Starting Epoch 401/2000
+Starting Epoch 1901/2000
+Starting Epoch 701/2000
+Starting Epoch 1901/2000
+Starting Epoch 401/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1201/2000
+Starting Epoch 601/2000
+Starting Epoch 101/2000
+Starting Epoch 501/2000
+Starting Epoch 801/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  1  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  3  1
+1  0  0  0  1  4  6
+Fold: 4, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  4  0
+1  0  0  0  1  3  7
+Fold: 6, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 501/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  0  0
+5  0  0  2  0  1  0
+3  0  0  0  0  0  0
+2  0  0  0  1  5  0
+1  0  0  0  1  2  7
+Fold: 2, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 1301/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  7  3
+1  0  0  0  1  0  4
+Fold: 1, shape: [9, 9, 8, 7]
+Starting Epoch 1/2000
+Starting Epoch 701/2000
+Starting Epoch 201/2000
+Starting Epoch 901/2000
+Starting Epoch 601/2000
+Starting Epoch 101/2000
+Starting Epoch 1401/2000
+Starting Epoch 101/2000
+Starting Epoch 601/2000
+Starting Epoch 101/2000
+Starting Epoch 101/2000
+Starting Epoch 801/2000
+Starting Epoch 1001/2000
+Starting Epoch 301/2000
+Starting Epoch 701/2000
+Starting Epoch 1501/2000
+Starting Epoch 201/2000
+Starting Epoch 201/2000
+Starting Epoch 701/2000
+Starting Epoch 201/2000
+Starting Epoch 1101/2000
+Starting Epoch 201/2000
+Starting Epoch 901/2000
+Starting Epoch 401/2000
+Starting Epoch 801/2000
+Starting Epoch 1601/2000
+Starting Epoch 301/2000
+Starting Epoch 1201/2000
+Starting Epoch 301/2000
+Starting Epoch 801/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+Starting Epoch 1701/2000
+Starting Epoch 1001/2000
+Starting Epoch 501/2000
+Starting Epoch 901/2000
+Starting Epoch 1301/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 901/2000
+Starting Epoch 401/2000
+Starting Epoch 1801/2000
+Starting Epoch 401/2000
+Starting Epoch 1101/2000
+Starting Epoch 1001/2000
+Starting Epoch 601/2000
+Starting Epoch 1401/2000
+Starting Epoch 501/2000
+Starting Epoch 1901/2000
+Starting Epoch 501/2000
+Starting Epoch 1001/2000
+Starting Epoch 501/2000
+Starting Epoch 501/2000
+Starting Epoch 1101/2000
+Starting Epoch 1201/2000
+Starting Epoch 701/2000
+Starting Epoch 1501/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  0  0
+5  0  0  2  0  1  0
+3  0  0  0  0  0  0
+2  1  0  0  1  7  0
+1  0  0  0  1  0  7
+Fold: 5, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 1101/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 1301/2000
+Starting Epoch 801/2000
+Starting Epoch 101/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 1201/2000
+Starting Epoch 701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1301/2000
+Starting Epoch 701/2000
+Starting Epoch 1401/2000
+Starting Epoch 201/2000
+Starting Epoch 901/2000
+Starting Epoch 1801/2000
+Starting Epoch 801/2000
+Starting Epoch 1301/2000
+Starting Epoch 801/2000
+Starting Epoch 801/2000
+Starting Epoch 1401/2000
+Starting Epoch 301/2000
+Starting Epoch 801/2000
+Starting Epoch 1501/2000
+Starting Epoch 1001/2000
+Starting Epoch 1901/2000
+Starting Epoch 901/2000
+Starting Epoch 401/2000
+Starting Epoch 1401/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1501/2000
+Starting Epoch 901/2000
+Starting Epoch 1601/2000
+Starting Epoch 1101/2000
+   7  6  5  3  2  1
+7  2  0  1  0  0  0
+6  0  1  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  2  5  1
+1  0  0  0  0  2  6
+Fold: 9, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 501/2000
+Starting Epoch 1001/2000
+Starting Epoch 1601/2000
+Starting Epoch 1501/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1701/2000
+Starting Epoch 101/2000
+Starting Epoch 1201/2000
+Starting Epoch 601/2000
+Starting Epoch 1101/2000
+Starting Epoch 1701/2000
+Starting Epoch 1601/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 201/2000
+Starting Epoch 1101/2000
+Starting Epoch 1801/2000
+Starting Epoch 1301/2000
+Starting Epoch 701/2000
+Starting Epoch 1201/2000
+Starting Epoch 1801/2000
+Starting Epoch 301/2000
+Starting Epoch 1701/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 801/2000
+Starting Epoch 1901/2000
+Starting Epoch 1401/2000
+Starting Epoch 401/2000
+Starting Epoch 1901/2000
+Starting Epoch 1801/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 901/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  0  0
+5  0  0  2  0  1  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  2
+1  0  0  0  1  2  5
+Fold: 3, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 1501/2000
+Starting Epoch 501/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  4  0
+1  0  0  0  1  3  7
+Fold: 0, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 1901/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1001/2000
+Starting Epoch 1401/2000
+Starting Epoch 101/2000
+Starting Epoch 1601/2000
+Starting Epoch 601/2000
+Starting Epoch 101/2000
+   7  6  5  3  2  1
+7  2  1  1  0  0  0
+6  0  0  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  1
+1  0  0  0  1  2  6
+Fold: 7, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 1501/2000
+Starting Epoch 1101/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 701/2000
+Starting Epoch 201/2000
+Starting Epoch 1701/2000
+Starting Epoch 201/2000
+Starting Epoch 101/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 801/2000
+Starting Epoch 1601/2000
+Starting Epoch 301/2000
+Starting Epoch 1801/2000
+Starting Epoch 301/2000
+Starting Epoch 1301/2000
+Starting Epoch 201/2000
+Starting Epoch 1701/2000
+Starting Epoch 901/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1901/2000
+Starting Epoch 401/2000
+Starting Epoch 1001/2000
+Starting Epoch 301/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1501/2000
+Starting Epoch 1801/2000
+Starting Epoch 501/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  1  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  0  3  1
+1  0  0  0  2  4  6
+Fold: 8, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 501/2000
+Starting Epoch 1101/2000
+Starting Epoch 401/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1601/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 601/2000
+Starting Epoch 1201/2000
+Starting Epoch 601/2000
+Starting Epoch 101/2000
+Starting Epoch 501/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  5  2
+1  0  0  0  1  2  5
+Fold: 4, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  1
+1  0  0  0  1  1  6
+Fold: 2, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 1701/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  0  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  0
+1  0  0  0  1  2  7
+Fold: 6, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 1301/2000
+Starting Epoch 201/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  7  2
+1  0  0  0  1  0  5
+Fold: 1, shape: [9, 9, 9, 7]
+Starting Epoch 1/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 601/2000
+Starting Epoch 101/2000
+Starting Epoch 1401/2000
+Starting Epoch 101/2000
+Starting Epoch 1801/2000
+Starting Epoch 301/2000
+Starting Epoch 101/2000
+Starting Epoch 801/2000
+Starting Epoch 101/2000
+Starting Epoch 801/2000
+Starting Epoch 701/2000
+Starting Epoch 1501/2000
+Starting Epoch 201/2000
+Starting Epoch 401/2000
+Starting Epoch 201/2000
+Starting Epoch 1901/2000
+Starting Epoch 201/2000
+Starting Epoch 901/2000
+Starting Epoch 201/2000
+Starting Epoch 901/2000
+Starting Epoch 1601/2000
+Starting Epoch 501/2000
+Starting Epoch 801/2000
+Starting Epoch 301/2000
+Starting Epoch 301/2000
+   7  6  5  3  2  1
+7  2  1  0  0  0  0
+6  0  0  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  2  7  1
+1  0  0  0  0  0  6
+Starting Epoch 301/2000
+Starting Epoch 1001/2000
+Starting Epoch 301/2000
+Starting Epoch 1001/2000
+Starting Epoch 1701/2000
+Starting Epoch 601/2000
+Starting Epoch 901/2000
+Starting Epoch 401/2000
+Starting Epoch 401/2000
+Starting Epoch 1101/2000
+Starting Epoch 401/2000
+Starting Epoch 1801/2000
+Starting Epoch 701/2000
+Starting Epoch 401/2000
+Starting Epoch 1101/2000
+Starting Epoch 1001/2000
+Starting Epoch 501/2000
+Starting Epoch 1901/2000
+Starting Epoch 501/2000
+Starting Epoch 1201/2000
+Starting Epoch 801/2000
+Starting Epoch 501/2000
+Starting Epoch 1101/2000
+Starting Epoch 501/2000
+Starting Epoch 1201/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  2
+1  0  0  0  1  1  5
+Starting Epoch 601/2000
+Starting Epoch 901/2000
+Starting Epoch 1301/2000
+Starting Epoch 601/2000
+Starting Epoch 1201/2000
+Starting Epoch 601/2000
+Starting Epoch 601/2000
+Starting Epoch 1301/2000
+Starting Epoch 701/2000
+Starting Epoch 1401/2000
+Starting Epoch 1001/2000
+Starting Epoch 701/2000
+Starting Epoch 1301/2000
+Starting Epoch 701/2000
+Starting Epoch 701/2000
+Starting Epoch 1401/2000
+Starting Epoch 801/2000
+Starting Epoch 1501/2000
+Starting Epoch 1101/2000
+Starting Epoch 801/2000
+Starting Epoch 1401/2000
+Starting Epoch 801/2000
+Starting Epoch 1501/2000
+Starting Epoch 801/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1501/2000
+Starting Epoch 1601/2000
+Starting Epoch 901/2000
+Starting Epoch 901/2000
+Starting Epoch 1301/2000
+Starting Epoch 1001/2000
+Starting Epoch 1601/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1001/2000
+Starting Epoch 1401/2000
+Starting Epoch 1701/2000
+Starting Epoch 1101/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1101/2000
+Starting Epoch 1101/2000
+Starting Epoch 1501/2000
+Starting Epoch 1101/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+Starting Epoch 1201/2000
+Starting Epoch 1901/2000
+Starting Epoch 1201/2000
+Starting Epoch 1201/2000
+Starting Epoch 1601/2000
+Starting Epoch 1901/2000
+Starting Epoch 1201/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  3
+1  0  0  0  1  1  4
+Starting Epoch 1301/2000
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  0  7  3
+1  0  0  0  2  0  4
+Starting Epoch 1301/2000
+Starting Epoch 1701/2000
+   7  6  5  3  2  1
+7  3  1  1  0  0  0
+6  0  0  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  2  6  0
+1  0  0  0  0  1  7
+Starting Epoch 1301/2000
+Starting Epoch 1301/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1801/2000
+Starting Epoch 1401/2000
+Starting Epoch 1401/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1901/2000
+Starting Epoch 1501/2000
+Starting Epoch 1501/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+Starting Epoch 1601/2000
+   7  6  5  3  2  1
+7  3  0  1  0  0  0
+6  0  1  0  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  0  4  2
+1  0  0  0  2  3  5
+Starting Epoch 1601/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1701/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1801/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+Starting Epoch 1901/2000
+   7  6  5  3  2  1
+7  3  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  0
+1  0  0  0  1  1  7
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  0  0  1  0
+5  0  0  2  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  6  2
+1  0  0  0  1  1  5
+   7  6  5  3  2  1
+7  2  0  0  0  0  0
+6  0  1  1  0  1  0
+5  0  0  1  0  0  0
+3  0  0  0  0  0  0
+2  1  0  0  1  7  3
+1  0  0  0  1  0  4
+   7  6  5  3  2  1
+7  3  0  1  0  0  0
+6  0  0  0  0  1  0
+5  0  1  1  0  0  0
+3  0  0  0  0  0  0
+2  0  0  0  1  6  0
+1  0  0  0  1  1  7
+Best Models for 2 Hidden Layers
+[(0.782608695652174, [9, 9, 8, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a40ee60>), (0.7391304347826086, [9, 8, 8, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a44bf10>), (0.7391304347826086, [9, 7, 7, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a44b700>), (0.7391304347826086, [9, 8, 7, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a44b2b0>), (0.7391304347826086, [9, 9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a44ad10>), (0.6521739130434783, [9, 8, 8, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a44a8c0>), (0.8260869565217391, [9, 9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a44a500>), (0.7391304347826086, [9, 9, 8, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a449e70>), (0.6521739130434783, [9, 9, 9, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a449a20>), (0.8260869565217391, [9, 9, 8, 7], <Project03.NeuralNetwork.NeuralNetwork object at 0x7fd98a449210>)]
+Overall results for 2 Hidden Layers
+[   1  2  3  5  6  7
+1  6  0  2  0  0  0
+2  1  7  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  2  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  5  0  1  0  0  0
+2  2  7  1  1  0  0
+3  0  0  0  0  0  0
+5  0  0  0  0  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  4  1  2  0  0  0
+2  3  5  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  0  0  0
+6  0  1  0  0  1  0
+7  0  0  0  1  0  3,    1  2  3  5  6  7
+1  6  3  2  0  0  0
+2  0  4  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  5  0  1  0  0  0
+2  1  7  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  3,    1  2  3  5  6  7
+1  3  2  1  0  0  0
+2  2  5  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  1  0  0  0  0  0
+7  0  0  0  0  1  3,    1  2  3  5  6  7
+1  6  1  1  0  0  1
+2  0  6  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  1
+6  0  0  0  0  1  0
+7  0  0  0  0  0  0,    1  2  3  5  6  7
+1  5  1  0  0  0  0
+2  1  6  1  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  1  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  6  1  1  0  0  0
+2  0  5  0  0  0  0
+3  0  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  2,    1  2  3  5  6  7
+1  5  0  0  0  0  0
+2  0  6  1  0  0  0
+3  1  0  0  0  0  0
+5  0  0  0  1  0  0
+6  0  0  0  0  0  0
+7  0  0  0  0  0  2]
+Measures -------------------------
+Loss:  [0.8636363636363636, 0.7619047619047619, 0.6190476190476191, 0.75, 0.85, 0.631578947368421, 0.7777777777777778, 0.8333333333333334, 0.875, 0.875]
+F1:  [0.9333333333333333, 0.7777777777777778, 0.6666666666666666, 0.7272727272727273, 0.8750000000000001, 0.7142857142857143, 0.923076923076923, 0.7999999999999999, 0.9090909090909091, 0.923076923076923]
