@@ -6,5 +6,6 @@ Each of the projects focused on exploring a unique set of machine learning algor
 - Project 2: Exploring the underlying difference in performance between K-Nearest Neighbor, K-Means Clustering, and Edited K-Nearest Neighbor algorithms
 - Project 3: Exploring the effects of hidden layers on the performance of feed-forward neural networks which implement the backpropagation algorithm
 - Project 4: Exploring the relative differences in performance of Backpropagation, the Genetic Algorithm, Differential Evolution, and Particle Swarm Optimization
+- 
 For each of these projects, we were responsible for implementing the underlying algorithms, preprocessing, training, and evaluation methods from scratch (only relying on general purpose tools such as Pandas and NumPy for representing and working with data). 
 
